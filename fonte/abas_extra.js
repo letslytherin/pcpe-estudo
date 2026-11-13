@@ -203,6 +203,7 @@ function itemHtml(it,done){
   return `<label class="hitem${done?' done':''}"><input type="checkbox" data-id="${it.id}"${done?' checked':''}><span><span class="meta">${meta}</span><span class="ttl">${ttl}</span>${filt?`<div class="filt">${filt}</div>`:''}${window.__glink?window.__glink(it.id):''}</span></label>`;
 }
 document.addEventListener('change',e=>{if(e.target&&e.target.id==='h-sempiscina')etapas.set({semPiscina:e.target.checked});});
+document.addEventListener('change',e=>{if(e.target&&e.target.id==='h-sembarra')etapas.set({semBarra:e.target.checked});});
 function renderHoje(){
   if(!READY)return;
   const now=new Date();now.setHours(0,0,0,0);
@@ -254,7 +255,10 @@ function renderHoje(){
     T=[[QA,['Abdômen e lombar','cerca de 10 minutos'],AQ],[resp,['Barra estática',barra]],[QB(20),['Pernas e salto (leve)',salto],AQ],[QC,AQ],[resp,['Barra estática',barra]],[QB(25),AQ],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
     if(dw<6&&[0,2,3,5].includes(dw))T.push(['Se der para sair',`Pode trocar o cardio pela corrida da sua etapa (${cn}).`]);
   }
+  const sb=!!et.semBarra;
+  if(sb)T=T.map(r=>r[0]==='Barra estática'?['Força para a barra (em casa, sem barra)','4×20–30 s de puxada isométrica com toalha: sentada, toalha passada nos pés, puxe forte até os cotovelos dobrarem e segure. Remada curvada com mochila pesada 3×10–12, segurando 3 s em cima. Segurar a mochila ou duas garrafas de 2 L ao lado do corpo 3×30–40 s. No dia de academia, faça a barra de verdade: '+barra+'.']:r);
   $('#h-treino').innerHTML=T.map(([a,b])=>`<div class="xrow" style="grid-template-columns:1fr"><div><b>${hesc(a)}</b><small>${hesc(b)}</small></div></div>`).join('')+
+    `<label class="xsp"><input type="checkbox" id="h-sembarra"${sb?' checked':''}> Não tenho barra em casa (só na academia)</label>`+
     `<label class="xsp"><input type="checkbox" id="h-sempiscina"${sp?' checked':''}> Estou sem piscina por enquanto${sp?' (treino no quarto: cardio sem equipamento + respiração)':''}</label>`+
     (dw<6?'<p class="muted xsmall">Aqueça de 5 a 10 minutos antes e alongue no fim. Dor nas articulações ou no peito pede pausa.</p>':'');
   /* fim do dia */
