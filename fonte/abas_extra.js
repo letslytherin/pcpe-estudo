@@ -200,8 +200,9 @@ function itemHtml(it,done){
   if(it.kind==='cap'){meta=`<span class="chip ${it.p.toLowerCase()}">${it.p}</span><span class="chip p${it.pr.toLowerCase()}">${it.pr}</span><span class="disc">${hesc(it.d)}</span>`;
     ttl=`Guia cap. ${hesc(it.c)} + ${it.q} questões`;filt=`Disciplina: ${hesc(it.d)} · Assunto: ${hesc(it.a)}`;}
   else{meta=`<span class="chip fx">${hesc(it.tag)}</span>`;ttl=hesc(it.c);if(it.a)filt=hesc(it.a);}
-  return `<label class="hitem${done?' done':''}"><input type="checkbox" data-id="${it.id}"${done?' checked':''}><span><span class="meta">${meta}</span><span class="ttl">${ttl}</span>${filt?`<div class="filt">${filt}</div>`:''}</span></label>`;
+  return `<label class="hitem${done?' done':''}"><input type="checkbox" data-id="${it.id}"${done?' checked':''}><span><span class="meta">${meta}</span><span class="ttl">${ttl}</span>${filt?`<div class="filt">${filt}</div>`:''}${window.__glink?window.__glink(it.id):''}</span></label>`;
 }
+document.addEventListener('change',e=>{if(e.target&&e.target.id==='h-sempiscina')etapas.set({semPiscina:e.target.checked});});
 function renderHoje(){
   if(!READY)return;
   const now=new Date();now.setHours(0,0,0,0);
@@ -239,10 +240,14 @@ function renderHoje(){
     bb<15?'5×5–8 s sem apoio, com o queixo acima da barra, e 5 descidas lentas de 5 s':'4×10–15 s, buscando chegar a 20 s';
   const salto=bs==null||bs<1.35?'Técnica (balanço dos braços e aterrissagem) 4×5 saltos, mais agachamento, afundo e ponte de glúteo 3×10–12':
     '5×3 saltos máximos com 1–2 min de descanso; meça a marca uma vez por semana';
-  const corr=[`Corrida · etapa ${cn}`,CORR[cn-1][0]],nat=[`Natação · etapa ${nn}`,NAT[nn-1][0]+'. Nunca nade sozinha.'];
-  const dw=(now.getDay()+6)%7;
-  const T=[[corr,['Abdômen e lombar','cerca de 10 minutos']],[nat,['Barra estática',barra]],[nat,['Pernas e salto (leve)',salto]],[corr],[nat,['Barra estática',barra]],[[`Corrida leve · etapa ${cn}`,'O mesmo treino da sua etapa, num ritmo mais tranquilo']],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
+  const corr=[`Corrida · etapa ${cn}`,CORR[cn-1][0]];let nat=[`Natação · etapa ${nn}`,NAT[nn-1][0]+'. Nunca nade sozinha.'];
+  const dw=(now.getDay()+6)%7,sp=!!et.semPiscina;
+  const resp=['Respiração (fora da água)','Deitada, mão na barriga: 5 min de respiração pelo diafragma. Depois 10 vezes: inspire pelo nariz em 4 tempos e solte pela boca bem devagar, em 6 a 8 tempos, como se soprasse bolhas. Não prenda o fôlego.'];
+  const rit=['Caminhada rápida com respiração ritmada','25 a 30 min: inspire em 3 passos e solte em 3; quando ficar fácil, trote leve no mesmo ritmo. Se não conseguir falar frases curtas, diminua.'];
+  if(sp)nat=resp;
+  const T=[[corr,['Abdômen e lombar','cerca de 10 minutos']],[nat,['Barra estática',barra]],[sp?rit:nat,['Pernas e salto (leve)',salto]],[corr],[nat,['Barra estática',barra]],[[`Corrida leve · etapa ${cn}`,'O mesmo treino da sua etapa, num ritmo mais tranquilo']],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
   $('#h-treino').innerHTML=T.map(([a,b])=>`<div class="xrow" style="grid-template-columns:1fr"><div><b>${hesc(a)}</b><small>${hesc(b)}</small></div></div>`).join('')+
+    `<label class="xsp"><input type="checkbox" id="h-sempiscina"${sp?' checked':''}> Estou sem piscina por enquanto${sp?' (natação trocada por respiração e corrida leve)':''}</label>`+
     (dw<6?'<p class="muted xsmall">Aqueça de 5 a 10 minutos antes e alongue no fim. Dor nas articulações ou no peito pede pausa.</p>':'');
   /* fim do dia */
   const fim=[];

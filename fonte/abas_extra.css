@@ -64,3 +64,8 @@
 .hitem{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid var(--line)}
 .hitem input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--ok);cursor:pointer}
 .hitem.done .ttl{text-decoration:line-through;color:var(--muted)}
+.glink{display:inline-block;margin:6px 8px 0 0;padding:5px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent) !important;border:1px solid var(--accent);font:600 12.5px/1.2 var(--f-body,system-ui);text-decoration:none}
+.glink:hover{filter:brightness(1.1)}
+.ghint{font-size:11.5px;color:var(--muted,#888);white-space:nowrap}
+.xsp{display:flex;gap:8px;align-items:center;margin:10px 0 4px;font-size:14px;cursor:pointer}
+.xsp input{width:18px;height:18px;accent-color:var(--accent)}
