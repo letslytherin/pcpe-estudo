@@ -245,9 +245,17 @@ function renderHoje(){
   const resp=['Respiração (fora da água)','Deitada, mão na barriga: 5 min de respiração pelo diafragma. Depois 10 vezes: inspire pelo nariz em 4 tempos e solte pela boca bem devagar, em 6 a 8 tempos, como se soprasse bolhas. Não prenda o fôlego.'];
   const rit=['Caminhada rápida com respiração ritmada','25 a 30 min: inspire em 3 passos e solte em 3; quando ficar fácil, trote leve no mesmo ritmo. Se não conseguir falar frases curtas, diminua.'];
   if(sp)nat=resp;
-  const T=[[corr,['Abdômen e lombar','cerca de 10 minutos']],[nat,['Barra estática',barra]],[sp?rit:nat,['Pernas e salto (leve)',salto]],[corr],[nat,['Barra estática',barra]],[[`Corrida leve · etapa ${cn}`,'O mesmo treino da sua etapa, num ritmo mais tranquilo']],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
+  let T=[[corr,['Abdômen e lombar','cerca de 10 minutos']],[nat,['Barra estática',barra]],[sp?rit:nat,['Pernas e salto (leve)',salto]],[corr],[nat,['Barra estática',barra]],[[`Corrida leve · etapa ${cn}`,'O mesmo treino da sua etapa, num ritmo mais tranquilo']],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
+  if(sp){
+    const QA=['Cardio no quarto · Treino A (20 min)','3 rodadas de 40 s de exercício + 20 s marchando: polichinelo, skipping, agachamento, corrida parada e escalador com as mãos na cama (sem impacto: abra um pé de cada vez e troque saltos por marcha rápida). 1 min de marcha leve entre as rodadas.'],
+      QB=n=>['Cardio no quarto · Treino B ('+n+' min)','Sem parar, em ritmo moderado e com respiração ritmada, 3 min cada: marcha com joelho alto, passo lateral, marcha com soco à frente, step ou avanço alternado. Repita a sequência.'],
+      QC=['Cardio no quarto · Treino A ou C','A como na segunda. Se A e B já estão fáceis há uma semana, faça o C: 8 rodadas de 20 s forte (skipping rápido, polichinelo ou burpee sem salto) + 40 s marchando devagar.'],
+      AQ=['Antes e depois','5 min de aquecimento (marcha, círculos de braço, meio agachamento, passo lateral). No fim, 2 min de marcha lenta, alongamento e 1 min da respiração 4 por 6–8.'];
+    T=[[QA,['Abdômen e lombar','cerca de 10 minutos'],AQ],[resp,['Barra estática',barra]],[QB(20),['Pernas e salto (leve)',salto],AQ],[QC,AQ],[resp,['Barra estática',barra]],[QB(25),AQ],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
+    if(dw<6&&[0,2,3,5].includes(dw))T.push(['Se der para sair',`Pode trocar o cardio pela corrida da sua etapa (${cn}).`]);
+  }
   $('#h-treino').innerHTML=T.map(([a,b])=>`<div class="xrow" style="grid-template-columns:1fr"><div><b>${hesc(a)}</b><small>${hesc(b)}</small></div></div>`).join('')+
-    `<label class="xsp"><input type="checkbox" id="h-sempiscina"${sp?' checked':''}> Estou sem piscina por enquanto${sp?' (natação trocada por respiração e corrida leve)':''}</label>`+
+    `<label class="xsp"><input type="checkbox" id="h-sempiscina"${sp?' checked':''}> Estou sem piscina por enquanto${sp?' (treino no quarto: cardio sem equipamento + respiração)':''}</label>`+
     (dw<6?'<p class="muted xsmall">Aqueça de 5 a 10 minutos antes e alongue no fim. Dor nas articulações ou no peito pede pausa.</p>':'');
   /* fim do dia */
   const fim=[];
