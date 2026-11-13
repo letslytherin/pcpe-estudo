@@ -1,0 +1,505 @@
+<title>Legislação Estadual em Palitinhos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: uma coluna estreita de "fichas de ocorrência"; cada ficha = palco animado + legenda + regra fixa */
+:root{
+  --bg:#E9EDF2; --card:#FFFFFF; --stage:#F8FAFC; --line:#D3DAE3; --grid:#E8EDF3;
+  --ink:#1A2233; --muted:#5B6678; --accent:#1F3F94; --accent-soft:#E3E9F8;
+  --perp:#C2410C; --alt:#0F766E; --ok:#15803D; --no:#B42318;
+  --water:#3E86C6; --wood:#8A5A2B; --metal:#9AA4B2; --money:#2F9E5B; --folder:#D9A520; --bag:#7C3AED; --night:#1E2A4A; --moon:#B8C0CE;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1320; --card:#161D2D; --stage:#1B2336; --line:#2C3650; --grid:#212A40;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --perp:#F49660; --alt:#4FD1C0; --ok:#5BD98A; --no:#FF8A80;
+  --water:#4F93D6; --wood:#C08A55; --metal:#7D889A; --money:#4CC27F; --folder:#E5B93A; --bag:#A78BFA; --night:#000000; --moon:#E7EBF3;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1320; --card:#161D2D; --stage:#1B2336; --line:#2C3650; --grid:#212A40;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --perp:#F49660; --alt:#4FD1C0; --ok:#5BD98A; --no:#FF8A80;
+  --water:#4F93D6; --wood:#C08A55; --metal:#7D889A; --money:#4CC27F; --folder:#E5B93A; --bag:#A78BFA; --night:#000000; --moon:#E7EBF3;
+  color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+.wrap{max-width:560px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 48px;display:flex;flex-direction:column;gap:22px}
+header{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,8vw,40px);line-height:1.05;margin:0;text-wrap:balance}
+.lead{margin:0;color:var(--muted);max-width:60ch}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav button{font:600 13px var(--f-body);color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:7px 12px;cursor:pointer}
+nav button.speed{background:var(--accent);color:var(--card)}
+nav button:focus-visible,.play:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:12px}
+.card-head{padding:14px 16px 10px;display:flex;flex-direction:column;gap:2px}
+.card-head .art{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.card-head h2{font-family:var(--f-display);font-weight:600;font-size:22px;line-height:1.15;margin:0;text-wrap:balance}
+.stage{border-block:1px solid var(--line);background:var(--stage)}
+.stage svg{display:block;width:100%;height:auto;max-width:100%}
+.player{display:flex;flex-direction:column;gap:10px;padding:12px 16px 14px}
+.cap{margin:0;min-height:3em;font-size:16px}
+.ctrl{display:flex;align-items:center;gap:12px}
+.play{font:700 14px var(--f-body);background:var(--accent);color:var(--card);border:0;border-radius:10px;padding:9px 14px;cursor:pointer;flex:none}
+.bar{flex:1;height:4px;background:var(--grid);border-radius:4px;overflow:hidden;min-width:0}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.rule{border-top:1px dashed var(--line);padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px}
+.rule h3{margin:0;font:700 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rule ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.rule p{margin:0}
+.trap{background:var(--accent-soft);border-radius:10px;padding:10px 12px;font-size:15px}
+.trap b{color:var(--accent)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12px var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+footer{color:var(--muted);font-size:13px}
+/* SVG */
+.gnd{stroke:var(--ink);stroke-width:2;stroke-linecap:round;opacity:.55}
+.gridl{stroke:var(--grid);stroke-width:1}
+.fig .lb{stroke:var(--ink);stroke-width:3.2;stroke-linecap:round;fill:none}
+.fig .hd{stroke:var(--ink);stroke-width:3.2;fill:var(--stage)}
+.fig.perp .lb,.fig.perp .hd{stroke:var(--perp)}
+.fig.alt .lb,.fig.alt .hd{stroke:var(--alt)}
+.nm{font:700 10px var(--f-body);fill:var(--muted);text-anchor:middle}
+.nm.perp{fill:var(--perp)} .nm.alt{fill:var(--alt)}
+.wood{stroke:var(--wood);stroke-width:4;stroke-linecap:round}
+.rock{fill:var(--metal)}
+.handle{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.blade{fill:var(--metal)}
+.phone{fill:var(--ink)}
+.strap{stroke:var(--bag);stroke-width:2;fill:none}
+.bag{fill:var(--bag)}
+.wallet{fill:var(--wood)}
+.folder{fill:var(--folder)}
+.money{fill:var(--money)}
+.carbody{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2}
+.wheel{fill:var(--ink)}
+.glass{fill:var(--water);fill-opacity:.28;stroke:var(--ink);stroke-width:1.5}
+.shard{fill:var(--water);fill-opacity:.55}
+.sun{fill:var(--folder)} .ray{stroke:var(--folder);stroke-width:2.5;stroke-linecap:round}
+.heat{stroke:var(--perp);stroke-width:1.8;fill:none;stroke-linecap:round}
+.water{fill:var(--water);fill-opacity:.82}
+.wave{stroke:var(--stage);stroke-width:1.6;fill:none;opacity:.7}
+.shop{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.shopwin{fill:var(--accent-soft);stroke:var(--ink);stroke-width:1.5}
+.sign{font:800 11px var(--f-display);fill:var(--ink);text-anchor:middle;letter-spacing:.1em}
+.desk{fill:var(--wood);stroke:var(--ink);stroke-width:2}
+.deskline{stroke:var(--ink);stroke-width:1.5}
+.bub{fill:var(--card);stroke:var(--ink);stroke-width:1.6}
+.bubt{font:700 11px var(--f-body);fill:var(--ink);text-anchor:middle}
+.tagbg{fill:var(--accent-soft)}
+.tagt{font:500 10.5px var(--f-mono);fill:var(--accent)}
+.stampbox{fill:var(--card);fill-opacity:.94;stroke-width:2.6}
+.stampt{font:800 13px var(--f-display);letter-spacing:.06em;text-anchor:middle}
+.k-ok .stampbox{stroke:var(--ok)} .k-ok .stampt{fill:var(--ok)}
+.k-no .stampbox{stroke:var(--no)} .k-no .stampt{fill:var(--no)}
+.k-info .stampbox{stroke:var(--accent)} .k-info .stampt{fill:var(--accent)}
+.pixbox{fill:var(--card);stroke:var(--money);stroke-width:2}
+.pixt{font:700 10px var(--f-mono);fill:var(--money);text-anchor:middle}
+.pixv{font:800 14px var(--f-display);fill:var(--ink);text-anchor:middle}
+.hatp{fill:var(--accent)} .hatb{stroke:var(--accent);stroke-width:2.5;stroke-linecap:round}
+.bone{fill:var(--perp)} .boneb{stroke:var(--perp);stroke-width:2.5;stroke-linecap:round}
+.paper{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+.night{fill:var(--night);fill-opacity:.32} .moon{fill:var(--moon)}
+.roof{fill:var(--perp);fill-opacity:.85;stroke:var(--ink);stroke-width:2}
+.doorway{fill:var(--ink);fill-opacity:.75} .door{fill:var(--wood);stroke:var(--ink);stroke-width:1.5}
+.wall{fill:var(--line);stroke:var(--ink);stroke-width:1.5} .brick{stroke:var(--ink);stroke-width:1;opacity:.4}
+.box{fill:var(--wood);stroke:var(--ink);stroke-width:1.2}
+.barl{stroke:var(--ink);stroke-width:2.2} .cell{fill:none;stroke:var(--ink);stroke-width:2.5}
+.scr{fill:var(--ink)} .scrt{font:500 9.5px var(--f-mono);fill:var(--stage);text-anchor:middle}
+.doct{font:700 9.5px var(--f-mono);fill:var(--ink);text-anchor:middle;letter-spacing:.04em}
+.road{fill:var(--ok)} .roadt{font:800 11px var(--f-display);fill:var(--card);text-anchor:middle}
+.post{stroke:var(--ink);stroke-width:2.5}
+.cuff{fill:none;stroke:var(--metal);stroke-width:2}
+.axis{stroke:var(--ink);stroke-width:2} .tick{font:500 10px var(--f-mono);fill:var(--muted);text-anchor:middle}
+.bar-no{fill:var(--no)} .bar-info{fill:var(--accent)}
+.radarbox{fill:var(--ink)} .lens{fill:var(--folder)} .flash{fill:var(--folder);fill-opacity:.75}
+.lightbox{fill:var(--ink)} .lampoff{fill:var(--metal);fill-opacity:.5} .lampred{fill:var(--no)}
+.rainl{stroke:var(--water);stroke-width:1.6;stroke-linecap:round;opacity:.8}
+.cartxt{font:800 8px var(--f-display);fill:var(--accent);text-anchor:middle;letter-spacing:.08em}
+.cellr{fill:var(--card);stroke:var(--line);stroke-width:1.2} .gl{font:500 9.5px var(--f-mono);fill:var(--muted);text-anchor:middle}
+.tok{fill:var(--accent);stroke:var(--card);stroke-width:2}
+@media (prefers-reduced-motion: reduce){.bar i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">PC-PE · Agente de Polícia · Legislação Estadual</span>
+    <h1>Legislação Estadual em Palitinhos</h1>
+    <p class="lead">Cinco cenas curtas sobre os estatutos e a carreira da Polícia Civil de Pernambuco. Assista, veja o carimbo e confira a regra logo abaixo de cada uma. A cena começa sozinha quando aparece na tela.</p>
+    <nav id="nav" aria-label="Cenas"></nav>
+  </header>
+  <main id="cards" style="display:flex;flex-direction:column;gap:22px"></main>
+  <footer>Cenas e textos de estudo próprios, baseados nas Leis estaduais 6.123/1968 e 6.425/1972 e na LC 137/2008. Nomes e situações são fictícios.</footer>
+</div>
+
+<script>
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const REDUCE=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mk(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in (attrs||{}))e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function txt(parent,str,attrs){const t=mk('text',attrs,parent);t.textContent=str;return t;}
+function width(t,str,per){let w=0;try{w=t.getBBox().width}catch(e){}return w||str.length*per;}
+
+/* ---------- objetos que as figuras seguram ---------- */
+const HOLD={
+  stick:g=>mk('line',{x1:0,y1:10,x2:0,y2:52,class:'wood'},g),
+  rock:g=>mk('circle',{cx:0,cy:25,r:5.5,class:'rock'},g),
+  knife:g=>{mk('line',{x1:0,y1:20,x2:0,y2:27,class:'handle'},g);mk('path',{d:'M-2.4 27 L2.4 27 L0 43 Z',class:'blade'},g);},
+  phone:g=>mk('rect',{x:-4.5,y:19,width:9,height:14,rx:2,class:'phone'},g),
+  bag:g=>{mk('path',{d:'M-6 21 Q0 13 6 21',class:'strap'},g);mk('rect',{x:-10,y:21,width:20,height:16,rx:4,class:'bag'},g);},
+  wallet:g=>mk('rect',{x:-6,y:20,width:12,height:8,rx:1.5,class:'wallet'},g),
+  folder:g=>mk('rect',{x:-9,y:19,width:18,height:13,rx:1.5,class:'folder'},g),
+  money:g=>mk('rect',{x:-8,y:20,width:16,height:9,rx:1,class:'money'},g),
+  sign:g=>{mk('line',{x1:0,y1:16,x2:0,y2:44,class:'wood'},g);mk('rect',{x:-13,y:40,width:26,height:16,rx:1,class:'paper'},g);},
+  cuffs:g=>{mk('circle',{cx:-3.5,cy:23,r:3.2,class:'cuff'},g);mk('circle',{cx:3.5,cy:23,r:3.2,class:'cuff'},g);},
+  paper:g=>mk('rect',{x:-6,y:18,width:12,height:15,rx:1,class:'paper'},g)
+};
+
+/* ---------- cenários e objetos ---------- */
+const PROPS={
+  car(g,d){mk('path',{d:'M-46 -40 L-32 -76 L38 -76 L54 -40 Z',class:'carbody'},g);
+    mk('rect',{x:-76,y:-42,width:152,height:32,rx:9,class:'carbody'},g);
+    mk('circle',{cx:-44,cy:-9,r:9,class:'wheel'},g);mk('circle',{cx:46,cy:-9,r:9,class:'wheel'},g);if(d.text)txt(g,d.text,{y:-22,class:'cartxt'});},
+  glass(g){mk('path',{d:'M-28 -71 L34 -71 L45 -44 L-39 -44 Z',class:'glass'},g);},
+  shards(g){[[-46,-30,'M0 0 l6 -4 l2 7z'],[-58,-6,'M0 0 l7 -2 l-3 6z'],[-36,-4,'M0 0 l5 -5 l3 5z'],[-62,-20,'M0 0 l4 -6 l4 6z'],[-30,-52,'M0 0 l6 2 l-4 5z']]
+    .forEach(([x,y,d])=>mk('path',{d,transform:`translate(${x} ${y})`,class:'shard'},g));},
+  sun(g){mk('circle',{r:13,class:'sun'},g);for(let i=0;i<8;i++){const a=i*Math.PI/4;mk('line',{x1:Math.cos(a)*18,y1:Math.sin(a)*18,x2:Math.cos(a)*25,y2:Math.sin(a)*25,class:'ray'},g);}},
+  heat(g){[-14,0,14].forEach(x=>mk('path',{d:`M${x} 0 q4 -5 0 -10 q-4 -5 0 -10`,class:'heat'},g));},
+  river(g){mk('rect',{x:0,y:-2,width:115,height:44,class:'water'},g);
+    [8,20].forEach(y=>mk('path',{d:`M8 ${y} q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0`,class:'wave'},g));},
+  shop(g){mk('rect',{x:-48,y:-112,width:96,height:112,class:'shop'},g);mk('rect',{x:-38,y:-80,width:76,height:46,class:'shopwin'},g);
+    txt(g,'LOJA',{x:0,y:-92,class:'sign'});},
+  desk(g){mk('rect',{x:-52,y:-31,width:104,height:31,class:'desk'},g);mk('line',{x1:-40,y1:-17,x2:-6,y2:-17,class:'deskline'},g);},
+  file(g){mk('rect',{x:-9,y:-6,width:18,height:12,rx:1.5,class:'folder'},g);},
+  house(g){mk('rect',{x:-65,y:-92,width:130,height:92,class:'shop'},g);mk('path',{d:'M-76 -92 L0 -128 L76 -92 Z',class:'roof'},g);
+    mk('rect',{x:-42,y:-62,width:30,height:62,class:'doorway'},g);mk('rect',{x:16,y:-70,width:32,height:26,class:'shopwin'},g);},
+  door(g){mk('rect',{x:-42,y:-62,width:30,height:62,class:'door'},g);mk('circle',{cx:-17,cy:-30,r:2,fill:'var(--ink)'},g);},
+  night(g){mk('rect',{x:0,y:0,width:360,height:220,class:'night'},g);},
+  moon(g){mk('circle',{r:12,class:'moon'},g);},
+  wall(g){mk('rect',{x:-24,y:-66,width:48,height:66,class:'wall'},g);[-50,-33,-16].forEach(y=>mk('line',{x1:-24,y1:y,x2:24,y2:y,class:'brick'},g));},
+  depot(g){mk('rect',{x:-60,y:-80,width:120,height:80,class:'shop'},g);txt(g,'DEPÓSITO',{y:-64,class:'sign'});
+    [[-44,-28],[-14,-28],[16,-28],[-29,-54]].forEach(([x,y])=>mk('rect',{x,y,width:26,height:26,class:'box'},g));},
+  walletp(g){mk('rect',{x:-7,y:-6,width:14,height:8,rx:1.5,class:'wallet'},g);},
+  building(g,d){const w=d.w||110,h=d.h||92;mk('rect',{x:-w/2,y:-h,width:w,height:h,class:'shop'},g);txt(g,d.text,{y:-h+18,class:'sign'});
+    mk('rect',{x:-14,y:-50,width:28,height:50,class:'doorway'},g);},
+  bars(g){mk('rect',{x:-36,y:-96,width:72,height:96,class:'cell'},g);for(let x=-26;x<=26;x+=13)mk('line',{x1:x,y1:-96,x2:x,y2:0,class:'barl'},g);},
+  screen(g,d){mk('rect',{x:-62,y:-28,width:124,height:56,rx:5,class:'scr'},g);d.lines.forEach((l,i)=>txt(g,l,{y:-10+i*15,class:'scrt'}));},
+  doc(g,d){const r=mk('rect',{y:-13,height:26,rx:3,class:'paper'},g);const t=txt(g,d.text,{y:4,class:'doct'});const w=width(t,d.text,6.4)+20;r.setAttribute('x',-w/2);r.setAttribute('width',w);},
+  roadsign(g,d){mk('line',{x1:0,y1:0,x2:0,y2:-72,class:'post'},g);mk('rect',{x:-30,y:-98,width:60,height:26,rx:3,class:'road'},g);txt(g,d.text,{y:-81,class:'roadt'});},
+  timeline(g){mk('line',{x1:40,y1:150,x2:332,y2:150,class:'axis'},g);mk('path',{d:'M332 145 L342 150 L332 155 Z',fill:'var(--ink)'},g);
+    [[70,'2024: o ato'],[240,'hoje']].forEach(([x,l])=>{mk('line',{x1:x,y1:144,x2:x,y2:156,class:'axis'},g);txt(g,l,{x,y:172,class:'tick'});});},
+  bar(g,d){mk('rect',{x:d.x1,y:134,width:d.x2-d.x1,height:9,rx:4,class:'bar-'+d.kind},g);},
+  radar(g){mk('line',{x1:0,y1:0,x2:0,y2:-70,class:'post'},g);mk('rect',{x:-11,y:-88,width:22,height:18,rx:3,class:'radarbox'},g);mk('circle',{cx:-4,cy:-79,r:4,class:'lens'},g);},
+  flash(g){mk('circle',{r:14,class:'flash'},g);},
+  light(g){mk('line',{x1:0,y1:0,x2:0,y2:-80,class:'post'},g);mk('rect',{x:-9,y:-112,width:18,height:32,rx:4,class:'lightbox'},g);
+    [-104,-96,-88].forEach(y=>mk('circle',{cx:0,cy:y,r:3.6,class:'lampoff'},g));},
+  lamp(g){mk('circle',{cx:0,cy:-104,r:4,class:'lampred'},g);},
+  rain(g){for(let i=0;i<26;i++){const x=(i*37)%360+6,y=30+(i*53)%120;mk('line',{x1:x,y1:y,x2:x-4,y2:y+10,class:'rainl'},g);}},
+  flood(g){mk('rect',{x:0,y:174,width:360,height:46,class:'water'},g);},
+  grid(g){const rows=['I','II','III','IV'];rows.forEach((r,ri)=>{const y=150-ri*24;txt(g,'Classe '+r,{x:44,y:y+3.5,class:'gl'});
+      for(let c=0;c<7;c++)mk('rect',{x:96+c*36-16,y:y-10,width:32,height:20,rx:3,class:'cellr'},g);});
+    txt(g,'Faixa',{x:44,y:174,class:'gl'});for(let c=0;c<7;c++)txt(g,String(c+1),{x:96+c*36,y:174,class:'gl'});},
+  token(g){mk('circle',{r:8,class:'tok'},g);},
+  pix(g){mk('rect',{x:-46,y:-22,width:92,height:44,rx:7,class:'pixbox'},g);txt(g,'PIX ENVIADO',{y:-5,class:'pixt'});txt(g,'R$ 500,00',{y:13,class:'pixv'});}
+};
+
+/* ---------- atores ---------- */
+function makeFig(svg,d){
+  const init={x:0,y:180,r:0,f:1,s:1,o:1,aF:-12,aB:12,lF:-10,lB:10,walk:0};
+  (d.holdF||[]).concat(d.holdB||[]).forEach(n=>init['h_'+n]=0);
+  Object.assign(init,d.st||{});
+  const outer=mk('g',{},svg), inner=mk('g',{class:'fig'+(d.perp?' perp':d.alt?' alt':'')},outer);
+  const hold={};
+  const limb=(len,items)=>{const g=mk('g',{},inner);mk('line',{x1:0,y1:0,x2:0,y2:len,class:'lb'},g);(items||[]).forEach(n=>{const h=mk('g',{},g);HOLD[n](h);hold[n]=h;});return g;};
+  const aB=limb(22,d.holdB), lB=limb(25);
+  mk('line',{x1:0,y1:-53,x2:0,y2:-25,class:'lb'},inner);
+  mk('circle',{cx:0,cy:-62,r:9,class:'hd'},inner);
+  if(d.hat==='pol'){mk('path',{d:'M-10 -68 L-8 -77 L8 -77 L10 -68 Z',class:'hatp'},inner);mk('line',{x1:-11,y1:-68,x2:14,y2:-68,class:'hatb'},inner);}
+  if(d.hat==='bone'){mk('path',{d:'M-9 -65 Q-9 -75 0 -75 Q9 -75 9 -65 Z',class:'bone'},inner);mk('line',{x1:6,y1:-65,x2:17,y2:-65,class:'boneb'},inner);}
+  const lF=limb(25), aF=limb(22,d.holdF);
+  if(d.label)txt(outer,d.label,{y:15,class:'nm'+(d.perp?' perp':d.alt?' alt':'')});
+  return {init,st:{...init},render(now){
+    const s=this.st, sw=REDUCE?0:s.walk*Math.sin(now*0.012);
+    outer.setAttribute('transform',`translate(${s.x} ${s.y}) scale(${s.s})`);outer.style.opacity=s.o;
+    inner.setAttribute('transform',`rotate(${s.r}) scale(${s.f} 1)`);
+    aF.setAttribute('transform',`translate(0 -48) rotate(${s.aF+sw*-18})`);
+    aB.setAttribute('transform',`translate(0 -48) rotate(${s.aB+sw*18})`);
+    lF.setAttribute('transform',`translate(0 -25) rotate(${s.lF+sw*26})`);
+    lB.setAttribute('transform',`translate(0 -25) rotate(${s.lB-sw*26})`);
+    for(const n in hold)hold[n].style.opacity=s['h_'+n];
+  }};
+}
+function makeProp(svg,d){
+  const init=Object.assign({x:d.x||0,y:d.y||0,r:0,s:1,o:1},d.st||{});
+  const g=mk('g',{},svg);
+  if(d.t==='stamp'){Object.assign(init,{s:.5,o:0},d.st||{});
+    const r=mk('g',{transform:'rotate(-6)',class:'k-'+(d.kind||'info')},g);
+    const box=mk('rect',{class:'stampbox',rx:5},r);const t=txt(r,d.text,{y:5,class:'stampt'});
+    const w=width(t,d.text,9)+28;box.setAttribute('x',-w/2);box.setAttribute('y',-17);box.setAttribute('width',w);box.setAttribute('height',34);
+  }else if(d.t==='bubble'){Object.assign(init,{o:0,s:.85},d.st||{});
+    const box=mk('rect',{class:'bub',rx:9,y:-36,height:26},g);mk('path',{d:'M-6 -10.8 L0 0 L6 -10.8',class:'bub'},g);
+    mk('rect',{x:-5.2,y:-12.6,width:10.4,height:3,fill:'var(--card)'},g);
+    const t=txt(g,d.text,{y:-19,class:'bubt'});const w=width(t,d.text,6.2)+20;
+    let left=-w/2;const absL=init.x+left,absR=init.x+left+w;
+    if(absL<6)left+=6-absL; if(absR>354)left-=absR-354;
+    box.setAttribute('x',left);box.setAttribute('width',w);t.setAttribute('x',left+w/2);
+  }else if(d.t==='tag'){Object.assign(init,{o:0},d.st||{});
+    const box=mk('rect',{class:'tagbg',rx:6,x:0,y:-13,height:19},g);const t=txt(g,d.text,{x:8,y:0,class:'tagt'});
+    box.setAttribute('width',width(t,d.text,6.4)+16);
+  }else PROPS[d.t](g,d);
+  return {init,st:{...init},render(){const s=this.st;g.setAttribute('transform',`translate(${s.x} ${s.y}) rotate(${s.r}) scale(${s.s})`);g.style.opacity=s.o;}};
+}
+
+/* ---------- motor de animação ---------- */
+const tweens=[];
+const EASE={io:t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2,lin:t=>t};
+function tween(a,props,ms,ez){const now=performance.now();
+  for(const k in props){for(let i=tweens.length-1;i>=0;i--)if(tweens[i].a===a&&tweens[i].k===k)tweens.splice(i,1);
+    if(!ms||REDUCE){a.st[k]=props[k];continue;}
+    tweens.push({a,k,from:a.st[k]??0,to:props[k],t0:now,ms,ez:ez||'io'});}}
+const players=[];
+const SPEEDS=[{v:1,t:'Ritmo: normal'},{v:1.35,t:'Ritmo: rápido'},{v:.75,t:'Ritmo: lento'}];
+let si=0;try{si=Math.max(0,SPEEDS.findIndex(x=>x.t===localStorage.getItem('pp-ritmo')));}catch(e){}
+const SPEED={get v(){return SPEEDS[si].v}};
+function loop(now){
+  for(let i=tweens.length-1;i>=0;i--){const t=tweens[i];const p=Math.min(1,(now-t.t0)/t.ms);t.a.st[t.k]=t.from+(t.to-t.from)*EASE[t.ez](p);if(p>=1)tweens.splice(i,1);}
+  for(const p of players)if(p.visible||p.dirty){p.render(now);p.dirty=false;}
+  requestAnimationFrame(loop);
+}
+const wait=ms=>new Promise(r=>setTimeout(r,REDUCE?Math.max(ms,1600):ms));
+
+class Player{
+  constructor(scene,card){
+    this.scene=scene;this.tok=0;this.visible=false;this.dirty=true;this.played=false;
+    const svg=mk('svg',{viewBox:'0 0 360 220',role:'img','aria-label':'Animação: '+scene.title},card.querySelector('.stage'));
+    for(let y=40;y<180;y+=28)mk('line',{x1:0,y1:y,x2:360,y2:y,class:'gridl'},svg);
+    (scene.ground||[[0,360]]).forEach(([a,b])=>mk('line',{x1:a,y1:180,x2:b,y2:180,class:'gnd'},svg));
+    this.actors={};
+    scene.actors.forEach(d=>{this.actors[d.id]=d.t==='fig'?makeFig(svg,d):makeProp(svg,d);});
+    this.cap=card.querySelector('.cap');this.bar=card.querySelector('.bar i');this.btn=card.querySelector('.play');
+    this.btn.addEventListener('click',()=>this.play());
+    this.cap.textContent=scene.lead;
+  }
+  reset(){for(const id in this.actors){const a=this.actors[id];for(let i=tweens.length-1;i>=0;i--)if(tweens[i].a===a)tweens.splice(i,1);a.st={...a.init};}this.dirty=true;}
+  render(now){for(const id in this.actors)this.actors[id].render(now);}
+  async play(){
+    const tok=++this.tok;this.played=true;this.reset();this.btn.textContent='Recomeçar';
+    const steps=this.scene.steps;
+    for(let i=0;i<steps.length;i++){
+      if(tok!==this.tok)return;
+      const s=steps[i];
+      if(s.reset)this.reset();
+      if(s.set)for(const id in s.set)Object.assign(this.actors[id].st,s.set[id]);
+      if(s.to)for(const id in s.to){const p=s.to[id];tween(this.actors[id],p,s.ms??600,s.ez||(p.walk>0?'lin':'io'));}
+      if(s.cap)this.cap.textContent=s.cap;
+      this.bar.style.width=((i+1)/steps.length*100)+'%';this.dirty=true;
+      /* ritmo de leitura: legenda fica ~1 s + 50 ms por caractere; ajustável pelo botão de velocidade */
+      const base=(s.d??1200)*1.2;
+      await wait((s.cap?Math.max(base,1000+s.cap.length*50):base)/SPEED.v);
+    }
+    if(tok===this.tok)this.btn.textContent='Ver de novo';
+  }
+}
+
+/* ---------- cenas ---------- */
+const STAMP=(id,text,kind,y)=>({id,t:'stamp',text,kind,x:180,y:y||46});
+const TAG=(id,text)=>({id,t:'tag',text,x:12,y:22});
+const POL=(id,label,st,extra)=>Object.assign({id,t:'fig',label,alt:1,hat:'pol',st},extra||{});
+const DOC=(id,text,x,y)=>({id,t:'doc',text,x,y,st:{o:0}});
+const ON={o:1,s:1}, OFF={o:0};
+const SCENES=[
+{id:'posse-exercicio',nav:'Posse e exercício',art:'Lei 6.123/1968, arts. 28, 33 e 39',title:'Posse e exercício: os prazos',
+ lead:'Luana foi aprovada no concurso. Agora começam a correr os prazos.',
+ actors:[
+  {id:'pc',t:'building',text:'POLÍCIA CIVIL',x:298,y:180,w:110,h:96},
+  {id:'lu',t:'fig',label:'Luana',st:{x:50}},
+  DOC('dnom','NOMEAÇÃO PUBLICADA',150,74),DOC('dp30','POSSE: 30 DIAS',150,106),
+  DOC('ddia31','DIA 31: PRAZO PERDIDO',150,106),DOC('dterm','TERMO DE POSSE ASSINADO',150,74),
+  DOC('de30','EXERCÍCIO: 30 DIAS (+30)',150,106),DOC('ddia61','DIA 61: NÃO APARECEU',150,106),
+  TAG('t1','1 de 3 · Tudo no prazo'),TAG('t2','2 de 3 · Perdeu a posse'),TAG('t3','3 de 3 · Perdeu o exercício'),
+  STAMP('s1','POSSE NO PRAZO','ok'),STAMP('s2','NOMEAÇÃO SEM EFEITO','no'),STAMP('s3','PERDE O CARGO','no')],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'Luana é nomeada. Da publicação, ela tem 30 dias para tomar posse.',to:{dnom:ON,dp30:ON},ms:400,d:2400},
+  {cap:'Ela vai até a Polícia Civil e assina o termo de posse, declarando seus bens.',to:{dnom:OFF,dp30:OFF,lu:{x:235,walk:1}},ms:1500,d:1550},
+  {to:{lu:{walk:0},dterm:ON},ms:400,d:1800},
+  {cap:'Com justa causa, ela poderia pedir prorrogação da posse até 180 dias.',to:{dterm:OFF,s1:ON},ms:300,d:2800},
+
+  {reset:1,set:{t2:{o:1}},cap:'Outra vez, Luana é nomeada e tem 30 dias para a posse.',to:{dnom:ON,dp30:ON},ms:400,d:2200},
+  {cap:'Ela deixa o prazo passar e não pede prorrogação.',to:{dp30:OFF,ddia31:ON},ms:400,d:2200},
+  {cap:'Quem não toma posse no prazo não perde cargo nenhum: a nomeação fica sem efeito.',to:{dnom:OFF,ddia31:OFF,s2:ON},ms:300,d:2800},
+
+  {reset:1,set:{t3:{o:1},lu:{x:235}},cap:'Agora Luana tomou posse. Da posse, ela tem 30 dias para entrar em exercício, prorrogáveis por mais 30.',to:{dterm:ON,de30:ON},ms:400,d:2600},
+  {cap:'Os 60 dias passam e ela não começa a trabalhar.',to:{de30:OFF,ddia61:ON,lu:{f:-1}},ms:400,d:600},
+  {to:{lu:{x:-50,walk:1}},ms:1600,d:1700},
+  {cap:'Quem já tomou posse e não entra em exercício perde o cargo, salvo força maior.',to:{dterm:OFF,ddia61:OFF,s3:ON},ms:300,d:2800}],
+ rule:`<h3>Regra</h3>
+  <div class="tbl"><table>
+   <tr><th>Ato</th><th>Prazo</th><th>Prorrogação</th><th>Se perder</th></tr>
+   <tr><td><b>Posse</b></td><td>30 dias da publicação</td><td>Até 180 dias, por justa causa, a pedido</td><td>Nomeação sem efeito</td></tr>
+   <tr><td><b>Exercício</b></td><td>30 dias da posse</td><td>Mais 30 dias, a pedido</td><td>Perde o cargo, salvo força maior</td></tr>
+  </table></div>
+  <div class="trap"><b>Pegadinha:</b> a banca troca as consequências: posse perdida torna a nomeação sem efeito; exercício perdido faz perder o cargo. Na reintegração, os 30 dias do exercício contam da publicação do ato. Se o nomeado estiver fora do Estado, a posse pode ser por procuração.</div>`},
+
+{id:'formas-de-volta',nav:'Voltar ao cargo',art:'Lei 6.123/1968, art. 10',title:'Reintegração, reversão e aproveitamento',
+ lead:'Três servidores voltam ao serviço público, cada um por um caminho.',
+ actors:[
+  {id:'rep',t:'building',text:'REPARTIÇÃO',x:300,y:180,w:100,h:92},
+  {id:'ocup',t:'fig',label:'Ocupante',st:{x:255,f:-1,o:0}},
+  {id:'joao',t:'fig',label:'João',st:{x:-30,o:0}},
+  {id:'ze',t:'fig',label:'Seu Zé',holdB:['stick'],st:{x:-30,o:0,h_stick:1,aB:30}},
+  {id:'lia',t:'fig',label:'Lia',st:{x:-30,o:0}},
+  DOC('d1','DEMISSÃO ILEGAL: ANULADA',160,74),DOC('d2','APOSENTADO VOLTA À ATIVA',160,74),
+  DOC('d3a','CARGO EXTINTO: DISPONIBILIDADE',160,74),DOC('d3b','NOVO CARGO EQUIVALENTE',160,108),
+  TAG('t1','1 de 3 · Demitido ilegalmente'),TAG('t2','2 de 3 · Aposentado'),TAG('t3','3 de 3 · Em disponibilidade'),
+  STAMP('s1','REINTEGRAÇÃO','info'),STAMP('s2','REVERSÃO','info'),STAMP('s3','APROVEITAMENTO','info')],
+ steps:[
+  {reset:1,set:{t1:{o:1},joao:{o:1},ocup:{o:1}},cap:'João foi demitido, mas a demissão foi reconhecida como ilegal.',to:{d1:ON},ms:400,d:2400},
+  {cap:'Ele volta ao cargo, com ressarcimento das vantagens que perdeu.',to:{d1:OFF,joao:{x:200,walk:1}},ms:1500,d:1550},
+  {to:{joao:{walk:0},ocup:{f:1}},ms:300,d:400},
+  {cap:'Quem estava na vaga sai, sem direito a indenização.',to:{ocup:{x:420,walk:1}},ms:1300,d:1400},
+  {to:{s1:ON},ms:300,d:2600},
+
+  {reset:1,set:{t2:{o:1},ze:{o:1}},cap:'Seu Zé estava aposentado e volta à atividade.',to:{d2:ON},ms:400,d:2200},
+  {to:{d2:OFF,ze:{x:220,walk:.6}},ms:2200,d:2250},
+  {cap:'A reversão tem prioridade sobre novas nomeações, e o revertido não pode ir para cargo em comissão.',to:{ze:{walk:0},s2:ON},ms:300,d:2800},
+
+  {reset:1,set:{t3:{o:1},lia:{o:1,x:60}},cap:'O cargo de Lia foi extinto, e ela ficou em disponibilidade.',to:{d3a:ON},ms:400,d:2400},
+  {cap:'Surge um cargo igual ou equivalente, e ela é chamada de volta.',to:{d3b:ON},ms:400,d:1800},
+  {to:{d3a:OFF,d3b:OFF,lia:{x:220,walk:1}},ms:1400,d:1450},
+  {cap:'Se ela não tomasse posse no prazo, o aproveitamento ficaria sem efeito e a disponibilidade seria cassada, após inquérito.',to:{lia:{walk:0},s3:ON},ms:300,d:3000}],
+ rule:`<h3>Regra</h3>
+  <div class="tbl"><table>
+   <tr><th>Forma</th><th>Quem volta</th><th>Detalhe</th></tr>
+   <tr><td><b>Reintegração</b></td><td>Demitido ilegalmente</td><td>Com ressarcimento; o ocupante sai sem indenização; passa por inspeção médica</td></tr>
+   <tr><td><b>Reversão</b></td><td>Aposentado</td><td>Prioridade sobre novas nomeações; não pode ir para cargo em comissão</td></tr>
+   <tr><td><b>Aproveitamento</b></td><td>Servidor em disponibilidade</td><td>Em cargo igual ou equivalente</td></tr>
+  </table></div>
+  <div class="trap"><b>Pegadinha:</b> as formas de provimento da Lei 6.123 são nomeação, promoção, reintegração, aproveitamento, reversão e transferência. Só a nomeação é originária. O Estatuto do Policial Civil acrescenta o <b>acesso</b>.</div>`},
+
+{id:'detencao-disciplinar',nav:'Detenção disciplinar',art:'Lei 6.425/1972, arts. 38 a 46',title:'Detenção disciplinar',
+ lead:'Uma pena que só existe no Estatuto do Policial Civil.',
+ actors:[
+  {id:'house',t:'house',x:262,y:180},
+  {id:'door',t:'door',x:262,y:180},
+  {id:'sec',t:'fig',label:'Secretário',holdF:['paper'],st:{x:50,h_paper:1}},
+  POL('rui','Agente Rui',{x:150}),
+  DOC('d1','SUSPENSÃO: 10 DIAS',170,74),DOC('d2','CONVERTIDA EM DETENÇÃO',170,106),
+  DOC('d3','ATÉ 48 H: EM CASA',170,74),DOC('d4','VENCIMENTO: INTEGRAL',170,106),
+  DOC('d5','EMERGÊNCIA NO SERVIÇO',170,74),DOC('d6','SUSPENSA: CONTA COMO CUMPRIDA',170,74),DOC('d7','INTERROMPIDA: CUMPRE O RESTO',170,106),
+  TAG('t1','1 de 2 · Como funciona'),TAG('t2','2 de 2 · Suspender × interromper'),
+  STAMP('s1','NÃO CORTA O SALÁRIO','ok'),STAMP('s2','SUSPENDER × INTERROMPER','info')],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'O agente Rui recebe uma suspensão de 10 dias.',to:{d1:ON},ms:400,d:2000},
+  {cap:'Por ordem escrita, o Secretário converte a suspensão em detenção disciplinar.',to:{d2:ON,sec:{aF:-90}},ms:400,d:2400},
+  {cap:'Até 48 horas, a detenção é cumprida em casa. Acima disso, em sala especial da Secretaria.',to:{d1:OFF,d2:OFF,d3:ON,sec:{aF:-12}},ms:400,d:600},
+  {to:{rui:{x:226,walk:1},door:{o:0}},ms:1000,d:1050},
+  {to:{rui:{o:0,walk:0}},ms:300,d:1600},
+  {cap:'O vencimento continua integral, mas o tempo de detenção não conta para nenhum efeito funcional.',to:{d3:OFF,d4:ON},ms:400,d:2600},
+  {to:{d4:OFF,s1:ON},ms:300,d:2400},
+
+  {reset:1,set:{t2:{o:1},rui:{x:226,o:0},door:{o:0}},cap:'Rui está cumprindo a detenção quando surge uma emergência no serviço.',to:{d5:ON},ms:400,d:2200},
+  {to:{rui:{o:1,x:180},d5:OFF},ms:600,d:700},
+  {cap:'Se o Secretário suspende a detenção, ela é anotada como cumprida por inteiro.',to:{d6:ON},ms:400,d:2600},
+  {cap:'Se ele interrompe, Rui volta depois para cumprir o que faltar.',to:{d7:ON},ms:400,d:2600},
+  {cap:'Recusar-se a cumprir a detenção é insubordinação grave, punida com demissão.',to:{d6:OFF,d7:OFF,s2:ON},ms:300,d:2800}],
+ rule:`<h3>Regra</h3>
+  <ul>
+   <li>É a conversão da suspensão, por ordem escrita do <b>Secretário</b> ou do <b>Governador</b>.</li>
+   <li>Prazo máximo igual ao da suspensão: <b>30 dias</b>.</li>
+   <li><b>Não tira o vencimento</b>, mas o tempo não conta para nenhum efeito funcional.</li>
+   <li>Até <b>48 horas</b>: em casa. Acima disso: sala especial na Secretaria ou repartição designada.</li>
+  </ul>
+  <div class="trap"><b>Pegadinha:</b> a questão costuma dizer que a detenção corta o salário, como a suspensão. Não corta. Na <b>suspensão</b> da detenção, a pena conta como cumprida; na <b>interrupção</b>, o restante é cumprido depois.</div>`},
+
+{id:'quem-aplica',nav:'Quem pune',art:'Lei 6.425/1972, art. 52',title:'Quem aplica cada pena',
+ lead:'No Estatuto do Policial Civil, cada autoridade tem um teto.',
+ actors:[
+  {id:'gov',t:'fig',label:'Governador',st:{x:36}},
+  {id:'sec',t:'fig',label:'Secretário',st:{x:106}},
+  {id:'chg',t:'fig',label:'Chefe Gab.',st:{x:176}},
+  {id:'dir',t:'fig',label:'Diretores',st:{x:246}},
+  POL('del','Delegados',{x:316}),
+  {id:'b1',t:'bubble',text:'Qualquer pena. Só eu demito e casso.',x:60,y:104},
+  {id:'b2',t:'bubble',text:'Todas, menos demitir e cassar.',x:106,y:104},
+  {id:'b3',t:'bubble',text:'Suspensão até 20 dias.',x:176,y:104},
+  {id:'b4',t:'bubble',text:'Suspensão até 15 dias.',x:246,y:104},
+  {id:'b5',t:'bubble',text:'Suspensão até 10 dias.',x:300,y:104},
+  TAG('t1','Do topo para a ponta'),
+  STAMP('s1','20 · 15 · 10','info')],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'O Governador pode aplicar qualquer pena. Só ele demite e cassa aposentadoria ou disponibilidade.',to:{gov:{aF:-150},b1:ON},ms:300,d:2600},
+  {cap:'O Secretário de Segurança aplica todas as outras.',to:{gov:{aF:-12},b1:OFF,sec:{aF:-150},b2:ON},ms:300,d:2400},
+  {cap:'O Chefe de Gabinete aplica repreensão e suspensão até 20 dias.',to:{sec:{aF:-12},b2:OFF,chg:{aF:-150},b3:ON},ms:300,d:2300},
+  {cap:'Diretores de departamento, diretores executivos e o corregedor: até 15 dias.',to:{chg:{aF:-12},b3:OFF,dir:{aF:-150},b4:ON},ms:300,d:2400},
+  {cap:'Titulares de delegacia, delegados, médicos-legistas e peritos criminais: até 10 dias.',to:{dir:{aF:-12},b4:OFF,del:{aF:-150},b5:ON},ms:300,d:2400},
+  {cap:'Para lembrar: 20, 15 e 10, descendo na hierarquia. Na lei geral, o diretor de repartição vai só até 8 dias.',to:{del:{aF:-12},b5:OFF,s1:ON},ms:300,d:3000}],
+ rule:`<h3>Regra</h3>
+  <div class="tbl"><table>
+   <tr><th>Autoridade</th><th>Limite</th></tr>
+   <tr><td><b>Governador</b></td><td>Qualquer pena; só ele demite e cassa</td></tr>
+   <tr><td><b>Secretário de Segurança Pública</b></td><td>Todas, menos demissão e cassação</td></tr>
+   <tr><td><b>Chefe de Gabinete</b></td><td>Repreensão e suspensão até 20 dias</td></tr>
+   <tr><td><b>Diretores e corregedor</b></td><td>Repreensão e suspensão até 15 dias</td></tr>
+   <tr><td><b>Titulares de delegacia, delegados, legistas e peritos</b></td><td>Repreensão e suspensão até 10 dias</td></tr>
+  </table></div>
+  <div class="trap"><b>Pegadinha:</b> a suspensão preventiva (até 30 dias, prorrogável até 90) pode ser imposta pelas quatro primeiras autoridades, mas não por delegados e titulares de delegacia. O processo disciplinar é obrigatório antes de suspensão acima de 15 dias.</div>`},
+
+{id:'progressao',nav:'Progressão',art:'LC 137/2008, arts. 9º a 18',title:'Progressão horizontal × vertical',
+ lead:'Cada cargo tem classes de I a IV, e cada classe tem 7 faixas salariais.',
+ ground:[],
+ actors:[
+  {id:'grid',t:'grid'},
+  {id:'tok',t:'token',x:96,y:150},
+  DOC('d1','DEPOIS DO ESTÁGIO PROBATÓRIO',196,190),DOC('d2','CHEGOU À ÚLTIMA FAIXA',196,190),
+  TAG('t1','1 de 2 · Muda a faixa'),TAG('t2','2 de 2 · Muda a classe'),
+  STAMP('s1','PROGRESSÃO HORIZONTAL','info'),STAMP('s2','PROGRESSÃO VERTICAL','info')],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'O agente começa na classe I, faixa 1.',to:{tok:{s:1.25}},ms:400,d:1600},
+  {cap:'Depois do estágio probatório, com bom desempenho, sobe para a faixa seguinte, na mesma classe.',to:{d1:ON,tok:{s:1}},ms:400,d:1200},
+  {to:{tok:{x:132}},ms:700,d:900},
+  {to:{tok:{x:168}},ms:700,d:1100},
+  {cap:'Muda a faixa, não a classe. O critério é o desempenho.',to:{d1:OFF,s1:ON},ms:300,d:2600},
+
+  {reset:1,set:{t2:{o:1},tok:{x:312}},cap:'Agora o agente já está na última faixa da classe I.',to:{d2:ON},ms:400,d:2200},
+  {cap:'Pela progressão vertical, ele passa para a faixa inicial da classe seguinte.',to:{tok:{x:96,y:126}},ms:1100,d:1500},
+  {cap:'Muda a classe. Critério: desempenho e/ou tempo de serviço, conforme a lei.',to:{d2:OFF,s2:ON},ms:300,d:2800}],
+ rule:`<h3>Regra</h3>
+  <div class="tbl"><table>
+   <tr><th></th><th>Horizontal</th><th>Vertical</th></tr>
+   <tr><td><b>O que muda</b></td><td>A faixa</td><td>A classe</td></tr>
+   <tr><td><b>De onde para onde</b></td><td>Para a faixa seguinte, na mesma classe</td><td>Da última faixa para a faixa inicial da classe seguinte</td></tr>
+   <tr><td><b>Critério</b></td><td>Desempenho</td><td>Desempenho e/ou tempo de serviço</td></tr>
+  </table></div>
+  <div class="trap"><b>Pegadinha:</b> não concorre à progressão quem está em estágio probatório ou em disponibilidade, quem não tem o curso de formação, quem está de licença para interesse particular, quem exerce atividade não policial ou quem foi punido com suspensão ou condenado criminalmente, até cumprir a pena.</div>`}
+];
+
+/* ---------- montagem da página ---------- */
+const cards=document.getElementById('cards'), nav=document.getElementById('nav');
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{const p=e.target._player;p.visible=e.isIntersecting;
+  if(e.isIntersecting&&e.intersectionRatio>=.55&&!p.played&&!REDUCE)p.play();}),{threshold:[0,.55]}):null;
+SCENES.forEach(sc=>{
+  const card=document.createElement('section');card.className='card';card.id=sc.id;
+  card.innerHTML=`<div class="card-head"><span class="art">${sc.art}</span><h2>${sc.title}</h2></div>
+   <div class="stage"></div>
+   <div class="player"><p class="cap" aria-live="polite"></p>
+    <div class="ctrl"><button class="play" type="button" id="play-${sc.id}">Assistir</button><div class="bar"><i></i></div></div></div>
+   <div class="rule">${sc.rule}</div>`;
+  cards.appendChild(card);
+  const p=new Player(sc,card);players.push(p);card._player=p;
+  if(io)io.observe(card);else p.visible=true;
+  const b=document.createElement('button');b.type='button';b.textContent=sc.nav||sc.title;
+  b.addEventListener('click',()=>{card.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'});p.play();});
+  nav.appendChild(b);
+});
+const sp=document.createElement('button');sp.type='button';sp.id='ritmo';sp.className='speed';sp.textContent=SPEEDS[si].t;
+sp.addEventListener('click',()=>{si=(si+1)%SPEEDS.length;sp.textContent=SPEEDS[si].t;try{localStorage.setItem('pp-ritmo',SPEEDS[si].t)}catch(e){}});
+nav.appendChild(sp);
+requestAnimationFrame(loop);
+})();
+</script>

@@ -1,0 +1,182 @@
+  <div id="hoje" role="tabpanel" aria-labelledby="tb-hoje" class="xpanel">
+    <section class="card">
+      <h2 id="h-dia">Hoje</h2>
+      <p id="h-semana" class="muted"></p>
+      <div class="bar" aria-hidden="true"><i id="h-bar"></i></div>
+    </section>
+    <section class="card">
+      <h2>Estudo de hoje</h2>
+      <p id="h-carga" class="muted xsmall"></p>
+      <div id="h-estudo" class="xlist"></div>
+      <div id="h-atras"></div>
+    </section>
+    <section class="card">
+      <h2>Treino de hoje</h2>
+      <div id="h-treino"></div>
+      <p class="muted xsmall">Mudou de etapa ou fez um teste? Registre na aba TAF; o treino de hoje se ajusta sozinho.</p>
+    </section>
+    <section class="card">
+      <h2>Para fechar o dia</h2>
+      <ul id="h-fim"></ul>
+      <div id="h-anim" class="links"></div>
+    </section>
+    <section class="card">
+      <details class="xmore"><summary>Backup do progresso</summary>
+        <p class="xsmall muted">Use para levar suas marcações, notas e marcas do TAF entre esta página e o app do celular. Copie o backup num lugar, cole no outro.</p>
+        <div class="xform" style="grid-template-columns:1fr">
+          <button type="button" id="bk-copy">Copiar meu backup</button>
+          <label>Cole aqui um backup para trazer o progresso<textarea id="bk-text" rows="3" style="font:500 13px var(--f-mono);color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:8px"></textarea></label>
+          <button type="button" id="bk-load">Trazer este backup</button>
+        </div>
+        <p id="bk-msg" class="xsmall"></p>
+      </details>
+    </section>
+    <section class="card">
+      <details class="xmore"><summary>Como deixar esta página no celular</summary>
+        <ol>
+          <li>Abra este link no navegador do celular, já entrando na sua conta do claude.ai.</li>
+          <li><b>Android (Chrome):</b> toque nos três pontinhos ⋮ e depois em <b>Adicionar à tela inicial</b>.</li>
+          <li><b>iPhone (Safari):</b> toque em Compartilhar (o quadrado com a seta) e depois em <b>Adicionar à Tela de Início</b>.</li>
+          <li>O ícone abre direto nesta aba Hoje. O que você marca aqui aparece também no computador.</li>
+        </ol>
+      </details>
+    </section>
+  </div>
+  <div id="notas" role="tabpanel" aria-labelledby="tb-notas" hidden class="xpanel">
+    <section class="card">
+      <h2>Sua meta de nota</h2>
+      <div class="xgoal">
+        <div><b>70</b><span>de 90: meta para ficar nas 1.200 vagas</span></div>
+        <div><b>72</b><span>de 90: meta com folga (corte de 2023)</span></div>
+      </div>
+      <ul>
+        <li>Nota final = objetiva (60) + discursiva (30).</li>
+        <li>Eliminação: menos de <b>30 na objetiva</b> ou menos de <b>15 na discursiva</b>.</li>
+        <li>Na objetiva, mire em <b>47 de 60 (78%)</b>: cerca de <b>16 de 20 na P1</b> e <b>31 de 40 na P2</b>.</li>
+      </ul>
+      <div class="tblw"><table class="xt">
+        <tr><th>Objetiva (de 60)</th><th>Discursiva mínima (de 30) para chegar a 70</th></tr>
+        <tr><td>44</td><td>26</td></tr><tr><td>46</td><td>24</td></tr><tr><td>48</td><td>22</td></tr><tr><td>50</td><td>20</td></tr>
+      </table></div>
+      <p class="muted xsmall">Estimativa feita com o resultado de 2023 (corte de 72,17 com 250 vagas) e com a notícia de até 64 mil inscritos, que não é número oficial. Em 2023, entre os aprovados, a objetiva mediana foi 47 e a discursiva mediana foi 27,5.</p>
+    </section>
+
+    <section class="card">
+      <h2>Registrar simulado</h2>
+      <form id="f-sim" class="xform">
+        <label>Data<input type="date" name="d" required></label>
+        <label>Nome (opcional)<input type="text" name="n" maxlength="40" placeholder="Simulado 1"></label>
+        <label>Acertos P1 (de 20)<input type="number" name="p1" min="0" max="20" required inputmode="numeric"></label>
+        <label>Acertos P2 (de 40)<input type="number" name="p2" min="0" max="40" required inputmode="numeric"></label>
+        <label>Discursiva (de 30, opcional)<input type="number" name="disc" min="0" max="30" step="0.25" inputmode="decimal"></label>
+        <button type="submit">Salvar simulado</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Evolução nos simulados</h2>
+      <div id="sim-stats" class="xstats"></div>
+      <p id="sim-msg" class="xmsg"></p>
+      <div id="sim-chart" class="xchart"></div>
+      <div id="sim-list" class="xlist"></div>
+    </section>
+
+    <section class="card">
+      <h2>Questões por disciplina</h2>
+      <p class="muted xsmall">Depois de cada bateria do Gran, anote quantas fez e quantas acertou. A meta é acertar 78% ou mais em cada disciplina.</p>
+      <form id="f-q" class="xform">
+        <label>Data<input type="date" name="d" required></label>
+        <label>Disciplina<select name="disc" required id="q-disc"></select></label>
+        <label>Questões feitas<input type="number" name="q" min="1" max="500" required inputmode="numeric"></label>
+        <label>Acertos<input type="number" name="a" min="0" max="500" required inputmode="numeric"></label>
+        <button type="submit">Salvar bateria</button>
+      </form>
+      <div id="q-table"></div>
+      <details class="xmore"><summary>Ver e apagar registros</summary><div id="q-list" class="xlist"></div></details>
+    </section>
+  </div>
+
+  <div id="taf" role="tabpanel" aria-labelledby="tb-taf" hidden class="xpanel">
+    <section class="card">
+      <h2>TAF feminino: o que o edital pede</h2>
+      <div class="tblw"><table class="xt">
+        <tr><th>Ordem</th><th>Teste</th><th>Mínimo</th><th>Treine para</th><th>2ª tentativa</th></tr>
+        <tr><td>1</td><td>Barra estática (queixo acima da barra)</td><td><b>15 s</b></td><td>20 s</td><td>Sim</td></tr>
+        <tr><td>2</td><td>Salto horizontal (pés juntos)</td><td><b>1,35 m</b></td><td>1,45 a 1,50 m</td><td>Sim</td></tr>
+        <tr><td>3</td><td>Natação 50 m, estilo livre</td><td><b>até 80 s</b></td><td>perto de 70 s</td><td>Sim</td></tr>
+        <tr><td>4</td><td>Corrida de 12 min (pode caminhar)</td><td><b>1.800 m</b></td><td>2.000 m</td><td>Não</td></tr>
+      </table></div>
+      <ul>
+        <li>Os quatro testes são feitos em sequência, com pelo menos 5 minutos entre eles. É apta ou inapta: precisa do mínimo em todos.</li>
+        <li>A segunda tentativa é só para quem não atingiu o mínimo.</li>
+        <li>A data sai em convocação própria, depois das provas escritas e do exame médico.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Registrar marca</h2>
+      <form id="f-taf" class="xform">
+        <label>Data<input type="date" name="d" required></label>
+        <label>Teste<select name="t" id="taf-t" required></select></label>
+        <label><span id="taf-u">Valor</span><input type="number" name="v" min="0" step="any" required inputmode="decimal"></label>
+        <button type="submit">Salvar marca</button>
+      </form>
+      <p class="muted xsmall">Enquanto aprende a nadar e a correr direto, registre também "natação sem parar" e "trote sem parar". Eles mostram a evolução antes de você conseguir fazer o teste completo.</p>
+    </section>
+
+    <section class="card">
+      <h2>Sua evolução no TAF</h2>
+      <div id="taf-cards" class="xtests"></div>
+      <details class="xmore"><summary>Ver e apagar registros</summary><div id="taf-list" class="xlist"></div></details>
+    </section>
+
+    <section class="card">
+      <h2>Corrida: em que etapa você está</h2>
+      <p class="muted xsmall">Três corridas por semana, com um dia de folga entre elas. Antes, 5 minutos de caminhada rápida; depois, mais 5 de caminhada. O trote deve deixar você falar frases curtas. Só avance quando cumprir o critério.</p>
+      <div id="et-corrida" class="xsteps"></div>
+    </section>
+
+    <section class="card">
+      <h2>Natação: em que etapa você está</h2>
+      <p class="muted xsmall">Três sessões curtas por semana, de 30 a 40 minutos. Nunca treine sozinha na piscina, fique na parte rasa até ter segurança e não faça treino de prender a respiração.</p>
+      <div id="et-natacao" class="xsteps"></div>
+    </section>
+
+    <section class="card">
+      <h2>Semana de treino</h2>
+      <div class="tblw"><table class="xt">
+        <tr><th>Dia</th><th>Treino</th></tr>
+        <tr><td>Seg</td><td>Corrida (sua etapa) + abdômen e lombar</td></tr>
+        <tr><td>Ter</td><td>Natação (sua etapa) + barra estática</td></tr>
+        <tr><td>Qua</td><td>Natação + pernas e salto (leve)</td></tr>
+        <tr><td>Qui</td><td>Corrida (sua etapa)</td></tr>
+        <tr><td>Sex</td><td>Natação + barra estática</td></tr>
+        <tr><td>Sáb</td><td>Corrida leve</td></tr>
+        <tr><td>Dom</td><td>Descanso</td></tr>
+      </table></div>
+      <h3>Barra estática e salto</h3>
+      <div class="tblw"><table class="xt">
+        <tr><th></th><th>Semanas 1–4</th><th>Semanas 5–8</th><th>Semanas 9–12</th></tr>
+        <tr><td><b>Barra</b></td><td>3×15–20 s com os pés apoiados; pendurar 3×20–30 s para firmar a pegada; remada no elástico 3×8–12</td><td>5×5–8 s sem apoio, queixo acima da barra; 5 descidas lentas de 5 s</td><td>4×10–15 s; meta de 15 s com folga, chegando a 20 s</td></tr>
+        <tr><td><b>Salto</b></td><td>Técnica (balanço de braços e aterrissagem) 4×5; agachamento, afundo e ponte de glúteo 3×10–12</td><td>5×3 saltos máximos com 1–2 min de descanso; salto no degrau</td><td>Medir 1 vez por semana; treinar para 1,45–1,50 m</td></tr>
+      </table></div>
+      <ul>
+        <li>Aumente no máximo 10% por semana. Nas semanas 4, 8 e 12, reduza o volume em cerca de 30%.</li>
+        <li>Quando estiver mais adiantada, faça um simulado completo a cada 3 ou 4 semanas: os quatro testes em sequência, com 5 minutos entre eles.</li>
+        <li>Dor nas articulações, no peito ou na canela que piora a cada passo pede pausa. Se estiver parada há muito tempo, faça uma avaliação médica antes de começar.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>No dia do TAF</h2>
+      <ul>
+        <li><b>Atestado médico</b> original ou cópia autenticada, emitido até 15 dias antes, dizendo que você está apta, sem nenhuma restrição, com data, assinatura, carimbo e CRM. Entregue na identificação; não aceitam depois.</li>
+        <li>Documento de identidade original, roupa esportiva, tênis, meias e roupa de banho. Em área militar, calça comprida é obrigatória.</li>
+        <li><b>Barra:</b> sem luvas, sem apoiar o queixo, sem pedalar ou balançar as pernas.</li>
+        <li><b>Salto:</b> não toque na linha. Dois saltos inválidos eliminam. Vale a marca mais próxima da linha deixada por qualquer parte do corpo.</li>
+        <li><b>Natação:</b> piscina de 25 m, saída em pé na borda. Na virada pode tocar a parede e dar impulso, mas não pode parar nem se apoiar na raia, na borda lateral ou no fundo.</li>
+        <li><b>Corrida:</b> pode usar relógio. Depois do sinal final, fique parada até medirem sua última volta.</li>
+        <li>Cólica ou indisposição não dão direito a remarcar. Todos os testes são filmados.</li>
+      </ul>
+    </section>
+  </div>

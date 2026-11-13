@@ -1,0 +1,507 @@
+<title>Estatística em Palitinhos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: uma coluna estreita de "fichas de ocorrência"; cada ficha = palco animado + legenda + regra fixa */
+:root{
+  --bg:#E9EDF2; --card:#FFFFFF; --stage:#F8FAFC; --line:#D3DAE3; --grid:#E8EDF3;
+  --ink:#1A2233; --muted:#5B6678; --accent:#1F3F94; --accent-soft:#E3E9F8;
+  --perp:#C2410C; --alt:#0F766E; --ok:#15803D; --no:#B42318;
+  --water:#3E86C6; --wood:#8A5A2B; --metal:#9AA4B2; --money:#2F9E5B; --folder:#D9A520; --bag:#7C3AED; --night:#1E2A4A; --moon:#B8C0CE;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1320; --card:#161D2D; --stage:#1B2336; --line:#2C3650; --grid:#212A40;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --perp:#F49660; --alt:#4FD1C0; --ok:#5BD98A; --no:#FF8A80;
+  --water:#4F93D6; --wood:#C08A55; --metal:#7D889A; --money:#4CC27F; --folder:#E5B93A; --bag:#A78BFA; --night:#000000; --moon:#E7EBF3;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1320; --card:#161D2D; --stage:#1B2336; --line:#2C3650; --grid:#212A40;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --perp:#F49660; --alt:#4FD1C0; --ok:#5BD98A; --no:#FF8A80;
+  --water:#4F93D6; --wood:#C08A55; --metal:#7D889A; --money:#4CC27F; --folder:#E5B93A; --bag:#A78BFA; --night:#000000; --moon:#E7EBF3;
+  color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+.wrap{max-width:560px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 48px;display:flex;flex-direction:column;gap:22px}
+header{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,8vw,40px);line-height:1.05;margin:0;text-wrap:balance}
+.lead{margin:0;color:var(--muted);max-width:60ch}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav button{font:600 13px var(--f-body);color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:7px 12px;cursor:pointer}
+nav button.speed{background:var(--accent);color:var(--card)}
+nav button:focus-visible,.play:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:12px}
+.card-head{padding:14px 16px 10px;display:flex;flex-direction:column;gap:2px}
+.card-head .art{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.card-head h2{font-family:var(--f-display);font-weight:600;font-size:22px;line-height:1.15;margin:0;text-wrap:balance}
+.stage{border-block:1px solid var(--line);background:var(--stage)}
+.stage svg{display:block;width:100%;height:auto;max-width:100%}
+.player{display:flex;flex-direction:column;gap:10px;padding:12px 16px 14px}
+.cap{margin:0;min-height:3em;font-size:16px}
+.ctrl{display:flex;align-items:center;gap:12px}
+.play{font:700 14px var(--f-body);background:var(--accent);color:var(--card);border:0;border-radius:10px;padding:9px 14px;cursor:pointer;flex:none}
+.bar{flex:1;height:4px;background:var(--grid);border-radius:4px;overflow:hidden;min-width:0}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.rule{border-top:1px dashed var(--line);padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px}
+.rule h3{margin:0;font:700 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rule ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.rule p{margin:0}
+.trap{background:var(--accent-soft);border-radius:10px;padding:10px 12px;font-size:15px}
+.trap b{color:var(--accent)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12px var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+footer{color:var(--muted);font-size:13px}
+/* SVG */
+.gnd{stroke:var(--ink);stroke-width:2;stroke-linecap:round;opacity:.55}
+.gridl{stroke:var(--grid);stroke-width:1}
+.fig .lb{stroke:var(--ink);stroke-width:3.2;stroke-linecap:round;fill:none}
+.fig .hd{stroke:var(--ink);stroke-width:3.2;fill:var(--stage)}
+.fig.perp .lb,.fig.perp .hd{stroke:var(--perp)}
+.fig.alt .lb,.fig.alt .hd{stroke:var(--alt)}
+.nm{font:700 10px var(--f-body);fill:var(--muted);text-anchor:middle}
+.nm.perp{fill:var(--perp)} .nm.alt{fill:var(--alt)}
+.wood{stroke:var(--wood);stroke-width:4;stroke-linecap:round}
+.rock{fill:var(--metal)}
+.handle{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.blade{fill:var(--metal)}
+.phone{fill:var(--ink)}
+.strap{stroke:var(--bag);stroke-width:2;fill:none}
+.bag{fill:var(--bag)}
+.wallet{fill:var(--wood)}
+.folder{fill:var(--folder)}
+.money{fill:var(--money)}
+.carbody{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2}
+.wheel{fill:var(--ink)}
+.glass{fill:var(--water);fill-opacity:.28;stroke:var(--ink);stroke-width:1.5}
+.shard{fill:var(--water);fill-opacity:.55}
+.sun{fill:var(--folder)} .ray{stroke:var(--folder);stroke-width:2.5;stroke-linecap:round}
+.heat{stroke:var(--perp);stroke-width:1.8;fill:none;stroke-linecap:round}
+.water{fill:var(--water);fill-opacity:.82}
+.wave{stroke:var(--stage);stroke-width:1.6;fill:none;opacity:.7}
+.shop{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.shopwin{fill:var(--accent-soft);stroke:var(--ink);stroke-width:1.5}
+.sign{font:800 11px var(--f-display);fill:var(--ink);text-anchor:middle;letter-spacing:.1em}
+.desk{fill:var(--wood);stroke:var(--ink);stroke-width:2}
+.deskline{stroke:var(--ink);stroke-width:1.5}
+.bub{fill:var(--card);stroke:var(--ink);stroke-width:1.6}
+.bubt{font:700 11px var(--f-body);fill:var(--ink);text-anchor:middle}
+.tagbg{fill:var(--accent-soft)}
+.tagt{font:500 10.5px var(--f-mono);fill:var(--accent)}
+.stampbox{fill:var(--card);fill-opacity:.94;stroke-width:2.6}
+.stampt{font:800 13px var(--f-display);letter-spacing:.06em;text-anchor:middle}
+.k-ok .stampbox{stroke:var(--ok)} .k-ok .stampt{fill:var(--ok)}
+.k-no .stampbox{stroke:var(--no)} .k-no .stampt{fill:var(--no)}
+.k-info .stampbox{stroke:var(--accent)} .k-info .stampt{fill:var(--accent)}
+.pixbox{fill:var(--card);stroke:var(--money);stroke-width:2}
+.pixt{font:700 10px var(--f-mono);fill:var(--money);text-anchor:middle}
+.pixv{font:800 14px var(--f-display);fill:var(--ink);text-anchor:middle}
+.hatp{fill:var(--accent)} .hatb{stroke:var(--accent);stroke-width:2.5;stroke-linecap:round}
+.bone{fill:var(--perp)} .boneb{stroke:var(--perp);stroke-width:2.5;stroke-linecap:round}
+.paper{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+.night{fill:var(--night);fill-opacity:.32} .moon{fill:var(--moon)}
+.roof{fill:var(--perp);fill-opacity:.85;stroke:var(--ink);stroke-width:2}
+.doorway{fill:var(--ink);fill-opacity:.75} .door{fill:var(--wood);stroke:var(--ink);stroke-width:1.5}
+.wall{fill:var(--line);stroke:var(--ink);stroke-width:1.5} .brick{stroke:var(--ink);stroke-width:1;opacity:.4}
+.box{fill:var(--wood);stroke:var(--ink);stroke-width:1.2}
+.barl{stroke:var(--ink);stroke-width:2.2} .cell{fill:none;stroke:var(--ink);stroke-width:2.5}
+.scr{fill:var(--ink)} .scrt{font:500 9.5px var(--f-mono);fill:var(--stage);text-anchor:middle}
+.doct{font:700 9.5px var(--f-mono);fill:var(--ink);text-anchor:middle;letter-spacing:.04em}
+.road{fill:var(--ok)} .roadt{font:800 11px var(--f-display);fill:var(--card);text-anchor:middle}
+.post{stroke:var(--ink);stroke-width:2.5}
+.cuff{fill:none;stroke:var(--metal);stroke-width:2}
+.axis{stroke:var(--ink);stroke-width:2} .tick{font:500 10px var(--f-mono);fill:var(--muted);text-anchor:middle}
+.bar-no{fill:var(--no)} .bar-info{fill:var(--accent)}
+.radarbox{fill:var(--ink)} .lens{fill:var(--folder)} .flash{fill:var(--folder);fill-opacity:.75}
+.lightbox{fill:var(--ink)} .lampoff{fill:var(--metal);fill-opacity:.5} .lampred{fill:var(--no)}
+.rainl{stroke:var(--water);stroke-width:1.6;stroke-linecap:round;opacity:.8}
+.cartxt{font:800 8px var(--f-display);fill:var(--accent);text-anchor:middle;letter-spacing:.08em}
+.cellr{fill:var(--card);stroke:var(--line);stroke-width:1.2} .gl{font:500 9.5px var(--f-mono);fill:var(--muted);text-anchor:middle}
+.tok{fill:var(--accent);stroke:var(--card);stroke-width:2}
+.netl{stroke:var(--muted);stroke-width:2;stroke-dasharray:5 4}
+.bugb{fill:var(--no)} .bugl{stroke:var(--no);stroke-width:1.6;stroke-linecap:round}
+.kbd{fill:var(--card);stroke:var(--ink);stroke-width:1.5} .key{fill:var(--line)}
+.lockb{fill:var(--folder);stroke:var(--ink);stroke-width:1.2} .locks{fill:none;stroke:var(--ink);stroke-width:2}
+.seal{fill:var(--no)} .flap{fill:none;stroke:var(--ink);stroke-width:1.2}
+.hl{fill:none;stroke:var(--ok);stroke-width:2.2;stroke-dasharray:5 3}
+.bred{fill:var(--no)} .bblue{fill:var(--accent)} .urna{fill:none;stroke:var(--ink);stroke-width:2.5}
+.tline{stroke:var(--ink);stroke-width:2.2} .ttit{font:800 11px var(--f-display);fill:var(--ink);text-anchor:middle}
+.dotp{fill:var(--accent)} .dotq{fill:var(--perp)}
+.bpbox{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2} .bpl{stroke:var(--accent);stroke-width:2}
+.canopy{fill:var(--accent)}
+@media (prefers-reduced-motion: reduce){.bar i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">PC-PE · Agente de Polícia · Estatística</span>
+    <h1>Estatística em Palitinhos</h1>
+    <p class="lead">Cinco cenas curtas sobre média, moda, dispersão, box plot e correlação. Assista, veja o carimbo e confira a regra logo abaixo de cada uma. A cena começa sozinha quando aparece na tela.</p>
+    <nav id="nav" aria-label="Cenas"></nav>
+  </header>
+  <main id="cards" style="display:flex;flex-direction:column;gap:22px"></main>
+  <footer>Cenas e textos de estudo próprios, baseados no guia de Estatística do concurso. Dados e valores são inventados. Nomes e situações são fictícios.</footer>
+</div>
+
+<script>
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const REDUCE=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mk(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in (attrs||{}))e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function txt(parent,str,attrs){const t=mk('text',attrs,parent);t.textContent=str;return t;}
+function width(t,str,per){let w=0;try{w=t.getBBox().width}catch(e){}return w||str.length*per;}
+
+/* ---------- objetos que as figuras seguram ---------- */
+const HOLD={
+  stick:g=>mk('line',{x1:0,y1:10,x2:0,y2:52,class:'wood'},g),
+  rock:g=>mk('circle',{cx:0,cy:25,r:5.5,class:'rock'},g),
+  knife:g=>{mk('line',{x1:0,y1:20,x2:0,y2:27,class:'handle'},g);mk('path',{d:'M-2.4 27 L2.4 27 L0 43 Z',class:'blade'},g);},
+  phone:g=>mk('rect',{x:-4.5,y:19,width:9,height:14,rx:2,class:'phone'},g),
+  bag:g=>{mk('path',{d:'M-6 21 Q0 13 6 21',class:'strap'},g);mk('rect',{x:-10,y:21,width:20,height:16,rx:4,class:'bag'},g);},
+  wallet:g=>mk('rect',{x:-6,y:20,width:12,height:8,rx:1.5,class:'wallet'},g),
+  folder:g=>mk('rect',{x:-9,y:19,width:18,height:13,rx:1.5,class:'folder'},g),
+  money:g=>mk('rect',{x:-8,y:20,width:16,height:9,rx:1,class:'money'},g),
+  sign:g=>{mk('line',{x1:0,y1:16,x2:0,y2:44,class:'wood'},g);mk('rect',{x:-13,y:40,width:26,height:16,rx:1,class:'paper'},g);},
+  cuffs:g=>{mk('circle',{cx:-3.5,cy:23,r:3.2,class:'cuff'},g);mk('circle',{cx:3.5,cy:23,r:3.2,class:'cuff'},g);},
+  umbrella:g=>{mk('line',{x1:0,y1:14,x2:0,y2:46,class:'handle'},g);mk('path',{d:'M-19 44 Q0 72 19 44 Z',class:'canopy'},g);},
+  paper:g=>mk('rect',{x:-6,y:18,width:12,height:15,rx:1,class:'paper'},g)
+};
+
+/* ---------- cenários e objetos ---------- */
+const PROPS={
+  car(g,d){mk('path',{d:'M-46 -40 L-32 -76 L38 -76 L54 -40 Z',class:'carbody'},g);
+    mk('rect',{x:-76,y:-42,width:152,height:32,rx:9,class:'carbody'},g);
+    mk('circle',{cx:-44,cy:-9,r:9,class:'wheel'},g);mk('circle',{cx:46,cy:-9,r:9,class:'wheel'},g);if(d.text)txt(g,d.text,{y:-22,class:'cartxt'});},
+  glass(g){mk('path',{d:'M-28 -71 L34 -71 L45 -44 L-39 -44 Z',class:'glass'},g);},
+  shards(g){[[-46,-30,'M0 0 l6 -4 l2 7z'],[-58,-6,'M0 0 l7 -2 l-3 6z'],[-36,-4,'M0 0 l5 -5 l3 5z'],[-62,-20,'M0 0 l4 -6 l4 6z'],[-30,-52,'M0 0 l6 2 l-4 5z']]
+    .forEach(([x,y,d])=>mk('path',{d,transform:`translate(${x} ${y})`,class:'shard'},g));},
+  sun(g){mk('circle',{r:13,class:'sun'},g);for(let i=0;i<8;i++){const a=i*Math.PI/4;mk('line',{x1:Math.cos(a)*18,y1:Math.sin(a)*18,x2:Math.cos(a)*25,y2:Math.sin(a)*25,class:'ray'},g);}},
+  heat(g){[-14,0,14].forEach(x=>mk('path',{d:`M${x} 0 q4 -5 0 -10 q-4 -5 0 -10`,class:'heat'},g));},
+  river(g){mk('rect',{x:0,y:-2,width:115,height:44,class:'water'},g);
+    [8,20].forEach(y=>mk('path',{d:`M8 ${y} q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0`,class:'wave'},g));},
+  shop(g){mk('rect',{x:-48,y:-112,width:96,height:112,class:'shop'},g);mk('rect',{x:-38,y:-80,width:76,height:46,class:'shopwin'},g);
+    txt(g,'LOJA',{x:0,y:-92,class:'sign'});},
+  desk(g){mk('rect',{x:-52,y:-31,width:104,height:31,class:'desk'},g);mk('line',{x1:-40,y1:-17,x2:-6,y2:-17,class:'deskline'},g);},
+  file(g){mk('rect',{x:-9,y:-6,width:18,height:12,rx:1.5,class:'folder'},g);},
+  house(g){mk('rect',{x:-65,y:-92,width:130,height:92,class:'shop'},g);mk('path',{d:'M-76 -92 L0 -128 L76 -92 Z',class:'roof'},g);
+    mk('rect',{x:-42,y:-62,width:30,height:62,class:'doorway'},g);mk('rect',{x:16,y:-70,width:32,height:26,class:'shopwin'},g);},
+  door(g){mk('rect',{x:-42,y:-62,width:30,height:62,class:'door'},g);mk('circle',{cx:-17,cy:-30,r:2,fill:'var(--ink)'},g);},
+  night(g){mk('rect',{x:0,y:0,width:360,height:220,class:'night'},g);},
+  moon(g){mk('circle',{r:12,class:'moon'},g);},
+  wall(g){mk('rect',{x:-24,y:-66,width:48,height:66,class:'wall'},g);[-50,-33,-16].forEach(y=>mk('line',{x1:-24,y1:y,x2:24,y2:y,class:'brick'},g));},
+  depot(g){mk('rect',{x:-60,y:-80,width:120,height:80,class:'shop'},g);txt(g,'DEPÓSITO',{y:-64,class:'sign'});
+    [[-44,-28],[-14,-28],[16,-28],[-29,-54]].forEach(([x,y])=>mk('rect',{x,y,width:26,height:26,class:'box'},g));},
+  walletp(g){mk('rect',{x:-7,y:-6,width:14,height:8,rx:1.5,class:'wallet'},g);},
+  building(g,d){const w=d.w||110,h=d.h||92;mk('rect',{x:-w/2,y:-h,width:w,height:h,class:'shop'},g);txt(g,d.text,{y:-h+18,class:'sign'});
+    mk('rect',{x:-14,y:-50,width:28,height:50,class:'doorway'},g);},
+  bars(g){mk('rect',{x:-36,y:-96,width:72,height:96,class:'cell'},g);for(let x=-26;x<=26;x+=13)mk('line',{x1:x,y1:-96,x2:x,y2:0,class:'barl'},g);},
+  screen(g,d){const w=d.w||124;if(d.stand){mk('line',{x1:0,y1:28,x2:0,y2:d.stand,class:'post'},g);mk('line',{x1:-16,y1:d.stand,x2:16,y2:d.stand,class:'post'},g);}mk('rect',{x:-w/2,y:-28,width:w,height:56,rx:5,class:'scr'},g);d.lines.forEach((l,i)=>txt(g,l,{y:-10+i*15,class:'scrt'}));},
+  doc(g,d){const r=mk('rect',{y:-13,height:26,rx:3,class:'paper'},g);const t=txt(g,d.text,{y:4,class:'doct'});const w=width(t,d.text,6.4)+20;r.setAttribute('x',-w/2);r.setAttribute('width',w);},
+  roadsign(g,d){mk('line',{x1:0,y1:0,x2:0,y2:-72,class:'post'},g);mk('rect',{x:-30,y:-98,width:60,height:26,rx:3,class:'road'},g);txt(g,d.text,{y:-81,class:'roadt'});},
+  timeline(g){mk('line',{x1:40,y1:150,x2:332,y2:150,class:'axis'},g);mk('path',{d:'M332 145 L342 150 L332 155 Z',fill:'var(--ink)'},g);
+    [[70,'2024: o ato'],[240,'hoje']].forEach(([x,l])=>{mk('line',{x1:x,y1:144,x2:x,y2:156,class:'axis'},g);txt(g,l,{x,y:172,class:'tick'});});},
+  bar(g,d){mk('rect',{x:d.x1,y:134,width:d.x2-d.x1,height:9,rx:4,class:'bar-'+d.kind},g);},
+  radar(g){mk('line',{x1:0,y1:0,x2:0,y2:-70,class:'post'},g);mk('rect',{x:-11,y:-88,width:22,height:18,rx:3,class:'radarbox'},g);mk('circle',{cx:-4,cy:-79,r:4,class:'lens'},g);},
+  flash(g){mk('circle',{r:14,class:'flash'},g);},
+  light(g){mk('line',{x1:0,y1:0,x2:0,y2:-80,class:'post'},g);mk('rect',{x:-9,y:-112,width:18,height:32,rx:4,class:'lightbox'},g);
+    [-104,-96,-88].forEach(y=>mk('circle',{cx:0,cy:y,r:3.6,class:'lampoff'},g));},
+  lamp(g){mk('circle',{cx:0,cy:-104,r:4,class:'lampred'},g);},
+  rain(g){for(let i=0;i<26;i++){const x=(i*37)%360+6,y=30+(i*53)%120;mk('line',{x1:x,y1:y,x2:x-4,y2:y+10,class:'rainl'},g);}},
+  flood(g){mk('rect',{x:0,y:174,width:360,height:46,class:'water'},g);},
+  grid(g){const rows=['I','II','III','IV'];rows.forEach((r,ri)=>{const y=150-ri*24;txt(g,'Classe '+r,{x:44,y:y+3.5,class:'gl'});
+      for(let c=0;c<7;c++)mk('rect',{x:96+c*36-16,y:y-10,width:32,height:20,rx:3,class:'cellr'},g);});
+    txt(g,'Faixa',{x:44,y:174,class:'gl'});for(let c=0;c<7;c++)txt(g,String(c+1),{x:96+c*36,y:174,class:'gl'});},
+  token(g){mk('circle',{r:8,class:'tok'},g);},
+  net(g,d){mk('line',{x1:d.x1,y1:d.y,x2:d.x2,y2:d.y,class:'netl'},g);},
+  bug(g){[-1,1].forEach(s=>[-4,0,4].forEach(y=>mk('line',{x1:0,y1:y,x2:s*9,y2:y+s*0-2,class:'bugl'},g)));mk('ellipse',{rx:5.5,ry:7,class:'bugb'},g);},
+  keyboard(g){mk('rect',{x:-28,y:-7,width:56,height:14,rx:2,class:'kbd'},g);for(let i=0;i<6;i++){mk('rect',{x:-24+i*8.5,y:-4,width:6,height:3,class:'key'},g);mk('rect',{x:-24+i*8.5,y:1,width:6,height:3,class:'key'},g);}},
+  envelope(g){mk('rect',{x:-17,y:-11,width:34,height:22,rx:2,class:'paper'},g);mk('path',{d:'M-17 -11 L0 2 L17 -11',class:'flap'},g);},
+  lock(g){mk('path',{d:'M-4 0 V-5 A4 4 0 0 1 4 -5 V0',class:'locks'},g);mk('rect',{x:-6,y:0,width:12,height:9,rx:1.5,class:'lockb'},g);},
+  seal(g){mk('circle',{r:6,class:'seal'},g);},
+  days(g){mk('line',{x1:40,y1:161,x2:332,y2:161,class:'axis'},g);['Dom','Seg','Ter','Qua','Qui'].forEach((l,i)=>txt(g,l,{x:70+i*60,y:178,class:'tick'}));},
+  blk(g,d){mk('rect',{x:-22,y:160-d.h,width:44,height:d.h,rx:2,class:d.kind==='full'?'box':'bar-info'},g);txt(g,d.text,{y:160-d.h-5,class:'gl'});},
+  hl(g,d){mk('rect',{x:-28,y:160-d.h-17,width:56,height:d.h+21,rx:4,class:'hl'},g);},
+  ball(g,d){mk('circle',{r:7,class:d.kind==='blue'?'bblue':'bred'},g);},
+  urna(g){mk('path',{d:'M-40 -60 L-34 0 L34 0 L40 -60',class:'urna'},g);},
+  taccount(g,d){mk('line',{x1:-62,y1:-70,x2:62,y2:-70,class:'tline'},g);mk('line',{x1:0,y1:-70,x2:0,y2:0,class:'tline'},g);
+    txt(g,d.text,{y:-78,class:'ttit'});txt(g,'D',{x:-50,y:-58,class:'gl'});txt(g,'C',{x:50,y:-58,class:'gl'});},
+  ticks(g,d){mk('line',{x1:d.x1,y1:d.ay,x2:d.x2,y2:d.ay,class:'axis'},g);d.labels.forEach(([x,l])=>{mk('line',{x1:x,y1:d.ay-4,x2:x,y2:d.ay+4,class:'axis'},g);txt(g,l,{x,y:d.ay+17,class:'tick'});});},
+  dots(g,d){d.pts.forEach(([x,y])=>mk('circle',{cx:x,cy:y,r:5.5,class:d.alt?'dotq':'dotp'},g));},
+  bplot(g,d){const y=d.ay;mk('line',{x1:d.min,y1:y,x2:d.q1,y2:y,class:'bpl'},g);mk('line',{x1:d.q3,y1:y,x2:d.max,y2:y,class:'bpl'},g);
+    [d.min,d.max].forEach(x=>mk('line',{x1:x,y1:y-8,x2:x,y2:y+8,class:'bpl'},g));
+    mk('rect',{x:d.q1,y:y-16,width:d.q3-d.q1,height:32,class:'bpbox'},g);mk('line',{x1:d.q2,y1:y-16,x2:d.q2,y2:y+16,class:'bpl'},g);},
+  pix(g){mk('rect',{x:-46,y:-22,width:92,height:44,rx:7,class:'pixbox'},g);txt(g,'PIX ENVIADO',{y:-5,class:'pixt'});txt(g,'R$ 500,00',{y:13,class:'pixv'});}
+};
+
+/* ---------- atores ---------- */
+function makeFig(svg,d){
+  const init={x:0,y:180,r:0,f:1,s:1,o:1,aF:-12,aB:12,lF:-10,lB:10,walk:0};
+  (d.holdF||[]).concat(d.holdB||[]).forEach(n=>init['h_'+n]=0);
+  Object.assign(init,d.st||{});
+  const outer=mk('g',{},svg), inner=mk('g',{class:'fig'+(d.perp?' perp':d.alt?' alt':'')},outer);
+  const hold={};
+  const limb=(len,items)=>{const g=mk('g',{},inner);mk('line',{x1:0,y1:0,x2:0,y2:len,class:'lb'},g);(items||[]).forEach(n=>{const h=mk('g',{},g);HOLD[n](h);hold[n]=h;});return g;};
+  const aB=limb(22,d.holdB), lB=limb(25);
+  mk('line',{x1:0,y1:-53,x2:0,y2:-25,class:'lb'},inner);
+  mk('circle',{cx:0,cy:-62,r:9,class:'hd'},inner);
+  if(d.hat==='pol'){mk('path',{d:'M-10 -68 L-8 -77 L8 -77 L10 -68 Z',class:'hatp'},inner);mk('line',{x1:-11,y1:-68,x2:14,y2:-68,class:'hatb'},inner);}
+  if(d.hat==='bone'){mk('path',{d:'M-9 -65 Q-9 -75 0 -75 Q9 -75 9 -65 Z',class:'bone'},inner);mk('line',{x1:6,y1:-65,x2:17,y2:-65,class:'boneb'},inner);}
+  const lF=limb(25), aF=limb(22,d.holdF);
+  if(d.label)txt(outer,d.label,{y:15,class:'nm'+(d.perp?' perp':d.alt?' alt':'')});
+  return {init,st:{...init},render(now){
+    const s=this.st, sw=REDUCE?0:s.walk*Math.sin(now*0.012);
+    outer.setAttribute('transform',`translate(${s.x} ${s.y}) scale(${s.s})`);outer.style.opacity=s.o;
+    inner.setAttribute('transform',`rotate(${s.r}) scale(${s.f} 1)`);
+    aF.setAttribute('transform',`translate(0 -48) rotate(${s.aF+sw*-18})`);
+    aB.setAttribute('transform',`translate(0 -48) rotate(${s.aB+sw*18})`);
+    lF.setAttribute('transform',`translate(0 -25) rotate(${s.lF+sw*26})`);
+    lB.setAttribute('transform',`translate(0 -25) rotate(${s.lB-sw*26})`);
+    for(const n in hold)hold[n].style.opacity=s['h_'+n];
+  }};
+}
+function makeProp(svg,d){
+  const init=Object.assign({x:d.x||0,y:d.y||0,r:0,s:1,o:1},d.st||{});
+  const g=mk('g',{},svg);
+  if(d.t==='stamp'){Object.assign(init,{s:.5,o:0},d.st||{});
+    const r=mk('g',{transform:'rotate(-6)',class:'k-'+(d.kind||'info')},g);
+    const box=mk('rect',{class:'stampbox',rx:5},r);const t=txt(r,d.text,{y:5,class:'stampt'});
+    const w=width(t,d.text,9)+28;box.setAttribute('x',-w/2);box.setAttribute('y',-17);box.setAttribute('width',w);box.setAttribute('height',34);
+  }else if(d.t==='bubble'){Object.assign(init,{o:0,s:.85},d.st||{});
+    const box=mk('rect',{class:'bub',rx:9,y:-36,height:26},g);mk('path',{d:'M-6 -10.8 L0 0 L6 -10.8',class:'bub'},g);
+    mk('rect',{x:-5.2,y:-12.6,width:10.4,height:3,fill:'var(--card)'},g);
+    const t=txt(g,d.text,{y:-19,class:'bubt'});const w=width(t,d.text,6.2)+20;
+    let left=-w/2;const absL=init.x+left,absR=init.x+left+w;
+    if(absL<6)left+=6-absL; if(absR>354)left-=absR-354;
+    box.setAttribute('x',left);box.setAttribute('width',w);t.setAttribute('x',left+w/2);
+  }else if(d.t==='tag'){Object.assign(init,{o:0},d.st||{});
+    const box=mk('rect',{class:'tagbg',rx:6,x:0,y:-13,height:19},g);const t=txt(g,d.text,{x:8,y:0,class:'tagt'});
+    box.setAttribute('width',width(t,d.text,6.4)+16);
+  }else PROPS[d.t](g,d);
+  return {init,st:{...init},render(){const s=this.st;g.setAttribute('transform',`translate(${s.x} ${s.y}) rotate(${s.r}) scale(${s.s})`);g.style.opacity=s.o;}};
+}
+
+/* ---------- motor de animação ---------- */
+const tweens=[];
+const EASE={io:t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2,lin:t=>t};
+function tween(a,props,ms,ez){const now=performance.now();
+  for(const k in props){for(let i=tweens.length-1;i>=0;i--)if(tweens[i].a===a&&tweens[i].k===k)tweens.splice(i,1);
+    if(!ms||REDUCE){a.st[k]=props[k];continue;}
+    tweens.push({a,k,from:a.st[k]??0,to:props[k],t0:now,ms,ez:ez||'io'});}}
+const players=[];
+const SPEEDS=[{v:1,t:'Ritmo: normal'},{v:1.35,t:'Ritmo: rápido'},{v:.75,t:'Ritmo: lento'}];
+let si=0;try{si=Math.max(0,SPEEDS.findIndex(x=>x.t===localStorage.getItem('pp-ritmo')));}catch(e){}
+const SPEED={get v(){return SPEEDS[si].v}};
+function loop(now){
+  for(let i=tweens.length-1;i>=0;i--){const t=tweens[i];const p=Math.min(1,(now-t.t0)/t.ms);t.a.st[t.k]=t.from+(t.to-t.from)*EASE[t.ez](p);if(p>=1)tweens.splice(i,1);}
+  for(const p of players)if(p.visible||p.dirty){p.render(now);p.dirty=false;}
+  requestAnimationFrame(loop);
+}
+const wait=ms=>new Promise(r=>setTimeout(r,REDUCE?Math.max(ms,1600):ms));
+
+class Player{
+  constructor(scene,card){
+    this.scene=scene;this.tok=0;this.visible=false;this.dirty=true;this.played=false;
+    const svg=mk('svg',{viewBox:'0 0 360 220',role:'img','aria-label':'Animação: '+scene.title},card.querySelector('.stage'));
+    for(let y=40;y<180;y+=28)mk('line',{x1:0,y1:y,x2:360,y2:y,class:'gridl'},svg);
+    (scene.ground||[[0,360]]).forEach(([a,b])=>mk('line',{x1:a,y1:180,x2:b,y2:180,class:'gnd'},svg));
+    this.actors={};
+    scene.actors.forEach(d=>{this.actors[d.id]=d.t==='fig'?makeFig(svg,d):makeProp(svg,d);});
+    this.cap=card.querySelector('.cap');this.bar=card.querySelector('.bar i');this.btn=card.querySelector('.play');
+    this.btn.addEventListener('click',()=>this.play());
+    this.cap.textContent=scene.lead;
+  }
+  reset(){for(const id in this.actors){const a=this.actors[id];for(let i=tweens.length-1;i>=0;i--)if(tweens[i].a===a)tweens.splice(i,1);a.st={...a.init};}this.dirty=true;}
+  render(now){for(const id in this.actors)this.actors[id].render(now);}
+  async play(){
+    const tok=++this.tok;this.played=true;this.reset();this.btn.textContent='Recomeçar';
+    const steps=this.scene.steps;
+    for(let i=0;i<steps.length;i++){
+      if(tok!==this.tok)return;
+      const s=steps[i];
+      if(s.reset)this.reset();
+      if(s.set)for(const id in s.set)Object.assign(this.actors[id].st,s.set[id]);
+      if(s.to)for(const id in s.to){const p=s.to[id];tween(this.actors[id],p,s.ms??600,s.ez||(p.walk>0?'lin':'io'));}
+      if(s.cap)this.cap.textContent=s.cap;
+      this.bar.style.width=((i+1)/steps.length*100)+'%';this.dirty=true;
+      /* ritmo de leitura: legenda fica ~1 s + 50 ms por caractere; ajustável pelo botão de velocidade */
+      const base=(s.d??1200)*1.2;
+      await wait((s.cap?Math.max(base,1000+s.cap.length*50):base)/SPEED.v);
+    }
+    if(tok===this.tok)this.btn.textContent='Ver de novo';
+  }
+}
+
+/* ---------- cenas ---------- */
+const STAMP=(id,text,kind,y)=>({id,t:'stamp',text,kind,x:180,y:y||46});
+const TAG=(id,text)=>({id,t:'tag',text,x:12,y:22});
+const DOC=(id,text,x,y)=>({id,t:'doc',text,x,y,st:{o:0}});
+const SCR=(id,lines,x,y)=>({id,t:'screen',lines,x:x||210,y:y||96,w:Math.max(124,Math.max(...lines.map(l=>l.length))*5.9+22),st:{o:0}});
+const DOT=(id,x,y,alt,o)=>({id,t:'dots',pts:[[0,0]],alt,x,y,st:{o:o===undefined?1:o}});
+const ON={o:1,s:1}, OFF={o:0};
+const AX=[[40,'0'],[96,'2'],[152,'4'],[208,'6'],[264,'8'],[320,'10']];
+const SCENES=[
+{id:'media-mediana',nav:'Média × mediana',art:'Medidas de posição',title:'Um salário enorme estraga a média',
+ lead:'Cinco salários, em mil reais. Depois, um deles vira 40.',ground:[],
+ actors:[
+  {id:'ax',t:'ticks',x1:30,x2:340,ay:165,labels:AX},
+  DOT('v1',96,152),DOT('v2',124,152),DOT('v3',124,139),DOT('v4',152,152),DOT('v5',180,152),
+  DOT('v5b',334,152,1,0),DOC('big','40 →',334,128),
+  SCR('m1',['Média: 17 ÷ 5 = 3,4','Mediana (do meio): 3'],180,86),
+  SCR('m2',['Média: 52 ÷ 5 = 10,4','Mediana (do meio): 3'],180,86),
+  TAG('t1','1 de 2 · Dados comportados'),TAG('t2','2 de 2 · Valor extremo'),
+  STAMP('s1','MÉDIA ≈ MEDIANA','info',26),STAMP('s2','MEDIANA RESISTE','ok',26)],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'Salários de 2, 3, 3, 4 e 5 mil. Em ordem, o do meio é 3.',to:{m1:ON},ms:400,d:2800},
+  {cap:'A média dá 3,4. Média e mediana ficam perto uma da outra.',to:{s1:ON},ms:300,d:2400},
+
+  {reset:1,set:{t2:{o:1}},cap:'Agora o salário de 5 mil é trocado por um de 40 mil.',to:{v5:{o:0},v5b:{o:1},big:ON},ms:600,d:2400},
+  {cap:'A média dispara para 10,4, mas ninguém do grupo ganha perto disso.',to:{m2:ON},ms:400,d:2800},
+  {cap:'O valor do meio continua 3. A mediana não se deixa levar pelo extremo.',to:{s2:ON},ms:300,d:2600}],
+ rule:`<h3>Regra</h3>
+  <ul>
+   <li><b>Média</b>: soma ÷ quantidade. Usa todos os valores, por isso é sensível a extremos.</li>
+   <li><b>Mediana</b>: valor central com os dados em ordem. Com quantidade par, é a média dos dois centrais.</li>
+   <li>Com valores extremos (outliers), a mediana representa melhor o "típico".</li>
+  </ul>
+  <div class="trap"><b>Pegadinha:</b> a mediana exige ordenar os dados antes. A banca dá a lista fora de ordem para quem pega o valor do meio direto.</div>`},
+
+{id:'moda',nav:'Moda',art:'Medidas de posição',title:'O tamanho que mais sai',
+ lead:'Uma loja de calçados conta as vendas de cada número.',ground:[],
+ actors:[
+  {id:'a37',t:'blk',x:60,h:20,text:'37',kind:'full',st:{o:0}},{id:'a38',t:'blk',x:120,h:40,text:'38',kind:'full',st:{o:0}},
+  {id:'a39',t:'blk',x:180,h:80,text:'39',kind:'full',st:{o:0}},{id:'a40',t:'blk',x:240,h:40,text:'40',kind:'full',st:{o:0}},
+  {id:'a41',t:'blk',x:300,h:20,text:'41',kind:'full',st:{o:0}},
+  {id:'b38',t:'blk',x:120,h:80,text:'38',kind:'full',st:{o:0}},{id:'b39',t:'blk',x:180,h:40,text:'39',kind:'full',st:{o:0}},
+  {id:'b40',t:'blk',x:240,h:80,text:'40',kind:'full',st:{o:0}},
+  DOC('f1','vendas: 1 · 2 · 4 · 2 · 1',180,182),DOC('f2','vendas: 1 · 4 · 2 · 4 · 1',180,182),
+  TAG('t1','1 de 2 · Uma moda'),TAG('t2','2 de 2 · Duas modas'),
+  STAMP('s1','MODA = 39','ok',34),STAMP('s2','BIMODAL: 38 E 40','info',34)],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'Cada barra mostra quantos pares de cada número foram vendidos.',to:{a37:ON,a38:ON,a39:ON,a40:ON,a41:ON,f1:ON},ms:500,d:2600},
+  {cap:'A moda é o valor que mais aparece: o 39, com 4 vendas.',to:{s1:ON},ms:300,d:2400},
+
+  {reset:1,set:{t2:{o:1},a37:{o:1},a41:{o:1}},cap:'Em outra semana, o 38 e o 40 empataram no topo.',to:{b38:ON,b39:ON,b40:ON,f2:ON},ms:500,d:2600},
+  {cap:'Quando dois valores empatam como os mais frequentes, a série é bimodal.',to:{s2:ON},ms:300,d:2600}],
+ rule:`<h3>Regra</h3>
+  <ul>
+   <li><b>Moda</b>: valor de maior frequência. Pode não existir (amodal), ser uma, duas (bimodal) ou mais.</li>
+   <li>É a única medida de posição que serve para dados qualitativos (cor preferida, tipo de crime mais registrado).</li>
+   <li>Em tabela de frequências, olhe a coluna da frequência, não a dos valores.</li>
+  </ul>
+  <div class="trap"><b>Pegadinha:</b> a moda é o <b>valor</b> (39), não a frequência dele (4). A banca coloca as duas coisas nas alternativas.</div>`},
+
+{id:'dispersao',nav:'Dispersão',art:'Medidas de dispersão',title:'Mesma média, grupos diferentes',
+ lead:'Dois grupos de notas, ambos com média 5.',ground:[],
+ actors:[
+  {id:'ax',t:'ticks',x1:30,x2:340,ay:158,labels:AX},
+  DOT('a1',152,145),DOT('a2',180,145),DOT('a3',208,145),
+  DOT('b1',40,112,1,0),DOT('b2',180,112,1,0),DOT('b3',320,112,1,0),
+  DOC('la','A: 4, 5, 6',300,145),DOC('lb','B: 0, 5, 10',90,90),
+  SCR('r',['Amplitude A = 2 · B = 10','Desvio padrão A < B'],180,52),
+  TAG('t1','1 de 2 · Grupo A'),TAG('t2','2 de 2 · Grupo B'),
+  STAMP('s1','MÉDIA NÃO BASTA','no',52),STAMP('s2','B É MAIS DISPERSO','ok',204)],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'O grupo A tirou 4, 5 e 6. Média 5, notas bem juntas.',to:{la:ON},ms:400,d:2600},
+  {to:{s1:ON},ms:300,d:1600},
+
+  {reset:1,set:{t2:{o:1},la:{o:1}},cap:'O grupo B tirou 0, 5 e 10. A média também é 5.',to:{b1:{o:1},b2:{o:1},b3:{o:1},lb:ON},ms:500,d:2600},
+  {cap:'Só que as notas de B estão muito mais espalhadas. Amplitude e desvio padrão medem isso.',to:{r:ON},ms:400,d:3000},
+  {to:{s2:ON},ms:300,d:2200}],
+ rule:`<h3>Regra</h3>
+  <ul>
+   <li><b>Amplitude</b> = maior − menor.</li>
+   <li><b>Variância</b>: média dos quadrados dos desvios em relação à média. <b>Desvio padrão</b> = raiz da variância, na mesma unidade dos dados.</li>
+   <li><b>Coeficiente de variação</b> = desvio padrão ÷ média. Serve para comparar grupos com médias diferentes.</li>
+   <li>Somar uma constante a todos os dados não muda o desvio padrão. Multiplicar por k multiplica o desvio por k (e a variância por k²).</li>
+  </ul>
+  <div class="trap"><b>Pegadinha:</b> variância de amostra divide por n − 1; de população, por n. Leia qual das duas o enunciado pede.</div>`},
+
+{id:'boxplot',nav:'Box plot',art:'Gráficos',title:'A caixa e o ponto fora dela',
+ lead:'Tempos de atendimento, em minutos, resumidos em cinco números.',ground:[],
+ actors:[
+  {id:'ax',t:'ticks',x1:30,x2:340,ay:158,labels:[[30,'0'],[90,'20'],[150,'40'],[210,'60'],[270,'80'],[330,'100']]},
+  {id:'bp',t:'bplot',ay:110,min:60,q1:90,q2:120,q3:150,max:210,st:{o:0}},
+  DOT('out',300,110,1,0),
+  DOC('lq1','Q1 20',90,76),DOC('lq2','Q2 30',120,54),DOC('lq3','Q3 40',150,76),
+  DOC('lim','limite: 70',240,136),DOC('lo','90',300,88),
+  SCR('a',['AIQ = Q3 − Q1 = 20','Limite = Q3 + 1,5 × 20 = 70'],180,46),
+  TAG('t1','1 de 2 · A caixa'),TAG('t2','2 de 2 · O outlier'),
+  STAMP('s1','METADE DOS DADOS NA CAIXA','info',204),STAMP('s2','90 > 70: OUTLIER','no',204)],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'A caixa vai do primeiro quartil (20) ao terceiro (40). A linha de dentro é a mediana (30).',to:{bp:ON,lq1:ON,lq2:ON,lq3:ON},ms:500,d:3000},
+  {cap:'Entre Q1 e Q3 estão os 50% centrais dos dados.',to:{s1:ON},ms:300,d:2400},
+
+  {reset:1,set:{t2:{o:1},bp:{o:1}},cap:'A distância entre Q3 e Q1 é a amplitude interquartil: 20.',to:{a:ON},ms:400,d:2600},
+  {cap:'Acima de Q3 + 1,5 × 20 = 70, o valor é considerado atípico.',to:{lim:ON},ms:400,d:2600},
+  {cap:'Um atendimento de 90 minutos aparece como ponto isolado, fora do bigode.',to:{out:{o:1},lo:ON},ms:400,d:2400},
+  {to:{s2:ON},ms:300,d:2200}],
+ rule:`<h3>Regra</h3>
+  <ul>
+   <li>Cinco números: mínimo, Q1, mediana (Q2), Q3 e máximo (sem contar outliers).</li>
+   <li><b>AIQ</b> = Q3 − Q1. Limites: Q1 − 1,5·AIQ e Q3 + 1,5·AIQ. Fora disso, outlier.</li>
+   <li>Mediana mais perto de Q1 e bigode direito mais longo: assimetria à direita (positiva).</li>
+  </ul>
+  <div class="trap"><b>Pegadinha:</b> a caixa mostra 50% dos dados, não 50% da amplitude. Uma caixa curta quer dizer dados concentrados, não poucos dados.</div>`},
+
+{id:'correlacao',nav:'Correlação',art:'Correlação',title:'Andar junto não é causar',
+ lead:'Cada ponto é um dia. Os eixos são duas medidas.',ground:[],
+ actors:[
+  {id:'ax',t:'ticks',x1:40,x2:330,ay:170,labels:[]},
+  {id:'pos',t:'dots',pts:[[70,150],[110,140],[140,122],[180,112],[215,96],[250,84],[290,70],[315,60]],st:{o:0}},
+  {id:'neg',t:'dots',pts:[[70,62],[110,74],[140,90],[180,100],[215,118],[250,128],[290,146],[315,152]],alt:1,st:{o:0}},
+  {id:'nul',t:'dots',pts:[[70,90],[105,150],[140,70],[175,128],[210,82],[245,150],[280,100],[315,66]],st:{o:0}},
+  {id:'sol',t:'sun',x:320,y:36,st:{o:0}},
+  DOC('lp','r perto de +1',90,46),DOC('ln','r perto de −1',90,46),DOC('lz','r perto de 0',90,46),
+  SCR('c',['Sorvete vendido × afogamentos:','sobem juntos no verão.','Causa comum: o calor.'],180,90),
+  TAG('t1','1 de 4 · Positiva'),TAG('t2','2 de 4 · Negativa'),TAG('t3','3 de 4 · Nula'),TAG('t4','4 de 4 · A armadilha'),
+  STAMP('s1','UM SOBE, O OUTRO SOBE','ok',196),STAMP('s2','UM SOBE, O OUTRO DESCE','info',196),
+  STAMP('s3','SEM RELAÇÃO LINEAR','info',196),STAMP('s4','CORRELAÇÃO ≠ CAUSA','no',196)],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'Horas de estudo e acertos: quanto mais um, mais o outro.',to:{pos:{o:1},lp:ON},ms:500,d:2600},
+  {to:{s1:ON},ms:300,d:1800},
+  {reset:1,set:{t2:{o:1}},cap:'Faltas e nota: quando um aumenta, o outro cai.',to:{neg:{o:1},ln:ON},ms:500,d:2600},
+  {to:{s2:ON},ms:300,d:1800},
+  {reset:1,set:{t3:{o:1}},cap:'Número do sapato e nota: pontos espalhados, sem tendência.',to:{nul:{o:1},lz:ON},ms:500,d:2600},
+  {to:{s3:ON},ms:300,d:1800},
+  {reset:1,set:{t4:{o:1},pos:{o:1}},cap:'Venda de sorvete e afogamentos também sobem juntos.',to:{c:ON},ms:400,d:2800},
+  {cap:'Sorvete não afoga ninguém. Os dois crescem por causa de um terceiro fator: o calor.',to:{sol:{o:1}},ms:400,d:2800},
+  {to:{s4:ON},ms:300,d:2200}],
+ rule:`<h3>Regra</h3>
+  <ul>
+   <li>Coeficiente de correlação linear (r) vai de <b>−1 a +1</b>.</li>
+   <li>r perto de +1: relação linear positiva forte. Perto de −1: negativa forte. Perto de 0: sem relação <b>linear</b>.</li>
+   <li>r não tem unidade e não muda se você trocar a escala dos dados (metros por centímetros, por exemplo).</li>
+  </ul>
+  <div class="trap"><b>Pegadinha:</b> correlação alta não prova que uma variável causa a outra. E r = 0 não quer dizer que não há relação nenhuma: pode haver uma relação curva.</div>`}
+];
+
+/* ---------- montagem da página ---------- */
+const cards=document.getElementById('cards'), nav=document.getElementById('nav');
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{const p=e.target._player;p.visible=e.isIntersecting;
+  if(e.isIntersecting&&e.intersectionRatio>=.55&&!p.played&&!REDUCE)p.play();}),{threshold:[0,.55]}):null;
+SCENES.forEach(sc=>{
+  const card=document.createElement('section');card.className='card';card.id=sc.id;
+  card.innerHTML=`<div class="card-head"><span class="art">${sc.art}</span><h2>${sc.title}</h2></div>
+   <div class="stage"></div>
+   <div class="player"><p class="cap" aria-live="polite"></p>
+    <div class="ctrl"><button class="play" type="button" id="play-${sc.id}">Assistir</button><div class="bar"><i></i></div></div></div>
+   <div class="rule">${sc.rule}</div>`;
+  cards.appendChild(card);
+  const p=new Player(sc,card);players.push(p);card._player=p;
+  if(io)io.observe(card);else p.visible=true;
+  const b=document.createElement('button');b.type='button';b.textContent=sc.nav||sc.title;
+  b.addEventListener('click',()=>{card.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'});p.play();});
+  nav.appendChild(b);
+});
+const sp=document.createElement('button');sp.type='button';sp.id='ritmo';sp.className='speed';sp.textContent=SPEEDS[si].t;
+sp.addEventListener('click',()=>{si=(si+1)%SPEEDS.length;sp.textContent=SPEEDS[si].t;try{localStorage.setItem('pp-ritmo',SPEEDS[si].t)}catch(e){}});
+nav.appendChild(sp);
+requestAnimationFrame(loop);
+})();
+</script>

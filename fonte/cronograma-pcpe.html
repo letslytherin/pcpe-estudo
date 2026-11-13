@@ -1,0 +1,285 @@
+<title>Cronograma PC-PE Agente</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: coluna única de "agenda de estudos"; topo com contagem e progresso, depois regras fixas, depois semanas sanfonadas */
+:root{
+  --bg:#E9EDF2; --card:#FFFFFF; --line:#D3DAE3; --soft:#F3F6F9;
+  --ink:#1A2233; --muted:#5B6678; --accent:#1F3F94; --accent-soft:#E3E9F8;
+  --p1:#7A2E8E; --p1-soft:#F3E6F6; --p2:#0F766E; --p2-soft:#DDF3F0;
+  --a:#B42318; --b:#B26A00; --c:#5B6678; --ok:#15803D;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1320; --card:#161D2D; --line:#2C3650; --soft:#1B2336;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --p1:#D49BE3; --p1-soft:#33243B; --p2:#4FD1C0; --p2-soft:#173532;
+  --a:#FF8A80; --b:#F2B85B; --c:#9AA6BC; --ok:#5BD98A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1320; --card:#161D2D; --line:#2C3650; --soft:#1B2336;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --p1:#D49BE3; --p1-soft:#33243B; --p2:#4FD1C0; --p2-soft:#173532;
+  --a:#FF8A80; --b:#F2B85B; --c:#9AA6BC; --ok:#5BD98A; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 56px;display:flex;flex-direction:column;gap:20px}
+.eyebrow{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font:800 clamp(30px,8vw,40px)/1.05 var(--f-display);margin:0;text-wrap:balance}
+h2{font:600 21px/1.2 var(--f-display);margin:0;text-wrap:balance}
+h3{font:700 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+header{display:flex;flex-direction:column;gap:10px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.stat b{font:800 24px var(--f-display);font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.card ul,.card ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:5px}
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.phase{border-radius:10px;padding:10px;background:var(--soft);display:flex;flex-direction:column;gap:2px;min-width:0}
+.phase b{font:600 15px var(--f-display)}
+.phase span{font-size:13px;color:var(--muted)}
+@media (max-width:480px){.phases{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat b{font-size:20px}}
+details.week{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+details.week[open]{border-color:var(--accent)}
+summary{list-style:none;cursor:pointer;padding:12px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.wnum{font:800 18px var(--f-display);color:var(--accent);font-variant-numeric:tabular-nums;grid-row:span 2}
+.wtitle{font:600 16px var(--f-display);min-width:0}
+.wdates{font:500 12px var(--f-mono);color:var(--muted)}
+.wpct{font:700 13px var(--f-mono);color:var(--muted);grid-row:span 2;font-variant-numeric:tabular-nums}
+.wpct.done{color:var(--ok)}
+.now{font:700 10px var(--f-mono);background:var(--accent);color:var(--card);border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:2px}
+.wbody{padding:0 16px 14px;display:flex;flex-direction:column;gap:8px}
+.wnote{font-size:14px;color:var(--muted)}
+.item{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.item input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--ok);cursor:pointer}
+.item.done .ttl{text-decoration:line-through;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip{font:700 11px var(--f-mono);border-radius:5px;padding:1px 6px}
+.chip.p1{background:var(--p1-soft);color:var(--p1)} .chip.p2{background:var(--p2-soft);color:var(--p2)}
+.chip.pa{color:var(--a);border:1px solid var(--a)} .chip.pb{color:var(--b);border:1px solid var(--b)} .chip.pc{color:var(--c);border:1px solid var(--c)}
+.chip.fx{background:var(--accent-soft);color:var(--accent)}
+.disc{font-size:13px;color:var(--muted)}
+.ttl{font-weight:700}
+.filt{font:500 12.5px/1.45 var(--f-mono);color:var(--accent);background:var(--soft);border-radius:6px;padding:4px 8px;margin-top:4px;overflow-wrap:anywhere}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{font:600 13px var(--f-body);color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 11px;text-decoration:none}
+.status{font-size:13px;color:var(--muted)}
+footer{font-size:13px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">PC-PE 2026 · Agente de Polícia · Cebraspe</span>
+    <h1>Cronograma até a prova</h1>
+    <p class="muted">Prova objetiva e discursiva em <b>7 de março de 2027</b>, à tarde. 60 questões: 20 de Noções de Direito (P1) e 40 de Conhecimentos Específicos (P2), múltipla escolha de A a E, sem desconto por erro.</p>
+    <div class="stats">
+      <div class="stat"><b id="dias">–</b><span>dias até a prova</span></div>
+      <div class="stat"><b id="feitos">0</b><span id="feitosl">tarefas feitas</span></div>
+      <div class="stat"><b id="qtot">–</b><span>questões planejadas</span></div>
+    </div>
+    <div class="bar" aria-hidden="true"><i id="gbar"></i></div>
+    <p class="status" id="status">Carregando seu progresso…</p>
+  </header>
+
+  <section class="card">
+    <h2>Rotina da semana</h2>
+    <p class="muted">Pensada para cerca de 16 horas por semana, junto com o trabalho. Se sobrar tempo, adiante a semana seguinte; se faltar, corte primeiro as tarefas de prioridade C.</p>
+    <ul>
+      <li><b>Segunda a sexta (2 h):</b> 30 a 40 min do capítulo no guia do Kindle, depois as questões do filtro. Corrija na hora e leia o comentário das que errar.</li>
+      <li><b>Sábado (4 h):</b> as tarefas que ficaram da semana e um bloco maior de questões.</li>
+      <li><b>Domingo (2 h):</b> refazer o caderno de erros e, a partir da semana 2, uma discursiva.</li>
+    </ul>
+    <div class="legend"><span><span class="chip pa">A</span> cai muito: 20 questões</span><span><span class="chip pb">B</span> cai às vezes: 12</span><span><span class="chip pc">C</span> cai pouco: 6</span></div>
+  </section>
+
+  <section class="card">
+    <h2>Filtros fixos no Gran Questões</h2>
+    <p class="muted">Monte este filtro uma vez e salve. Em cada tarefa, troque só a disciplina e o assunto indicados.</p>
+    <ol>
+      <li><b>Banca:</b> Cebraspe (no Gran aparece como CEBRASPE (CESPE)).</li>
+      <li><b>Modalidade:</b> Múltipla escolha. Quando faltar volume, inclua Certo ou Errado: o conteúdo cobrado é o mesmo, muda só o formato.</li>
+      <li><b>Ano:</b> de 2019 em diante, por causa das leis novas (Pacote Anticrime, Lei 14.133, Lei 14.230).</li>
+      <li><b>Escolaridade:</b> Superior.</li>
+      <li><b>Assunto:</b> digite no campo de busca de assuntos o termo da tarefa. Se o nome no Gran for um pouco diferente, escolha o mais próximo.</li>
+      <li><b>Excluir</b> questões anuladas e desatualizadas e, na segunda volta, as que você já resolveu.</li>
+    </ol>
+    <p class="muted"><b>Exceção, Legislação Estadual:</b> quase não há questão do Cebraspe sobre leis de Pernambuco. Tire o filtro de banca e busque pelo número da lei. Complete com o treino de certo ou errado do próprio guia.</p>
+    <p class="muted"><b>Prova anterior:</b> a PC-PE de 2016 foi do Cebraspe em múltipla escolha. Filtre Órgão PC-PE, Ano 2016, Cargo Agente de Polícia: é o melhor espelho do estilo da prova.</p>
+  </section>
+
+  <section class="card">
+    <h2>Três fases</h2>
+    <div class="phases">
+      <div class="phase"><b>Base</b><span>Semanas 1 a 11. Todos os capítulos, com pausa leve no Natal e no Ano-Novo.</span></div>
+      <div class="phase"><b>Questões</b><span>Semanas 12 a 14. Segunda volta nos assuntos A, simulados e erros.</span></div>
+      <div class="phase"><b>Reta final</b><span>Semanas 15 e 16. Simulado, revisão de véspera e descanso.</span></div>
+    </div>
+  </section>
+
+  <section id="weeks" style="display:flex;flex-direction:column;gap:10px" aria-label="Semanas"></section>
+
+  <section class="card">
+    <h2>Temas para treinar a discursiva</h2>
+    <p class="muted">O edital fala em estudo de caso ou redação sobre tema específico. Escreva à mão, de 20 a 30 linhas, e confira os pontos no guia.</p>
+    <ol>
+      <li>Prisão em flagrante: espécies e audiência de custódia.</li>
+      <li>Inquérito policial: características, prazos e arquivamento.</li>
+      <li>Legítima defesa, estado de necessidade e excesso.</li>
+      <li>Busca domiciliar sem mandado e as fundadas razões (Tema 280 do STF).</li>
+      <li>Provas ilícitas, fonte independente e cadeia de custódia.</li>
+      <li>Violência doméstica: medidas protetivas da Lei Maria da Penha.</li>
+      <li>Tráfico × porte para uso pessoal na Lei de Drogas.</li>
+      <li>Abuso de autoridade na atuação policial.</li>
+      <li>Segurança pública no art. 144 da CF e na Constituição de Pernambuco.</li>
+      <li>Responsabilidade civil do Estado por ação de agente policial.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Animações para revisão leve</h2>
+    <div class="links">
+      <a href="https://claude.ai/artifact/EMhxu1dzo9LQt4qcTDkinr">Penal</a>
+      <a href="https://claude.ai/artifact/EeKGngbWxvvD9a65FXnVRY">Processo Penal</a>
+      <a href="https://claude.ai/artifact/3RA5AhxNr7rApW8pXvc8PF">Constitucional</a>
+      <a href="https://claude.ai/artifact/JfN1oJ8bdkdDJyeSCc2KqY">Administrativo</a>
+      <a href="https://claude.ai/artifact/Dv9QM1eUMFUwJg3yct2Nb5">Legislação Estadual</a>
+      <a href="https://claude.ai/artifact/FSW7DfWQ1iNmsQy3nrwEZS">Informática</a>
+      <a href="https://claude.ai/artifact/QtpwRYcXuTdY8rSV6YMBVx">Português</a>
+      <a href="https://claude.ai/artifact/VogPijK9oWq59wdoQBzAtV">Raciocínio Lógico</a>
+      <a href="https://claude.ai/artifact/E7yTkaZ7hTGnN8S98M9apx">Contabilidade</a>
+      <a href="https://claude.ai/artifact/QfeVH9PeDddQ3ACxBsNjHm">Estatística</a>
+    </div>
+  </section>
+
+  <footer>A prioridade A, B ou C é uma estimativa do que o Cebraspe costuma cobrar em provas policiais, não uma estatística oficial. A divisão de questões por disciplina dentro de P1 e P2 não foi informada nas fontes consultadas; confira no edital. Seu progresso fica salvo nesta página.</footer>
+</div>
+
+<script>
+(function(){
+const WEEKS={"1": [{"d": "Direito Constitucional", "p": "P1", "c": "1. Constituição e princípios fundamentais", "pr": "B", "q": 12, "a": "Princípios fundamentais"}, {"d": "Direito Constitucional", "p": "P1", "c": "2. Aplicabilidade das normas", "pr": "C", "q": 6, "a": "Aplicabilidade das normas constitucionais"}, {"d": "Direito Administrativo", "p": "P1", "c": "1. Estado, governo e administração", "pr": "C", "q": 6, "a": "Estado, governo e administração pública"}, {"d": "Direito Administrativo", "p": "P1", "c": "2. Princípios da administração", "pr": "A", "q": 20, "a": "Princípios da administração pública"}, {"d": "Direito Penal", "p": "P1", "c": "1. Princípios, fontes e interpretação", "pr": "B", "q": 12, "a": "Princípios do direito penal"}, {"d": "Direito Penal", "p": "P1", "c": "2. Lei penal no tempo e no espaço", "pr": "B", "q": 12, "a": "Aplicação da lei penal"}, {"d": "Direito Processual Penal", "p": "P1", "c": "1. Princípios e disposições constitucionais", "pr": "B", "q": 12, "a": "Princípios do processo penal"}, {"d": "Legislação Estadual", "p": "P1", "c": "1a. Estatuto dos Servidores de PE: provimento, posse, estágio", "pr": "A", "q": 20, "a": "Lei 6.123/1968 (PE); Estatuto dos Servidores de Pernambuco"}, {"d": "Português", "p": "P2", "c": "1. Compreensão, interpretação, tipos e gêneros", "pr": "A", "q": 20, "a": "Compreensão e interpretação de textos; Tipologia textual"}, {"d": "Português", "p": "P2", "c": "2. Coesão e coerência", "pr": "A", "q": 20, "a": "Coesão; Coerência"}, {"d": "Informática", "p": "P2", "c": "1. Windows 11", "pr": "A", "q": 20, "a": "Windows 11; Windows 10"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "1. Números reais, potências e raízes", "pr": "C", "q": 6, "a": "Números reais; Potenciação"}, {"d": "Contabilidade Geral", "p": "P2", "c": "1. Conceitos e estrutura conceitual", "pr": "C", "q": 6, "a": "Estrutura conceitual; CPC 00"}, {"d": "Estatística", "p": "P2", "c": "1. Variáveis e tabelas de frequência", "pr": "A", "q": 20, "a": "Distribuição de frequências; Variáveis"}], "2": [{"d": "Direito Constitucional", "p": "P1", "c": "3. Poder constituinte", "pr": "C", "q": 6, "a": "Poder constituinte"}, {"d": "Direito Administrativo", "p": "P1", "c": "3. Organização administrativa", "pr": "A", "q": 20, "a": "Organização administrativa; Administração indireta"}, {"d": "Direito Penal", "p": "P1", "c": "3. Teoria do crime", "pr": "A", "q": 20, "a": "Teoria do crime; Excludentes de ilicitude; Tentativa"}, {"d": "Direito Processual Penal", "p": "P1", "c": "2. Aplicação da lei processual penal", "pr": "B", "q": 12, "a": "Aplicação da lei processual penal"}, {"d": "Direito Processual Penal", "p": "P1", "c": "3. Inquérito policial I", "pr": "A", "q": 20, "a": "Inquérito policial"}, {"d": "Português", "p": "P2", "c": "3. Semântica, figuras e vícios de linguagem", "pr": "B", "q": 12, "a": "Semântica; Figuras de linguagem"}, {"d": "Português", "p": "P2", "c": "4. Ortografia oficial e acentuação", "pr": "C", "q": 6, "a": "Ortografia; Acentuação gráfica"}, {"d": "Informática", "p": "P2", "c": "2. Redes, internet, intranet e extranet", "pr": "A", "q": 20, "a": "Redes de computadores; Internet; Intranet"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "2. Razão, proporção e regra de três", "pr": "A", "q": 20, "a": "Razão e proporção; Regra de três"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "3. Porcentagem", "pr": "A", "q": 20, "a": "Porcentagem"}, {"d": "Contabilidade Geral", "p": "P2", "c": "2. Patrimônio e equação patrimonial", "pr": "A", "q": 20, "a": "Patrimônio; Equação patrimonial"}, {"d": "Contabilidade Geral", "p": "P2", "c": "3. Contas e plano de contas", "pr": "A", "q": 20, "a": "Contas; Plano de contas"}, {"d": "Estatística", "p": "P2", "c": "2. Gráficos e diagramas", "pr": "B", "q": 12, "a": "Gráficos estatísticos"}], "3": [{"d": "Direito Constitucional", "p": "P1", "c": "4. Direitos fundamentais e liberdades do art. 5º", "pr": "A", "q": 20, "a": "Direitos e garantias fundamentais; Direitos individuais"}, {"d": "Direito Constitucional", "p": "P1", "c": "5. Garantias penais e processuais do art. 5º", "pr": "A", "q": 20, "a": "Direitos individuais e coletivos"}, {"d": "Direito Administrativo", "p": "P1", "c": "4. Poderes administrativos", "pr": "A", "q": 20, "a": "Poderes administrativos; Poder de polícia"}, {"d": "Direito Administrativo", "p": "P1", "c": "5. Ato administrativo", "pr": "A", "q": 20, "a": "Atos administrativos"}, {"d": "Direito Penal", "p": "P1", "c": "4. Crimes contra a vida", "pr": "A", "q": 20, "a": "Crimes contra a vida"}, {"d": "Direito Penal", "p": "P1", "c": "5. Lesão, periclitação e honra", "pr": "B", "q": 12, "a": "Lesão corporal; Crimes contra a honra"}, {"d": "Direito Processual Penal", "p": "P1", "c": "4. Inquérito II e Lei 12.830/2013", "pr": "A", "q": 20, "a": "Inquérito policial; Arquivamento; ANPP"}, {"d": "Legislação Estadual", "p": "P1", "c": "1b. Estatuto dos Servidores de PE: licenças, regime disciplinar", "pr": "A", "q": 20, "a": "Lei 6.123/1968 (PE); Regime disciplinar"}, {"d": "Português", "p": "P2", "c": "5. Estrutura e formação de palavras", "pr": "C", "q": 6, "a": "Formação das palavras"}, {"d": "Informática", "p": "P2", "c": "3. Busca, e-mail, nuvem e web", "pr": "C", "q": 6, "a": "Correio eletrônico; Computação em nuvem"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "4. Equações, inequações e sistemas", "pr": "B", "q": 12, "a": "Equações; Sistemas lineares"}, {"d": "Contabilidade Geral", "p": "P2", "c": "4. Escrituração e livros contábeis", "pr": "B", "q": 12, "a": "Escrituração; Lançamentos"}, {"d": "Estatística", "p": "P2", "c": "3. Medidas de posição", "pr": "A", "q": 20, "a": "Média; Mediana; Moda"}], "4": [{"d": "Direito Constitucional", "p": "P1", "c": "6. Remédios constitucionais", "pr": "A", "q": 20, "a": "Remédios constitucionais; Habeas corpus"}, {"d": "Direito Administrativo", "p": "P1", "c": "6. Agentes públicos", "pr": "A", "q": 20, "a": "Agentes públicos"}, {"d": "Direito Penal", "p": "P1", "c": "6. Liberdade individual", "pr": "B", "q": 12, "a": "Crimes contra a liberdade individual"}, {"d": "Direito Penal", "p": "P1", "c": "7. Patrimônio I: furto, roubo e extorsão", "pr": "A", "q": 20, "a": "Furto; Roubo; Extorsão"}, {"d": "Direito Processual Penal", "p": "P1", "c": "5. Prova I: ilicitude e perícia", "pr": "A", "q": 20, "a": "Provas; Provas ilícitas; Cadeia de custódia"}, {"d": "Português", "p": "P2", "c": "6. Classes de palavras, tempos e modos verbais", "pr": "A", "q": 20, "a": "Classes de palavras; Verbos"}, {"d": "Português", "p": "P2", "c": "7. Termos da oração, coordenação e subordinação", "pr": "B", "q": 12, "a": "Sintaxe; Período composto"}, {"d": "Informática", "p": "P2", "c": "4. Navegadores: Edge, Chrome e Firefox", "pr": "B", "q": 12, "a": "Navegadores"}, {"d": "Informática", "p": "P2", "c": "5. Segurança da informação e malwares", "pr": "A", "q": 20, "a": "Segurança da informação; Malware"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "5. Funções: afim, composta e inversa", "pr": "C", "q": 6, "a": "Funções"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "6. Quadrática, exponencial e logarítmica", "pr": "C", "q": 6, "a": "Função quadrática; Logaritmos"}, {"d": "Contabilidade Geral", "p": "P2", "c": "5. Atos e fatos; regimes de caixa e competência", "pr": "A", "q": 20, "a": "Fatos contábeis; Regime de competência"}, {"d": "Estatística", "p": "P2", "c": "4. Separatrizes e box plot", "pr": "B", "q": 12, "a": "Quartis; Box plot"}], "5": [{"d": "Direito Constitucional", "p": "P1", "c": "7. Direitos sociais", "pr": "B", "q": 12, "a": "Direitos sociais"}, {"d": "Direito Constitucional", "p": "P1", "c": "8. Nacionalidade", "pr": "A", "q": 20, "a": "Nacionalidade"}, {"d": "Direito Administrativo", "p": "P1", "c": "7. Serviços públicos e concessões", "pr": "C", "q": 6, "a": "Serviços públicos; Concessão"}, {"d": "Direito Administrativo", "p": "P1", "c": "8. Controle da administração", "pr": "B", "q": 12, "a": "Controle da administração pública"}, {"d": "Direito Penal", "p": "P1", "c": "8. Patrimônio II: estelionato e receptação", "pr": "B", "q": 12, "a": "Estelionato; Receptação"}, {"d": "Direito Processual Penal", "p": "P1", "c": "6. Prova II: meios de prova e busca", "pr": "A", "q": 20, "a": "Busca e apreensão; Reconhecimento de pessoas"}, {"d": "Direito Processual Penal", "p": "P1", "c": "7. Medidas cautelares pessoais", "pr": "B", "q": 12, "a": "Medidas cautelares"}, {"d": "Legislação Estadual", "p": "P1", "c": "2. Estatuto do Policial Civil (Lei 6.425/1972)", "pr": "A", "q": 20, "a": "Lei 6.425/1972 (PE); Estatuto do Policial Civil de Pernambuco"}, {"d": "Português", "p": "P2", "c": "8. Funções do QUE e do SE", "pr": "A", "q": 20, "a": "Pronome relativo; Partícula SE"}, {"d": "Informática", "p": "P2", "c": "6. Criptografia, certificado digital e backup", "pr": "B", "q": 12, "a": "Criptografia; Certificado digital; Backup"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "7. Análise combinatória", "pr": "A", "q": 20, "a": "Análise combinatória"}, {"d": "Contabilidade Geral", "p": "P2", "c": "6. Operações diversas", "pr": "A", "q": 20, "a": "Operações com mercadorias; Depreciação"}, {"d": "Estatística", "p": "P2", "c": "5. Medidas de dispersão", "pr": "A", "q": 20, "a": "Variância; Desvio padrão"}], "8": [{"d": "Direito Constitucional", "p": "P1", "c": "9. Direitos políticos e partidos", "pr": "B", "q": 12, "a": "Direitos políticos"}, {"d": "Direito Constitucional", "p": "P1", "c": "10. Organização político-administrativa e intervenção", "pr": "B", "q": 12, "a": "Organização do Estado; Intervenção"}, {"d": "Direito Administrativo", "p": "P1", "c": "9. Improbidade administrativa", "pr": "A", "q": 20, "a": "Improbidade administrativa (Lei 8.429/1992)"}, {"d": "Direito Penal", "p": "P1", "c": "9. Dignidade sexual", "pr": "B", "q": 12, "a": "Crimes contra a dignidade sexual"}, {"d": "Direito Penal", "p": "P1", "c": "10. Crimes de funcionário público", "pr": "A", "q": 20, "a": "Crimes praticados por funcionário público"}, {"d": "Direito Processual Penal", "p": "P1", "c": "8. Prisão em flagrante e custódia", "pr": "A", "q": 20, "a": "Prisão em flagrante; Audiência de custódia"}, {"d": "Português", "p": "P2", "c": "9. Concordância verbal e nominal", "pr": "A", "q": 20, "a": "Concordância verbal; Concordância nominal"}, {"d": "Português", "p": "P2", "c": "10. Regência verbal e nominal", "pr": "A", "q": 20, "a": "Regência"}, {"d": "Informática", "p": "P2", "c": "7. Word 365", "pr": "B", "q": 12, "a": "Microsoft Word"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "8. Sequências, PA e PG", "pr": "B", "q": 12, "a": "Sequências; Progressões"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "9. Lógica proposicional", "pr": "A", "q": 20, "a": "Lógica proposicional; Tabela-verdade; Equivalências"}, {"d": "Contabilidade Geral", "p": "P2", "c": "7. Balancete e conciliação", "pr": "B", "q": 12, "a": "Balancete de verificação"}, {"d": "Estatística", "p": "P2", "c": "6. Covariância e correlação", "pr": "B", "q": 12, "a": "Correlação"}], "9": [{"d": "Direito Constitucional", "p": "P1", "c": "11. Repartição de competências", "pr": "B", "q": 12, "a": "Repartição de competências"}, {"d": "Direito Administrativo", "p": "P1", "c": "10. Responsabilidade civil do Estado", "pr": "A", "q": 20, "a": "Responsabilidade civil do Estado"}, {"d": "Direito Administrativo", "p": "P1", "c": "11. Processo administrativo estadual (PE)", "pr": "B", "q": 12, "a": "Processo administrativo"}, {"d": "Direito Penal", "p": "P1", "c": "11. Particular e Administração da Justiça", "pr": "B", "q": 12, "a": "Crimes praticados por particular contra a administração"}, {"d": "Direito Penal", "p": "P1", "c": "12. Hediondos, tortura, racismo e abuso de autoridade", "pr": "A", "q": 20, "a": "Crimes hediondos; Tortura; Abuso de autoridade"}, {"d": "Direito Processual Penal", "p": "P1", "c": "9. Prisão preventiva e domiciliar", "pr": "A", "q": 20, "a": "Prisão preventiva"}, {"d": "Legislação Estadual", "p": "P1", "c": "3. PCCV da Polícia Civil (LC 137/2008)", "pr": "A", "q": 20, "a": "LC 137/2008 (PE)"}, {"d": "Português", "p": "P2", "c": "11. Crase", "pr": "A", "q": 20, "a": "Crase"}, {"d": "Português", "p": "P2", "c": "12. Colocação pronominal", "pr": "B", "q": 12, "a": "Colocação pronominal"}, {"d": "Informática", "p": "P2", "c": "8. Excel (I): fórmulas e referências", "pr": "A", "q": 20, "a": "Microsoft Excel"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "10. Argumentação e lógica de primeira ordem", "pr": "A", "q": 20, "a": "Argumentação; Quantificadores"}, {"d": "Contabilidade Geral", "p": "P2", "c": "8. Balanço patrimonial", "pr": "A", "q": 20, "a": "Balanço patrimonial"}, {"d": "Estatística", "p": "P2", "c": "7. Assimetria e curtose", "pr": "C", "q": 6, "a": "Assimetria; Curtose"}], "10": [{"d": "Direito Constitucional", "p": "P1", "c": "12. Poderes Legislativo, Executivo e Judiciário", "pr": "B", "q": 12, "a": "Poder Legislativo; Poder Judiciário"}, {"d": "Direito Constitucional", "p": "P1", "c": "13. Funções essenciais e administração pública", "pr": "A", "q": 20, "a": "Administração pública (arts. 37 a 41); Ministério Público"}, {"d": "Direito Administrativo", "p": "P1", "c": "12. Licitações I", "pr": "B", "q": 12, "a": "Licitações (Lei 14.133/2021)"}, {"d": "Direito Penal", "p": "P1", "c": "13. ECA, organizações criminosas e trânsito", "pr": "B", "q": 12, "a": "Organização criminosa; Crimes de trânsito"}, {"d": "Direito Processual Penal", "p": "P1", "c": "10. Prisão temporária", "pr": "A", "q": 20, "a": "Prisão temporária"}, {"d": "Direito Processual Penal", "p": "P1", "c": "11. Liberdade provisória e fiança", "pr": "B", "q": 12, "a": "Liberdade provisória; Fiança"}, {"d": "Português", "p": "P2", "c": "13. Pontuação", "pr": "A", "q": 20, "a": "Pontuação"}, {"d": "Informática", "p": "P2", "c": "9. Excel (II): funções, erros e gráficos", "pr": "B", "q": 12, "a": "Microsoft Excel - funções"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "11. Probabilidade", "pr": "A", "q": 20, "a": "Probabilidade"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "12. Conjuntos e diagramas de Venn", "pr": "A", "q": 20, "a": "Conjuntos"}, {"d": "Contabilidade Geral", "p": "P2", "c": "9. DRE e demais demonstrações", "pr": "A", "q": 20, "a": "DRE; Demonstrações contábeis"}, {"d": "Contabilidade Geral", "p": "P2", "c": "10. Critérios de avaliação", "pr": "B", "q": 12, "a": "Critérios de avaliação; Estoques"}, {"d": "Estatística", "p": "P2", "c": "8. Técnicas de amostragem", "pr": "B", "q": 12, "a": "Amostragem"}], "11": [{"d": "Direito Constitucional", "p": "P1", "c": "14. Defesa do Estado e segurança pública", "pr": "A", "q": 20, "a": "Segurança pública; Defesa do Estado"}, {"d": "Direito Administrativo", "p": "P1", "c": "13. Licitações II: contratação direta", "pr": "B", "q": 12, "a": "Dispensa e inexigibilidade"}, {"d": "Direito Administrativo", "p": "P1", "c": "14. Contratos administrativos", "pr": "B", "q": 12, "a": "Contratos administrativos"}, {"d": "Direito Penal", "p": "P1", "c": "14. Maria da Penha, Henry Borel e Drogas", "pr": "A", "q": 20, "a": "Lei Maria da Penha; Lei de Drogas"}, {"d": "Direito Penal", "p": "P1", "c": "15. Ambientais, Desarmamento e Juventude", "pr": "B", "q": 12, "a": "Estatuto do Desarmamento; Crimes ambientais"}, {"d": "Direito Processual Penal", "p": "P1", "c": "12. Juizados Especiais Criminais", "pr": "C", "q": 6, "a": "Juizados Especiais Criminais"}, {"d": "Legislação Estadual", "p": "P1", "c": "4. Segurança pública na Constituição de PE e LC 317/2015", "pr": "A", "q": 20, "a": "Constituição do Estado de Pernambuco"}, {"d": "Português", "p": "P2", "c": "14. Reescrita de frases e parágrafos", "pr": "A", "q": 20, "a": "Reescrita de frases"}, {"d": "Português", "p": "P2", "c": "15. Correspondência oficial", "pr": "C", "q": 6, "a": "Redação oficial; Manual de Redação da Presidência"}, {"d": "Informática", "p": "P2", "c": "10. PowerPoint 365", "pr": "C", "q": 6, "a": "Microsoft PowerPoint"}, {"d": "Raciocínio Lógico", "p": "P2", "c": "13. Problemas aritméticos, geométricos e matriciais", "pr": "B", "q": 12, "a": "Problemas aritméticos; Geometria; Matrizes"}, {"d": "Contabilidade Geral", "p": "P2", "c": "11. Normas Brasileiras de Contabilidade", "pr": "C", "q": 6, "a": "NBC; Normas Brasileiras de Contabilidade"}, {"d": "Estatística", "p": "P2", "c": "9. Probabilidade", "pr": "A", "q": 20, "a": "Probabilidade"}]};
+const START=new Date(2026,10,16);
+const PROVA=new Date(2027,2,7);
+const fmt=d=>d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+const META={
+ 1:{t:'Base 1'},2:{t:'Base 2'},3:{t:'Base 3'},4:{t:'Base 4'},5:{t:'Base 5'},
+ 6:{t:'Natal: semana leve',note:'Cerca de 8 horas. Nada de matéria nova.',fixed:[
+  ['Revisão','Refazer o caderno de erros das semanas 1 a 5',''],
+  ['Prova anterior','PC-PE 2016, Agente: primeira metade da prova, cronometrada','Órgão: PC-PE · Ano: 2016 · Cargo: Agente de Polícia'],
+  ['Discursiva','Uma discursiva da lista de temas',''],
+  ['Revisão leve','Assistir às animações de Penal e Processo Penal','']]},
+ 7:{t:'Ano-Novo: semana leve',note:'Cerca de 8 horas.',fixed:[
+  ['Prova anterior','PC-PE 2016, Agente: segunda metade e correção','Órgão: PC-PE · Ano: 2016 · Cargo: Agente de Polícia'],
+  ['Revisão','Revisão de véspera dos guias de Constitucional, Administrativo e Legislação Estadual',''],
+  ['Revisão leve','Animações de Constitucional, Administrativo e Legislação Estadual','']]},
+ 8:{t:'Base 6'},9:{t:'Base 7'},10:{t:'Base 8'},11:{t:'Base 9'},
+ 12:{t:'Segunda volta nos assuntos A',fixed:[
+  ['P1','40 questões novas dos assuntos A de Penal e Processo Penal','Mesmos assuntos A · Excluir resolvidas'],
+  ['P1','30 questões novas dos assuntos A de Constitucional e Administrativo','Mesmos assuntos A · Excluir resolvidas'],
+  ['P2','40 questões novas de Português (prioridade A)','Mesmos assuntos A · Excluir resolvidas'],
+  ['P2','40 questões novas de Informática e Raciocínio Lógico (prioridade A)','Mesmos assuntos A · Excluir resolvidas'],
+  ['P2','30 questões novas de Contabilidade e Estatística (prioridade A)','Mesmos assuntos A · Excluir resolvidas'],
+  ['Simulado','Simulado 1: 20 questões de P1 e 40 de P2, no tempo da prova','Banca Cebraspe · Múltipla escolha · disciplinas do edital'],
+  ['Discursiva','Uma discursiva','']]},
+ 13:{t:'Carnaval: semana leve',note:'Cerca de 8 horas.',fixed:[
+  ['Revisão','Caderno de erros completo, separando os assuntos que mais errou',''],
+  ['Revisão','Revisão de véspera dos guias de Português e Informática',''],
+  ['Discursiva','Uma discursiva','']]},
+ 14:{t:'Pontos fracos',fixed:[
+  ['Simulado','Simulado 2: 60 questões no tempo da prova','Banca Cebraspe · Múltipla escolha'],
+  ['Reforço','Os 3 assuntos com mais erros: reler o capítulo e fazer 20 questões novas de cada','Filtre pelas questões que você errou e depois pelas não resolvidas'],
+  ['Revisão leve','Animação de Informática',''],
+  ['Discursiva','Uma discursiva','']]},
+ 15:{t:'Reta final 1',fixed:[
+  ['Simulado','Simulado 3: 60 questões no tempo da prova','Banca Cebraspe · Múltipla escolha'],
+  ['Revisão','Revisão de véspera dos guias de Raciocínio Lógico, Contabilidade e Estatística',''],
+  ['Reforço','10 questões novas de prioridade A em cada disciplina da P2','Excluir resolvidas'],
+  ['Discursiva','Última discursiva completa, cronometrada','']]},
+ 16:{t:'Reta final 2',note:'Prova no domingo, 7/3, à tarde.',fixed:[
+  ['Revisão','Revisão de véspera dos guias de Penal, Processo Penal, Constitucional, Administrativo e Legislação Estadual',''],
+  ['Revisão leve','Rever as seis animações',''],
+  ['Reforço','10 questões de prioridade A por disciplina, só para manter o ritmo','Excluir resolvidas'],
+  ['Véspera','Sábado 6/3: descanso, documento com foto, caneta preta transparente e conferir o local de prova','']]}
+};
+const weeks=[];
+for(let w=1;w<=16;w++){
+  const m=META[w];const items=[];
+  if(WEEKS[w])WEEKS[w].forEach((x,i)=>items.push({id:'w'+w+'-'+i,kind:'cap',...x}));
+  (m.fixed||[]).forEach((f,i)=>items.push({id:'w'+w+'-f'+i,kind:'fix',tag:f[0],c:f[1],a:f[2]}));
+  if(WEEKS[w]){items.push({id:'w'+w+'-erros',kind:'fix',tag:'Domingo',c:'Refazer as questões erradas da semana',a:''});
+    if(w>=2)items.push({id:'w'+w+'-disc',kind:'fix',tag:'Discursiva',c:'Uma discursiva da lista de temas',a:''});}
+  const s=new Date(START);s.setDate(s.getDate()+(w-1)*7);const e=new Date(s);e.setDate(e.getDate()+6);
+  weeks.push({w,title:m.t,note:m.note,items,s,e});
+}
+const today=new Date();today.setHours(0,0,0,0);
+document.getElementById('dias').textContent=Math.max(0,Math.round((PROVA-today)/864e5));
+let qtot=0;weeks.forEach(wk=>wk.items.forEach(it=>{if(it.q)qtot+=it.q}));
+document.getElementById('qtot').textContent=qtot.toLocaleString('pt-BR');
+
+let done={};
+const host=document.getElementById('weeks');
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+weeks.forEach(wk=>{
+  const isNow=today>=wk.s&&today<=wk.e || (wk.w===1&&today<wk.s);
+  const d=document.createElement('details');d.className='week';d.id='semana-'+wk.w;if(isNow)d.open=true;
+  const total=wk.items.length;
+  let html=`<summary><span class="wnum">${String(wk.w).padStart(2,'0')}</span><span class="wtitle">${esc(wk.title)}${isNow?'<span class="now">AGORA</span>':''}</span><span class="wpct" data-w="${wk.w}">0/${total}</span><span class="wdates">${fmt(wk.s)} a ${fmt(wk.e)}</span></summary><div class="wbody">`;
+  if(wk.note)html+=`<p class="wnote">${esc(wk.note)}</p>`;
+  wk.items.forEach(it=>{
+    let meta,ttl,filt='';
+    if(it.kind==='cap'){
+      meta=`<span class="chip ${it.p.toLowerCase()}">${it.p}</span><span class="chip p${it.pr.toLowerCase()}">${it.pr}</span><span class="disc">${esc(it.d)}</span>`;
+      ttl=`Guia cap. ${esc(it.c)} + ${it.q} questões`;
+      filt=`Disciplina: ${esc(it.d)} · Assunto: ${esc(it.a)}`;
+    }else{
+      meta=`<span class="chip fx">${esc(it.tag)}</span>`;ttl=esc(it.c);if(it.a)filt=esc(it.a);
+    }
+    html+=`<label class="item" data-id="${it.id}"><input type="checkbox" id="${it.id}"><span><span class="meta">${meta}</span><span class="ttl">${ttl}</span>${filt?`<div class="filt">${filt}</div>`:''}</span></label>`;
+  });
+  d.innerHTML=html+'</div>';host.appendChild(d);
+});
+const allIds=weeks.flatMap(wk=>wk.items.map(i=>i.id));
+function paint(){
+  let n=0;
+  document.querySelectorAll('.item').forEach(el=>{const v=!!done[el.dataset.id];el.querySelector('input').checked=v;el.classList.toggle('done',v);if(v)n++;});
+  weeks.forEach(wk=>{const k=wk.items.filter(i=>done[i.id]).length;const el=document.querySelector(`.wpct[data-w="${wk.w}"]`);el.textContent=k+'/'+wk.items.length;el.classList.toggle('done',k===wk.items.length);});
+  document.getElementById('feitos').textContent=n;
+  document.getElementById('feitosl').textContent='de '+allIds.length+' tarefas feitas';
+  document.getElementById('gbar').style.width=(n/allIds.length*100)+'%';
+}
+paint();
+
+/* ---- armazenamento: db da página; se indisponível, só neste navegador ---- */
+const statusEl=document.getElementById('status');
+let ref=null,exists=false,queue=Promise.resolve();
+function local(save){try{if(save)localStorage.setItem('crono-pcpe',JSON.stringify(done));else{const v=localStorage.getItem('crono-pcpe');if(v)done=JSON.parse(v)||{};}}catch(e){}}
+function save(id,v){
+  done[id]=v;paint();
+  if(!ref){local(true);return;}
+  queue=queue.then(async()=>{
+    try{ if(exists)await ref.update({feito:{[id]:v}}); else {await ref.set({feito:{...done}});exists=true;} statusEl.textContent='Progresso salvo.';}
+    catch(e){statusEl.textContent='Não consegui salvar agora ('+(e&&e.code||'erro')+'). A marcação fica só nesta tela.';}
+  });
+}
+host.addEventListener('change',e=>{const t=e.target;if(t.matches('input[type=checkbox]'))save(t.id,t.checked);});
+local(false);paint();
+(async()=>{
+  const db=window.claude&&window.claude.use?await window.claude.use('db'):null;
+  if(!db){statusEl.textContent='Progresso salvo só neste navegador.';return;}
+  ref=db.doc('progresso/geral');
+  const timer=setTimeout(()=>{statusEl.textContent='Ainda não consegui carregar o progresso salvo. Suas marcações aparecem quando a conexão voltar.';},10000);
+  ref.onSnapshot(snap=>{
+    if(!(snap.metadata&&snap.metadata.fromCache)){clearTimeout(timer);statusEl.textContent='Progresso sincronizado entre celular e computador.';}
+    exists=snap.exists;
+    if(snap.exists){const f=(snap.data()||{}).feito||{};done={...f};paint();}
+  },err=>{clearTimeout(timer);statusEl.textContent='Não consegui ler o progresso salvo ('+(err&&err.code||'erro')+').';ref=null;});
+})();
+})();
+</script>

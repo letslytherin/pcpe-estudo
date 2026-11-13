@@ -1,0 +1,453 @@
+<title>Penal em Palitinhos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: uma coluna estreita de "fichas de ocorrência"; cada ficha = palco animado + legenda + regra fixa */
+:root{
+  --bg:#E9EDF2; --card:#FFFFFF; --stage:#F8FAFC; --line:#D3DAE3; --grid:#E8EDF3;
+  --ink:#1A2233; --muted:#5B6678; --accent:#1F3F94; --accent-soft:#E3E9F8;
+  --perp:#C2410C; --alt:#0F766E; --ok:#15803D; --no:#B42318;
+  --water:#3E86C6; --wood:#8A5A2B; --metal:#9AA4B2; --money:#2F9E5B; --folder:#D9A520; --bag:#7C3AED;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1320; --card:#161D2D; --stage:#1B2336; --line:#2C3650; --grid:#212A40;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --perp:#F49660; --alt:#4FD1C0; --ok:#5BD98A; --no:#FF8A80;
+  --water:#4F93D6; --wood:#C08A55; --metal:#7D889A; --money:#4CC27F; --folder:#E5B93A; --bag:#A78BFA;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1320; --card:#161D2D; --stage:#1B2336; --line:#2C3650; --grid:#212A40;
+  --ink:#E7EBF3; --muted:#9AA6BC; --accent:#93ABF5; --accent-soft:#232F52;
+  --perp:#F49660; --alt:#4FD1C0; --ok:#5BD98A; --no:#FF8A80;
+  --water:#4F93D6; --wood:#C08A55; --metal:#7D889A; --money:#4CC27F; --folder:#E5B93A; --bag:#A78BFA;
+  color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+.wrap{max-width:560px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 48px;display:flex;flex-direction:column;gap:22px}
+header{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,8vw,40px);line-height:1.05;margin:0;text-wrap:balance}
+.lead{margin:0;color:var(--muted);max-width:60ch}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav button{font:600 13px var(--f-body);color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:7px 12px;cursor:pointer}
+nav button.speed{background:var(--accent);color:var(--card)}
+nav button:focus-visible,.play:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:12px}
+.card-head{padding:14px 16px 10px;display:flex;flex-direction:column;gap:2px}
+.card-head .art{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.card-head h2{font-family:var(--f-display);font-weight:600;font-size:22px;line-height:1.15;margin:0;text-wrap:balance}
+.stage{border-block:1px solid var(--line);background:var(--stage)}
+.stage svg{display:block;width:100%;height:auto;max-width:100%}
+.player{display:flex;flex-direction:column;gap:10px;padding:12px 16px 14px}
+.cap{margin:0;min-height:3em;font-size:16px}
+.ctrl{display:flex;align-items:center;gap:12px}
+.play{font:700 14px var(--f-body);background:var(--accent);color:var(--card);border:0;border-radius:10px;padding:9px 14px;cursor:pointer;flex:none}
+.bar{flex:1;height:4px;background:var(--grid);border-radius:4px;overflow:hidden;min-width:0}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.rule{border-top:1px dashed var(--line);padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px}
+.rule h3{margin:0;font:700 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rule ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.rule p{margin:0}
+.trap{background:var(--accent-soft);border-radius:10px;padding:10px 12px;font-size:15px}
+.trap b{color:var(--accent)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 12px var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+footer{color:var(--muted);font-size:13px}
+/* SVG */
+.gnd{stroke:var(--ink);stroke-width:2;stroke-linecap:round;opacity:.55}
+.gridl{stroke:var(--grid);stroke-width:1}
+.fig .lb{stroke:var(--ink);stroke-width:3.2;stroke-linecap:round;fill:none}
+.fig .hd{stroke:var(--ink);stroke-width:3.2;fill:var(--stage)}
+.fig.perp .lb,.fig.perp .hd{stroke:var(--perp)}
+.fig.alt .lb,.fig.alt .hd{stroke:var(--alt)}
+.nm{font:700 10px var(--f-body);fill:var(--muted);text-anchor:middle}
+.nm.perp{fill:var(--perp)} .nm.alt{fill:var(--alt)}
+.wood{stroke:var(--wood);stroke-width:4;stroke-linecap:round}
+.rock{fill:var(--metal)}
+.handle{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.blade{fill:var(--metal)}
+.phone{fill:var(--ink)}
+.strap{stroke:var(--bag);stroke-width:2;fill:none}
+.bag{fill:var(--bag)}
+.wallet{fill:var(--wood)}
+.folder{fill:var(--folder)}
+.money{fill:var(--money)}
+.carbody{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2}
+.wheel{fill:var(--ink)}
+.glass{fill:var(--water);fill-opacity:.28;stroke:var(--ink);stroke-width:1.5}
+.shard{fill:var(--water);fill-opacity:.55}
+.sun{fill:var(--folder)} .ray{stroke:var(--folder);stroke-width:2.5;stroke-linecap:round}
+.heat{stroke:var(--perp);stroke-width:1.8;fill:none;stroke-linecap:round}
+.water{fill:var(--water);fill-opacity:.82}
+.wave{stroke:var(--stage);stroke-width:1.6;fill:none;opacity:.7}
+.shop{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.shopwin{fill:var(--accent-soft);stroke:var(--ink);stroke-width:1.5}
+.sign{font:800 11px var(--f-display);fill:var(--ink);text-anchor:middle;letter-spacing:.1em}
+.desk{fill:var(--wood);stroke:var(--ink);stroke-width:2}
+.deskline{stroke:var(--ink);stroke-width:1.5}
+.bub{fill:var(--card);stroke:var(--ink);stroke-width:1.6}
+.bubt{font:700 11px var(--f-body);fill:var(--ink);text-anchor:middle}
+.tagbg{fill:var(--accent-soft)}
+.tagt{font:500 10.5px var(--f-mono);fill:var(--accent)}
+.stampbox{fill:var(--card);fill-opacity:.94;stroke-width:2.6}
+.stampt{font:800 13px var(--f-display);letter-spacing:.06em;text-anchor:middle}
+.k-ok .stampbox{stroke:var(--ok)} .k-ok .stampt{fill:var(--ok)}
+.k-no .stampbox{stroke:var(--no)} .k-no .stampt{fill:var(--no)}
+.k-info .stampbox{stroke:var(--accent)} .k-info .stampt{fill:var(--accent)}
+.pixbox{fill:var(--card);stroke:var(--money);stroke-width:2}
+.pixt{font:700 10px var(--f-mono);fill:var(--money);text-anchor:middle}
+.pixv{font:800 14px var(--f-display);fill:var(--ink);text-anchor:middle}
+@media (prefers-reduced-motion: reduce){.bar i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">PC-PE · Agente de Polícia · Direito Penal</span>
+    <h1>Penal em Palitinhos</h1>
+    <p class="lead">Cinco cenas curtas com situações do dia a dia. Assista, veja o carimbo e confira a regra logo abaixo de cada uma. A cena começa sozinha quando aparece na tela.</p>
+    <nav id="nav" aria-label="Cenas"></nav>
+  </header>
+  <main id="cards" style="display:flex;flex-direction:column;gap:22px"></main>
+  <footer>Cenas e textos de estudo próprios, baseados no Código Penal (Decreto-Lei 2.848/1940) e nas súmulas citadas. Nomes e situações são fictícios.</footer>
+</div>
+
+<script>
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const REDUCE=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mk(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in (attrs||{}))e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function txt(parent,str,attrs){const t=mk('text',attrs,parent);t.textContent=str;return t;}
+function width(t,str,per){let w=0;try{w=t.getBBox().width}catch(e){}return w||str.length*per;}
+
+/* ---------- objetos que as figuras seguram ---------- */
+const HOLD={
+  stick:g=>mk('line',{x1:0,y1:10,x2:0,y2:52,class:'wood'},g),
+  rock:g=>mk('circle',{cx:0,cy:25,r:5.5,class:'rock'},g),
+  knife:g=>{mk('line',{x1:0,y1:20,x2:0,y2:27,class:'handle'},g);mk('path',{d:'M-2.4 27 L2.4 27 L0 43 Z',class:'blade'},g);},
+  phone:g=>mk('rect',{x:-4.5,y:19,width:9,height:14,rx:2,class:'phone'},g),
+  bag:g=>{mk('path',{d:'M-6 21 Q0 13 6 21',class:'strap'},g);mk('rect',{x:-10,y:21,width:20,height:16,rx:4,class:'bag'},g);},
+  wallet:g=>mk('rect',{x:-6,y:20,width:12,height:8,rx:1.5,class:'wallet'},g),
+  folder:g=>mk('rect',{x:-9,y:19,width:18,height:13,rx:1.5,class:'folder'},g),
+  money:g=>mk('rect',{x:-8,y:20,width:16,height:9,rx:1,class:'money'},g)
+};
+
+/* ---------- cenários e objetos ---------- */
+const PROPS={
+  car(g){mk('path',{d:'M-46 -40 L-32 -76 L38 -76 L54 -40 Z',class:'carbody'},g);
+    mk('rect',{x:-76,y:-42,width:152,height:32,rx:9,class:'carbody'},g);
+    mk('circle',{cx:-44,cy:-9,r:9,class:'wheel'},g);mk('circle',{cx:46,cy:-9,r:9,class:'wheel'},g);},
+  glass(g){mk('path',{d:'M-28 -71 L34 -71 L45 -44 L-39 -44 Z',class:'glass'},g);},
+  shards(g){[[-46,-30,'M0 0 l6 -4 l2 7z'],[-58,-6,'M0 0 l7 -2 l-3 6z'],[-36,-4,'M0 0 l5 -5 l3 5z'],[-62,-20,'M0 0 l4 -6 l4 6z'],[-30,-52,'M0 0 l6 2 l-4 5z']]
+    .forEach(([x,y,d])=>mk('path',{d,transform:`translate(${x} ${y})`,class:'shard'},g));},
+  sun(g){mk('circle',{r:13,class:'sun'},g);for(let i=0;i<8;i++){const a=i*Math.PI/4;mk('line',{x1:Math.cos(a)*18,y1:Math.sin(a)*18,x2:Math.cos(a)*25,y2:Math.sin(a)*25,class:'ray'},g);}},
+  heat(g){[-14,0,14].forEach(x=>mk('path',{d:`M${x} 0 q4 -5 0 -10 q-4 -5 0 -10`,class:'heat'},g));},
+  river(g){mk('rect',{x:0,y:-2,width:115,height:44,class:'water'},g);
+    [8,20].forEach(y=>mk('path',{d:`M8 ${y} q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0`,class:'wave'},g));},
+  shop(g){mk('rect',{x:-48,y:-112,width:96,height:112,class:'shop'},g);mk('rect',{x:-38,y:-80,width:76,height:46,class:'shopwin'},g);
+    txt(g,'LOJA',{x:0,y:-92,class:'sign'});},
+  desk(g){mk('rect',{x:-52,y:-31,width:104,height:31,class:'desk'},g);mk('line',{x1:-40,y1:-17,x2:-6,y2:-17,class:'deskline'},g);},
+  file(g){mk('rect',{x:-9,y:-6,width:18,height:12,rx:1.5,class:'folder'},g);},
+  pix(g){mk('rect',{x:-46,y:-22,width:92,height:44,rx:7,class:'pixbox'},g);txt(g,'PIX ENVIADO',{y:-5,class:'pixt'});txt(g,'R$ 500,00',{y:13,class:'pixv'});}
+};
+
+/* ---------- atores ---------- */
+function makeFig(svg,d){
+  const init={x:0,y:180,r:0,f:1,s:1,o:1,aF:-12,aB:12,lF:-10,lB:10,walk:0};
+  (d.holdF||[]).concat(d.holdB||[]).forEach(n=>init['h_'+n]=0);
+  Object.assign(init,d.st||{});
+  const outer=mk('g',{},svg), inner=mk('g',{class:'fig'+(d.perp?' perp':d.alt?' alt':'')},outer);
+  const hold={};
+  const limb=(len,items)=>{const g=mk('g',{},inner);mk('line',{x1:0,y1:0,x2:0,y2:len,class:'lb'},g);(items||[]).forEach(n=>{const h=mk('g',{},g);HOLD[n](h);hold[n]=h;});return g;};
+  const aB=limb(22,d.holdB), lB=limb(25);
+  mk('line',{x1:0,y1:-53,x2:0,y2:-25,class:'lb'},inner);
+  mk('circle',{cx:0,cy:-62,r:9,class:'hd'},inner);
+  const lF=limb(25), aF=limb(22,d.holdF);
+  if(d.label)txt(outer,d.label,{y:15,class:'nm'+(d.perp?' perp':d.alt?' alt':'')});
+  return {init,st:{...init},render(now){
+    const s=this.st, sw=REDUCE?0:s.walk*Math.sin(now*0.012);
+    outer.setAttribute('transform',`translate(${s.x} ${s.y}) scale(${s.s})`);outer.style.opacity=s.o;
+    inner.setAttribute('transform',`rotate(${s.r}) scale(${s.f} 1)`);
+    aF.setAttribute('transform',`translate(0 -48) rotate(${s.aF+sw*-18})`);
+    aB.setAttribute('transform',`translate(0 -48) rotate(${s.aB+sw*18})`);
+    lF.setAttribute('transform',`translate(0 -25) rotate(${s.lF+sw*26})`);
+    lB.setAttribute('transform',`translate(0 -25) rotate(${s.lB-sw*26})`);
+    for(const n in hold)hold[n].style.opacity=s['h_'+n];
+  }};
+}
+function makeProp(svg,d){
+  const init=Object.assign({x:d.x||0,y:d.y||0,r:0,s:1,o:1},d.st||{});
+  const g=mk('g',{},svg);
+  if(d.t==='stamp'){Object.assign(init,{s:.5,o:0},d.st||{});
+    const r=mk('g',{transform:'rotate(-6)',class:'k-'+(d.kind||'info')},g);
+    const box=mk('rect',{class:'stampbox',rx:5},r);const t=txt(r,d.text,{y:5,class:'stampt'});
+    const w=width(t,d.text,9)+28;box.setAttribute('x',-w/2);box.setAttribute('y',-17);box.setAttribute('width',w);box.setAttribute('height',34);
+  }else if(d.t==='bubble'){Object.assign(init,{o:0,s:.85},d.st||{});
+    const box=mk('rect',{class:'bub',rx:9,y:-36,height:26},g);mk('path',{d:'M-6 -10.8 L0 0 L6 -10.8',class:'bub'},g);
+    mk('rect',{x:-5.2,y:-12.6,width:10.4,height:3,fill:'var(--card)'},g);
+    const t=txt(g,d.text,{y:-19,class:'bubt'});const w=width(t,d.text,6.2)+20;
+    let left=-w/2;const absL=init.x+left,absR=init.x+left+w;
+    if(absL<6)left+=6-absL; if(absR>354)left-=absR-354;
+    box.setAttribute('x',left);box.setAttribute('width',w);t.setAttribute('x',left+w/2);
+  }else if(d.t==='tag'){Object.assign(init,{o:0},d.st||{});
+    const box=mk('rect',{class:'tagbg',rx:6,x:0,y:-13,height:19},g);const t=txt(g,d.text,{x:8,y:0,class:'tagt'});
+    box.setAttribute('width',width(t,d.text,6.4)+16);
+  }else PROPS[d.t](g);
+  return {init,st:{...init},render(){const s=this.st;g.setAttribute('transform',`translate(${s.x} ${s.y}) rotate(${s.r}) scale(${s.s})`);g.style.opacity=s.o;}};
+}
+
+/* ---------- motor de animação ---------- */
+const tweens=[];
+const EASE={io:t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2,lin:t=>t};
+function tween(a,props,ms,ez){const now=performance.now();
+  for(const k in props){for(let i=tweens.length-1;i>=0;i--)if(tweens[i].a===a&&tweens[i].k===k)tweens.splice(i,1);
+    if(!ms||REDUCE){a.st[k]=props[k];continue;}
+    tweens.push({a,k,from:a.st[k]??0,to:props[k],t0:now,ms,ez:ez||'io'});}}
+const players=[];
+const SPEEDS=[{v:1,t:'Ritmo: normal'},{v:1.35,t:'Ritmo: rápido'},{v:.75,t:'Ritmo: lento'}];
+let si=0;try{si=Math.max(0,SPEEDS.findIndex(x=>x.t===localStorage.getItem('pp-ritmo')));}catch(e){}
+const SPEED={get v(){return SPEEDS[si].v}};
+function loop(now){
+  for(let i=tweens.length-1;i>=0;i--){const t=tweens[i];const p=Math.min(1,(now-t.t0)/t.ms);t.a.st[t.k]=t.from+(t.to-t.from)*EASE[t.ez](p);if(p>=1)tweens.splice(i,1);}
+  for(const p of players)if(p.visible||p.dirty){p.render(now);p.dirty=false;}
+  requestAnimationFrame(loop);
+}
+const wait=ms=>new Promise(r=>setTimeout(r,REDUCE?Math.max(ms,1600):ms));
+
+class Player{
+  constructor(scene,card){
+    this.scene=scene;this.tok=0;this.visible=false;this.dirty=true;this.played=false;
+    const svg=mk('svg',{viewBox:'0 0 360 220',role:'img','aria-label':'Animação: '+scene.title},card.querySelector('.stage'));
+    for(let y=40;y<180;y+=28)mk('line',{x1:0,y1:y,x2:360,y2:y,class:'gridl'},svg);
+    (scene.ground||[[0,360]]).forEach(([a,b])=>mk('line',{x1:a,y1:180,x2:b,y2:180,class:'gnd'},svg));
+    this.actors={};
+    scene.actors.forEach(d=>{this.actors[d.id]=d.t==='fig'?makeFig(svg,d):makeProp(svg,d);});
+    this.cap=card.querySelector('.cap');this.bar=card.querySelector('.bar i');this.btn=card.querySelector('.play');
+    this.btn.addEventListener('click',()=>this.play());
+    this.cap.textContent=scene.lead;
+  }
+  reset(){for(const id in this.actors){const a=this.actors[id];for(let i=tweens.length-1;i>=0;i--)if(tweens[i].a===a)tweens.splice(i,1);a.st={...a.init};}this.dirty=true;}
+  render(now){for(const id in this.actors)this.actors[id].render(now);}
+  async play(){
+    const tok=++this.tok;this.played=true;this.reset();this.btn.textContent='Recomeçar';
+    const steps=this.scene.steps;
+    for(let i=0;i<steps.length;i++){
+      if(tok!==this.tok)return;
+      const s=steps[i];
+      if(s.reset)this.reset();
+      if(s.set)for(const id in s.set)Object.assign(this.actors[id].st,s.set[id]);
+      if(s.to)for(const id in s.to){const p=s.to[id];tween(this.actors[id],p,s.ms??600,s.ez||(p.walk>0?'lin':'io'));}
+      if(s.cap)this.cap.textContent=s.cap;
+      this.bar.style.width=((i+1)/steps.length*100)+'%';this.dirty=true;
+      /* ritmo de leitura: legenda fica ~1 s + 50 ms por caractere; ajustável pelo botão de velocidade */
+      const base=(s.d??1200)*1.2;
+      await wait((s.cap?Math.max(base,1000+s.cap.length*50):base)/SPEED.v);
+    }
+    if(tok===this.tok)this.btn.textContent='Ver de novo';
+  }
+}
+
+/* ---------- cenas ---------- */
+const STAMP=(id,text,kind,y)=>({id,t:'stamp',text,kind,x:180,y:y||46});
+const TAG=(id,text)=>({id,t:'tag',text,x:12,y:22});
+const SCENES=[
+{id:'legitima-defesa',art:'Art. 25 do CP',title:'Legítima defesa × vingança',
+ lead:'Rui está com um pedaço de pau. Bia está do outro lado da rua.',
+ actors:[
+  {id:'rui',t:'fig',label:'Rui',perp:1,holdF:['stick'],st:{x:40,h_stick:1}},
+  {id:'bia',t:'fig',label:'Bia',holdF:['stick'],st:{x:250,f:-1}},
+  {id:'clock',t:'tag',text:'30 minutos depois',x:12,y:22},
+  STAMP('ok','LEGÍTIMA DEFESA','ok'),STAMP('no','VINGANÇA: SEM EXCLUDENTE','no')],
+ steps:[
+  {cap:'Rui avança contra Bia com o pedaço de pau.',to:{rui:{x:172,walk:1}},ms:1500,d:1550},
+  {cap:'Ele ergue o pau para bater. A agressão é injusta e iminente.',to:{rui:{walk:0,aF:-165}},ms:320,d:1500},
+  {cap:'Bia empurra Rui com as duas mãos.',to:{bia:{x:205,aF:-95,aB:-85}},ms:280,d:300},
+  {to:{rui:{r:-90,x:138,aF:-30,h_stick:0}},ms:450,d:900},
+  {cap:'Ela usou o meio que tinha, com a força necessária para parar o ataque.',to:{bia:{aF:-12,aB:12}},ms:500,d:1500},
+  {to:{ok:{s:1,o:1}},ms:300,d:2200},
+  {cap:'Rui se levanta e foge.',to:{ok:{o:0},rui:{r:0,x:125}},ms:500,d:600},
+  {to:{rui:{f:-1}},ms:220,d:260},
+  {to:{rui:{x:-50,walk:1}},ms:1300,d:1400},
+  {cap:'Meia hora depois, Bia encontra Rui e vai bater nele com o mesmo pau.',set:{rui:{x:45,f:1,walk:0,aF:-12}},to:{clock:{o:1},bia:{x:108,walk:1,h_stick:1}},ms:1300,d:1400},
+  {to:{bia:{walk:0,aF:-165}},ms:300,d:380},
+  {to:{bia:{aF:-60},rui:{r:-18,x:40}},ms:170,d:700},
+  {cap:'A agressão já tinha acabado. Isso é vingança, e Bia responde pela lesão que causar.',to:{no:{s:1,o:1}},ms:300,d:2600}],
+ rule:`<h3>Regra</h3>
+  <p>Age em legítima defesa quem repele <b>agressão injusta</b>, <b>atual ou iminente</b>, a direito seu ou de outra pessoa, usando <b>moderadamente</b> os meios necessários.</p>
+  <div class="trap"><b>Pegadinha:</b> agressão que já terminou não autoriza reação; revidar depois é vingança. E quem exagera responde pelo excesso, doloso ou culposo (art. 23, parágrafo único).</div>`},
+
+{id:'estado-de-necessidade',art:'Art. 24 do CP',title:'Estado de necessidade',
+ lead:'Meio-dia, sol forte. Um carro está estacionado e fechado.',
+ ground:[[0,360]],
+ actors:[
+  {id:'sun',t:'sun',x:322,y:36},
+  {id:'car',t:'car',x:225,y:180},
+  {id:'kid',t:'fig',st:{x:225,y:136,s:.4}},
+  {id:'glass',t:'glass',x:225,y:180},
+  {id:'shards',t:'shards',x:225,y:180,st:{o:0}},
+  {id:'heat',t:'heat',x:225,y:96,st:{o:0}},
+  {id:'caio',t:'fig',label:'Caio',alt:1,holdF:['rock'],st:{x:-30,h_rock:1}},
+  STAMP('ok','ESTADO DE NECESSIDADE','ok')],
+ steps:[
+  {cap:'Uma criança ficou trancada no carro, no sol.',to:{heat:{o:1},sun:{s:1.15}},ms:900,d:1500},
+  {cap:'Caio vê que ela está passando mal. O dono não aparece.',to:{caio:{x:160,walk:1},sun:{s:1}},ms:1700,d:1750},
+  {to:{caio:{walk:0,aF:-165}},ms:320,d:420},
+  {cap:'Ele quebra o vidro com uma pedra...',to:{caio:{aF:-68},glass:{o:0},shards:{o:1}},ms:160,d:900},
+  {to:{caio:{h_rock:0,aF:-80}},ms:200,d:250},
+  {cap:'...e tira a criança antes que algo pior aconteça.',to:{kid:{x:196,y:120}},ms:500,d:550},
+  {to:{kid:{x:118,y:180,s:.5},caio:{aF:-12},heat:{o:0}},ms:800,d:1000},
+  {cap:'O perigo era atual, Caio não o criou e não havia outro jeito. Quebrar o vidro não é crime.',to:{ok:{s:1,o:1}},ms:300,d:2600}],
+ rule:`<h3>Regra</h3>
+  <p>Está em estado de necessidade quem sacrifica um bem para salvar direito seu ou alheio de <b>perigo atual</b>, que <b>não provocou</b> por sua vontade e que não podia evitar de outro modo, quando não era razoável exigir aquele sacrifício.</p>
+  <div class="trap"><b>Pegadinha:</b> quem tem o <b>dever legal de enfrentar o perigo</b> (bombeiro, policial) não pode alegar estado de necessidade para fugir dele. E não confunda: na legítima defesa há uma agressão humana injusta; aqui há uma situação de perigo.</div>`},
+
+{id:'iter-criminis',art:'Arts. 14, II, e 15 do CP',title:'Tentativa, desistência e arrependimento',
+ lead:'Leo quer matar Ana, que não sabe nadar. Três finais possíveis.',
+ ground:[[0,250]],
+ actors:[
+  {id:'leo',t:'fig',label:'Leo',perp:1,st:{x:-30}},
+  {id:'ana',t:'fig',label:'Ana',st:{x:232}},
+  {id:'gv',t:'fig',label:'Guarda-vidas',alt:1,st:{x:-40}},
+  {id:'river',t:'river',x:250,y:180},
+  TAG('t1','1 de 3 · Tentativa'),TAG('t2','2 de 3 · Desistência voluntária'),TAG('t3','3 de 3 · Arrependimento eficaz'),
+  STAMP('s1','TENTATIVA','no'),STAMP('s2','DESISTÊNCIA VOLUNTÁRIA','info'),STAMP('s3','ARREPENDIMENTO EFICAZ','info')],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'Leo chega por trás de Ana, na beira do rio...',to:{leo:{x:200,walk:1}},ms:1500,d:1550},
+  {cap:'...e a empurra na água.',to:{leo:{walk:0,aF:-95,aB:-85}},ms:200,d:230},
+  {to:{ana:{x:292,y:202,aF:-170,aB:170}},ms:500,d:1000},
+  {cap:'Um guarda-vidas pula na água e salva Ana.',to:{leo:{aF:-12,aB:12},gv:{x:270,y:200,walk:1}},ms:1500,d:1550},
+  {to:{gv:{walk:0}},ms:150,d:150},
+  {to:{gv:{x:222,y:180},ana:{x:240,y:180,aF:-12,aB:12}},ms:800,d:1000},
+  {cap:'A morte não aconteceu por algo alheio à vontade de Leo.',to:{s1:{s:1,o:1}},ms:300,d:2600},
+
+  {reset:1,set:{t2:{o:1}},cap:'De novo: Leo começa a empurrar Ana em direção ao rio...',to:{leo:{x:205,walk:1}},ms:1500,d:1550},
+  {to:{leo:{walk:0,aF:-95,aB:-85,x:214},ana:{x:244}},ms:600,d:900},
+  {cap:'...mas para por vontade própria, mesmo podendo continuar, e vai embora.',to:{leo:{aF:-12,aB:12,x:190}},ms:500,d:600},
+  {to:{leo:{f:-1}},ms:220,d:260},
+  {to:{leo:{x:-50,walk:1}},ms:1600,d:1700},
+  {cap:'Não há tentativa de homicídio. Leo responde só pelo que já fez.',to:{s2:{s:1,o:1}},ms:300,d:2600},
+
+  {reset:1,set:{t3:{o:1}},cap:'Agora Leo empurra Ana no rio. Ele fez tudo o que planejava...',to:{leo:{x:200,walk:1}},ms:1500,d:1550},
+  {to:{leo:{walk:0,aF:-95,aB:-85}},ms:200,d:230},
+  {to:{ana:{x:292,y:202,aF:-170,aB:170}},ms:500,d:1100},
+  {cap:'...mas se arrepende, pula e tira Ana da água ele mesmo.',to:{leo:{x:272,y:200,aF:-150,aB:150}},ms:500,d:700},
+  {to:{leo:{x:215,y:180,aF:-12,aB:12},ana:{x:240,y:180,aF:-12,aB:12}},ms:800,d:1000},
+  {cap:'Ele impediu o resultado: responde só pelos atos já praticados.',to:{s3:{s:1,o:1}},ms:300,d:2800}],
+ rule:`<h3>Regra</h3>
+  <div class="tbl"><table>
+   <tr><th>Situação</th><th>O que houve</th><th>Consequência</th></tr>
+   <tr><td><b>Tentativa</b></td><td>Iniciou a execução; o crime não se consumou por motivo <b>alheio</b> à vontade dele</td><td>Pena do crime consumado, reduzida de 1 a 2/3</td></tr>
+   <tr><td><b>Desistência voluntária</b></td><td>Parou de executar por vontade própria</td><td>Responde só pelos atos já praticados</td></tr>
+   <tr><td><b>Arrependimento eficaz</b></td><td>Terminou a execução e impediu o resultado</td><td>Responde só pelos atos já praticados</td></tr>
+  </table></div>
+  <div class="trap"><b>Pegadinha:</b> arrependimento <b>posterior</b> (art. 16) é outra coisa: crime sem violência ou grave ameaça, com o dano reparado ou a coisa devolvida até o recebimento da denúncia. Aí a pena só diminui, de 1 a 2/3.</div>`},
+
+{id:'furto-roubo-extorsao',art:'Arts. 155, 157 e 158 do CP',title:'Furto, roubo ou extorsão',
+ lead:'Duda está na rua com a bolsa e o celular. Zé quer lucrar com isso.',
+ actors:[
+  {id:'shop',t:'shop',x:308,y:180},
+  {id:'duda',t:'fig',label:'Duda',holdF:['phone'],holdB:['bag'],st:{x:230,h_bag:1}},
+  {id:'ze',t:'fig',label:'Zé',perp:1,holdF:['wallet','knife'],holdB:['phone'],st:{x:-30}},
+  {id:'pix',t:'pix',x:272,y:86,st:{o:0,s:.7}},
+  {id:'b2',t:'bubble',text:'Passa o celular!',x:172,y:104},
+  {id:'b3',t:'bubble',text:'Faz um PIX de 500 pra mim!',x:172,y:104},
+  TAG('t1','1 de 3 · Furto'),TAG('t2','2 de 3 · Roubo'),TAG('t3','3 de 3 · Extorsão'),
+  STAMP('s1','FURTO','no'),STAMP('s2','ROUBO','no'),STAMP('s3','EXTORSÃO','no')],
+ steps:[
+  {reset:1,set:{t1:{o:1}},cap:'Duda olha a vitrine, distraída. Zé chega por trás, devagar...',to:{ze:{x:193,walk:.6}},ms:1900,d:1950},
+  {cap:'...e tira a carteira da bolsa dela sem que ela perceba.',to:{ze:{walk:0,aF:-80}},ms:300,d:450},
+  {to:{ze:{h_wallet:1,aF:-20}},ms:300,d:500},
+  {to:{ze:{f:-1}},ms:220,d:260},
+  {to:{ze:{x:-50,walk:1}},ms:1400,d:1500},
+  {cap:'Sem violência e sem ameaça: ele subtraiu às escondidas.',to:{s1:{s:1,o:1}},ms:300,d:2500},
+
+  {reset:1,set:{t2:{o:1},duda:{f:-1,h_phone:1,aF:-45},ze:{h_knife:1}},cap:'Zé aborda Duda com uma faca.',to:{ze:{x:165,walk:1}},ms:1500,d:1550},
+  {cap:'Ele a ameaça e manda entregar o celular.',to:{ze:{walk:0,aF:-90},b2:{o:1,s:1}},ms:300,d:1500},
+  {cap:'Em seguida, ele mesmo arranca o celular da mão dela.',to:{ze:{aB:-95,x:186}},ms:300,d:330},
+  {to:{duda:{h_phone:0},ze:{h_phone:1,aB:20,x:165},b2:{o:0}},ms:300,d:600},
+  {to:{ze:{f:-1}},ms:220,d:260},
+  {to:{ze:{x:-50,walk:1}},ms:1300,d:1400},
+  {cap:'Grave ameaça e subtração: quem pega a coisa é o ladrão.',to:{s2:{s:1,o:1}},ms:300,d:2500},
+
+  {reset:1,set:{t3:{o:1},duda:{f:-1,h_phone:1,aF:-45},ze:{h_knife:1}},cap:'De novo, Zé aborda Duda com a faca...',to:{ze:{x:165,walk:1}},ms:1500,d:1550},
+  {cap:'...mas agora exige que ela mesma faça um PIX para ele.',to:{ze:{walk:0,aF:-90},b3:{o:1,s:1}},ms:300,d:1700},
+  {cap:'Com medo, Duda faz a transferência no próprio celular.',to:{b3:{o:0},duda:{aF:-100},pix:{o:1,s:1}},ms:400,d:1900},
+  {cap:'Sem a colaboração da vítima, Zé não teria o dinheiro. Isso é extorsão.',to:{s3:{s:1,o:1}},ms:300,d:2800}],
+ rule:`<h3>Regra</h3>
+  <div class="tbl"><table>
+   <tr><th>Crime</th><th>Como identificar</th></tr>
+   <tr><td><b>Furto</b> (155)</td><td>Subtrair coisa alheia móvel <b>sem</b> violência ou grave ameaça</td></tr>
+   <tr><td><b>Roubo</b> (157)</td><td>Subtrair com violência ou grave ameaça; o agente pega a coisa e a colaboração da vítima é dispensável</td></tr>
+   <tr><td><b>Extorsão</b> (158)</td><td>Constranger a vítima, com violência ou grave ameaça, a <b>fazer</b>, tolerar ou deixar de fazer algo; a colaboração dela é indispensável</td></tr>
+  </table></div>
+  <div class="trap"><b>Pegadinha:</b> a extorsão é crime formal e se consuma com o constrangimento, mesmo que o PIX nunca seja feito (Súmula 96 do STJ). Já o roubo se consuma com a inversão da posse, ainda que breve e com perseguição logo em seguida (Súmula 582 do STJ).</div>`},
+
+{id:'funcionario-publico',art:'Arts. 316, 317 e 319 do CP',title:'Concussão, corrupção passiva e prevaricação',
+ lead:'Um servidor atende no balcão da prefeitura. Cada cena muda um detalhe.',
+ actors:[
+  {id:'serv',t:'fig',label:'',alt:1,holdF:['money'],st:{x:236,f:-1}},
+  {id:'desk',t:'desk',x:215,y:180},
+  {id:'file',t:'file',x:192,y:144,st:{o:0}},
+  {id:'cid',t:'fig',label:'Cidadão',holdF:['folder','money'],st:{x:-30}},
+  {id:'nmserv',t:'tag',text:'Servidor',x:262,y:196,st:{o:1}},
+  {id:'b1',t:'bubble',text:'Sem R$ 200, o alvará não sai.',x:226,y:104},
+  {id:'b2',t:'bubble',text:'Se quiser agilizar, aceito um agrado.',x:226,y:104},
+  {id:'b3',t:'bubble',text:'Esse aí vai esperar sentado.',x:226,y:104},
+  TAG('t1','1 de 3 · Concussão'),TAG('t2','2 de 3 · Corrupção passiva'),TAG('t3','3 de 3 · Prevaricação'),
+  STAMP('s1','CONCUSSÃO','no'),STAMP('s2','CORRUPÇÃO PASSIVA','no'),STAMP('s3','PREVARICAÇÃO','no')],
+ steps:[
+  {reset:1,set:{t1:{o:1},cid:{h_folder:1}},cap:'Um cidadão vai ao balcão pedir um alvará.',to:{cid:{x:140,walk:1}},ms:1500,d:1550},
+  {to:{cid:{walk:0,aF:-80}},ms:300,d:500},
+  {cap:'O servidor exige dinheiro para fazer o que já é dever dele.',to:{b1:{o:1,s:1},serv:{aF:-100}},ms:300,d:2000},
+  {cap:'O verbo é exigir: concussão, mesmo que o cidadão não pague nada.',to:{b1:{o:0},serv:{aF:-12},s1:{s:1,o:1}},ms:300,d:2800},
+
+  {reset:1,set:{t2:{o:1},cid:{h_folder:1}},cap:'Outro cidadão, outro pedido.',to:{cid:{x:140,walk:1}},ms:1500,d:1550},
+  {cap:'Agora o servidor não impõe nada: ele pede uma vantagem.',to:{cid:{walk:0,aF:-80},b2:{o:1,s:1}},ms:300,d:2100},
+  {cap:'O cidadão entrega o dinheiro e o servidor recebe.',to:{cid:{h_folder:0,h_money:1,aF:-85},b2:{o:0}},ms:300,d:500},
+  {to:{cid:{h_money:0,aF:-15},serv:{h_money:1,aF:-80}},ms:300,d:1000},
+  {cap:'Solicitar, receber ou aceitar promessa de vantagem indevida: corrupção passiva.',to:{s2:{s:1,o:1}},ms:300,d:2800},
+
+  {reset:1,set:{t3:{o:1},cid:{h_folder:1}},cap:'Chega um vizinho com quem o servidor brigou na semana passada.',to:{cid:{x:140,walk:1}},ms:1500,d:1550},
+  {to:{cid:{walk:0,aF:-80}},ms:300,d:350},
+  {cap:'O vizinho entrega o pedido.',to:{cid:{h_folder:0,aF:-15},file:{o:1}},ms:300,d:900},
+  {cap:'Sem ganhar nada, o servidor engaveta o pedido só por raiva.',to:{b3:{o:1,s:1}},ms:300,d:1600},
+  {to:{file:{y:166,o:0},b3:{o:0}},ms:700,d:900},
+  {cap:'Retardar ato de ofício por interesse ou sentimento pessoal: prevaricação.',to:{s3:{s:1,o:1}},ms:300,d:2800}],
+ rule:`<h3>Regra</h3>
+  <div class="tbl"><table>
+   <tr><th>Crime</th><th>Verbo-chave</th><th>Detalhe</th></tr>
+   <tr><td><b>Concussão</b> (316)</td><td>Exigir</td><td>Impõe a vantagem indevida em razão da função</td></tr>
+   <tr><td><b>Corrupção passiva</b> (317)</td><td>Solicitar, receber, aceitar promessa</td><td>Há vantagem indevida, sem imposição</td></tr>
+   <tr><td><b>Prevaricação</b> (319)</td><td>Retardar, deixar de praticar ou praticar contra a lei</td><td>Por interesse ou sentimento pessoal, sem vantagem</td></tr>
+  </table></div>
+  <div class="trap"><b>Pegadinha:</b> se o funcionário usa violência ou grave ameaça, o crime passa a ser extorsão (art. 158). Concussão e corrupção passiva são formais: consumam-se com a exigência ou a solicitação, ainda que o dinheiro nunca chegue.</div>`}
+];
+
+/* ---------- montagem da página ---------- */
+const cards=document.getElementById('cards'), nav=document.getElementById('nav');
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{const p=e.target._player;p.visible=e.isIntersecting;
+  if(e.isIntersecting&&e.intersectionRatio>=.55&&!p.played&&!REDUCE)p.play();}),{threshold:[0,.55]}):null;
+SCENES.forEach(sc=>{
+  const card=document.createElement('section');card.className='card';card.id=sc.id;
+  card.innerHTML=`<div class="card-head"><span class="art">${sc.art}</span><h2>${sc.title}</h2></div>
+   <div class="stage"></div>
+   <div class="player"><p class="cap" aria-live="polite"></p>
+    <div class="ctrl"><button class="play" type="button" id="play-${sc.id}">Assistir</button><div class="bar"><i></i></div></div></div>
+   <div class="rule">${sc.rule}</div>`;
+  cards.appendChild(card);
+  const p=new Player(sc,card);players.push(p);card._player=p;
+  if(io)io.observe(card);else p.visible=true;
+  const b=document.createElement('button');b.type='button';b.textContent=sc.title.split(' ×')[0].split(',')[0];
+  b.addEventListener('click',()=>{card.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'});p.play();});
+  nav.appendChild(b);
+});
+const sp=document.createElement('button');sp.type='button';sp.id='ritmo';sp.className='speed';sp.textContent=SPEEDS[si].t;
+sp.addEventListener('click',()=>{si=(si+1)%SPEEDS.length;sp.textContent=SPEEDS[si].t;try{localStorage.setItem('pp-ritmo',SPEEDS[si].t)}catch(e){}});
+nav.appendChild(sp);
+requestAnimationFrame(loop);
+})();
+</script>

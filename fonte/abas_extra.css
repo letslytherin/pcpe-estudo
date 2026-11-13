@@ -1,0 +1,66 @@
+.xpanel{display:flex;flex-direction:column;gap:20px}
+.xsmall{font-size:13px}
+.tblw{overflow-x:auto}
+.xt{border-collapse:collapse;width:100%;font-size:14px}
+.xt th,.xt td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.xt th{font:700 11.5px var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.xgoal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.xgoal div{background:var(--soft);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.xgoal b{font:800 30px var(--f-display);color:var(--accent);font-variant-numeric:tabular-nums}
+.xgoal span{font-size:13px;color:var(--muted)}
+.xform{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.xform label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);min-width:0}
+.xform input,.xform select{font:500 16px var(--f-body);color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:9px 10px;min-width:0;width:100%;box-sizing:border-box}
+.xform input:focus-visible,.xform select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.xform button{grid-column:1/-1;font:700 15px var(--f-body);background:var(--accent);color:var(--card);border:0;border-radius:10px;padding:11px;cursor:pointer}
+.xform button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.xstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.xstats div{background:var(--soft);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;min-width:0}
+.xstats b{font:800 22px var(--f-display);font-variant-numeric:tabular-nums}
+.xstats span{font-size:12px;color:var(--muted)}
+.xmsg{font-size:15px;background:var(--accent-soft);border-radius:10px;padding:10px 12px}
+.xmsg:empty{display:none}
+.xchart svg{display:block;width:100%;height:auto}
+.xchart .ax{stroke:var(--line);stroke-width:1}
+.xchart .axt{font:500 10px var(--f-mono);fill:var(--muted)}
+.xchart .goal{stroke:var(--ok);stroke-width:1.5;stroke-dasharray:5 4}
+.xchart .goalt{font:700 10px var(--f-mono);fill:var(--ok)}
+.xchart .s1{stroke:var(--accent);stroke-width:2.5;fill:none} .xchart .d1{fill:var(--accent)}
+.xchart .s2{stroke:var(--p1);stroke-width:2.5;fill:none} .xchart .d2{fill:var(--p1)}
+.xchart .s3{stroke:var(--p2);stroke-width:2.5;fill:none} .xchart .d3{fill:var(--p2)}
+.xleg{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-top:4px}
+.xleg i{display:inline-block;width:12px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.xempty{font-size:14px;color:var(--muted)}
+.xlist{display:flex;flex-direction:column}
+.xrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.xrow small{color:var(--muted);display:block}
+.xrow button{font:600 12px var(--f-body);color:var(--a);background:transparent;border:1px solid var(--line);border-radius:7px;padding:5px 9px;cursor:pointer}
+.xmore summary{grid-template-columns:1fr;padding:6px 0;font:600 14px var(--f-body);color:var(--accent)}
+.xdisc{display:grid;grid-template-columns:minmax(0,1fr) 60px;gap:2px 10px;padding:8px 0;border-top:1px solid var(--line);align-items:center}
+.xdisc .nm{font-size:14px;font-weight:700;min-width:0}
+.xdisc .pc{font:700 14px var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.xdisc .tr{grid-column:1/-1;height:8px;background:var(--soft);border-radius:5px;position:relative;overflow:hidden}
+.xdisc .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:5px}
+.xdisc .tr b{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink);left:78%}
+.xdisc small{grid-column:1/-1;font-size:12px;color:var(--muted)}
+.ok{color:var(--ok)} .mid{color:var(--b)} .low{color:var(--a)}
+.bok{background:var(--ok)} .bmid{background:var(--b)} .blow{background:var(--a)}
+.xtests{display:flex;flex-direction:column;gap:14px}
+.xtest{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.xtest h3{font:600 16px var(--f-display);text-transform:none;letter-spacing:0;color:var(--ink)}
+.xtest .st{font-size:14px}
+.xsteps{display:flex;flex-direction:column;gap:8px}
+.xstep{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.xstep.cur{border-color:var(--accent);background:var(--accent-soft)}
+.xstep.past{opacity:.6}
+.xstep .h{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.xstep .h b{font:600 15px var(--f-display)}
+.xstep .tr{font-size:14px}
+.xstep .cr{font-size:13px;color:var(--muted)}
+.xstep button{font:600 12.5px var(--f-body);color:var(--accent);background:var(--card);border:1px solid var(--accent);border-radius:999px;padding:4px 10px;cursor:pointer;flex:none}
+.xstep.cur button{background:var(--accent);color:var(--card)}
+@media (max-width:420px){.xform{grid-template-columns:1fr}.xgoal b{font-size:26px}}
+@media (max-width:440px){.tabs{grid-template-columns:repeat(3,minmax(0,1fr))}#anim .card{scroll-margin-top:120px}}
+.hitem{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.hitem input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--ok);cursor:pointer}
+.hitem.done .ttl{text-decoration:line-through;color:var(--muted)}
