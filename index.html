@@ -326,6 +326,8 @@ footer{font-size:13px;color:var(--muted)}
 .ghint{font-size:11.5px;color:var(--muted,#888);white-space:nowrap}
 .xsp{display:flex;gap:8px;align-items:center;margin:10px 0 4px;font-size:14px;cursor:pointer}
 .xsp input{width:18px;height:18px;accent-color:var(--accent)}
+.xbtn{display:block;width:100%;margin-top:10px;font:600 14px var(--f-body);color:var(--accent);background:var(--accent-soft);border:1px dashed var(--accent);border-radius:10px;padding:10px;cursor:pointer}
+.xbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 </style>
 
@@ -714,18 +716,19 @@ paint();
 
 /* ---- armazenamento: db da página; se indisponível, só neste navegador ---- */
 const statusEl=document.getElementById('status');
-let ref=null,exists=false,queue=Promise.resolve();
-function local(save){try{if(save)localStorage.setItem('crono-pcpe',JSON.stringify(done));else{const v=localStorage.getItem('crono-pcpe');if(v)done=JSON.parse(v)||{};}}catch(e){}}
+let ref=null,exists=false,queue=Promise.resolve(),quando={};
+function hojeISO(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function local(save){try{if(save){localStorage.setItem('crono-pcpe',JSON.stringify(done));localStorage.setItem('crono-pcpe-quando',JSON.stringify(quando));}else{const v=localStorage.getItem('crono-pcpe');if(v)done=JSON.parse(v)||{};const q=localStorage.getItem('crono-pcpe-quando');if(q)quando=JSON.parse(q)||{};}}catch(e){}}
 function save(id,v){
-  done[id]=v;paint();
+  done[id]=v;quando[id]=v?hojeISO():'';try{localStorage.setItem('crono-pcpe-quando',JSON.stringify(quando));}catch(e){}paint();
   if(!ref){local(true);return;}
   queue=queue.then(async()=>{
-    try{ if(exists)await ref.update({feito:{[id]:v}}); else {await ref.set({feito:{...done}});exists=true;} statusEl.textContent='Progresso salvo.';}
+    try{ if(exists)await ref.update({feito:{[id]:v},quando:{[id]:quando[id]}}); else {await ref.set({feito:{...done},quando:{...quando}});exists=true;} statusEl.textContent='Progresso salvo.';}
     catch(e){statusEl.textContent='Não consegui salvar agora ('+(e&&e.code||'erro')+'). A marcação fica só nesta tela.';}
   });
 }
-function saveMany(m){Object.assign(done,m);paint();if(!ref){local(true);return;}queue=queue.then(async()=>{try{if(exists)await ref.update({feito:m});else{await ref.set({feito:{...done}});exists=true;}statusEl.textContent='Progresso salvo.';}catch(e){statusEl.textContent='Não consegui salvar agora.';}});}
-window.__crono={weeks,get done(){return done},save,saveMany,START};
+function saveMany(m){Object.assign(done,m);paint();if(!ref){local(true);return;}queue=queue.then(async()=>{try{if(exists)await ref.update({feito:m});else{await ref.set({feito:{...done},quando:{...quando}});exists=true;}statusEl.textContent='Progresso salvo.';}catch(e){statusEl.textContent='Não consegui salvar agora.';}});}
+window.__crono={weeks,get done(){return done},get quando(){return quando},hojeISO,save,saveMany,START};
 host.addEventListener('change',e=>{const t=e.target;if(t.matches('input[type=checkbox]'))save(t.id,t.checked);});
 local(false);paint();
 (async()=>{
@@ -736,7 +739,7 @@ local(false);paint();
   ref.onSnapshot(snap=>{
     if(!(snap.metadata&&snap.metadata.fromCache)){clearTimeout(timer);statusEl.textContent='Progresso sincronizado entre celular e computador.';}
     exists=snap.exists;
-    if(snap.exists){const f=(snap.data()||{}).feito||{};done={...f};paint();}
+    if(snap.exists){const f=(snap.data()||{}).feito||{};done={...f};quando={...quando,...((snap.data()||{}).quando||{})};paint();}
   },err=>{clearTimeout(timer);statusEl.textContent='Não consegui ler o progresso salvo ('+(err&&err.code||'erro')+').';ref=null;});
 })();
 })();
@@ -960,6 +963,7 @@ function itemHtml(it,done){
   return `<label class="hitem${done?' done':''}"><input type="checkbox" data-id="${it.id}"${done?' checked':''}><span><span class="meta">${meta}</span><span class="ttl">${ttl}</span>${filt?`<div class="filt">${filt}</div>`:''}${window.__glink?window.__glink(it.id):''}</span></label>`;
 }
 document.addEventListener('change',e=>{if(e.target&&e.target.id==='h-sempiscina')etapas.set({semPiscina:e.target.checked});});
+document.addEventListener('click',e=>{if(e.target&&e.target.id==='h-mais'){const td=window.__crono&&window.__crono.hojeISO?window.__crono.hojeISO():'';let n=0;try{const o=JSON.parse(localStorage.getItem('pcpe-hoje-extra')||'{}');if(o.d===td)n=+o.n||0;}catch(x){}try{localStorage.setItem('pcpe-hoje-extra',JSON.stringify({d:td,n:n+1}));}catch(x){}renderHoje();}});
 document.addEventListener('change',e=>{if(e.target&&e.target.id==='h-sembarra')etapas.set({semBarra:e.target.checked});});
 function renderHoje(){
   if(!READY)return;
@@ -976,12 +980,24 @@ function renderHoje(){
       const dl=Math.max(0,Math.round((new Date(2027,2,7)-now)/864e5));
       $('#h-semana').textContent=`Semana ${wk.w} de 16 · ${wk.title} · ${k} de ${wk.items.length} tarefas da semana feitas · ${dl} dias até a prova`;
       $('#h-bar').style.width=(k/wk.items.length*100)+'%';
-      const hoje=plan[dow];
-      $('#h-carga').textContent=preview?`O cronograma começa na segunda, ${C.START.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}. Se quiser adiantar, estas são as tarefas de segunda:`:
-        (dow===5?'Cerca de 4 horas hoje.':'Cerca de 2 horas hoje.')+(wk.note?' '+wk.note:'');
+      /* Hoje dinâmico: o que foi feito antes de hoje sai da fila e a vaga é preenchida pela próxima tarefa */
+      const Q=C.quando||{},td=C.hojeISO?C.hojeISO():'';
+      const feitoHoje=id=>!!done[id]&&Q[id]===td,feitoAntes=id=>!!done[id]&&Q[id]!==td;
+      let ex=0;try{const o=JSON.parse(localStorage.getItem('pcpe-hoje-extra')||'{}');if(o.d===td)ex=+o.n||0;}catch(e){}
+      const rest=w=>distribute(w).slice(0,6).flat();
+      const R=rest(wk),start=dow<6?plan.slice(0,dow).flat().length:R.length;
+      let cand=R.slice(start);for(let k2=wi+1;k2<C.weeks.length&&cand.length<R.length+20;k2++)cand=cand.concat(rest(C.weeks[k2]));
+      const quota=(dow<6?plan[dow].length:0)+ex;
+      const hoje=dow===6?plan[6].slice():[];let n=0;
+      for(const it of cand){if(feitoAntes(it.id))continue;if(n<quota||feitoHoje(it.id)){hoje.push(it);n++;}}
+      const adiant=dow<6?plan[dow].filter(it=>feitoAntes(it.id)).length:0;
+      $('#h-carga').textContent=(preview?`O cronograma começa na segunda, ${C.START.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}. Se quiser adiantar, estas são as próximas tarefas:`:
+        (dow===5?'Cerca de 4 horas hoje.':'Cerca de 2 horas hoje.')+(wk.note?' '+wk.note:''))+
+        (adiant?(adiant===1?' Você já adiantou 1 tarefa de hoje, então entrou a próxima da fila.':` Você já adiantou ${adiant} tarefas de hoje, então entraram as próximas da fila.`):'');
       let h=hoje.map(it=>itemHtml(it,!!done[it.id])).join('');
       if(!hoje.length)h='<p class="xempty">Nada novo marcado para hoje. Use o tempo para o que ficou para trás ou para refazer erros.</p>';
       else if(hoje.every(it=>done[it.id]))h+='<p class="xmsg">Estudo de hoje concluído.</p>';
+      if(cand.some(it=>!done[it.id]&&!hoje.includes(it)))h+='<button type="button" class="xbtn" id="h-mais">Estudar mais: puxar a próxima tarefa</button>';
       $('#h-estudo').innerHTML=h;
       hoje.forEach(it=>{if(it.d)disc.add(it.d);});
       const atras=[];

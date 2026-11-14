@@ -203,6 +203,7 @@ function itemHtml(it,done){
   return `<label class="hitem${done?' done':''}"><input type="checkbox" data-id="${it.id}"${done?' checked':''}><span><span class="meta">${meta}</span><span class="ttl">${ttl}</span>${filt?`<div class="filt">${filt}</div>`:''}${window.__glink?window.__glink(it.id):''}</span></label>`;
 }
 document.addEventListener('change',e=>{if(e.target&&e.target.id==='h-sempiscina')etapas.set({semPiscina:e.target.checked});});
+document.addEventListener('click',e=>{if(e.target&&e.target.id==='h-mais'){const td=window.__crono&&window.__crono.hojeISO?window.__crono.hojeISO():'';let n=0;try{const o=JSON.parse(localStorage.getItem('pcpe-hoje-extra')||'{}');if(o.d===td)n=+o.n||0;}catch(x){}try{localStorage.setItem('pcpe-hoje-extra',JSON.stringify({d:td,n:n+1}));}catch(x){}renderHoje();}});
 document.addEventListener('change',e=>{if(e.target&&e.target.id==='h-sembarra')etapas.set({semBarra:e.target.checked});});
 function renderHoje(){
   if(!READY)return;
@@ -219,12 +220,24 @@ function renderHoje(){
       const dl=Math.max(0,Math.round((new Date(2027,2,7)-now)/864e5));
       $('#h-semana').textContent=`Semana ${wk.w} de 16 · ${wk.title} · ${k} de ${wk.items.length} tarefas da semana feitas · ${dl} dias até a prova`;
       $('#h-bar').style.width=(k/wk.items.length*100)+'%';
-      const hoje=plan[dow];
-      $('#h-carga').textContent=preview?`O cronograma começa na segunda, ${C.START.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}. Se quiser adiantar, estas são as tarefas de segunda:`:
-        (dow===5?'Cerca de 4 horas hoje.':'Cerca de 2 horas hoje.')+(wk.note?' '+wk.note:'');
+      /* Hoje dinâmico: o que foi feito antes de hoje sai da fila e a vaga é preenchida pela próxima tarefa */
+      const Q=C.quando||{},td=C.hojeISO?C.hojeISO():'';
+      const feitoHoje=id=>!!done[id]&&Q[id]===td,feitoAntes=id=>!!done[id]&&Q[id]!==td;
+      let ex=0;try{const o=JSON.parse(localStorage.getItem('pcpe-hoje-extra')||'{}');if(o.d===td)ex=+o.n||0;}catch(e){}
+      const rest=w=>distribute(w).slice(0,6).flat();
+      const R=rest(wk),start=dow<6?plan.slice(0,dow).flat().length:R.length;
+      let cand=R.slice(start);for(let k2=wi+1;k2<C.weeks.length&&cand.length<R.length+20;k2++)cand=cand.concat(rest(C.weeks[k2]));
+      const quota=(dow<6?plan[dow].length:0)+ex;
+      const hoje=dow===6?plan[6].slice():[];let n=0;
+      for(const it of cand){if(feitoAntes(it.id))continue;if(n<quota||feitoHoje(it.id)){hoje.push(it);n++;}}
+      const adiant=dow<6?plan[dow].filter(it=>feitoAntes(it.id)).length:0;
+      $('#h-carga').textContent=(preview?`O cronograma começa na segunda, ${C.START.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})}. Se quiser adiantar, estas são as próximas tarefas:`:
+        (dow===5?'Cerca de 4 horas hoje.':'Cerca de 2 horas hoje.')+(wk.note?' '+wk.note:''))+
+        (adiant?(adiant===1?' Você já adiantou 1 tarefa de hoje, então entrou a próxima da fila.':` Você já adiantou ${adiant} tarefas de hoje, então entraram as próximas da fila.`):'');
       let h=hoje.map(it=>itemHtml(it,!!done[it.id])).join('');
       if(!hoje.length)h='<p class="xempty">Nada novo marcado para hoje. Use o tempo para o que ficou para trás ou para refazer erros.</p>';
       else if(hoje.every(it=>done[it.id]))h+='<p class="xmsg">Estudo de hoje concluído.</p>';
+      if(cand.some(it=>!done[it.id]&&!hoje.includes(it)))h+='<button type="button" class="xbtn" id="h-mais">Estudar mais: puxar a próxima tarefa</button>';
       $('#h-estudo').innerHTML=h;
       hoje.forEach(it=>{if(it.d)disc.add(it.d);});
       const atras=[];
