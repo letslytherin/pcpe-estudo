@@ -257,9 +257,11 @@ document.addEventListener('click',e=>{const t=e.target;if(!t)return;
 })();
 function distribute(wk){
   const sun=[],rest=[];
-  wk.items.forEach(it=>(it.kind==='fix'&&(it.tag==='Domingo'||it.tag==='Discursiva')?sun:rest).push(it));
+  const fx=[[],[],[],[],[],[]];
+  wk.items.forEach(it=>{if(it.kind==='fix'&&(it.tag==='Domingo'||it.tag==='Discursiva'))sun.push(it);else if(it.day!=null)fx[it.day].push(it);else rest.push(it);});
   const plan=[[],[],[],[],[],[],sun],cum=[2,4,6,8,10,14];
   rest.forEach((it,i)=>{const pos=(i+.5)/rest.length*14;plan[cum.findIndex(c=>pos<c)].push(it);});
+  for(let k=0;k<6;k++)plan[k]=plan[k].concat(fx[k]);
   return plan;
 }
 function itemHtml(it,done){
