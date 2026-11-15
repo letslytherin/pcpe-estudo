@@ -9,6 +9,7 @@
       <p id="h-carga" class="muted xsmall"></p>
       <div id="h-estudo" class="xlist"></div>
       <div id="h-atras"></div>
+      <div id="h-err"></div>
     </section>
     <section class="card">
       <h2>Treino de hoje</h2>
@@ -83,6 +84,26 @@
       <p id="sim-msg" class="xmsg"></p>
       <div id="sim-chart" class="xchart"></div>
       <div id="sim-list" class="xlist"></div>
+    </section>
+
+    <section class="card" id="err-card">
+      <h2>Caderno de erros</h2>
+      <p class="muted xsmall">Cada questão errada fica ligada ao capítulo do cronograma. Quando você marca o capítulo como feito, ela aparece em "Prontas" para você refazer. Errou de novo, ela continua aqui; acertou, sai da lista.</p>
+      <div id="err-stats" class="xstats"></div>
+      <p id="err-top" class="xsmall"></p>
+      <div class="er-bar"><div id="err-filt" class="er-filt"><button type="button" data-f="prontas">Prontas</button><button type="button" data-f="todas">Pendentes</button><button type="button" data-f="feitas">Acertadas</button></div>
+        <select id="err-disc" aria-label="Filtrar por disciplina"></select></div>
+      <div id="err-list" class="er-list"></div>
+      <details class="xmore"><summary>Anotar um erro novo</summary>
+        <form id="f-err" class="xform">
+          <label>Disciplina<select name="disc" id="err-fdisc" required></select></label>
+          <label>Assunto<input type="text" name="a" maxlength="80" required placeholder="Ex.: crase antes de pronome"></label>
+          <label>Capítulo do cronograma (opcional)<input type="text" name="ch" maxlength="4" inputmode="numeric" placeholder="Ex.: 11"></label>
+          <label>Código no Gran (opcional)<input type="text" name="q" maxlength="12" inputmode="numeric" placeholder="Ex.: 3139044"></label>
+          <label>Origem (opcional)<input type="text" name="o" maxlength="40" placeholder="Ex.: bateria de crase"></label>
+          <button type="submit">Salvar no caderno</button>
+        </form>
+      </details>
     </section>
 
     <section class="card">

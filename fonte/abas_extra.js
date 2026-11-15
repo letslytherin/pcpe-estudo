@@ -379,5 +379,6 @@ $('#bk-load').addEventListener('click',()=>{
   $('#bk-msg').textContent=`Backup trazido (${n} itens novos). Atualizando…`;$('#bk-text').value='';
   setTimeout(()=>location.reload(),2500);
 });
+window.__st={store,docStore};
 READY=true;window.__hoje=()=>{renderHoje();renderCorrida();};renderHoje();renderCorrida();
 })();

@@ -61,7 +61,7 @@ acss+='''
 .tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .links button{font:600 13px var(--f-body);color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:6px 11px;cursor:pointer}
 [hidden]{display:none!important}
-'''+rd('abas_extra.css')+rd('redacao.css')
+'''+rd('abas_extra.css')+rd('redacao.css')+rd('erros.css')
 
 # ---------- JS: motor + cenas de cada disciplina ----------
 js=re.search(r'<script>(.*?)</script>',base,re.S).group(1)
@@ -167,6 +167,9 @@ window.__tab=tab;
 <script>
 window.__red='''+red_json()+''';
 '''+rd('redacao.js')+'''
+</script>
+<script>
+'''+rd('erros.js')+'''
 </script>
 <script>
 '''+ajs+'''
