@@ -1,0 +1,56 @@
+TITULO: Estado, governo e administração pública
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Hoje é o primeiro episódio de Direito Administrativo: Estado, governo, administração pública e o que é, afinal, o direito administrativo.
+ANA: É um capítulo de conceitos. Parece teoria solta, mas a banca usa esses conceitos para montar frases quase certas. Então presta atenção nas palavras.
+CAIO: Começando pelo Estado. Quais são os elementos?
+ANA: Povo, território e governo soberano. Parte da doutrina acrescenta a finalidade. E a forma de Estado no Brasil é a federação, que é descentralização política. A alternativa seria o Estado unitário.
+CAIO: E os Poderes?
+ANA: Legislativo, Executivo e Judiciário, independentes e harmônicos. Cada um tem uma função típica, a principal, e funções atípicas. E aqui vem a primeira pegadinha: a função administrativa é típica do Executivo, mas os três Poderes exercem.
+CAIO: Me dá um exemplo.
+ANA: Quando o Judiciário faz uma licitação para comprar computadores, ou nomeia um servidor, ele está exercendo função administrativa. Então se a questão disser que a função administrativa é exclusiva do Executivo, está errado.
+CAIO: Agora governo. Qual a diferença entre governo e administração?
+ANA: Governo é a atividade política. Fixa diretrizes, escolhe prioridades, decide com ampla liberdade. A administração executa. De forma neutra, hierarquizada e sem autonomia política.
+CAIO: Uma frase: o governo decide, a administração executa.
+ANA: Isso. E tem uma confusão clássica de nomenclatura. Forma de governo é república ou monarquia. Sistema de governo é presidencialismo ou parlamentarismo. Forma de Estado é federação ou Estado unitário.
+CAIO: No Brasil: república, presidencialismo e federação.
+ANA: E a banca adora dizer que o presidencialismo é forma de governo. Errado. Presidencialismo é sistema.
+CAIO: Agora o coração do capítulo: os sentidos da expressão administração pública.
+ANA: São dois principais. O sentido subjetivo, também chamado formal ou orgânico, olha para quem exerce a função: as pessoas jurídicas, os órgãos e os agentes. Costuma ser escrito com iniciais maiúsculas, Administração Pública.
+CAIO: E o objetivo?
+ANA: O sentido objetivo, também chamado material ou funcional, olha para a atividade em si. Costuma ser escrito com minúsculas. E as atividades são quatro: serviço público, polícia administrativa, fomento e intervenção no domínio econômico. Alguns autores incluem a regulação.
+CAIO: Fomento é o quê, mesmo?
+ANA: É incentivar a iniciativa privada que faz algo de interesse público. Um subsídio, um incentivo fiscal, um convênio com uma entidade sem fins lucrativos.
+CAIO: E a pegadinha?
+ANA: A banca descreve o sentido subjetivo e diz que é o objetivo. Por exemplo: em sentido objetivo, administração pública é o conjunto de órgãos e entidades. Errado. Órgãos e entidades é quem faz, então é subjetivo. Objetivo é a atividade.
+CAIO: Tem ainda amplo e estrito.
+ANA: Em sentido amplo, inclui os órgãos de governo e a função política. Em sentido estrito, só a função administrativa, sem a política.
+CAIO: Agora o direito administrativo. O que é?
+ANA: É o ramo do direito público que regula a função administrativa e as relações entre a Administração e as pessoas. A origem é francesa, depois da Revolução, com o Conselho de Estado. Lá existe o contencioso administrativo, em que a própria Administração julga de forma definitiva.
+CAIO: E o Brasil copiou isso?
+ANA: Não. O Brasil adota o sistema inglês, de jurisdição única. Só o Judiciário decide de forma definitiva. Qualquer decisão administrativa pode ser levada ao Judiciário. Isso está no artigo quinto, inciso trinta e cinco, da Constituição.
+CAIO: Então a coisa julgada administrativa...
+ANA: Só impede a própria Administração de mudar a decisão. Não impede o Judiciário.
+CAIO: E o direito administrativo brasileiro tem um código?
+ANA: Não. As normas estão espalhadas em várias leis. E cada ente legisla sobre a própria administração: União, estados, municípios. Com exceções, como as normas gerais de licitação, que são da União.
+CAIO: E o critério para definir o objeto do direito administrativo?
+ANA: Existem vários, e quase todos têm falha. O legalista diz que é só o conjunto de leis. O do Poder Executivo esquece que os outros Poderes também administram. O do serviço público esquece a polícia e o fomento. O mais aceito é o critério da Administração Pública, porque abrange a estrutura e a atividade.
+CAIO: Fontes.
+ANA: A lei, em sentido amplo, incluindo a Constituição, é a fonte primária. Jurisprudência, doutrina e costumes são secundárias. Mas atenção: a súmula vinculante obriga a Administração. E o costume só vale se não for contra a lei. Costume contra a lei nunca é fonte.
+CAIO: Por último, o regime jurídico-administrativo.
+ANA: É o conjunto de prerrogativas e sujeições que diferencia a Administração do particular. Prerrogativas são poderes especiais. Sujeições são limites. E cada um tem um supraprincípio por trás.
+CAIO: Supremacia do interesse público...
+ANA: Fundamenta as prerrogativas. Desapropriar, aplicar sanção, presunção de legitimidade dos atos, cláusulas especiais nos contratos.
+CAIO: E indisponibilidade do interesse público...
+ANA: Fundamenta as sujeições. Fazer concurso, fazer licitação, se submeter a controle, não poder abrir mão de receita sem lei. Então, se perguntarem de onde vem a exigência de concurso, a resposta é indisponibilidade.
+CAIO: Certo ou errado rápido. A função administrativa é exercida exclusivamente pelo Executivo.
+ANA: Errado.
+CAIO: O Brasil adota a jurisdição única.
+ANA: Certo.
+CAIO: Em sentido objetivo, administração pública é o conjunto de órgãos e entidades.
+ANA: Errado. Isso é o subjetivo.
+CAIO: O costume pode ser fonte, desde que não contrarie a lei.
+ANA: Certo.
+CAIO: Fechando.
+ANA: Função administrativa é típica do Executivo, mas todos exercem. Governo decide, administração executa. Subjetivo é quem, objetivo é a atividade. Brasil tem jurisdição única. Supremacia gera prerrogativas, indisponibilidade gera sujeições.
+CAIO: Bora para as questões. Até a próxima.
+ANA: Tchau, bons estudos.

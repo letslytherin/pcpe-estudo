@@ -1,0 +1,53 @@
+TITULO: Lei penal no tempo e no espaço
+CAIO: Oi, aqui é o Caio.
+ANA: E eu sou a Ana. Hoje o tema é aplicação da lei penal: no tempo, no espaço, a contagem de prazos e uma noção de imunidades.
+CAIO: E tem um macete que resolve metade das questões. Fala, Ana.
+ANA: LUTA. Lugar é ubiquidade. Tempo é atividade. L-U, T-A.
+CAIO: Vamos por partes. Tempo do crime.
+ANA: Artigo quarto do Código Penal: teoria da atividade. O crime é considerado praticado no momento da ação ou da omissão, mesmo que o resultado aconteça depois. Se a pessoa atira hoje e a vítima morre daqui a um mês, o tempo do crime é hoje.
+CAIO: Isso importa para quê?
+ANA: Por exemplo, para saber se o autor era menor de idade, e para saber qual lei se aplica.
+CAIO: E qual lei se aplica?
+ANA: A regra é que a lei penal não volta para trás. Salvo para beneficiar o réu. Está no artigo quinto da Constituição.
+CAIO: Vamos às situações. Abolitio criminis.
+ANA: É quando uma lei nova deixa de considerar o fato como crime. Ela retroage, faz parar a execução da pena e apaga os efeitos penais da condenação. Mas os efeitos civis continuam. O dever de indenizar a vítima, por exemplo, não some.
+CAIO: Novatio legis in mellius.
+ANA: Lei nova mais benéfica, que não descriminaliza, mas melhora a situação. Diminui a pena, por exemplo. Ela retroage, inclusive depois do trânsito em julgado. E aí quem aplica é o juiz da execução, pela súmula seiscentos e onze do Supremo.
+CAIO: E a lei mais grave?
+ANA: Novatio legis in pejus, ou lei que cria crime novo: não retroage. Nunca.
+CAIO: Leis temporárias e excepcionais.
+ANA: Artigo terceiro. Lei temporária tem prazo de validade marcado. Excepcional vale durante uma situação, como uma calamidade. As duas são ultra-ativas: continuam sendo aplicadas aos fatos praticados durante a vigência, mesmo depois que deixam de valer. Senão ninguém respeitaria uma lei que todo mundo sabe que vai acabar.
+CAIO: E no crime permanente ou continuado, quando muda a lei no meio?
+ANA: Súmula setecentos e onze do Supremo: aplica-se a lei mais grave, se ela entrou em vigor antes de cessar a permanência ou a continuidade. Pensa num sequestro que dura semanas. Se a lei mais dura entrou em vigor enquanto a vítima ainda estava presa, vale a lei mais dura.
+CAIO: E dá para juntar a parte boa de duas leis?
+ANA: Não. A combinação de leis é vedada pelo STJ, com a súmula quinhentos e um, no caso da Lei de Drogas. Aplica-se a lei mais benéfica por inteiro.
+CAIO: Agora o espaço. Lugar do crime.
+ANA: Artigo sexto: teoria da ubiquidade. O lugar do crime é onde aconteceu a ação ou omissão, e também onde se produziu ou deveria se produzir o resultado. Os dois lugares valem.
+CAIO: E qual lei vale no território?
+ANA: Artigo quinto: territorialidade temperada. Aplica-se a lei brasileira ao crime cometido no território nacional, sem prejuízo de tratados e convenções internacionais.
+CAIO: E o território por extensão?
+ANA: Embarcações e aeronaves públicas brasileiras, onde quer que estejam. E as privadas brasileiras quando estão em alto-mar ou no espaço aéreo correspondente. E as privadas estrangeiras que estão no nosso território ou mar territorial também se sujeitam à lei brasileira.
+CAIO: Agora extraterritorialidade, artigo sétimo. A lei brasileira alcançando crimes cometidos lá fora.
+ANA: Tem a incondicionada e a condicionada. A incondicionada vale sem nenhuma condição, e o agente é punido no Brasil ainda que tenha sido absolvido ou condenado no estrangeiro.
+CAIO: Quais são os casos?
+ANA: Crimes contra a vida ou a liberdade do Presidente da República. Crimes contra o patrimônio ou a fé pública da União, estados, Distrito Federal, municípios e entidades da administração indireta. Crimes contra a Administração Pública por quem está a seu serviço. E genocídio, quando o agente é brasileiro ou domiciliado no Brasil.
+CAIO: E a condicionada?
+ANA: São os crimes que o Brasil se obrigou a reprimir por tratado, os praticados por brasileiro, os cometidos em aeronave ou embarcação brasileira privada no estrangeiro e lá não julgados, e o crime de estrangeiro contra brasileiro fora do Brasil. Aí precisa de condições: o agente entrar no Brasil, o fato ser crime nos dois países, ser crime que permite extradição, não ter sido absolvido nem cumprido pena lá fora, e não estar extinta a punibilidade.
+CAIO: E se ele já cumpriu pena lá fora?
+ANA: Artigo oitavo. A pena cumprida no estrangeiro atenua a pena imposta aqui, quando forem diferentes, ou é descontada, quando forem iguais.
+CAIO: Prazos penais.
+ANA: Artigo dez: no prazo penal, inclui-se o dia do começo, e conta-se pelo calendário comum. É o contrário do processo penal, que exclui o dia do começo. E pelo artigo onze, desprezam-se as frações de dia na pena de prisão e os centavos na multa.
+CAIO: Imunidades, rapidinho.
+ANA: Diplomatas não se sujeitam à jurisdição penal brasileira e respondem no país de origem. Parlamentares têm imunidade material, que é a inviolabilidade por opiniões, palavras e votos, e imunidade formal: desde a expedição do diploma, só podem ser presos em flagrante de crime inafiançável.
+CAIO: Certo ou errado. Quanto ao tempo do crime, o Código Penal adota a teoria da ubiquidade.
+ANA: Errado. Tempo é atividade. Ubiquidade é o lugar.
+CAIO: A abolitio criminis faz cessar os efeitos penais e civis da condenação.
+ANA: Errado. Os civis permanecem.
+CAIO: A lei mais benéfica não retroage após o trânsito em julgado.
+ANA: Errado. Retroage, e quem aplica é o juiz da execução.
+CAIO: No prazo penal, exclui-se o dia do começo.
+ANA: Errado. Inclui. Quem exclui é o processo penal.
+CAIO: Resumo.
+ANA: LUTA: lugar ubiquidade, tempo atividade. Lei benéfica retroage sempre, até depois do trânsito. Abolitio apaga efeitos penais, não civis. Temporária e excepcional são ultra-ativas. Crime permanente pega a lei mais grave. E prazo penal inclui o dia do começo.
+CAIO: Agora é com você nas questões. Até a próxima.
+ANA: Tchau, bons estudos.

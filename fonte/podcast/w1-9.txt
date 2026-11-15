@@ -1,0 +1,45 @@
+TITULO: Coesão e coerência
+CAIO: Oi, aqui é o Caio.
+ANA: E eu sou a Ana. Hoje é coesão e coerência, com um pedaço de tempos e modos verbais que o edital colocou junto.
+CAIO: A diferença em uma linha.
+ANA: Coesão é a ligação gramatical entre as partes do texto: pronomes, conectores, sinônimos. Coerência é a ligação lógica entre as ideias.
+CAIO: E dá para ter uma sem a outra?
+ANA: Dá. Ouve essa frase: choveu muito, portanto a seca piorou. O conector está ali, gramaticalmente certinho, mas a lógica não fecha. Coesão ajuda a coerência, mas não garante.
+CAIO: Começando pela coesão referencial, que é retomar ou anunciar um termo.
+ANA: Dá para retomar sem repetir de vários jeitos. Pronome: o agente chegou, ele trazia o laudo. Sinônimo ou palavra mais geral: o fuzil foi apreendido, a arma estava sem registro. Expressão que resume: houve furtos, roubos e ameaças, esse quadro preocupa. Elipse, que é omitir: os agentes entraram e revistaram a casa, sem repetir eles. E advérbios e numerais: fui a Caruaru, lá encontrei o perito.
+CAIO: E como cai na prova?
+ANA: O Cebraspe adora perguntar a que termo se refere um pronome. A técnica é simples: troque o pronome pelo termo que você escolheu e leia de novo. Se o sentido fechar, acertou. E cuidado, porque nem sempre é o termo mais próximo.
+CAIO: Este, esse e aquele.
+ANA: No texto, este anuncia o que vem, é a catáfora. Esse retoma o que já foi dito, é a anáfora. E aquele, quando tem um par, retoma o mais distante.
+CAIO: Me dá o exemplo do par.
+ANA: Pedro e Ana chegaram. Esta trazia o laudo, aquele, a arma. Esta é Ana, que está mais perto na frase. Aquele é Pedro, mais distante.
+CAIO: Agora coesão sequencial: os conectores. É aqui que a banca faz troca de palavras e pergunta se o sentido mudou.
+ANA: Vou passar pelas relações principais. Adição: e, nem, além disso. Oposição, ou adversativa: mas, porém, contudo, todavia, entretanto, no entanto.
+CAIO: Concessão.
+ANA: Embora, ainda que, mesmo que, conquanto, posto que, apesar de. Causa: porque, pois, visto que, já que, uma vez que, e como no início da frase. Conclusão: logo, portanto, por isso, assim.
+CAIO: E o pois, que aparece em dois lugares?
+ANA: Pois antes do verbo costuma ser explicação ou causa. Pois depois do verbo, entre vírgulas, é conclusão. Ele estudou muito; foi, pois, aprovado. Ali é conclusão.
+CAIO: Continua.
+ANA: Condição: se, caso, desde que, contanto que, a menos que. Finalidade: para que, a fim de que. Conformidade: conforme, consoante, segundo. Proporção: à medida que, à proporção que. Consequência: tão... que, de modo que.
+CAIO: E as duas armadilhas.
+ANA: Primeira: adversativa e concessiva expressam oposição, mas a concessiva pede o verbo no subjuntivo. Embora estivesse cansado, continuou, é o mesmo que: estava cansado, mas continuou. Se a questão trocar uma pela outra sem ajustar o verbo, fica errado.
+CAIO: E a segunda?
+ANA: Na medida em que indica causa. À medida que indica proporção. Parecem iguais, mas trocar muda o sentido. A banca adora essa.
+CAIO: Agora os verbos, que também amarram o texto no tempo.
+ANA: Pretérito perfeito é fato concluído: prendeu. Imperfeito é fato habitual ou em andamento no passado, é o cenário: prendia, chovia. Mais-que-perfeito é um passado anterior a outro passado: quando cheguei, ele já saíra, que é o mesmo que tinha saído.
+CAIO: E o futuro do pretérito, que aparece muito em notícia.
+ANA: O suspeito teria fugido. Isso não é fato confirmado. O futuro do pretérito marca hipótese, polidez ou informação não confirmada. E a banca escreve na opção que o texto afirma que o suspeito fugiu. Errado.
+CAIO: E a correlação que cai muito.
+ANA: Se ele tivesse visto, teria avisado. Imperfeito do subjuntivo com futuro do pretérito. E: se ele vir, avisará. Futuro do subjuntivo com futuro do presente. Repara: se ele vir, do verbo ver, e não se ele ver.
+CAIO: Certo ou errado. Na frase os agentes prenderam o suspeito e o levaram à delegacia, o pronome o retoma suspeito.
+ANA: Certo. Troca e confere: levaram o suspeito à delegacia.
+CAIO: Trocar embora estivesse cansado por mas estava cansado, ajustando a frase, mantém a relação de oposição.
+ANA: Certo.
+CAIO: Na medida em que e à medida que podem ser trocados sem alteração de sentido.
+ANA: Errado. Um é causa, o outro é proporção.
+CAIO: Em o suspeito teria fugido, o autor afirma como certo que houve fuga.
+ANA: Errado. É informação não confirmada.
+CAIO: Resumo.
+ANA: Coesão é gramática, coerência é lógica. Pronome: troque e confira. Este anuncia, esse retoma. Concessiva pede subjuntivo. Na medida em que é causa, à medida que é proporção. E teria fugido não é fato, é hipótese.
+CAIO: Agora é com você nas questões. Até a próxima.
+ANA: Tchau, bons estudos.

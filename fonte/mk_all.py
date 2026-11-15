@@ -105,6 +105,7 @@ s=s.replace('<title>Cronograma PC-PE Agente</title>','<title>Estudo PC-PE Agente
 s=s.replace('<h1>Cronograma até a prova</h1>','<h1>Tudo para a prova da PC-PE</h1>',1)
 s=s.replace('</style>',acss+'\n</style>',1)
 exec(open('patch_crono.py',encoding='utf-8').read())
+exec(open('patch_pod.py',encoding='utf-8').read())
 hdr_end=s.index('</header>')+len('</header>')
 tabs='''
   <div class="tabs" role="tablist" aria-label="Seções">

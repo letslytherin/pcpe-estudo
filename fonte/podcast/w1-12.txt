@@ -1,0 +1,58 @@
+TITULO: Conceitos de Contabilidade e estrutura conceitual
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Hoje começa Contabilidade Geral: conceito, objetivo, usuários e a Estrutura Conceitual, aquele pronunciamento chamado CPC zero zero.
+ANA: Contabilidade assusta, mas esse primeiro capítulo é quase todo de definição. Se você decorar as palavras certas, ganha os pontos.
+CAIO: O que é contabilidade?
+ANA: É a ciência social que estuda e controla o patrimônio das entidades. E aqui já vem a primeira pegadinha: o objeto da contabilidade é o patrimônio. Não é o lucro.
+CAIO: E o objetivo?
+ANA: Fornecer informações úteis sobre o patrimônio e as suas variações, para quem precisa tomar decisões. A finalidade é controle e planejamento. E o campo de aplicação são as entidades econômico-administrativas, também chamadas aziendas, com ou sem fins lucrativos.
+CAIO: E as técnicas contábeis?
+ANA: São quatro. Escrituração, que é registrar os fatos nos livros. Elaboração das demonstrações, que apresenta o patrimônio e o resultado. Auditoria, que verifica se está tudo certo. E análise das demonstrações, que interpreta os números com índices.
+CAIO: Quem usa a informação contábil?
+ANA: Usuários internos, como administradores, gerentes e sócios que dirigem a empresa. E externos, como investidores, bancos, fornecedores, governo, empregados e clientes. Mas a Estrutura Conceitual foca nos usuários primários: investidores, credores por empréstimo e outros credores, existentes e potenciais.
+CAIO: Um pouco de história.
+ANA: O método das partidas dobradas foi divulgado de forma sistemática no fim do século quinze, na Itália. E no Brasil, as Leis onze mil seiscentos e trinta e oito, de dois mil e sete, e onze mil novecentos e quarenta e um, de dois mil e nove, aproximaram as nossas normas das normas internacionais.
+CAIO: Agora a Estrutura Conceitual. Qual o objetivo do relatório financeiro?
+ANA: Dar informações úteis aos usuários primários para decidirem se fornecem recursos à entidade. Comprar ações, emprestar dinheiro, vender a prazo.
+CAIO: E o pressuposto básico.
+ANA: Continuidade. Presume-se que a entidade vai continuar operando no futuro previsível. Se ela vai fechar, as demonstrações seguem outra base.
+CAIO: Agora a parte que mais cai: as características qualitativas.
+ANA: Elas se dividem em fundamentais e de melhoria. As fundamentais são duas: relevância e representação fidedigna.
+CAIO: E as de melhoria?
+ANA: São quatro: comparabilidade, verificabilidade, tempestividade e compreensibilidade. Um jeito de lembrar: as de melhoria são as que deixam a informação mais fácil de usar, mas se ela não for relevante e fiel, não adianta melhorar.
+CAIO: Relevância.
+ANA: A informação faz diferença na decisão porque tem valor preditivo, ajuda a prever, ou confirmatório, confirma ou corrige avaliações anteriores. E dentro da relevância está a materialidade.
+CAIO: Materialidade é uma característica separada?
+ANA: Não. Pegadinha. A materialidade é um aspecto da relevância, específico de cada entidade. Uma informação é material se a omissão ou a distorção dela puder influenciar a decisão. Um erro de mil reais pode ser material numa padaria e irrelevante numa multinacional.
+CAIO: Representação fidedigna.
+ANA: Retratar a essência do fenômeno, de forma completa, neutra e livre de erro. E a prudência, que é a cautela ao julgar sob incerteza, apoia a neutralidade.
+CAIO: E as de melhoria, uma por uma.
+ANA: Comparabilidade permite comparar entidades e períodos. E a consistência, que é usar os mesmos métodos, ajuda a chegar na comparabilidade, mas não é sinônimo. Verificabilidade: pessoas independentes chegariam a uma conclusão parecida. Tempestividade: a informação chega a tempo de influenciar a decisão. Compreensibilidade: ela é apresentada de forma clara.
+CAIO: E tem uma restrição.
+ANA: O custo. O benefício da informação deve justificar o custo de produzi-la.
+CAIO: Agora os elementos das demonstrações.
+ANA: Ativo é um recurso econômico presente, controlado pela entidade, resultante de eventos passados. E o ponto chave aqui é a palavra controlado. Não precisa ser propriedade jurídica. Basta o controle.
+CAIO: Passivo.
+ANA: Obrigação presente de transferir um recurso econômico, resultante de eventos passados.
+CAIO: Patrimônio líquido.
+ANA: É a participação residual nos ativos depois de descontar os passivos. Ativo menos passivo.
+CAIO: Receitas e despesas.
+ANA: Receita é aumento de ativo ou redução de passivo que aumenta o patrimônio líquido, exceto o dinheiro que os sócios colocam. Despesa é redução de ativo ou aumento de passivo que diminui o patrimônio líquido, exceto o que é distribuído aos sócios.
+CAIO: Então aporte de capital dos sócios não é receita.
+ANA: Não é. Pegadinha clássica.
+CAIO: E as bases de mensuração?
+ANA: Custo histórico e valor atual. O valor atual inclui valor justo, valor em uso para ativos, valor de cumprimento para passivos, e custo corrente.
+CAIO: Certo ou errado. O objeto da contabilidade é o lucro.
+ANA: Errado. É o patrimônio.
+CAIO: A comparabilidade é característica qualitativa fundamental.
+ANA: Errado. É de melhoria. As fundamentais são relevância e representação fidedigna.
+CAIO: A materialidade é aspecto da relevância.
+ANA: Certo.
+CAIO: Para reconhecer um ativo, é indispensável a propriedade jurídica.
+ANA: Errado. Basta o controle.
+CAIO: Aporte de capital dos sócios é receita.
+ANA: Errado.
+CAIO: Resumo.
+ANA: Objeto é o patrimônio. Pressuposto é a continuidade. Fundamentais: relevância, com materialidade dentro, e representação fidedigna. Melhoria: comparabilidade, verificabilidade, tempestividade e compreensibilidade. Ativo pede controle, não propriedade. E dinheiro de sócio não é receita.
+CAIO: Bora para as questões. Até a próxima.
+ANA: Tchau, bons estudos.

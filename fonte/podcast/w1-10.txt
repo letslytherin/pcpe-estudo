@@ -1,0 +1,66 @@
+TITULO: Windows 11
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Hoje é Informática, começando pelo Windows onze. Interface, arquivos, Lixeira e os atalhos que a banca mais cobra.
+ANA: Uma dica antes: se você estiver perto de um computador com Windows, testa cada atalho depois. Na prova, quem já apertou a tecla lembra muito mais fácil.
+CAIO: Começando pela interface. O que mudou no onze?
+ANA: A barra de tarefas tem os ícones centralizados por padrão. Dá para alinhar à esquerda nas configurações. E a antiga central de ações foi separada em duas: as configurações rápidas, com Wi-Fi, volume, brilho e Bluetooth, e a central de notificações, junto com o calendário.
+CAIO: E os atalhos dessas duas?
+ANA: Windows mais A abre as configurações rápidas. Windows mais N abre as notificações e o calendário. Windows mais W abre os widgets, aquele painel com notícias e clima.
+CAIO: Áreas de trabalho virtuais.
+ANA: São várias mesas separadas para organizar janelas. Windows mais Tab abre a Visão de Tarefas, e Windows mais Control mais D cria uma área nova.
+CAIO: Snap Layouts.
+ANA: Organizam as janelas em grade. Você passa o mouse sobre o botão maximizar ou aperta Windows mais Z. E Windows mais as setas encaixam a janela nos cantos.
+CAIO: E o assistente?
+ANA: O Copilot, de inteligência artificial, que substituiu a Cortana.
+CAIO: Janelas.
+ANA: Alt mais Tab alterna entre as janelas abertas. Alt mais F4 fecha a janela ativa, e se você estiver na área de trabalho, abre a tela de desligar. Windows mais D mostra a área de trabalho, e apertando de novo restaura. Windows mais M minimiza tudo.
+CAIO: Explorador de Arquivos.
+ANA: Abre com Windows mais E. E aqui tem um conceito que cai: as bibliotecas. Documentos, Imagens, Músicas, Vídeos. Elas agrupam o conteúdo de várias pastas num lugar só, mas sem mover os arquivos. É só uma forma de visualizar.
+CAIO: Então se a questão disser que a biblioteca move os arquivos...
+ANA: Errado. E o modo de exibição detalhes é o que mostra tamanho, tipo e data. E no onze o menu do botão direito ficou mais enxuto. Para ver o menu antigo, clique em mostrar mais opções, ou use Shift mais F10.
+CAIO: Operações com arquivos. Os atalhos.
+ANA: F2 renomeia. Control C copia, Control X recorta, Control V cola. Control A seleciona tudo. Control Z desfaz. Control mais Shift mais N cria uma pasta nova no Explorador. E Alt mais Enter abre as propriedades.
+CAIO: Selecionar vários itens.
+ANA: Control mais clique seleciona itens alternados, um aqui e outro ali. Shift mais clique seleciona um intervalo, tudo entre o primeiro e o último.
+CAIO: E excluir.
+ANA: Delete manda para a Lixeira. Shift mais Delete exclui definitivamente, sem passar pela Lixeira.
+CAIO: Agora a parte que mais cai: arrastar com o mouse.
+ANA: Arrastar para uma pasta da mesma unidade move o arquivo. Arrastar para outra unidade, por exemplo do disco C para um pen drive, copia.
+CAIO: E com as teclas?
+ANA: Arrastando com Control, sempre copia. Com Shift, sempre move. E com Alt, ou Control mais Shift, cria um atalho.
+CAIO: Lixeira.
+ANA: Recebe os arquivos apagados do disco local. Arquivos apagados de pen drive, cartão de memória ou de pasta de rede, em geral, não vão para a Lixeira. São excluídos direto. E arquivo maior que a capacidade da Lixeira também é excluído direto.
+CAIO: Então a frase todo arquivo excluído vai para a Lixeira...
+ANA: Está errada. E outra: excluir um atalho não exclui o programa. Só apaga o atalho.
+CAIO: Nomes de arquivo.
+ANA: Não podem ter os caracteres barra invertida, barra, dois-pontos, asterisco, interrogação, aspas, menor que, maior que e a barra vertical.
+CAIO: Configurações.
+ANA: Windows mais I abre o app Configurações, que substituiu boa parte do antigo Painel de Controle. Resolução da tela e luz noturna ficam em Sistema, Tela. Papel de parede, cores e temas, em Personalização. Proteção de tela fica em Personalização, Tela de bloqueio. E Windows Hello, que é o login por rosto, digital ou PIN, fica em Contas.
+CAIO: E o Gerenciador de Tarefas?
+ANA: Control mais Shift mais Esc. Mostra os programas e processos e permite encerrar o que travou.
+CAIO: Agora uma rodada só de atalhos com a tecla Windows. Eu falo a tecla, você pensa na função.
+ANA: Vai.
+CAIO: Windows mais L.
+ANA: Bloqueia o computador. Não desliga, bloqueia.
+CAIO: Windows mais V.
+ANA: Histórico da área de transferência.
+CAIO: Windows mais Shift mais S.
+ANA: Recorte de tela, a Ferramenta de Captura.
+CAIO: Windows mais R.
+ANA: Executar.
+CAIO: Windows mais ponto.
+ANA: Painel de emojis. E Windows mais vírgula espia a área de trabalho.
+CAIO: Windows mais H.
+ANA: Digitação por voz.
+CAIO: Certo ou errado. Ao arrastar um arquivo do disco C para um pen drive, o arquivo é movido.
+ANA: Errado. Outra unidade, copia.
+CAIO: Arquivos excluídos de um pen drive vão para a Lixeira.
+ANA: Errado. Em geral, são excluídos direto.
+CAIO: Windows mais L desliga o computador.
+ANA: Errado. Bloqueia.
+CAIO: As bibliotecas movem os arquivos para uma pasta única.
+ANA: Errado. Só agrupam a visualização.
+CAIO: Resumo.
+ANA: Mesma unidade move, outra unidade copia. Control copia, Shift move, Alt cria atalho. Shift Delete apaga sem Lixeira, e pen drive não usa Lixeira. Windows L bloqueia, Windows E abre o Explorador, Windows V é o histórico, Windows Shift S recorta a tela. F2 renomeia.
+CAIO: Bora para as questões. Até a próxima.
+ANA: Tchau, bons estudos.

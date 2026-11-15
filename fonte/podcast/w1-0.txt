@@ -1,0 +1,50 @@
+TITULO: Constituição e princípios fundamentais
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Este é o podcast de estudo para Agente da Polícia Civil de Pernambuco. Hoje a gente abre Direito Constitucional pelo começo: o que é a Constituição de 1988 e os princípios fundamentais, do artigo primeiro ao quarto.
+ANA: É um tema curto, mas que a banca adora, porque dá para trocar uma palavra e a frase fica errada. Então a ideia hoje é você sair sabendo separar fundamento, objetivo e princípio das relações internacionais.
+CAIO: Antes disso, a classificação. Como a nossa Constituição é classificada?
+ANA: Ela é escrita, porque está num documento só. Promulgada, porque foi votada por uma Assembleia Constituinte eleita pelo povo, e não imposta. Rígida, porque mudar o texto exige um processo mais difícil do que fazer uma lei comum. Analítica, porque é longa e detalhista. E dogmática, porque foi feita de uma vez, com os valores daquela época.
+CAIO: Tem gente que chama de super-rígida, né?
+ANA: Isso, por causa das cláusulas pétreas, aqueles pontos que nem emenda pode abolir. Se a questão disser super-rígida, não estranhe. E guarde a palavra-chave da origem: promulgada. O contrário seria outorgada, que é a imposta por quem está no poder.
+CAIO: Agora a estrutura. Preâmbulo, parte permanente e o ADCT, o Ato das Disposições Constitucionais Transitórias.
+ANA: E aqui mora a primeira pegadinha: o preâmbulo não tem força normativa. O Supremo já decidiu isso. Ele não serve de parâmetro para controle de constitucionalidade, e a menção a Deus que está lá não obriga os estados a repetir nas constituições estaduais.
+CAIO: Já o ADCT tem força normativa, só que muitas normas dele já cumpriram o papel e ficaram sem efeito prático.
+ANA: Perfeito. Vamos ao artigo primeiro.
+CAIO: O artigo primeiro diz que a República Federativa do Brasil é formada pela união indissolúvel dos estados, dos municípios e do Distrito Federal, e se constitui em Estado Democrático de Direito.
+ANA: Indissolúvel quer dizer que não existe direito de secessão. Nenhum estado pode sair da federação. E aí vêm os cinco fundamentos. O truque para decorar é SO-CI-DI-VA-PLU.
+CAIO: Soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre-iniciativa, e pluralismo político.
+ANA: Repete comigo mentalmente: so, ci, di, va, plu. Fundamento é a base, o alicerce. É o que a República já é.
+CAIO: E o parágrafo único?
+ANA: Todo o poder emana do povo, que o exerce por meio de representantes eleitos ou diretamente. Quando o povo age diretamente, é por plebiscito, referendo e iniciativa popular. Por isso a nossa democracia é chamada de semidireta ou participativa. Isso já caiu em questão no formato: representantes eleitos ou diretamente caracteriza qual democracia? Semidireta.
+CAIO: Artigo segundo: os Poderes.
+ANA: Legislativo, Executivo e Judiciário, independentes e harmônicos entre si. É o sistema de freios e contrapesos. E a separação de Poderes é cláusula pétrea.
+CAIO: Agora o artigo terceiro, que é o que mais confunde.
+ANA: Os objetivos fundamentais. Diferente dos fundamentos, objetivo é aonde a República quer chegar. E tem uma dica de ouro: todos os objetivos começam com verbo. Construir, garantir, erradicar, reduzir, promover. O mnemônico é CON-GA-ER-PRO.
+CAIO: Construir uma sociedade livre, justa e solidária. Garantir o desenvolvimento nacional. Erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais. Promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação.
+ANA: Então, na prova, se aparecer um verbo de ação, pense em objetivo. Se aparecer um substantivo como soberania ou dignidade, pense em fundamento.
+CAIO: E o artigo quarto?
+ANA: São os princípios que regem o Brasil nas relações internacionais. A lista é grande, mas os mais cobrados são: independência nacional, prevalência dos direitos humanos, autodeterminação dos povos, não intervenção, igualdade entre os Estados, defesa da paz, solução pacífica dos conflitos, repúdio ao terrorismo e ao racismo, cooperação entre os povos e concessão de asilo político.
+CAIO: E o parágrafo único fala da América Latina.
+ANA: O Brasil busca a integração econômica, política, social e cultural dos povos da América Latina, para formar uma comunidade latino-americana de nações.
+CAIO: Agora vamos às pegadinhas, que é o que vale ponto.
+ANA: Primeira: soberania é fundamento, do artigo primeiro. Independência nacional é princípio das relações internacionais, do artigo quarto. São parecidas, mas moram em artigos diferentes.
+CAIO: Segunda: garantir o desenvolvimento nacional é objetivo. Começa com verbo.
+ANA: Terceira: dignidade da pessoa humana é fundamento, não objetivo.
+CAIO: Quarta: asilo político e repúdio ao terrorismo e ao racismo estão no artigo quarto.
+ANA: Quinta, e essa é mais sutil: a federação é cláusula pétrea expressa. A república não é. A forma republicana aparece como princípio sensível, que pode justificar intervenção federal, mas não está na lista de cláusulas pétreas.
+CAIO: Vamos fazer um certo ou errado rápido? Eu falo, você pensa antes da Ana responder.
+ANA: Combinado.
+CAIO: A dignidade da pessoa humana é um dos objetivos fundamentais da República.
+ANA: Errado. É fundamento, artigo primeiro, inciso terceiro.
+CAIO: Erradicar a pobreza e a marginalização é fundamento da República.
+ANA: Errado. Começa com verbo, é objetivo, artigo terceiro.
+CAIO: O preâmbulo serve de parâmetro para o controle de constitucionalidade.
+ANA: Errado. O preâmbulo não tem força normativa.
+CAIO: A concessão de asilo político é princípio das relações internacionais.
+ANA: Certo. Artigo quarto.
+CAIO: O pluralismo político é fundamento da República.
+ANA: Certo. É o plu do SO-CI-DI-VA-PLU.
+CAIO: Fechando: o que você leva de hoje?
+ANA: Fundamento é substantivo, SO-CI-DI-VA-PLU. Objetivo começa com verbo, CON-GA-ER-PRO. Relações internacionais é o artigo quarto, com asilo e repúdio ao terrorismo. Preâmbulo sem força normativa. E federação é cláusula pétrea, república não.
+CAIO: Agora abre o Gran e faz as questões desse assunto. Até o próximo episódio.
+ANA: Tchau, bons estudos.

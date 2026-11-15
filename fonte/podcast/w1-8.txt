@@ -1,0 +1,50 @@
+TITULO: Compreensão, interpretação, tipos e gêneros textuais
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Hoje é Português, e o tema que vale mais ponto na prova: compreensão e interpretação de texto, junto com tipos e gêneros textuais.
+ANA: E o bom é que isso aqui é técnica. Dá para treinar e melhorar rápido.
+CAIO: Começa pela diferença entre compreender e interpretar.
+ANA: Compreensão é achar uma informação que está escrita no texto. Interpretação é tirar uma conclusão que o texto autoriza, a partir das pistas dele. E a regra de ouro serve para as duas: a conclusão tem que caber no texto.
+CAIO: Mesmo que seja verdade na vida real?
+ANA: Mesmo assim. Se o texto não sustenta, a opção está errada. O seu conhecimento de mundo não vale. Essa é a armadilha número um do Cebraspe: uma frase verdadeira, mas que o texto não disse.
+CAIO: E como a banca constrói as opções erradas?
+ANA: Com três defeitos. Extrapolação: diz mais do que o texto disse. O texto fala de alguns jovens, a opção fala dos jovens, todos. Redução: pega uma parte e trata como o todo. O texto cita três causas, a opção diz que a causa é uma só. E contradição: diz o contrário do texto, às vezes com um sinônimo disfarçado.
+CAIO: E as palavras de alerta.
+ANA: Sempre, nunca, todos, nenhum, apenas, exclusivamente, somente, necessariamente. Quando aparecerem na opção, volte ao texto e veja se ele foi tão categórico assim. Quase sempre o texto é mais cauteloso.
+CAIO: Pressuposto e subentendido.
+ANA: O pressuposto vem de uma marca na própria frase. Se eu digo ainda há vagas, pressuponho que já havia vagas e que elas podem acabar. Não dá para negar o pressuposto sem contradizer a frase.
+CAIO: E o subentendido?
+ANA: Vem do contexto, da situação. Se alguém pergunta: você viu que horas são?, pode estar querendo dizer: você está atrasado. E quem falou pode negar a insinuação.
+CAIO: Quais palavras carregam pressuposto?
+ANA: Ainda, já, até, também, só, voltar a, deixar de, continuar, passar a. Deixou de fumar pressupõe que fumava.
+CAIO: Vozes no texto.
+ANA: O texto mistura a voz do autor com a de outras pessoas. Aspas podem marcar citação, ironia ou gíria. Discurso direto reproduz a fala como foi dita. Discurso indireto conta o que a pessoa disse: o delegado afirmou que a operação terminara. E o indireto livre mistura o pensamento do personagem com a voz do narrador, sem aviso.
+CAIO: E a pegadinha?
+ANA: Atribuir ao autor uma opinião que ele só citou para criticar. Muito comum em texto argumentativo.
+CAIO: Funções da linguagem.
+ANA: Cada função destaca um elemento da comunicação. Referencial foca no assunto, é a da notícia. Emotiva foca em quem fala, primeira pessoa, exclamação. Conativa, ou apelativa, foca em quem recebe: imperativo, você, propaganda. Fática testa o canal: alô, está me ouvindo? Metalinguística é a língua explicando a língua, como o dicionário. E poética foca na forma: ritmo, rima, jogo de sons.
+CAIO: E se o texto tiver várias?
+ANA: Normal. A questão costuma pedir a predominante.
+CAIO: Variação linguística.
+ANA: Histórica, que muda com o tempo. Regional, como macaxeira, aipim e mandioca. Social, por escolaridade, idade, grupo. E situacional: a mesma pessoa fala diferente no trabalho e em casa.
+CAIO: E como o Cebraspe trata isso?
+ANA: Não trata a linguagem informal como erro, mas como inadequada a certos contextos. Então a opção que chama a variação popular de errada ou inferior tende a estar errada.
+CAIO: Agora tipos textuais.
+ANA: São cinco. Narrativo conta fatos em sequência, com verbos de ação, personagens, tempo e lugar. Descritivo mostra como algo é, com adjetivos e verbos de estado. Expositivo explica, informa, com definições e dados. Argumentativo quer convencer, tem tese, argumentos e conectores de causa e oposição. E injuntivo orienta a fazer algo, como uma receita ou um manual.
+CAIO: E um texto pode misturar tipos?
+ANA: Quase sempre mistura. A notícia narra e descreve. O artigo de opinião argumenta, mas pode contar um caso como exemplo. Então desconfie da opção que diz que um texto argumentativo não pode ter trecho narrativo.
+CAIO: Gêneros que mais caem.
+ANA: Notícia: relato objetivo de um fato recente. Reportagem: mais profundidade, várias fontes. Crônica: texto curto e leve sobre o cotidiano. Conto: narrativa curta com um conflito central. Charge e tirinha: imagem e palavra, quase sempre com crítica e humor.
+CAIO: E a confusão clássica.
+ANA: Editorial e artigo de opinião. O editorial é a opinião do veículo, do jornal, sem assinatura individual. O artigo de opinião é a opinião de quem assina, não do jornal.
+CAIO: Certo ou errado. O texto diz que alguns policiais aprovaram a medida. A opção: os policiais aprovaram a medida.
+ANA: Errado. Extrapolação.
+CAIO: A frase ele voltou a estudar pressupõe que ele já estudava antes.
+ANA: Certo. Voltar a carrega pressuposto.
+CAIO: O editorial expressa a opinião pessoal do jornalista que o assina.
+ANA: Errado. Editorial é a opinião do veículo.
+CAIO: Texto argumentativo não admite sequências narrativas.
+ANA: Errado. Os tipos se misturam.
+CAIO: Resumo.
+ANA: A resposta tem que caber no texto. Desconfie de palavras absolutas. Os três defeitos: extrapolação, redução e contradição. Pressuposto vem da frase, subentendido do contexto. Editorial é do jornal, artigo de opinião é de quem assina. E variação não é erro, é adequação.
+CAIO: Treina nas questões de interpretação do Gran, lendo o texto antes das opções. Até a próxima.
+ANA: Tchau, bons estudos.

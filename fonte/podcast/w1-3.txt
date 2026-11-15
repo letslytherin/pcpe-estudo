@@ -1,0 +1,55 @@
+TITULO: Princípios da administração pública
+CAIO: Oi, aqui é o Caio.
+ANA: E eu sou a Ana. Hoje é um dos temas mais cobrados de Direito Administrativo: os princípios da administração pública.
+CAIO: Começando pelos expressos, que estão no caput do artigo trinta e sete da Constituição.
+ANA: São cinco, e todo mundo conhece pelo LIMPE: legalidade, impessoalidade, moralidade, publicidade e eficiência. Valem para a administração direta e indireta, de todos os Poderes e de todos os entes.
+CAIO: Legalidade.
+ANA: Para o particular, pode tudo o que a lei não proíbe. Para o administrador, só pode o que a lei permite ou determina. É a frase que mais cai.
+CAIO: Impessoalidade.
+ANA: Tem três ideias. Tratar todos de forma igual. Agir com finalidade pública, e não para beneficiar ou prejudicar alguém. E proibir a promoção pessoal na publicidade oficial. Está no parágrafo primeiro do artigo trinta e sete.
+CAIO: Então a placa de obra com o nome e a foto do governador...
+ANA: Viola a impessoalidade. E tem um detalhe: pela impessoalidade, o ato é atribuído ao órgão, e não à pessoa do agente. Por isso, ato praticado por alguém que parecia ser servidor, o chamado agente de fato, pode ser aproveitado para proteger quem estava de boa-fé.
+CAIO: Moralidade.
+ANA: Honestidade, boa-fé, lealdade. E o ponto chave: a moralidade é autônoma. Um ato pode estar dentro da lei e ainda assim ser imoral. É dela que vem a Súmula Vinculante treze, sobre nepotismo.
+CAIO: Detalha o nepotismo.
+ANA: É proibido nomear cônjuge, companheiro ou parente até o terceiro grau da autoridade que nomeia, ou de servidor em cargo de direção, chefia ou assessoramento, para cargo em comissão ou função de confiança. Vale também o nepotismo cruzado, quando duas autoridades trocam favores e nomeiam o parente uma da outra.
+CAIO: E tem exceção.
+ANA: Tem. Em regra, a súmula não alcança cargos políticos, como secretário de estado ou ministro. Salvo se houver fraude ou falta evidente de qualificação.
+CAIO: Publicidade.
+ANA: É a divulgação oficial, e funciona como requisito de eficácia do ato. Enquanto não é publicado, o ato não produz efeitos para fora. Mas admite sigilo quando for imprescindível à segurança da sociedade e do Estado, ou para proteger a intimidade.
+CAIO: Eficiência.
+ANA: Busca de resultado com economia de recursos. E aqui a pegadinha de data: a eficiência não estava no texto original de mil novecentos e oitenta e oito. Entrou com a Emenda Constitucional dezenove, de mil novecentos e noventa e oito.
+CAIO: Agora os implícitos, que não estão no artigo trinta e sete mas são reconhecidos.
+ANA: O primeiro é a autotutela. A Administração anula os próprios atos ilegais, e isso é um dever. E revoga os atos que ficaram inconvenientes ou inoportunos, e isso é uma faculdade. São as súmulas trezentos e quarenta e seis e quatrocentos e setenta e três do Supremo.
+CAIO: E o Judiciário pode revogar?
+ANA: Nunca revoga ato de outro Poder. O Judiciário só anula, por ilegalidade. Revogar é exclusivo de quem praticou o ato.
+CAIO: Segurança jurídica.
+ANA: Protege a confiança das pessoas. Por exemplo, existe prazo para a Administração anular um ato que favoreceu alguém de boa-fé: cinco anos, na lei federal de processo administrativo. E também impede aplicar uma interpretação nova para trás.
+CAIO: Razoabilidade e proporcionalidade.
+ANA: O ato precisa ser adequado, necessário e proporcional. E aqui tem uma pegadinha fina: quando o Judiciário anula um ato desproporcional, ele está fazendo controle de legalidade, não de mérito. Porque o ato desproporcional é considerado ilegal. O juiz não entra na conveniência, só diz que aquilo passou do limite.
+CAIO: Continuidade do serviço público.
+ANA: O serviço não pode parar. Isso limita a greve em serviços essenciais e limita o contratado de parar o serviço só porque a Administração atrasou um pagamento.
+CAIO: Tem mais três que caem juntos: especialidade, controle e hierarquia.
+ANA: Especialidade: a entidade da administração indireta fica presa à finalidade da lei que a criou. Uma autarquia de trânsito não pode virar autarquia de saúde.
+CAIO: Controle ou tutela.
+ANA: É a fiscalização da administração direta sobre as entidades da indireta. Também chamada de supervisão ministerial. E não existe hierarquia aí, porque são pessoas jurídicas diferentes.
+CAIO: E hierarquia?
+ANA: Só existe dentro da mesma pessoa jurídica. Entre um ministério e uma autarquia, é vinculação, não subordinação.
+CAIO: E a motivação?
+ANA: É indicar os fatos e os fundamentos jurídicos do ato. É a regra, e a lei lista os casos em que é obrigatória.
+CAIO: Pegadinhas em sequência.
+ANA: LIMPE são os expressos. Razoabilidade, proporcionalidade, autotutela e motivação são implícitos na Constituição. Eficiência entrou em noventa e oito. Publicidade é requisito de eficácia. Judiciário anula, não revoga. E nepotismo, em regra, não pega cargo político.
+CAIO: Certo ou errado. O princípio da eficiência está no texto original do artigo trinta e sete.
+ANA: Errado. Emenda dezenove de noventa e oito.
+CAIO: Um ato pode ser legal e imoral.
+ANA: Certo.
+CAIO: A vedação ao nepotismo atinge, em regra, a nomeação de parente para secretário de estado.
+ANA: Errado. Cargo político fica fora, em regra.
+CAIO: Ao anular ato desproporcional, o Judiciário faz controle de mérito.
+ANA: Errado. É controle de legalidade.
+CAIO: A relação entre um ministério e uma autarquia vinculada é de hierarquia.
+ANA: Errado. É vinculação, tutela, supervisão.
+CAIO: Resumo.
+ANA: LIMPE no artigo trinta e sete. Legalidade: administrador só faz o que a lei permite. Impessoalidade proíbe promoção pessoal. Moralidade é autônoma e gera a súmula do nepotismo. Publicidade dá eficácia. Eficiência veio em noventa e oito. Anular é dever, revogar é faculdade, e só quem praticou o ato revoga.
+CAIO: Agora é com você nas questões. Até a próxima.
+ANA: Tchau, bons estudos.

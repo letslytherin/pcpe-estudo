@@ -1,0 +1,60 @@
+TITULO: Princípios do processo penal
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Hoje começa Processo Penal, com os princípios e as garantias da Constituição. Para quem vai ser agente de polícia, esse capítulo é prática do dia a dia, não só teoria.
+ANA: Exatamente. Entrar numa casa, prender alguém, ouvir um suspeito. Tudo isso passa por aqui.
+CAIO: Começando pelo devido processo legal.
+ANA: Ninguém perde a liberdade ou os bens sem o processo previsto em lei. Artigo quinto, inciso cinquenta e quatro. Dele decorrem o contraditório e a ampla defesa.
+CAIO: Contraditório.
+ANA: É ter ciência dos atos do processo e poder reagir. Ouvir e responder.
+CAIO: Ampla defesa.
+ANA: Tem duas partes. A defesa técnica, feita por advogado, que é obrigatória. E a autodefesa, feita pela própria pessoa, que pode ser renunciada. Ela pode ficar calada, por exemplo.
+CAIO: E se faltar defesa?
+ANA: A falta de defesa gera nulidade absoluta. Mas a defesa ruim, deficiente, só anula o processo se houver prova de prejuízo. É a súmula quinhentos e vinte e três do Supremo.
+CAIO: E plenitude de defesa?
+ANA: É do Tribunal do Júri. É uma defesa ainda mais ampla, que admite até argumentos não jurídicos, como apelos emocionais ou sociais aos jurados.
+CAIO: Presunção de inocência.
+ANA: Ninguém é considerado culpado até o trânsito em julgado da sentença condenatória. Artigo quinto, inciso cinquenta e sete. O Supremo firmou em dois mil e dezenove que a pena só pode ser executada depois do trânsito em julgado. Antes disso, só prisão cautelar, fundamentada.
+CAIO: Mas tem uma exceção recente.
+ANA: O Júri. Em dois mil e vinte e quatro, o Supremo admitiu a execução imediata da condenação pelo Tribunal do Júri, por causa da soberania dos veredictos.
+CAIO: Agora o que mais interessa a quem vai trabalhar na delegacia: não autoincriminação.
+ANA: Ninguém é obrigado a produzir prova contra si mesmo. O investigado pode ficar calado. E não é obrigado a participar da reconstituição do crime, nem fornecer material para exame grafotécnico, nem soprar o bafômetro.
+CAIO: Mas tem coisa que ele não pode recusar.
+ANA: Atos passivos. Ele pode ser submetido ao reconhecimento pessoal e à identificação. Ele não precisa fazer nada, só estar ali.
+CAIO: E o silêncio?
+ANA: O silêncio não importa confissão e não pode ser interpretado contra a defesa. Artigo cento e oitenta e seis do Código de Processo Penal. E aquela parte final do artigo cento e noventa e oito, que dizia que o silêncio poderia ajudar o juiz a formar convencimento, não foi recepcionada pela Constituição.
+CAIO: Juiz natural.
+ANA: Julgamento pelo juiz competente segundo regras definidas antes do fato. São proibidos os tribunais de exceção, criados depois do fato para julgar um caso específico.
+CAIO: Publicidade e motivação.
+ANA: Os atos são públicos, mas a lei pode restringir para proteger a intimidade ou o interesse social. E toda decisão judicial precisa ser fundamentada, senão é nula. Artigo noventa e três, inciso nove.
+CAIO: Provas ilícitas.
+ANA: São inadmissíveis as provas obtidas por meios ilícitos. Artigo quinto, inciso cinquenta e seis. A gente vai aprofundar isso no capítulo de provas.
+CAIO: Duplo grau de jurisdição.
+ANA: É o direito de recorrer a um órgão superior. E a pegadinha clássica: o duplo grau não está expresso na Constituição. Ele vem do Pacto de São José da Costa Rica.
+CAIO: Mais alguns rapidinhos.
+ANA: Ne bis in idem: ninguém é processado ou punido duas vezes pelo mesmo fato. In dubio pro reo: na dúvida, a favor do acusado. Intranscendência: o processo não passa da pessoa do acusado. Oficialidade: a persecução penal cabe a órgãos oficiais, como polícia e Ministério Público. E oficiosidade: nos crimes de ação pública incondicionada, as autoridades agem de ofício, sem esperar pedido.
+CAIO: Agora as garantias do artigo quinto que caem em prova de polícia. Casa.
+ANA: A casa é asilo inviolável. Sem consentimento do morador, só se pode entrar em flagrante delito, desastre ou para prestar socorro, a qualquer hora. Ou por determinação judicial, mas só durante o dia.
+CAIO: Então mandado judicial à noite...
+ANA: Não pode. Essa é pegadinha certa. Flagrante pode a qualquer hora. Mandado, só de dia.
+CAIO: Interceptação telefônica.
+ANA: Depende de ordem judicial, na forma da lei, e só para investigação criminal ou instrução processual penal. Não serve para processo civil, por exemplo.
+CAIO: Prisão.
+ANA: Só em flagrante ou por ordem escrita e fundamentada de autoridade judiciária. Ressalvados a transgressão militar e o crime propriamente militar. A prisão e o local onde o preso está são comunicados imediatamente ao juiz e à família, ou a pessoa indicada pelo preso.
+CAIO: E os direitos do preso.
+ANA: Ele é informado dos seus direitos, entre eles o de ficar calado, tem assistência da família e de advogado, e tem direito de saber quem o prendeu e quem o interrogou. A prisão ilegal é imediatamente relaxada pelo juiz. E ninguém fica preso quando a lei admitir liberdade provisória, com ou sem fiança.
+CAIO: Identificação criminal.
+ANA: Quem é civilmente identificado não passa por identificação criminal, salvo nos casos previstos em lei.
+CAIO: E os inafiançáveis.
+ANA: Racismo: inafiançável e imprescritível. Ação de grupos armados contra a ordem constitucional: inafiançável e imprescritível. Tortura, tráfico, terrorismo e hediondos, o famoso três T mais H: inafiançáveis e insuscetíveis de graça ou anistia, mas prescritíveis.
+CAIO: Certo ou errado. O duplo grau de jurisdição está expresso na Constituição.
+ANA: Errado. Vem do Pacto de São José.
+CAIO: Com ordem judicial, a polícia pode entrar numa casa à noite sem consentimento.
+ANA: Errado. Ordem judicial, só durante o dia.
+CAIO: O investigado é obrigado a participar da reconstituição do crime.
+ANA: Errado.
+CAIO: O investigado pode ser submetido a reconhecimento pessoal mesmo contra a vontade.
+ANA: Certo. É ato passivo.
+CAIO: Resumo.
+ANA: Presunção de inocência até o trânsito, com a exceção do Júri. Silêncio não é confissão. Ninguém produz prova ativa contra si. Casa: flagrante a qualquer hora, mandado só de dia. Duplo grau vem do Pacto. Racismo e grupos armados são imprescritíveis, os três T mais H não.
+CAIO: Bora para as questões. Até a próxima.
+ANA: Tchau, bons estudos.

@@ -1,0 +1,53 @@
+TITULO: Aplicabilidade das normas constitucionais
+CAIO: Oi, aqui é o Caio.
+ANA: E eu sou a Ana. Hoje o tema é aplicabilidade das normas constitucionais e um pedaço de direito intertemporal, que é o que acontece com as leis antigas quando chega uma Constituição nova.
+CAIO: A pergunta de fundo é simples: essa norma da Constituição já funciona sozinha ou depende de uma lei?
+ANA: E a classificação que a banca usa é a de José Afonso da Silva. São três tipos: eficácia plena, contida e limitada.
+CAIO: Começa pela plena.
+ANA: A norma de eficácia plena funciona sozinha desde o primeiro dia, por inteiro, e a lei não pode restringir. Aplicabilidade direta, imediata e integral. Exemplos: o artigo segundo, que separa os Poderes, e a proibição da tortura, no artigo quinto.
+CAIO: Agora a contida, que é a que mais cai.
+ANA: A contida também funciona desde o primeiro dia. Direta e imediata. Só que a lei pode vir depois e restringir. Por isso se diz que ela é possivelmente não integral. Também chamam de restringível.
+CAIO: E o exemplo clássico?
+ANA: O artigo quinto, inciso treze: é livre o exercício de qualquer trabalho, ofício ou profissão, atendidas as qualificações profissionais que a lei estabelecer. Você já pode exercer a profissão, mas a lei pode exigir, por exemplo, um diploma ou uma prova da ordem.
+CAIO: Então a pista na redação é aquela expressão: atendidas as qualificações que a lei estabelecer. A lei entra para limitar.
+ANA: Exatamente. E a limitada é o contrário. Ela não produz todos os efeitos enquanto a lei não vier. Aplicabilidade indireta, mediata e reduzida. A lei entra para completar, para ampliar.
+CAIO: Exemplo?
+ANA: A greve do servidor público, no artigo trinta e sete, inciso sete: o direito de greve será exercido nos termos e nos limites definidos em lei específica. Sem a lei, o direito não fica completo. Outro exemplo é a participação nos lucros, no artigo sétimo.
+CAIO: E a limitada ainda se divide em duas.
+ANA: Isso. A de princípio institutivo, ou organizativo, que cria um órgão ou entidade e depende de lei para estruturar. E a de princípio programático, que traça metas e programas para o Estado, como saúde, no artigo cento e noventa e seis, e cultura.
+CAIO: Aqui tem uma pegadinha boa.
+ANA: Tem. A banca escreve: as normas de eficácia limitada não produzem nenhum efeito até a lei regulamentadora. Isso está errado. Toda norma constitucional tem uma eficácia mínima.
+CAIO: Que eficácia mínima é essa?
+ANA: Ela já revoga as leis anteriores incompatíveis, que é a eficácia negativa. Serve de parâmetro para controle de constitucionalidade. E orienta a interpretação. Ou seja, norma programática não é mera recomendação.
+CAIO: E se o legislador nunca fizer a lei?
+ANA: Aí a omissão pode ser atacada por mandado de injunção ou por ação direta de inconstitucionalidade por omissão, a ADO.
+CAIO: Vamos fixar a diferença entre contida e limitada numa frase.
+ANA: Na contida, a norma já produz tudo até a lei vir restringir. Na limitada, ela só produz efeitos plenos depois que a lei vier.
+CAIO: Tem mais duas classificações que às vezes aparecem.
+ANA: Eficácia absoluta, que são as cláusulas pétreas, que nem emenda pode abolir. E eficácia exaurida, ou esvaída, que são normas que já cumpriram o papel, muito comuns no ADCT.
+CAIO: Agora a segunda parte: direito intertemporal. Chegou uma Constituição nova. O que acontece com a antiga?
+ANA: É revogada por inteiro. Revogação global.
+CAIO: E as leis que já existiam?
+ANA: Se forem compatíveis com a nova Constituição pelo conteúdo, são recepcionadas. E recebem a natureza que a nova ordem der para aquele assunto. O exemplo clássico é o Código Tributário Nacional: foi feito como lei ordinária e foi recebido com status de lei complementar.
+CAIO: Então o que importa é o conteúdo, não a forma.
+ANA: Isso. E se a lei antiga for incompatível, ela é simplesmente revogada. Não se diz que ela ficou inconstitucional depois. O Supremo não aceita essa ideia de inconstitucionalidade superveniente.
+CAIO: E qual ação discute isso?
+ANA: A ADPF, arguição de descumprimento de preceito fundamental. Não a ADI. Isso já foi pegadinha.
+CAIO: Repristinação.
+ANA: É quando uma lei revogada volta a valer porque a lei que a revogou deixou de existir. No Brasil, só acontece se houver previsão expressa. Não existe repristinação automática.
+CAIO: E desconstitucionalização?
+ANA: Seria a Constituição velha continuar valendo como lei comum naquilo que fosse compatível. Também não é aceita no Brasil sem previsão expressa.
+CAIO: Última: retroatividade.
+ANA: A regra para normas da Constituição originária é a retroatividade mínima. Ela alcança os efeitos futuros de fatos passados, por exemplo prestações que vencem depois da promulgação.
+CAIO: Certo ou errado. As normas de eficácia contida produzem efeitos plenos desde a promulgação, podendo ser restringidas por lei.
+ANA: Certo.
+CAIO: O direito de greve dos servidores públicos está em norma de eficácia limitada.
+ANA: Certo. Depende de lei específica.
+CAIO: Lei anterior incompatível com a Constituição pode ser objeto de ADI.
+ANA: Errado. Ela é revogada, e o caminho é a ADPF.
+CAIO: A repristinação acontece automaticamente.
+ANA: Errado. Só com previsão expressa.
+CAIO: Resumo final?
+ANA: Plena: funciona sozinha e a lei não mexe. Contida: funciona sozinha e a lei pode restringir, como a liberdade profissional. Limitada: precisa da lei, como a greve do servidor, mas já tem eficácia mínima. Lei antiga compatível é recepcionada pelo conteúdo, a incompatível é revogada, e repristinação só se a lei disser.
+CAIO: Agora é com você nas questões do Gran. Até a próxima.
+ANA: Tchau, bons estudos.

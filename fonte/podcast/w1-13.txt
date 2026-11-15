@@ -1,0 +1,53 @@
+TITULO: Variáveis e tabelas de frequência
+CAIO: Oi, aqui é o Caio.
+ANA: E eu sou a Ana. Hoje começa Estatística: conceitos básicos, tipos de variáveis e tabelas de frequência.
+CAIO: É o capítulo mais tranquilo de Estatística, mas é a base para todos os outros. E a classificação das variáveis cai muito no certo ou errado.
+ANA: Começando pela divisão da estatística. A descritiva organiza e resume os dados: tabelas, gráficos, médias. A inferencial tira conclusões sobre a população inteira a partir de uma amostra, sempre com uma margem de erro.
+CAIO: Me dá um exemplo do dia a dia.
+ANA: Contar quantas ocorrências a delegacia registrou no mês e fazer um gráfico é descritiva. Entrevistar mil pessoas e concluir algo sobre todo o estado de Pernambuco é inferencial.
+CAIO: E análise exploratória?
+ANA: É usar gráficos e medidas para entender os dados antes de fazer qualquer modelo.
+CAIO: Agora os tipos de variáveis.
+ANA: Primeiro a grande divisão: qualitativa ou quantitativa. Qualitativa, também chamada categórica, descreve uma qualidade, uma categoria. Quantitativa, também chamada numérica, mede ou conta.
+CAIO: A qualitativa se divide em duas.
+ANA: Nominal, quando não tem ordem: sexo, cor dos olhos, tipo de crime. Não existe furto maior que estelionato como categoria. E ordinal, quando tem ordem: escolaridade, classe social, patente. Ensino médio vem antes de superior. Soldado vem antes de cabo.
+CAIO: E a quantitativa?
+ANA: Discreta, quando é contagem, com valores isolados: número de filhos, número de ocorrências. Não existe dois filhos e meio. E contínua, quando é medição e pode assumir qualquer valor num intervalo: altura, peso, tempo, renda.
+CAIO: O macete?
+ANA: Discreta você conta. Contínua você mede.
+CAIO: E a pegadinha principal.
+ANA: Número usado como código é variável qualitativa. CEP, número da viatura, matrícula, número de telefone. Parece número, mas não faz sentido somar dois CEPs ou tirar a média de matrículas. É uma etiqueta, uma categoria.
+CAIO: E a outra pegadinha.
+ANA: Escolaridade é ordinal, não nominal. Porque tem ordem.
+CAIO: Agora tabela de frequências. Vamos montar uma de cabeça.
+ANA: Imagina que você anotou o número de ocorrências por dia durante vinte dias. Em quatro dias houve zero ocorrência. Em oito dias, uma. Em seis dias, duas. E em dois dias, três ocorrências.
+CAIO: Essas contagens, quatro, oito, seis e dois, são a frequência absoluta.
+ANA: Exatamente. E a soma das frequências absolutas tem que dar o total de observações. Quatro mais oito mais seis mais dois, vinte.
+CAIO: E a frequência relativa?
+ANA: É a absoluta dividida pelo total, geralmente em porcentagem. Quatro em vinte é vinte por cento. Oito em vinte, quarenta por cento. Seis em vinte, trinta. Dois em vinte, dez. E a soma das relativas sempre dá cem por cento.
+CAIO: E a acumulada?
+ANA: Vai somando de cima para baixo. Quatro. Depois quatro mais oito, doze. Depois dezoito. Depois vinte. A última acumulada é sempre igual ao total. E a relativa acumulada termina sempre em cem por cento.
+CAIO: Como isso cai na prova?
+ANA: Por exemplo: em quantos por cento dos dias houve no máximo uma ocorrência? Você olha a relativa acumulada até o um: sessenta por cento.
+CAIO: Agora dados agrupados em classes, quando os valores são muitos e variados.
+ANA: Primeiro a amplitude total, que é o maior valor menos o menor valor. Depois você escolhe o número de classes. Uma regra conhecida é a de Sturges, que usa o logaritmo do número de observações, mas na prova costuma vir dado.
+CAIO: E a amplitude de cada classe?
+ANA: É a amplitude total dividida pelo número de classes, aproximadamente.
+CAIO: E aquele símbolo de intervalo.
+ANA: Dez, um tracinho com uma barra no começo, vinte. Significa que inclui o dez e exclui o vinte. Fechado à esquerda, aberto à direita. O vinte vai para a próxima classe.
+CAIO: E o ponto médio.
+ANA: É o limite inferior mais o superior, dividido por dois. Na classe de dez a vinte, o ponto médio é quinze. Ele representa a classe quando você precisa calcular uma média, por exemplo.
+CAIO: Certo ou errado. O número de matrícula de um servidor é uma variável quantitativa discreta.
+ANA: Errado. Número usado como código é qualitativa.
+CAIO: Escolaridade é variável qualitativa nominal.
+ANA: Errado. É ordinal, tem ordem.
+CAIO: O tempo de resposta de uma viatura é variável quantitativa contínua.
+ANA: Certo. Tempo é medido.
+CAIO: Número de ocorrências por dia é variável contínua.
+ANA: Errado. É contagem, discreta.
+CAIO: No intervalo dez a vinte, fechado à esquerda, o valor vinte pertence à classe.
+ANA: Errado. O vinte fica de fora e vai para a classe seguinte.
+CAIO: Resumo.
+ANA: Descritiva resume, inferencial generaliza a partir da amostra. Qualitativa nominal não tem ordem, ordinal tem. Quantitativa discreta conta, contínua mede. Número de código é qualitativo. Relativas somam cem por cento, e a última acumulada é o total. Ponto médio representa a classe.
+CAIO: Bora para as questões. Até a próxima.
+ANA: Tchau, bons estudos.

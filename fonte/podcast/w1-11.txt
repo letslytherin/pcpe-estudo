@@ -1,0 +1,57 @@
+TITULO: Números reais, potências, raízes e medidas
+CAIO: Oi, aqui é o Caio.
+ANA: E eu sou a Ana. Hoje é Raciocínio Lógico, com a base de matemática: conjuntos numéricos, potências, raízes, notação científica e medidas.
+CAIO: Matemática em áudio é um desafio, então a gente vai focar nas regras e nas pegadinhas. As contas você treina depois, no papel.
+ANA: Começando pelos conjuntos. Um cabe dentro do outro: naturais, dentro dos inteiros, dentro dos racionais, dentro dos reais. E os irracionais ficam dentro dos reais, mas fora dos racionais.
+CAIO: Naturais.
+ANA: Zero, um, dois, três, e assim por diante. Inteiros incluem os negativos. Racionais são os que podem ser escritos como fração. E aí entram os decimais finitos, como zero vírgula setenta e cinco, que é três quartos, e as dízimas periódicas, como zero vírgula três três três, que é um terço.
+CAIO: Então dízima periódica é racional.
+ANA: Sim. E essa é pegadinha. Dízima periódica tem fração geratriz, então é racional. Irracional é a dízima que não repete nunca, como pi ou raiz de dois.
+CAIO: E a outra pegadinha das raízes.
+ANA: Nem toda raiz é irracional. Raiz de nove é três, então é natural. Raiz de dezesseis é quatro. Só é irracional a raiz que não é exata: raiz de dois, de três, de cinco.
+CAIO: Fração geratriz, rápido.
+ANA: Na dízima simples, em que o período começa logo depois da vírgula, você coloca o período sobre tantos noves quantos forem os algarismos dele. Zero vírgula sete sete sete é sete nonos. Zero vírgula vinte e sete vinte e sete é vinte e sete sobre noventa e nove.
+CAIO: E uma curiosidade que cai.
+ANA: Zero vírgula nove nove nove, repetindo para sempre, é igual a um. Exatamente um.
+CAIO: Potências. As regras.
+ANA: Multiplicação de mesma base: conserva a base e soma os expoentes. Divisão: subtrai os expoentes. Potência de potência: multiplica os expoentes. Qualquer número diferente de zero elevado a zero dá um. E expoente negativo inverte: dois elevado a menos três é um oitavo.
+CAIO: E o expoente fracionário.
+ANA: Vira raiz. Oito elevado a dois terços é raiz cúbica de oito, que é dois, ao quadrado, que dá quatro.
+CAIO: Agora a pegadinha do sinal, que derruba muita gente.
+ANA: Menos dois, entre parênteses, ao quadrado, dá quatro positivo. Mas menos dois ao quadrado, sem parênteses, dá menos quatro. Porque sem parênteses o expoente só pega o dois, e o sinal fica de fora.
+CAIO: E base negativa?
+ANA: Com expoente par, o resultado é positivo. Com expoente ímpar, negativo.
+CAIO: E o erro clássico do quadrado da soma.
+ANA: A mais b, ao quadrado, não é a ao quadrado mais b ao quadrado. É a ao quadrado, mais dois a b, mais b ao quadrado. Falta o termo do meio.
+CAIO: Raízes.
+ANA: A raiz de um produto é o produto das raízes. Mas a raiz de uma soma não é a soma das raízes. Raiz de nove mais dezesseis é raiz de vinte e cinco, que dá cinco. Não dá três mais quatro, sete.
+CAIO: Simplificar raiz.
+ANA: Procura um quadrado perfeito dentro. Raiz de setenta e dois é raiz de trinta e seis vezes dois, que vira seis raiz de dois. E só dá para somar raízes com o mesmo radical: três raiz de dois mais cinco raiz de dois dá oito raiz de dois. Raiz de dois mais raiz de três não simplifica.
+CAIO: Racionalizar.
+ANA: É tirar a raiz do denominador. Um sobre raiz de dois: multiplica em cima e embaixo por raiz de dois e fica raiz de dois sobre dois.
+CAIO: Notação científica.
+ANA: O número fica escrito como um número de um até menos de dez, vezes uma potência de dez. Quarenta e cinco mil vira quatro vírgula cinco vezes dez à quarta. E zero vírgula zero zero trinta e dois vira três vírgula dois vezes dez à menos três.
+CAIO: Agora medidas, que cai em questão de concurso de polícia com frequência.
+ANA: Os degraus são: quilo, hecto, deca, a unidade, deci, centi, mili. Para comprimento e massa, cada degrau vale dez. Um quilômetro tem mil metros, um metro tem cem centímetros.
+CAIO: E área?
+ANA: Área é ao quadrado, então cada degrau vale cem. Um metro quadrado tem dez mil centímetros quadrados. E um hectare são dez mil metros quadrados.
+CAIO: E volume?
+ANA: Volume é ao cubo, então cada degrau vale mil. Um metro cúbico tem mil decímetros cúbicos. E a ponte para litros: um decímetro cúbico é um litro. Um centímetro cúbico é um mililitro. E um metro cúbico tem mil litros.
+CAIO: E tempo.
+ANA: Tempo é base sessenta, e aqui mora a pegadinha. Uma hora e meia é uma hora e trinta minutos, não uma hora e cinquenta. Zero vírgula dois hora são doze minutos, porque é dois décimos de sessenta.
+CAIO: Módulo, para fechar.
+ANA: Módulo é a distância até o zero, então nunca é negativo. Módulo de menos sete é sete. Se o módulo de x é cinco, x pode ser cinco ou menos cinco. E módulo de x igual a menos um não tem solução, porque distância não é negativa.
+CAIO: Certo ou errado. Toda raiz quadrada é um número irracional.
+ANA: Errado. Raiz de dezesseis é quatro.
+CAIO: Zero vírgula três três três, periódica, é um número irracional.
+ANA: Errado. É um terço, racional.
+CAIO: Menos três ao quadrado, sem parênteses, é igual a nove.
+ANA: Errado. É menos nove.
+CAIO: Um metro quadrado equivale a cem centímetros quadrados.
+ANA: Errado. São dez mil. Área anda de cem em cem.
+CAIO: Uma hora e meia equivale a uma hora e cinquenta minutos.
+ANA: Errado. Uma hora e trinta.
+CAIO: Resumo.
+ANA: Dízima periódica é racional. Raiz exata é natural. Sem parênteses, o sinal fica de fora da potência. Raiz da soma não é soma das raízes. Comprimento de dez em dez, área de cem em cem, volume de mil em mil, decímetro cúbico é litro. E tempo é base sessenta.
+CAIO: Pega papel e faz as questões. Até a próxima.
+ANA: Tchau, bons estudos.

@@ -1,0 +1,56 @@
+TITULO: Princípios, fontes e interpretação do Direito Penal
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Hoje começa Direito Penal, com a base de tudo: os princípios, as fontes, a interpretação e o conflito aparente de normas.
+ANA: Esse capítulo é a chave para entender o resto da matéria, e cai muito no estilo certo ou errado.
+CAIO: Primeiro princípio: legalidade.
+ANA: Não há crime nem pena sem lei anterior que os defina. Está no artigo primeiro do Código Penal e no artigo quinto da Constituição. E tem duas partes: reserva legal, que exige lei, e anterioridade, que exige que a lei venha antes do fato.
+CAIO: E qual lei pode criar crime?
+ANA: Só lei em sentido estrito, feita pelo Congresso. Medida provisória não cria crime. Essa frase é campeã de pegadinha.
+CAIO: Intervenção mínima.
+ANA: O Direito Penal é a última opção, a ultima ratio. Tem duas faces. Subsidiariedade: ele só entra se os outros ramos do direito não resolverem. E fragmentariedade: ele protege só os bens mais importantes, contra os ataques mais graves.
+CAIO: Ofensividade, ou lesividade.
+ANA: Só há crime se houver lesão ou perigo de lesão a um bem jurídico de outra pessoa. Por isso não se pune a autolesão, nem o simples pensamento.
+CAIO: Agora o que mais cai: insignificância.
+ANA: A insignificância exclui a tipicidade material. Não exclui a ilicitude, não exclui a culpabilidade. Exclui a tipicidade material. Grava isso.
+CAIO: E os requisitos?
+ANA: O Supremo fixou quatro vetores, e o macete é MARI. Mínima ofensividade da conduta. Ausência de periculosidade social da ação. Reduzido grau de reprovabilidade do comportamento. Inexpressividade da lesão jurídica.
+CAIO: E onde ela não se aplica?
+ANA: Roubo e crimes com violência ou grave ameaça. Tráfico de drogas. Moeda falsa. Crimes contra a Administração Pública, pela súmula quinhentos e noventa e nove do STJ, salvo exceções pontuais. Violência doméstica contra a mulher, pela súmula quinhentos e oitenta e nove. E contrabando, em regra.
+CAIO: E o descaminho?
+ANA: No descaminho a jurisprudência admite a insignificância até vinte mil reais de tributo não pago. Contrabando, não. Essa diferença é pegadinha frequente.
+CAIO: Adequação social.
+ANA: Conduta aceita pela sociedade não é materialmente típica. O exemplo clássico é furar a orelha de uma criança para colocar brinco. Tecnicamente é uma lesão, mas a sociedade aceita.
+CAIO: Pessoalidade, ou intranscendência.
+ANA: Nenhuma pena passa da pessoa do condenado. Mas a obrigação de reparar o dano e o perdimento de bens podem alcançar os herdeiros, até o limite da herança. E atenção: a multa é pena, então não passa para os herdeiros.
+CAIO: Culpabilidade e humanidade.
+ANA: Culpabilidade: não há pena sem dolo ou culpa, então é proibida a responsabilidade penal objetiva. Humanidade: proíbe pena de morte, salvo em guerra declarada, prisão perpétua, trabalhos forçados, banimento e penas cruéis.
+CAIO: Individualização e proporcionalidade.
+ANA: A pena é individualizada em três momentos: quando o legislador fixa a pena na lei, quando o juiz aplica e na execução. E a proporcionalidade proíbe tanto o excesso quanto a proteção deficiente.
+CAIO: Agora as fontes.
+ANA: A fonte material, ou de produção, é a União, que tem competência privativa para legislar sobre direito penal. Uma lei complementar pode autorizar os estados a legislar sobre questões específicas.
+CAIO: E as formais?
+ANA: A imediata é a lei. As mediatas são os costumes, os princípios gerais e, na visão moderna, a Constituição, os tratados, a jurisprudência e as súmulas vinculantes. Mas o costume não cria crime e não revoga lei penal. Ele só ajuda a interpretar.
+CAIO: Agora uma diferença que confunde muita gente: interpretação analógica e analogia.
+ANA: Interpretação analógica é permitida. Acontece quando a própria lei dá exemplos e depois uma expressão genérica. Tipo: veneno, fogo, explosivo ou outro meio insidioso ou cruel. A lei mandou o juiz comparar.
+CAIO: E a analogia?
+ANA: Analogia é preencher uma lacuna, aplicar uma regra a um caso que a lei não previu. Para prejudicar o réu, in malam partem, é proibida. Para beneficiar, in bonam partem, é permitida.
+CAIO: Último bloco: conflito aparente de normas. Um fato parece caber em duas normas, mas só uma se aplica.
+ANA: São quatro princípios. Especialidade: a norma especial prevalece sobre a geral. Infanticídio prevalece sobre homicídio, porque tem todos os elementos do homicídio e mais alguns.
+CAIO: Subsidiariedade.
+ANA: A norma mais grave absorve a menos grave. A menos grave é o soldado de reserva. Exemplo: perigo para a vida de outrem só se aplica se o fato não constituir crime mais grave.
+CAIO: Consunção.
+ANA: O crime-meio é absorvido pelo crime-fim. Exemplo da súmula dezessete do STJ: quando a falsificação se esgota no estelionato, sem outra potencialidade lesiva, ela é absorvida pelo estelionato.
+CAIO: E alternatividade.
+ANA: Nos tipos com vários verbos, praticar mais de um verbo no mesmo contexto gera um crime só. Importar, guardar e vender a mesma droga é um tráfico só.
+CAIO: Certo ou errado. Medida provisória pode criar crime, desde que convertida em lei.
+ANA: Errado. Medida provisória não pode tratar de direito penal incriminador.
+CAIO: A insignificância exclui a ilicitude.
+ANA: Errado. Exclui a tipicidade material.
+CAIO: A analogia in malam partem é vedada, mas a interpretação analógica é admitida.
+ANA: Certo.
+CAIO: A multa passa aos herdeiros até o limite da herança.
+ANA: Errado. O que pode passar é a reparação do dano e o perdimento de bens.
+CAIO: Resumo.
+ANA: Legalidade: só lei em sentido estrito, medida provisória não. Insignificância: MARI, exclui a tipicidade material, e não vale para roubo, tráfico, moeda falsa e violência doméstica. Analogia só a favor do réu. E no conflito aparente: especialidade, subsidiariedade, consunção e alternatividade.
+CAIO: Bora para as questões. Até a próxima.
+ANA: Tchau, bons estudos.

@@ -182,12 +182,79 @@ function steps(el,list,key,label){
       el.appendChild(d);});};
 }
 const rc=steps($('#et-corrida'),CORR,'corrida','corrida'),rn=steps($('#et-natacao'),NAT,'natacao','natação');
-const etapas=docStore('progresso/taf',v=>{ST.et=v;rc(v);rn(v);renderHoje();});
+const etapas=docStore('progresso/taf',v=>{ST.et=v;rc(v);rn(v);if(READY)renderCorrida();renderHoje();});
 
 /* ---------- HOJE: coach do dia ---------- */
 const ANIM={'Direito Penal':0,'Direito Processual Penal':1,'Direito Constitucional':2,'Direito Administrativo':3,'Legislação Estadual':4,'Informática':5,'Português':6,'Raciocínio Lógico':7,'Contabilidade Geral':8,'Estatística':9};
 const DIAS=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
 const hesc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* ---------- cronograma de corrida (semanas a partir do início do cronograma de estudo) ---------- */
+const CPLAN=[
+ [['7× (1 min de trote + 2 min de caminhada)','7× (1 min de trote + 2 min de caminhada)','7× (1 min de trote + 2 min de caminhada)'],'Acostumar o corpo. Termine as 3 sessões sem encurtar.'],
+ [['6× (1:30 de trote + 2 min de caminhada)','6× (1:30 de trote + 2 min de caminhada)','7× (1:30 de trote + 2 min de caminhada)'],'Trote um pouco mais longo.'],
+ [['5× (2 min de trote + 2 min de caminhada)','5× (2 min de trote + 2 min de caminhada)','6× (2 min de trote + 2 min de caminhada)'],'20 a 24 min de sessão.'],
+ [['5× (3 min de trote + 2 min de caminhada)','5× (3 min de trote + 1:30 de caminhada)','5× (3 min de trote + 1 min de caminhada)'],'Caminhada encurtando.'],
+ [['4× (4 min de trote + 1 min de caminhada)','4× (4 min de trote + 1 min de caminhada)','4× (5 min de trote + 1 min de caminhada)'],'Primeiros blocos de 5 min.'],
+ [['4× (5 min de trote + 1 min de caminhada)','4× (5 min de trote + 1 min de caminhada)','3× (6 min de trote + 1 min de caminhada)'],'Consolidar 5 a 6 min seguidos.'],
+ [['3× (5 min de trote + 1 min de caminhada), leve','25 min de caminhada rápida','3× (6 min de trote + 1 min de caminhada), leve'],'Semana mais leve, para recuperar.'],
+ [['3× (8 min de trote + 1 min de caminhada)','3× (8 min de trote + 1 min de caminhada)','2× (10 min de trote + 1 min de caminhada)'],'Blocos de 8 a 10 min.'],
+ [['2× (10 min de trote + 1 min de caminhada)','12 min de trote contínuo','2× (12 min de trote + 1 min de caminhada)'],'Primeira vez 12 min sem parar.'],
+ [['15 min de trote contínuo','15 min de trote contínuo','18 min de trote contínuo'],'Trote contínuo crescendo.'],
+ [['18 min de trote contínuo','20 min de trote contínuo','22 min de trote contínuo'],'Base aeróbica.'],
+ [['20 min leve','20 min leve','Teste de 12 minutos: corra o máximo que conseguir e anote a distância na aba TAF'],'Primeiro teste de 12 min. Veja quanto falta para 1.800 m.'],
+ [['Intervalado: 4× 2 min no ritmo da prova (6:40/km) + 1 min de trote','25 min leve','30 min leve'],'Começa o treino de ritmo.'],
+ [['Intervalado: 5× 2 min no ritmo da prova + 1 min de trote','25 min leve','30 a 35 min leve'],'Mais ritmo de prova.'],
+ [['Intervalado: 4× 3 min no ritmo da prova + 1:30 de trote','25 min leve','Teste de 12 minutos (anote na aba TAF)'],'Segundo teste.'],
+ [['20 min leve','20 min leve, com 4 acelerações de 20 s','Descanso: semana da prova objetiva'],'Semana da prova: só manter.']];
+const CTAF=[[['Intervalado: 6× 400 m em 2:40 + 2 min de caminhada','30 min leve','35 min leve'],'Fase TAF: ritmo de prova e volume.'],
+ [['Intervalado: 3× 800 m em 5:20 + 2 min de caminhada','25 min leve','Teste de 12 minutos (anote na aba TAF)'],'Fase TAF: teste a cada duas semanas.']];
+function cWeek(){
+  const C=window.__crono;const del=+((ST.et||{}).corrDelay||0);if(!C)return{i:0,pre:true};
+  const now=new Date();now.setHours(0,0,0,0);
+  const d=Math.floor((now-C.START)/864e5);
+  if(d<0)return{i:Math.max(0,-del),pre:true};
+  return{i:Math.max(0,Math.floor(d/7)-del),pre:false};
+}
+function cSess(i){return i<CPLAN.length?CPLAN[i]:CTAF[(i-CPLAN.length)%2];}
+function cLabel(i){return i<CPLAN.length?`semana ${i+1} de ${CPLAN.length}`:`fase TAF, semana ${i+1}`;}
+function renderCorrida(){
+  const el=$('#c-now');if(!el)return;
+  const w=cWeek(),[s,m]=cSess(w.i);
+  el.innerHTML=`<div class="h"><b>Agora: ${cLabel(w.i)}${w.pre?' (começa na segunda)':''}</b></div><div class="tr"></div><div class="cr"></div>`;
+  el.querySelector('.tr').innerHTML=['Seg','Qui','Sáb'].map((d,k)=>`<div><b>${d}:</b> ${hesc(s[k])}</div>`).join('');
+  el.querySelector('.cr').textContent='Objetivo: '+m;
+  $('#c-plan').innerHTML=CPLAN.map(([ss,mm],k)=>`<div class="xstep${k===w.i?' cur':k<w.i?' past':''}"><div class="h"><b>Semana ${k+1}</b></div><div class="tr">Seg: ${hesc(ss[0])}<br>Qui: ${hesc(ss[1])}<br>Sáb: ${hesc(ss[2])}</div><div class="cr">${hesc(mm)}</div></div>`).join('')+
+    `<div class="xstep${w.i>=CPLAN.length?' cur':''}"><div class="h"><b>Depois da prova objetiva: fase TAF</b></div><div class="tr">Alterna duas semanas até o teste. Semana A: ${hesc(CTAF[0][0].join(' · '))}. Semana B: ${hesc(CTAF[1][0].join(' · '))}.</div></div>`;
+}
+document.addEventListener('click',e=>{const t=e.target;if(!t)return;
+  if(t.id==='c-rep'||t.id==='c-adi'){const cur=+((ST.et||{}).corrDelay||0);etapas.set({corrDelay:t.id==='c-rep'?cur+1:cur-1});}});
+/* ---------- player do podcast ---------- */
+(function(){
+  const LOCAL=/github\.io$|^localhost$|^127\./.test(location.hostname);
+  const BASE=LOCAL?'podcast/':'https://letslytherin.github.io/pcpe-estudo/podcast/';
+  let bar=null,au=null;
+  function ensure(){
+    if(bar)return;
+    bar=document.createElement('div');bar.className='pbar';bar.setAttribute('role','region');bar.setAttribute('aria-label','Podcast');
+    bar.innerHTML='<div class="pt"><b></b><span></span></div><audio controls preload="metadata"></audio><div class="pa"><button type="button" class="pv">1x</button><a class="pd" download>Baixar</a><button type="button" class="px" aria-label="Fechar player">✕</button></div>';
+    document.body.appendChild(bar);au=bar.querySelector('audio');
+    bar.querySelector('.px').addEventListener('click',()=>{au.pause();bar.hidden=true;});
+    const sp=[1,1.25,1.5,0.9];let k=0;
+    bar.querySelector('.pv').addEventListener('click',e=>{k=(k+1)%sp.length;au.playbackRate=sp[k];e.target.textContent=String(sp[k]).replace('.',',')+'x';});
+    au.addEventListener('error',()=>{if(au.dataset.u){window.open(au.dataset.u,'_blank','noopener');}});
+    au.addEventListener('timeupdate',()=>{try{localStorage.setItem('pcpe-pod-pos',JSON.stringify({id:au.dataset.id,t:au.currentTime}));}catch(e){}});
+  }
+  function play(id){
+    const P=window.__pod||{},p=P[id];if(!p)return;if(!LOCAL){window.open(BASE+id+'.mp3','_blank','noopener');return;}ensure();bar.hidden=false;
+    const u=BASE+id+'.mp3';au.dataset.u=u;au.dataset.id=id;au.src=u;
+    bar.querySelector('.pt b').textContent=p.t;bar.querySelector('.pt span').textContent=Math.round(p.s/60)+' min';
+    bar.querySelector('.pd').href=u;bar.querySelector('.pd').setAttribute('download','PC-PE '+p.t+'.mp3');
+    try{const o=JSON.parse(localStorage.getItem('pcpe-pod-pos')||'{}');if(o.id===id&&o.t>5&&o.t<p.s-10)au.currentTime=o.t;}catch(e){}
+    au.play().catch(()=>{});
+    if('mediaSession' in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:p.t,artist:'Podcast PC-PE',album:'PC-PE Estudo'});}catch(e){}}
+  }
+  document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-pod]');if(!b)return;e.preventDefault();e.stopPropagation();play(b.dataset.pod);},true);
+})();
 function distribute(wk){
   const sun=[],rest=[];
   wk.items.forEach(it=>(it.kind==='fix'&&(it.tag==='Domingo'||it.tag==='Discursiva')?sun:rest).push(it));
@@ -259,14 +326,16 @@ function renderHoje(){
   const resp=['Respiração (fora da água)','Deitada, mão na barriga: 5 min de respiração pelo diafragma. Depois 10 vezes: inspire pelo nariz em 4 tempos e solte pela boca bem devagar, em 6 a 8 tempos, como se soprasse bolhas. Não prenda o fôlego.'];
   const rit=['Caminhada rápida com respiração ritmada','25 a 30 min: inspire em 3 passos e solte em 3; quando ficar fácil, trote leve no mesmo ritmo. Se não conseguir falar frases curtas, diminua.'];
   if(sp)nat=resp;
-  let T=[[corr,['Abdômen e lombar','cerca de 10 minutos']],[nat,['Barra estática',barra]],[sp?rit:nat,['Pernas e salto (leve)',salto]],[corr],[nat,['Barra estática',barra]],[[`Corrida leve · etapa ${cn}`,'O mesmo treino da sua etapa, num ritmo mais tranquilo']],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
+  const cw=cWeek(),cs=cSess(cw.i)[0],cpre=cw.pre?' (prévia, começa na segunda)':'';
+  const corP=k=>[`Corrida · ${cLabel(cw.i)}${cpre}`,cs[k]];
+  let T=[[corP(0),['Abdômen e lombar','cerca de 10 minutos']],[nat,['Barra estática',barra]],[nat,['Pernas e salto (leve)',salto]],[corP(1)],[nat,['Barra estática',barra]],[corP(2)],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
   if(sp){
     const QA=['Cardio no quarto · Treino A (20 min)','3 rodadas de 40 s de exercício + 20 s marchando: polichinelo, skipping, agachamento, corrida parada e escalador com as mãos na cama (sem impacto: abra um pé de cada vez e troque saltos por marcha rápida). 1 min de marcha leve entre as rodadas.'],
       QB=n=>['Cardio no quarto · Treino B ('+n+' min)','Sem parar, em ritmo moderado e com respiração ritmada, 3 min cada: marcha com joelho alto, passo lateral, marcha com soco à frente, step ou avanço alternado. Repita a sequência.'],
       QC=['Cardio no quarto · Treino A ou C','A como na segunda. Se A e B já estão fáceis há uma semana, faça o C: 8 rodadas de 20 s forte (skipping rápido, polichinelo ou burpee sem salto) + 40 s marchando devagar.'],
       AQ=['Antes e depois','5 min de aquecimento (marcha, círculos de braço, meio agachamento, passo lateral). No fim, 2 min de marcha lenta, alongamento e 1 min da respiração 4 por 6–8.'];
-    T=[[QA,['Abdômen e lombar','cerca de 10 minutos'],AQ],[resp,['Barra estática',barra]],[QB(20),['Pernas e salto (leve)',salto],AQ],[QC,AQ],[resp,['Barra estática',barra]],[QB(25),AQ],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
-    if(dw<6&&[0,2,3,5].includes(dw))T.push(['Se der para sair',`Pode trocar o cardio pela corrida da sua etapa (${cn}).`]);
+    const alt=Q=>['Sem como sair para correr? '+Q[0],Q[1]];
+    T=[[corP(0),alt(QA),['Abdômen e lombar','cerca de 10 minutos']],[resp,['Barra estática',barra]],[QB(20),['Pernas e salto (leve)',salto],AQ],[corP(1),alt(QC)],[resp,['Barra estática',barra]],[corP(2),alt(QB(25))],[['Descanso','Dia de recuperar. Uma caminhada leve vale, se quiser.']]][dw];
   }
   const sb=!!et.semBarra;
   if(sb)T=T.map(r=>r[0]==='Barra estática'?['Força para a barra (em casa, sem barra)','4×20–30 s de puxada isométrica com toalha: sentada, toalha passada nos pés, puxe forte até os cotovelos dobrarem e segure. Remada curvada com mochila pesada 3×10–12, segurando 3 s em cima. Segurar a mochila ou duas garrafas de 2 L ao lado do corpo 3×30–40 s. No dia de academia, faça a barra de verdade: '+barra+'.']:r);
@@ -310,5 +379,5 @@ $('#bk-load').addEventListener('click',()=>{
   $('#bk-msg').textContent=`Backup trazido (${n} itens novos). Atualizando…`;$('#bk-text').value='';
   setTimeout(()=>location.reload(),2500);
 });
-READY=true;window.__hoje=renderHoje;renderHoje();
+READY=true;window.__hoje=()=>{renderHoje();renderCorrida();};renderHoje();renderCorrida();
 })();
