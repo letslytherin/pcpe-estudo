@@ -1,0 +1,54 @@
+TITULO: Poder constituinte
+ANA: Oi, aqui é a Ana.
+CAIO: E eu sou o Caio. Semana dois, e a gente volta a Direito Constitucional com o poder constituinte: quem cria a Constituição, quem pode mudar e quais são os limites das emendas.
+ANA: Esse tema é cheio de número, dois turnos, três quintos, um terço. É exatamente isso que a banca troca.
+CAIO: Quem é o titular do poder constituinte?
+ANA: O povo. Está no parágrafo único do artigo primeiro. O exercício é que fica com uma Assembleia Constituinte, ou com um grupo que toma o poder.
+CAIO: Agora as espécies. Começa pelo originário.
+ANA: O poder constituinte originário cria uma Constituição nova. Também chamado de genuíno ou de primeiro grau. E tem quatro características: inicial, porque inaugura uma nova ordem jurídica. Ilimitado juridicamente, ou autônomo, porque não deve obediência à Constituição anterior. Incondicionado, porque não segue forma pré-definida. E permanente, porque não se esgota depois de usado.
+CAIO: E o derivado?
+ANA: O derivado é criado pelo originário e, por isso, é limitado e condicionado. Ele tem três tipos. O reformador altera a Constituição por emendas, no artigo sessenta. O revisor fez a revisão prevista no ADCT, uma única vez, em mil novecentos e noventa e três e noventa e quatro, em sessão unicameral e por maioria absoluta. Gerou seis emendas de revisão e já se esgotou.
+CAIO: Então não dá para fazer outra revisão.
+ANA: Não. Pegadinha clássica. O poder revisor já foi exercido e não pode ser usado de novo.
+CAIO: E o decorrente?
+ANA: É o poder dos estados de fazer as próprias constituições. Limitado pelos princípios da Constituição Federal. E atenção: o município não tem poder constituinte decorrente. A lei orgânica municipal se subordina à Constituição estadual. Sobre o Distrito Federal há divergência, mas prevalece que a Lei Orgânica do DF é fruto de poder decorrente.
+CAIO: E o poder difuso?
+ANA: É a mutação constitucional. Muda o sentido da norma sem mudar o texto, pela interpretação. É informal.
+CAIO: Agora o que mais cai: os limites das emendas, no artigo sessenta. Primeiro os formais.
+ANA: Quem pode propor emenda? Um terço dos deputados ou um terço dos senadores. O Presidente da República. Ou mais da metade das Assembleias Legislativas, cada uma pela maioria relativa dos seus membros.
+CAIO: E quem não pode?
+ANA: Não tem iniciativa popular de emenda no texto da Constituição. Nem o Supremo, nem governador sozinho. A banca adora colocar governador ou cidadãos na lista.
+CAIO: E a votação?
+ANA: Em cada Casa do Congresso, em dois turnos, aprovada por três quintos dos votos dos respectivos membros. Três quintos, dois turnos, cada Casa. Repete comigo.
+CAIO: E depois de aprovada?
+ANA: É promulgada pelas Mesas da Câmara e do Senado, com o número de ordem. Não tem sanção nem veto do Presidente. Emenda não passa pelo Presidente.
+CAIO: E se a proposta for rejeitada?
+ANA: Não pode ser reapresentada na mesma sessão legislativa. A pegadinha troca por no mesmo ano civil, ou na mesma legislatura. O certo é sessão legislativa.
+CAIO: Agora os limites circunstanciais.
+ANA: A Constituição não pode ser emendada durante intervenção federal, estado de defesa ou estado de sítio. São momentos de crise, e a ideia é não mudar a Constituição no calor da crise.
+CAIO: E os materiais, as cláusulas pétreas.
+ANA: Artigo sessenta, parágrafo quarto. Não será objeto de deliberação a proposta de emenda tendente a abolir quatro coisas. O mnemônico é FO-VO-SE-DI.
+CAIO: Forma federativa de Estado. Voto direto, secreto, universal e periódico. Separação dos Poderes. Direitos e garantias individuais.
+ANA: E repara no adjetivo do voto: direto, secreto, universal e periódico. Obrigatório não está ali. O voto obrigatório não é cláusula pétrea. Dá para uma emenda tornar o voto facultativo.
+CAIO: E tendente a abolir significa o quê?
+ANA: Que a emenda não pode suprimir nem esvaziar o núcleo essencial. Mas pode alterar, detalhar ou ampliar. Uma emenda que amplia um direito individual não viola cláusula pétrea.
+CAIO: E os limites implícitos?
+ANA: Não se pode mudar o próprio artigo sessenta para facilitar as emendas, a chamada dupla revisão. E não se pode mudar o titular do poder constituinte.
+CAIO: E a república, de novo?
+ANA: Não é cláusula pétrea expressa. A federação é. Lembra do episódio da semana passada.
+CAIO: Certo ou errado. A Constituição pode ser emendada mediante proposta de um terço dos governadores.
+ANA: Errado. Governador não está na lista. São um terço de uma das Casas, o Presidente ou mais da metade das Assembleias.
+CAIO: A emenda é aprovada em dois turnos, em cada Casa, por três quintos dos votos.
+ANA: Certo.
+CAIO: A emenda aprovada vai à sanção do Presidente da República.
+ANA: Errado. É promulgada pelas Mesas, sem sanção.
+CAIO: O voto obrigatório é cláusula pétrea.
+ANA: Errado.
+CAIO: O poder constituinte revisor pode ser convocado novamente por lei.
+ANA: Errado. Já se esgotou.
+CAIO: Os municípios têm poder constituinte decorrente.
+ANA: Errado.
+CAIO: Resumo.
+ANA: Titular é o povo. Originário é inicial, ilimitado e incondicionado. Emenda: um terço de uma Casa, Presidente ou mais da metade das Assembleias. Três quintos, dois turnos, cada Casa, sem sanção. Rejeitada, só na próxima sessão legislativa. Sem emenda em intervenção, defesa ou sítio. FO-VO-SE-DI, e voto obrigatório fica de fora.
+CAIO: Bora para as questões. Até a próxima.
+ANA: Tchau, bons estudos.

@@ -3,6 +3,19 @@ DISC=[('Penal','penal'),('Processo Penal','processo-penal'),('Constitucional','c
       ('Legislação Estadual','legislacao-estadual'),('Informática','informatica'),('Português','portugues'),
       ('Raciocínio Lógico','raciocinio-logico'),('Contabilidade','contabilidade'),('Estatística','estatistica')]
 rd=lambda f:open(f,encoding='utf-8').read()
+def red_json():
+    import json
+    out=[]
+    for b in rd('redacao.txt').split('=== ')[1:]:
+        L=b.strip().splitlines();i,t=[x.strip() for x in L[0].split('|',1)]
+        m={'id':i,'t':t,'tema':'','a':[],'p':[],'r':[]}
+        for l in L[1:]:
+            if l.startswith('TEMA: '):m['tema']=l[6:]
+            elif l.startswith('A: '):m['a'].append(l[3:])
+            elif l.startswith('P: '):m['p'].append([x.strip() for x in l[3:].split('|',1)])
+            elif l.startswith('R: '):m['r'].append(l[3:])
+        out.append(m)
+    return json.dumps(out,ensure_ascii=False).replace('</','<\\/')
 crono=rd('cronograma-pcpe.html'); base=rd('estatistica-palitinhos.html')
 
 # ---------- CSS das animações, escopado em #anim ----------
@@ -42,13 +55,13 @@ acss+='''
 #anim .dchips button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
 #anim .dchips button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 #anim .hint{font-size:14px;color:var(--muted)}
-.tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;position:sticky;top:0;z-index:5}
+.tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;position:sticky;top:0;z-index:5}
 .tabs button{font:700 14px var(--f-body);border:0;border-radius:9px;padding:10px 2px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:transparent;color:var(--muted);cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--card)}
 .tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .links button{font:600 13px var(--f-body);color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:6px 11px;cursor:pointer}
 [hidden]{display:none!important}
-'''+rd('abas_extra.css')
+'''+rd('abas_extra.css')+rd('redacao.css')
 
 # ---------- JS: motor + cenas de cada disciplina ----------
 js=re.search(r'<script>(.*?)</script>',base,re.S).group(1)
@@ -113,13 +126,14 @@ tabs='''
     <button type="button" role="tab" id="tb-crono" aria-selected="false" aria-controls="tab-crono">Cronograma</button>
     <button type="button" role="tab" id="tb-notas" aria-selected="false" aria-controls="notas">Notas</button>
     <button type="button" role="tab" id="tb-taf" aria-selected="false" aria-controls="taf">TAF</button>
+    <button type="button" role="tab" id="tb-red" aria-selected="false" aria-controls="redacao">Redação</button>
     <button type="button" role="tab" id="tb-anim" aria-selected="false" aria-controls="anim">Animações</button>
   </div>
   <div id="tab-crono" role="tabpanel" aria-labelledby="tb-crono" hidden style="display:flex;flex-direction:column;gap:20px">'''
 s=s[:hdr_end]+tabs+s[hdr_end:]
 foot=s.index('  <footer>')
 anim='''  </div>
-'''+rd('abas_extra.html')+'''
+'''+rd('abas_extra.html')+rd('redacao.html')+'''
   <div id="anim" role="tabpanel" aria-labelledby="tb-anim" hidden>
     <p class="hint">Escolha a disciplina. Cada uma tem cinco cenas curtas com palitinhos; a cena começa sozinha quando aparece na tela, e a regra fica logo abaixo.</p>
     <div class="dchips" id="anim-disc" aria-label="Disciplinas"></div>
@@ -137,7 +151,7 @@ s=s.replace('Seu progresso fica salvo nesta página.','Seu progresso fica salvo 
 tabjs='''
 <script>
 (function(){
-const T=['hoje','crono','notas','taf','anim'],P={hoje:'hoje',crono:'tab-crono',notas:'notas',taf:'taf',anim:'anim'};
+const T=['hoje','crono','notas','taf','red','anim'],P={hoje:'hoje',crono:'tab-crono',notas:'notas',taf:'taf',red:'redacao',anim:'anim'};
 function tab(w,disc){T.forEach(k=>{const on=k===w;document.getElementById('tb-'+k).setAttribute('aria-selected',on);document.getElementById(P[k]).hidden=!on;});
   try{localStorage.setItem('pcpe-aba',w)}catch(e){}
   if(w==='anim')requestAnimationFrame(()=>{window.__animShow&&window.__animShow(disc);});
@@ -149,6 +163,10 @@ window.__tab=tab;
 </script>
 <script>
 '''+rd('abas_extra.js')+'''
+</script>
+<script>
+window.__red='''+red_json()+''';
+'''+rd('redacao.js')+'''
 </script>
 <script>
 '''+ajs+'''
