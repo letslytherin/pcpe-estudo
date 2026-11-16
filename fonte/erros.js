@@ -34,6 +34,7 @@ const MOT=['','Não sabia o conteúdo','Confundi conceitos','Interpretei errado'
 let own={},stt={},filtro='prontas',fdisc='';
 const sdoc=ST.docStore('progresso/erros',v=>{stt=v||{};render();});
 const sown=ST.store('erros',v=>{own=v||{};render();});
+window.__errAdd=o=>sown.add(o);
 function chapter(e){
   const C=window.__crono;if(!C||!e.ch)return null;
   for(const wk of C.weeks)for(const it of wk.items)if(it.kind==='cap'&&it.d===e.disc&&String(it.c).startsWith(e.ch+' '))return{w:wk.w,id:it.id,c:it.c,feito:!!C.done[it.id],s:wk.s};

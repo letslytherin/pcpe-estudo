@@ -1,0 +1,398 @@
+# w1-0
+cf88|t|os 5 fundamentos da república em uma palavra: SO-CI-DI-VA-PLU. soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, pluralismo político. decora igual refrão de brega
+banca|q|"erradicar a pobreza" está na CF como: ;; *objetivo fundamental (art. 3º) ;; fundamento da República (art. 1º) ;; princípio das relações internacionais (art. 4º) ;; =objetivo começa com verbo: construir, garantir, erradicar, promover. fundamento é substantivo
+cf88|t|dica que salva: o art. 3º só tem VERBO. construir, garantir, erradicar, promover. CON-GA-ER-PRO. se a alternativa trouxer substantivo chique tipo "soberania", é art. 1º
+banca|q|a dignidade da pessoa humana é: ;; objetivo fundamental ;; *fundamento da República ;; princípio das relações internacionais ;; =art. 1º, III. a banca adora trocar por objetivo. dignidade é base, não meta
+futura|t|eu às 2h da manhã repetindo "dignidade é fundamento, erradicar é objetivo" no escuro. o concurso já mora na minha cabeça e não paga aluguel
+cf88|t|"todo o poder emana do povo, que o exerce por meio de representantes eleitos ou diretamente" (art. 1º, parágrafo único). democracia semidireta: representantes + plebiscito, referendo e iniciativa popular
+delegado|t|os Poderes são independentes e harmônicos entre si (art. 2º). harmônicos. igual a equipe do plantão. em teoria
+banca|q|qual destes é princípio das relações internacionais (art. 4º)? ;; erradicação da pobreza ;; pluralismo político ;; *concessão de asilo político ;; =art. 4º, X. pluralismo é fundamento (art. 1º), erradicar a pobreza é objetivo (art. 3º)
+cf88|th|relações internacionais (art. 4º) sem sofrimento // independência nacional e autodeterminação dos povos: cada um manda na sua casa // não intervenção e igualdade entre os Estados: ninguém se mete na casa do outro // defesa da paz e solução pacífica dos conflitos: briga só no grupo da família // prevalência dos direitos humanos, repúdio ao terrorismo e ao racismo // cooperação entre os povos e concessão de asilo político // parágrafo único: integração com a América Latina, rumo a uma comunidade latino-americana de nações
+banca|q|a integração prevista no parágrafo único do art. 4º busca formar: ;; um mercado comum com moeda única ;; *uma comunidade latino-americana de nações ;; um parlamento sul-americano obrigatório ;; =integração econômica, política, social e cultural dos povos da América Latina, visando à comunidade latino-americana de nações
+cf88|t|república federativa formada pela união INDISSOLÚVEL dos Estados, Municípios e DF. indissolúvel. ninguém sai do grupo. nem depois de perder clássico
+cf88|t|classificação da CF/88 pra levar no bolso: escrita, promulgada (votada por assembleia, não imposta), rígida (mudar é mais difícil que lei comum), analítica (fala de TUDO) e dogmática
+banca|q|a CF/88 é rígida porque: ;; não pode ser alterada de jeito nenhum ;; *exige processo de alteração mais difícil que o das leis comuns ;; só o STF pode alterá-la ;; =rígida não é imutável. emenda existe (art. 60), só é mais difícil: 3/5, dois turnos, em cada Casa
+futura|t|a CF/88 é tão analítica que tem um parágrafo só pra dizer que o Colégio Pedro II fica na órbita federal (art. 242, § 2º). e eu achando que meu textão era longo
+banca|q|"valores sociais do trabalho e da livre iniciativa" é: ;; *fundamento da República ;; objetivo fundamental ;; direito social do art. 6º ;; =art. 1º, IV. é o VA do SO-CI-DI-VA-PLU
+cf88|t|soberania é fundamento (art. 1º). independência nacional é princípio das relações internacionais (art. 4º). parecem gêmeas, moram em artigos diferentes
+delegado|t|pluralismo político não é só ter vários partidos. é aceitar que existem ideias diferentes. inclusive a do colega que acha o café do plantão bom
+# w1-1
+cf88|t|norma de eficácia plena: nasceu pronta. não precisa de lei nenhuma pra funcionar. tipo aquela amiga que já sai de casa arrumada
+cf88|t|eficácia contida: funciona desde já, mas a lei pode CONTER (restringir). exemplo clássico, art. 5º, XIII: qualquer profissão, "atendidas as qualificações que a lei estabelecer". por isso existe exame da OAB
+cf88|t|eficácia limitada: só funciona de verdade quando vem a lei. é a planta que só cresce se alguém regar
+banca|q|o livre exercício de qualquer trabalho, "atendidas as qualificações profissionais que a lei estabelecer", é norma de eficácia: ;; plena ;; *contida ;; limitada ;; =já funciona, mas a lei pode restringir. contida
+banca|q|o direito de greve do servidor público (art. 37, VII), "nos termos e nos limites definidos em lei específica", é exemplo clássico de eficácia: ;; plena ;; contida ;; *limitada ;; =depende de lei específica. como a lei nunca veio, o STF mandou aplicar a lei geral de greve, via mandado de injunção
+futura|t|contida x limitada, o macete: a contida já funciona e a lei pode PODAR. a limitada não funciona até a lei REGAR. poda ou rega
+cf88|t|aplicabilidade em 3 linhas. plena: direta, imediata e integral. contida: direta, imediata, mas talvez não integral. limitada: indireta, mediata e reduzida
+banca|q|norma de eficácia limitada, antes da lei regulamentadora, produz algum efeito? ;; nenhum, é letra morta ;; *sim: revoga normas anteriores contrárias e impede leis incompatíveis ;; só se o STF autorizar ;; =toda norma constitucional tem alguma eficácia. a limitada tem eficácia negativa (ou paralisante)
+cf88|t|normas programáticas são limitadas que traçam METAS pro Estado: saúde, cultura, educação. o famoso "um dia a gente chega lá" constitucional
+cf88|t|as limitadas se dividem em duas: de princípio institutivo (criam órgãos ou institutos, a lei estrutura) e de princípio programático (traçam programas e metas)
+banca|q|"as normas definidoras dos direitos e garantias fundamentais têm aplicação imediata". onde está isso? ;; art. 1º, parágrafo único ;; *art. 5º, § 1º ;; art. 60, § 4º ;; =art. 5º, § 1º. cai do jeitinho que está escrito
+delegado|t|norma contida é o plantão: funciona agora, mas a escala (a lei) pode cortar seu horário
+futura|t|POV: você descobre que eficácia contida também se chama "restringível" e "redutível" e a banca usa os três nomes pra te confundir
+banca|q|norma de eficácia plena precisa de lei regulamentadora? ;; sim, sempre ;; *não, produz todos os efeitos desde a promulgação ;; só se for direito social ;; =plena: aplicabilidade direta, imediata e integral
+cf88|t|quem criou essa classificação: José Afonso da Silva. se a questão cita ele, é plena, contida e limitada. pode respirar
+# w2-0
+cf88|t|poder constituinte originário: inicial, ilimitado e incondicionado. cria a Constituição do zero e não deve satisfação à ordem jurídica anterior
+cf88|t|titular do poder constituinte: o POVO. quem exerce: a assembleia constituinte. titular ≠ exercente, a banca ama
+banca|q|quantos votos uma PEC precisa pra ser aprovada? ;; maioria absoluta, em um turno ;; 2/3, em dois turnos ;; *3/5, em dois turnos, em cada Casa ;; =art. 60, § 2º. 3/5 dos membros, dois turnos, Câmara e Senado
+delegado|t|emenda constitucional não vai pra sanção. é promulgada pelas Mesas da Câmara e do Senado. o Presidente pode propor, mas não pode vetar
+banca|q|quem NÃO pode propor emenda à Constituição? ;; 1/3 dos deputados federais ;; o Presidente da República ;; *1% do eleitorado nacional ;; =o art. 60 não prevê iniciativa popular para PEC. ela existe para lei (art. 61, § 2º)
+cf88|th|cláusulas pétreas (art. 60, § 4º), as 4 que não podem ser abolidas // forma federativa de Estado // voto direto, secreto, universal e periódico // separação dos Poderes // direitos e garantias individuais // macete: FO-VO-SE-DI. e repara na expressão "tendente a abolir": pode mexer, não pode acabar
+banca|q|o voto OBRIGATÓRIO é cláusula pétrea? ;; sim, está no art. 60, § 4º ;; *não. pétreo é o voto direto, secreto, universal e periódico ;; só para maiores de 18 ;; =obrigatoriedade não está na lista. uma emenda poderia tornar o voto facultativo
+futura|t|cláusula pétrea é igual meu amor por café: pode até mudar o jeito, abolir jamais
+cf88|t|limites circunstanciais: a CF não pode ser emendada durante intervenção federal, estado de defesa ou estado de sítio. em crise, ninguém mexe na casa
+banca|q|uma PEC rejeitada pode ser reapresentada: ;; no mês seguinte ;; *só na próxima sessão legislativa ;; nunca mais ;; =art. 60, § 5º. não pode na mesma sessão legislativa
+cf88|t|poder decorrente: os Estados fazem suas constituições respeitando a federal. a Constituição de Pernambuco é filha disso (e cai na sua prova, aliás)
+cf88|t|poder reformador = emendas (art. 60). poder revisor = a revisão do art. 3º do ADCT, feita uma única vez, 5 anos depois de 1988, em sessão unicameral e por maioria absoluta. já passou e não volta
+banca|q|mutação constitucional é: ;; uma emenda aprovada às pressas ;; *mudança no sentido da norma pela interpretação, sem mudar o texto ;; a revisão do ADCT ;; =também chamada de poder constituinte difuso. o texto fica, o entendimento muda
+delegado|t|mutação constitucional: o texto é o mesmo de 1988, o entendimento mudou. igual o "chego em 5 minutos" da equipe
+cf88|t|originário é ilimitado JURIDICAMENTE. não quer dizer que pode tudo na vida real: história e valores da sociedade pesam. mas o direito anterior não prende ele
+banca|q|o poder constituinte derivado é: ;; *limitado e condicionado às regras da Constituição ;; ilimitado como o originário ;; exercido só pelo STF ;; =o derivado nasce da Constituição e segue as regras dela
+# w3-0
+cf88|t|casa é asilo inviolável (art. 5º, XI). dá pra entrar sem consentimento em: flagrante delito, desastre, pra prestar socorro (dia ou noite) ou com ordem judicial (só durante o DIA)
+banca|q|com mandado judicial, a polícia pode entrar na casa sem consentimento: ;; a qualquer hora ;; *só durante o dia ;; só com o morador presente ;; =ordem judicial: durante o dia. flagrante, desastre e socorro: a qualquer hora
+delegado|t|eu às 22h com o mandado na mão / a CF: durante o dia, querido / eu: guardo o mandado e espero amanhecer
+banca|q|em flagrante delito, a polícia pode entrar na casa à noite sem mandado? ;; não, só de dia ;; *sim, mas precisa de fundadas razões, justificadas depois ;; só com autorização do delegado ;; =art. 5º, XI + Tema 280 do STF: fundadas razões de que há flagrante lá dentro, justificadas a posteriori
+cf88|t|reunião: pacífica, sem armas, em local aberto ao público. NÃO precisa de autorização, só de aviso prévio à autoridade. aviso ≠ autorização, a banca troca toda vez
+banca|q|para uma reunião pacífica em praça pública é preciso: ;; autorização da polícia ;; *apenas aviso prévio à autoridade competente ;; autorização judicial ;; =art. 5º, XVI. e não pode frustrar outra reunião já marcada para o mesmo local
+cf88|t|associação: criar não depende de autorização. SUSPENDER atividades: decisão judicial. DISSOLVER: decisão judicial transitada em julgado. paramilitar: proibida
+banca|q|uma associação pode ser dissolvida compulsoriamente por: ;; ato do Ministério Público ;; decisão judicial liminar ;; *decisão judicial transitada em julgado ;; =art. 5º, XIX. suspender basta decisão judicial. dissolver exige trânsito em julgado
+futura|t|ninguém é obrigado a se associar nem a permanecer associado (art. 5º, XX). mandei pro grupo da academia que eu pago e não vou
+cf88|t|manifestação do pensamento é livre, mas é vedado o ANONIMATO. quer falar? assina embaixo
+banca|q|interceptação telefônica é permitida: ;; com autorização do delegado ;; *por ordem judicial, para investigação criminal ou instrução processual penal ;; em qualquer processo, inclusive cível ;; =art. 5º, XII, regulamentado pela Lei 9.296/1996. processo civil não
+cf88|t|escusa de consciência: ninguém perde direitos por crença ou convicção. só perde se usar isso pra fugir de obrigação legal de todos E recusar a prestação alternativa. precisa das duas coisas
+cf88|t|art. 5º, II: ninguém é obrigado a fazer ou deixar de fazer alguma coisa senão em virtude de lei. pro particular, pode tudo que a lei não proíbe
+banca|q|desapropriação, como regra, exige indenização: ;; *prévia, justa e em dinheiro ;; posterior e em títulos ;; só se houver dano ;; =art. 5º, XXIV. indenização posterior, se houver dano, é a da requisição (iminente perigo público)
+delegado|t|requisição administrativa: iminente perigo público, a autoridade usa o bem do particular e, SE houver dano, indeniza depois. tipo usar o barco do vizinho pra resgate na enchente
+banca|q|os direitos do art. 5º valem para o estrangeiro de passagem pelo Brasil? ;; não, só para residentes ;; *sim. o texto fala em residentes, mas o STF estende a quem está no país ;; só com visto permanente ;; =o caput fala em "estrangeiros residentes", mas a interpretação é ampla
+cf88|t|ninguém será submetido a tortura nem a tratamento desumano ou degradante (art. 5º, III). curto e cai muito
+futura|t|o art. 5º tem 79 incisos. o último, de 2022, é sobre proteção de dados pessoais. a CF realmente não brinca de ser analítica
+# w3-1
+banca|q|racismo é: ;; inafiançável e insuscetível de graça ;; *inafiançável e imprescritível ;; imprescritível e afiançável ;; =art. 5º, XLII. racismo e ação de grupos armados contra a ordem constitucional: inafiançáveis e imprescritíveis
+cf88|th|o macete que mais salva no art. 5º // imprescritíveis e inafiançáveis: RAÇA e AÇÃO. racismo e ação de grupos armados contra a ordem constitucional e o Estado Democrático // inafiançáveis e sem graça ou anistia: 3TH. tortura, tráfico, terrorismo e hediondos // 3TH não são imprescritíveis. prescrevem normalmente
+banca|q|o crime de tortura é imprescritível pela CF? ;; sim, igual ao racismo ;; *não. é inafiançável e sem graça ou anistia, mas prescreve ;; só se praticado por agente público ;; =3TH: inafiançáveis, sem graça, sem anistia. imprescritível é só racismo e ação de grupos armados
+delegado|t|LXIII: o preso será informado de seus direitos, entre eles o de permanecer calado. o "você tem o direito de ficar em silêncio" versão brasileira, com inciso
+cf88|t|prisão só em flagrante ou por ordem ESCRITA e FUNDAMENTADA de autoridade JUDICIÁRIA competente (LXI). delegado não expede mandado de prisão. exceção: transgressão militar e crime propriamente militar
+banca|q|a prisão de qualquer pessoa deve ser comunicada imediatamente: ;; ao Ministério Público e à OAB ;; *ao juiz competente e à família do preso ou à pessoa por ele indicada ;; só ao juiz, em 24 horas ;; =art. 5º, LXII
+cf88|t|penas proibidas (XLVII): de morte (salvo guerra declarada), perpétua, de trabalhos forçados, de banimento e cruéis. só a de morte tem exceção
+banca|q|o brasileiro NATO pode ser extraditado? ;; sim, por tráfico de drogas ;; *nunca ;; sim, por crime anterior à naturalização ;; =nato, nunca. naturalizado: crime comum antes da naturalização ou envolvimento comprovado em tráfico de drogas
+cf88|t|júri (XXXVIII): plenitude de defesa, sigilo das votações, soberania dos veredictos e competência para os crimes DOLOSOS contra a vida
+banca|q|quem julga o homicídio CULPOSO? ;; o Tribunal do Júri ;; *o juiz singular ;; o júri, se a vítima for criança ;; =júri é para crimes dolosos contra a vida
+futura|t|"ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória" (LVII). eu não sou culpada por não ter estudado ontem até o domingo transitar em julgado
+cf88|t|a pena não passa da pessoa do condenado. mas a obrigação de reparar o dano e o perdimento de bens podem chegar aos sucessores, até o limite do patrimônio herdado
+banca|q|prisão civil por dívida, hoje: ;; cabe para depositário infiel e devedor de alimentos ;; *só para o devedor de alimentos ;; não cabe em nenhum caso ;; =o texto ainda cita o depositário infiel, mas a Súmula Vinculante 25 proíbe. sobra só a pensão alimentícia
+cf88|t|provas obtidas por meios ilícitos são inadmissíveis no processo (LVI). investigação feita torto, prova jogada fora
+banca|q|quem já é civilmente identificado: ;; *não será submetido a identificação criminal, salvo nas hipóteses da lei ;; sempre faz identificação criminal ao ser preso ;; nunca pode ser identificado criminalmente ;; =art. 5º, LVIII. a lei é a 12.037/2009
+delegado|t|LXIV: o preso tem direito à identificação dos responsáveis pela prisão e pelo interrogatório. nada de agente sem nome
+cf88|t|lei penal não retroage, salvo pra beneficiar o réu (XL). lei nova mais dura: só daqui pra frente. lei nova mais leve: volta pra ajudar
+banca|q|as presidiárias têm direito de permanecer com os filhos: ;; até os 6 anos ;; *durante o período de amamentação ;; até 1 ano, por lei estadual ;; =art. 5º, L
+# w1-8
+leitura|t|compreender = o que o texto DIZ. interpretar = o que dá pra CONCLUIR dele. a banca pergunta um e a gente responde o outro. clássico
+leitura|t|regra de ouro do Cebraspe: a resposta tem que estar no texto ou sair dele por dedução. sua opinião, por mais certa que seja, não conta
+banca|q|o texto fala em "muitos policiais". a alternativa diz "o autor afirma que TODOS os policiais...". ela: ;; está correta, mesmo sentido ;; *extrapola o texto ;; é inferência válida ;; =generalizou. todos, sempre, nunca, somente são bandeiras vermelhas
+futura|t|eu lendo o texto: entendi tudo / eu lendo a alternativa "infere-se que o autor...": quem é você, autor
+leitura|th|tipos textuais numa thread // narrativo: conta fato com personagens, tempo e lugar // descritivo: retrata e caracteriza. muito adjetivo // dissertativo-argumentativo: defende uma tese com argumentos. é a sua redação da prova // injuntivo: dá ordens e instruções. manual, receita, edital // expositivo: explica sem tomar partido
+banca|q|um edital, com "o candidato deverá comparecer...", tem predomínio do tipo: ;; narrativo ;; descritivo ;; *injuntivo ;; =instrução e ordem. injuntivo
+leitura|t|tipo ≠ gênero. tipo é a estrutura (narrar, descrever, argumentar). gênero é o texto da vida real (notícia, crônica, boletim de ocorrência, ofício). um gênero mistura vários tipos
+delegado|t|boletim de ocorrência é gênero com predomínio narrativo: fato, data, local, envolvidos. se tem opinião, tá errado
+banca|q|"depreende-se do texto que..." pede: ;; *o que o texto permite concluir ;; só o que está escrito literalmente ;; a opinião do candidato ;; =depreender, inferir, concluir: a partir do texto, sem fugir dele
+leitura|t|técnica: leia a pergunta ANTES do texto. você lê já procurando a resposta. numa prova de 4 horas, isso é ouro
+futura|t|a alternativa: "o texto critica severamente" / o texto: "talvez fosse interessante rever" / eu: severamente onde, minha filha
+leitura|t|cuidado com a troca de intensidade: o texto diz "pode", a alternativa diz "deve". o texto diz "contribui", a alternativa diz "é a causa". mudou o sentido, alternativa errada
+banca|q|o texto: "a tecnologia pode auxiliar a investigação". a alternativa: "a tecnologia é indispensável à investigação". ela: ;; está de acordo com o texto ;; *extrapola, porque transforma possibilidade em necessidade ;; é a ideia central ;; =pode auxiliar ≠ indispensável
+leitura|t|ideia central costuma estar no primeiro parágrafo ou na conclusão. alternativa sobre um detalhe do meio do texto? desconfia que é ideia secundária
+leitura|t|dissertativo-argumentativo = tese + argumentos + conclusão. exatamente o que a sua redação de 30 linhas precisa. estudar interpretação é treinar redação de graça
+# w1-9
+leitura|t|coesão = as ligações entre as partes (pronomes, conjunções, sinônimos). coerência = o texto fazer SENTIDO. dá pra ter coesão perfeita e ser incoerente
+banca|q|"o delegado chegou e o escrivão saiu. ELE estava cansado". o problema é: ;; erro de concordância ;; *ambiguidade na referência do pronome ;; falta de conectivo ;; =ele quem? coesão referencial mal feita
+futura|t|a banca: a que se refere o termo "isso" na linha 14? / eu voltando 3 parágrafos igual detetive
+leitura|t|anáfora: o termo retoma algo que já apareceu. catáfora: anuncia algo que vem depois. "o motivo era ESTE: falta de efetivo". este = catáfora
+banca|q|em "o suspeito fugiu. o homem foi encontrado horas depois", "o homem": ;; *retoma "o suspeito" por substituição ;; é catáfora ;; é elipse ;; =retomar com outra palavra = coesão por substituição
+leitura|th|conectivos que a banca adora trocar // mas, porém, contudo, todavia, no entanto: oposição // portanto, logo, por isso: conclusão // porque, já que, visto que: causa // embora, ainda que, mesmo que: concessão. pedem verbo no subjuntivo // conforme, segundo, consoante: conformidade
+banca|q|trocar "embora" por "porque" em "embora estivesse cansada, estudou": ;; mantém o sentido ;; *muda de concessão para causa ;; só exige ajuste de vírgula ;; =conectivos de valores diferentes alteram o sentido
+leitura|t|elipse: omitir um termo que dá pra recuperar. "fui à delegacia; ela, ao fórum". a vírgula ali está no lugar do verbo que sumiu (zeugma)
+futura|t|coerência é meu cronograma: precisa fazer sentido. coesão são os post-its: ligam uma parte na outra
+banca|q|"contudo" pode ser trocado, sem mudar o sentido, por: ;; portanto ;; *no entanto ;; porquanto ;; =ambos adversativos. portanto = conclusão, porquanto = causa
+leitura|t|o POIS muda de sentido pela posição. antes do verbo: explicativo ("estuda, pois a prova está perto"). depois do verbo, entre vírgulas: conclusivo ("a prova está perto; estude, pois, todo dia")
+banca|q|em "a prova está perto; deve-se, pois, revisar", o "pois" indica: ;; causa ;; *conclusão ;; concessão ;; =depois do verbo, entre vírgulas: conclusivo, igual a portanto
+leitura|t|coesão sequencial: conectivos que fazem o texto andar (além disso, em seguida, por fim). coesão referencial: termos que retomam outros. duas famílias, a banca pergunta das duas
+delegado|t|relatório incoerente: "o investigado estava em casa às 20h e no local do crime às 20h". coesão ótima, coerência nenhuma
+# w1-11
+calc|t|qualquer número diferente de zero elevado a zero dá 1. 7⁰ = 1. 1.000.000⁰ = 1. a vida pode ser complicada, o expoente zero não
+banca|q|quanto é -2²? ;; 4 ;; *-4 ;; 1/4 ;; =sem parênteses, o expoente só pega o 2: -(2²) = -4. já (-2)² = 4
+calc|t|expoente negativo não deixa o número negativo. só inverte. 2⁻³ = 1/2³ = 1/8. ninguém ficou negativo, só virou fração
+banca|q|0,999... (nove infinito) é: ;; menor que 1 ;; *igual a 1 ;; um número irracional ;; =0,999... = 9/9 = 1. e toda dízima periódica é racional
+calc|th|propriedades de potência que resolvem 80% das questões // multiplicou base igual: SOMA expoente. 2³ · 2⁴ = 2⁷ // dividiu base igual: SUBTRAI. 2⁵ ÷ 2² = 2³ // potência de potência: MULTIPLICA. (2³)² = 2⁶ // expoente fracionário vira raiz: 8^(1/3) = ∛8 = 2
+banca|q|√2 pertence a qual conjunto? ;; racionais ;; *irracionais ;; inteiros ;; =não pode ser escrito como fração de inteiros. π também é irracional
+calc|t|naturais ⊂ inteiros ⊂ racionais ⊂ reais. os irracionais estão nos reais, mas fora dos racionais. é um prédio chamado R, cada conjunto mora num andar
+futura|t|eu vendo 2¹⁰ na prova / meu cérebro: 1024 / eu: como eu sei disso / meu cérebro: não pergunta, só aceita
+banca|q|quanto é (2³)²? ;; 2⁵ = 32 ;; *2⁶ = 64 ;; 2⁹ = 512 ;; =potência de potência multiplica os expoentes: 3 × 2 = 6
+calc|t|raiz quadrada de número negativo não existe nos reais. √(-4) não é -2, porque (-2)² dá 4 positivo
+calc|t|notação científica: 0,00035 = 3,5 × 10⁻⁴. a vírgula andou 4 casas pra direita, expoente -4. andou pra esquerda, expoente positivo
+banca|q|qual é maior: 2⁻¹ ou 3⁻¹? ;; *2⁻¹ ;; 3⁻¹ ;; são iguais ;; =2⁻¹ = 1/2 = 0,5. 3⁻¹ = 1/3 ≈ 0,33. inverteu, o maior virou menor
+calc|t|√50 = √(25 · 2) = 5√2. simplificar raiz é achar o quadrado perfeito escondido lá dentro
+calc|t|mmc e mdc em uma linha: mmc é o menor número que os dois dividem (quando os eventos se encontram de novo). mdc é o maior número que divide os dois (quando você corta em pedaços iguais)
+# w5-0
+cf88|t|direitos sociais (art. 6º): educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência, proteção à maternidade e à infância e assistência aos desamparados. a segurança está aqui também
+banca|q|qual destes NÃO está na lista do art. 6º? ;; transporte ;; alimentação ;; *acesso à internet ;; lazer ;; =alimentação entrou em 2010 e transporte em 2015. internet não está na lista
+delegado|t|policial civil pode fazer greve? o STF decidiu em 2017 que não: é vedada a greve a quem atua diretamente na segurança pública
+banca|q|segundo o STF, o policial civil: ;; pode fazer greve mantendo 30% do efetivo ;; *não pode exercer o direito de greve ;; pode, se o MP autorizar ;; =decisão de 2017: vedada a greve aos policiais civis e a quem atua diretamente na segurança pública
+cf88|t|jornada pela CF: até 8 horas por dia e 44 por semana. turno ininterrupto de revezamento: 6 horas, salvo negociação coletiva
+banca|q|a hora extra, pela CF, tem adicional de no mínimo: ;; 25% ;; *50% ;; 100% ;; =art. 7º, XVI. 50% sobre a hora normal, no mínimo
+cf88|t|trabalho de menor: noturno, perigoso ou insalubre só depois dos 18. qualquer trabalho, depois dos 16. aprendiz, a partir dos 14. a escadinha 14-16-18
+banca|q|um adolescente de 15 anos pode trabalhar? ;; não, só aos 16 ;; *só como aprendiz ;; sim, em qualquer atividade diurna ;; =a partir dos 14, só como aprendiz
+cf88|t|licença-gestante: 120 dias, sem prejuízo do emprego e do salário. férias com pelo menos um terço a mais que o salário normal
+cf88|t|unicidade sindical: só um sindicato da mesma categoria por base territorial, e a base mínima é a área de um Município
+futura|t|o lazer é direito social (art. 6º). mostrei pro meu cronograma. ele não aceitou o argumento
+banca|q|militares das Forças Armadas podem se sindicalizar? ;; sim, como qualquer trabalhador ;; *não, a CF proíbe sindicalização e greve ;; só os oficiais ;; =art. 142, § 3º, IV
+cf88|t|salário mínimo: fixado em lei, nacionalmente unificado, e é vedada sua vinculação para qualquer fim. não serve de indexador pra outras coisas
+delegado|t|a segurança aparece duas vezes: como direito individual (caput do art. 5º) e como direito social (art. 6º). por isso tanta gente quer o seu emprego
+# w5-1
+cf88|t|brasileiro nato, 3 caminhos: nasceu no Brasil (salvo pais estrangeiros a serviço do país deles); nasceu fora com pai ou mãe brasileiro a serviço do Brasil; ou nasceu fora com pai ou mãe brasileiro e foi registrado em repartição brasileira ou veio morar aqui e optou depois dos 18
+banca|q|filho de diplomatas franceses a serviço da França, nascido no Recife, é: ;; brasileiro nato, nasceu no Brasil ;; *não é brasileiro nato ;; naturalizado automaticamente ;; =pais estrangeiros a serviço do seu país: exceção do critério do solo
+cf88|th|cargos privativos de brasileiro nato, o macete MP3.COM // M: Ministro do STF // P3: Presidente e Vice da República, Presidente da Câmara e Presidente do Senado // C: carreira diplomática // O: oficial das Forças Armadas // M: Ministro de Estado da Defesa
+banca|q|um brasileiro naturalizado pode ser: ;; Ministro do STF ;; Presidente da Câmara ;; *Senador ;; oficial do Exército ;; =pode ser senador e deputado. só não pode PRESIDIR a Câmara ou o Senado
+banca|q|pra quem vem de país de língua portuguesa, a naturalização exige: ;; 15 anos de residência ;; *residência por 1 ano ininterrupto e idoneidade moral ;; 4 anos e prova de português ;; =art. 12, II, a. os 15 anos são para estrangeiros de qualquer nacionalidade, sem condenação penal
+cf88|t|naturalização extraordinária: estrangeiro de qualquer país, morando aqui há mais de 15 anos ininterruptos, sem condenação penal, que pedir. cumpriu os requisitos, é direito
+cf88|t|a lei NÃO pode distinguir nato de naturalizado. só a própria Constituição pode (art. 12, § 2º): cargos privativos, extradição, Conselho da República e propriedade de empresa jornalística
+banca|q|português com residência permanente no Brasil, havendo reciprocidade: ;; vira brasileiro nato ;; *tem os direitos de brasileiro, salvo os casos previstos na CF ;; não tem direito nenhum ;; =art. 12, § 1º. não vira brasileiro, mas é tratado como tal
+cf88|t|idioma oficial: português (art. 13). símbolos nacionais: bandeira, hino, armas e selo. Estados e Municípios podem ter símbolos próprios
+futura|t|MP3.COM é o macete mais 2005 do direito constitucional e funciona até hoje
+banca|q|nasceu na Alemanha, mãe brasileira (não a serviço do Brasil), registrado no consulado brasileiro. é: ;; *brasileiro nato ;; naturalizado ;; só se vier morar no Brasil ;; =o registro em repartição brasileira competente já basta (art. 12, I, c)
+cf88|t|perda da nacionalidade (regra de 2023): naturalização cancelada por sentença judicial (fraude no processo ou atentado contra a ordem constitucional e o Estado Democrático) ou pedido expresso do próprio brasileiro, desde que ele não vire apátrida
+banca|q|depois de 2023, o brasileiro que pede expressamente a perda da nacionalidade: ;; nunca pode recuperá-la ;; *pode readquirir a nacionalidade originária, na forma da lei ;; vira automaticamente estrangeiro residente ;; =art. 12, § 5º, incluído pela EC 131/2023
+# w8-0
+cf88|th|idades mínimas pra se candidatar (art. 14, § 3º, VI) // 35: Presidente, Vice e Senador // 30: Governador e Vice // 21: Deputado (federal, estadual ou distrital), Prefeito, Vice-Prefeito e juiz de paz // 18: Vereador // macete: 35-30-21-18, descendo do topo
+banca|q|idade mínima pra Senador: ;; 30 anos ;; *35 anos ;; 21 anos ;; =senador = 35, junto com Presidente e Vice
+cf88|t|voto obrigatório: maiores de 18. facultativo: analfabetos, maiores de 70 e quem tem 16 ou 17. inalistáveis: estrangeiros e conscritos durante o serviço militar obrigatório
+banca|q|o analfabeto: ;; não pode votar ;; *pode votar (facultativo), mas é inelegível ;; pode votar e ser votado ;; =alistamento facultativo, mas inelegível (art. 14, § 4º)
+cf88|t|cassação de direitos políticos é PROIBIDA. existe perda ou suspensão, nos casos do art. 15. cassação lembra ditadura, a CF fez questão de vedar
+banca|q|a condenação criminal transitada em julgado gera: ;; perda definitiva dos direitos políticos ;; *suspensão dos direitos políticos enquanto durarem os efeitos ;; cassação dos direitos políticos ;; =art. 15, III. suspende, não perde
+delegado|t|preso provisório ainda não tem condenação transitada em julgado, então mantém os direitos políticos. por isso existe seção eleitoral em presídio
+cf88|t|anterioridade eleitoral (art. 16): a lei que muda o processo eleitoral entra em vigor na publicação, mas não vale para eleição que ocorra até 1 ano da vigência. mudar regra em cima da hora não pode
+banca|q|o prefeito que quer ser candidato a governador precisa: ;; nada, pode concorrer no cargo ;; *renunciar até 6 meses antes do pleito ;; tirar licença de 3 meses ;; =desincompatibilização (art. 14, § 6º). pra reeleição no mesmo cargo, não precisa
+cf88|t|inelegibilidade reflexa: cônjuge e parentes até o 2º grau do chefe do Executivo são inelegíveis no território da jurisdição dele. salvo se já tiverem mandato e forem candidatos à reeleição
+futura|t|eu com 16 anos achando que votar era o auge da vida adulta / eu hoje: decorando a idade mínima de juiz de paz
+banca|q|partido político é: ;; pessoa jurídica de direito público ;; *pessoa jurídica de direito privado ;; órgão do TSE ;; =adquire personalidade na forma da lei civil e registra o estatuto no TSE (art. 17, § 2º)
+cf88|t|partidos: caráter nacional, proibido receber recurso de entidade ou governo estrangeiro, proibida organização paramilitar e obrigatória a prestação de contas à Justiça Eleitoral
+banca|q|o conscrito, durante o serviço militar obrigatório: ;; vota normalmente ;; *não pode se alistar como eleitor ;; vota de forma facultativa ;; =inalistáveis: estrangeiros e conscritos (art. 14, § 2º)
+# w8-1
+cf88|t|entes federativos: União, Estados, DF e Municípios, todos autônomos. soberana mesmo é só a República Federativa do Brasil, como um todo
+banca|q|Territórios federais são entes federativos? ;; sim, como os Estados ;; *não, integram a União ;; só se tiverem mais de 100 mil habitantes ;; =art. 18, § 2º. hoje nem existe nenhum
+cf88|t|criar Município: lei ESTADUAL, no período fixado por lei complementar FEDERAL, com plebiscito das populações envolvidas e estudo de viabilidade
+banca|q|a União pode intervir diretamente num Município de Pernambuco? ;; sim, se houver grave desordem ;; *não. quem intervém em Município de Estado é o próprio Estado ;; sim, a pedido do prefeito ;; =a União intervém em Estados, no DF e em Municípios de Território federal
+cf88|t|intervenção é exceção. a regra é a autonomia: "a União NÃO intervirá nos Estados nem no DF, exceto para..." (art. 34). a lista é fechada
+delegado|t|intervenção federal pra pôr termo a grave comprometimento da ordem pública já aconteceu na segurança pública do Rio, em 2018. caiu no noticiário e cai em prova
+banca|q|o decreto de intervenção federal é submetido ao Congresso Nacional em: ;; 10 dias ;; *24 horas ;; 48 horas ;; =art. 36, § 1º
+cf88|th|princípios sensíveis (art. 34, VII): violou, cabe intervenção // forma republicana, sistema representativo e regime democrático // direitos da pessoa humana // autonomia municipal // prestação de contas da administração // aplicação do mínimo em saúde e educação // aqui depende de representação do Procurador-Geral da República provida pelo STF
+banca|q|é vedado à União, aos Estados, ao DF e aos Municípios: ;; cobrar tributos ;; *recusar fé aos documentos públicos ;; celebrar convênios ;; =art. 19, II. junto com: estabelecer ou subvencionar cultos e criar distinções entre brasileiros
+cf88|t|Brasília é a capital federal (art. 18, § 1º). o DF não pode ser dividido em Municípios: faz papel de Estado e de Município ao mesmo tempo
+futura|t|o Estado não pode estabelecer nem subvencionar cultos (art. 19). laico. eu, porém, rezo antes de todo simulado
+banca|q|o Estado que suspende o pagamento da dívida fundada por mais de 2 anos seguidos, sem força maior, pode sofrer: ;; *intervenção federal ;; estado de sítio ;; perda definitiva da autonomia ;; =art. 34, V, a: reorganizar as finanças
+cf88|t|Estados podem se incorporar, se subdividir ou se desmembrar com plebiscito da população diretamente interessada e lei complementar do Congresso
+# w9-0
+cf88|t|competência privativa da União pra legislar (art. 22, I), o macete CAPACETE DE PM: civil, agrário, penal, aeronáutico, comercial, eleitoral, trabalho, espacial, processual e marítimo
+banca|q|Pernambuco pode criar um crime novo por lei estadual? ;; sim, é competência concorrente ;; *não, direito penal é privativo da União ;; só com aprovação do STF ;; =art. 22, I. crime é sempre lei federal
+cf88|t|concorrente (art. 24): União faz normas gerais, Estados suplementam. sem lei federal, o Estado legisla de forma plena. se a federal vier depois, suspende a estadual no que for contrário. suspende, não revoga
+banca|q|lei federal geral que chega depois, contrária à lei estadual feita na falta dela: ;; revoga a lei estadual ;; *suspende a eficácia da lei estadual no que for contrário ;; torna a estadual inconstitucional ;; =art. 24, § 4º. a palavra é suspende
+delegado|t|organização, garantias, direitos e deveres das polícias civis é competência CONCORRENTE (art. 24, XVI). por isso existe lei nacional geral e o Estatuto do Policial Civil de PE
+cf88|t|competência COMUM (art. 23) é de fazer, não de legislar: todos os entes cuidam da saúde, protegem o meio ambiente, combatem a pobreza. mutirão federativo
+banca|q|Municípios aparecem no art. 24 (competência concorrente)? ;; sim, igual aos Estados ;; *não, mas podem suplementar a legislação federal e estadual no que couber (art. 30, II) ;; nunca legislam ;; =o caput do art. 24 cita só União, Estados e DF
+cf88|t|Estados ficam com a competência remanescente: o que a CF não vedou (art. 25, § 1º). União e Municípios têm lista, o Estado fica com a sobra
+banca|q|quem fixa o horário de funcionamento do comércio local? ;; o Estado ;; *o Município ;; a União ;; =Súmula Vinculante 38, interesse local. banco é exceção: horário bancário é da União
+cf88|t|a União pode delegar aos Estados questões ESPECÍFICAS das matérias privativas, por lei complementar (art. 22, parágrafo único). específicas, nunca a matéria inteira
+futura|t|CAPACETE DE PM decorado. agora só falta lembrar que tem DOIS "A": agrário e aeronáutico. socorro
+banca|q|direito penitenciário é competência: ;; privativa da União ;; *concorrente ;; exclusiva dos Estados ;; =art. 24, I: tributário, financeiro, penitenciário, econômico e urbanístico. penal é privativo, penitenciário é concorrente
+cf88|t|crimes de responsabilidade: definição e processo são da União (Súmula Vinculante 46). Estado não pode inventar crime de responsabilidade pro governador
+cf88|t|Municípios: assuntos de interesse local (art. 30, I). transporte coletivo local, ordenamento do solo urbano, educação infantil e ensino fundamental com cooperação técnica e financeira da União e do Estado
+# w10-0
+cf88|t|Câmara: representa o povo, eleição proporcional, mandato de 4 anos. Senado: representa os Estados e o DF, eleição majoritária, 3 por Estado, mandato de 8 anos
+banca|q|cada Estado elege quantos senadores? ;; 2, com 2 suplentes cada ;; *3, com mandato de 8 anos ;; varia conforme a população ;; =art. 46. a renovação alterna 1/3 e 2/3 a cada 4 anos. cada senador tem 2 suplentes
+cf88|t|imunidade material: deputados e senadores são invioláveis, civil e penalmente, por quaisquer opiniões, palavras e votos. o STF exige ligação com o mandato
+banca|q|desde a diplomação, um deputado federal só pode ser preso: ;; com ordem do STF ;; *em flagrante de crime inafiançável ;; nunca ;; =art. 53, § 2º. os autos vão em 24 horas pra Casa, que decide sobre a prisão pela maioria dos seus membros
+delegado|t|prender deputado em flagrante de crime inafiançável e mandar os autos em 24h pra Câmara decidir se mantém a prisão. procedimento é tudo
+cf88|t|CPI: requerimento de 1/3 dos membros, fato determinado e prazo certo. tem poderes de investigação próprios das autoridades judiciais. as conclusões vão pro Ministério Público
+banca|q|uma CPI pode, por conta própria: ;; decretar interceptação telefônica ;; mandar fazer busca domiciliar ;; *quebrar sigilo bancário e fiscal, com fundamentação ;; =interceptação, busca domiciliar e prisão (fora o flagrante) são reserva de jurisdição. sigilo bancário, fiscal e de dados ela pode
+cf88|t|Presidente: 35 anos, mandato de 4, eleito por maioria absoluta dos votos válidos. brancos e nulos não contam. não deu? segundo turno com os dois mais votados
+banca|q|no crime de responsabilidade do Presidente, quem JULGA? ;; o STF ;; a Câmara dos Deputados ;; *o Senado Federal ;; =a Câmara autoriza por 2/3, o Senado julga. no crime comum, quem julga é o STF
+cf88|t|garantias dos juízes: vitaliciedade (no 1º grau, depois de 2 anos de exercício), inamovibilidade e irredutibilidade de subsídio. sem isso, juiz decidiria com medo
+banca|q|quantos ministros tem o STF? ;; 33 ;; 15 ;; *11 ;; =11 no STF, 33 no STJ. nomeados pelo Presidente depois da aprovação pela maioria absoluta do Senado
+futura|t|eu: STF tem 11 / a banca: e o STJ? / eu: chuta 11 / o STJ: 33, amore
+cf88|t|quinto constitucional: 1/5 dos lugares dos TRFs e TJs vai para membros do MP e advogados com mais de 10 anos. a lista sêxtupla vira tríplice no tribunal e o chefe do Executivo escolhe
+banca|q|ministro do STF precisa ter: ;; entre 30 e 65 anos ;; *mais de 35 e menos de 70 anos, notável saber jurídico e reputação ilibada ;; carreira de juiz ;; =art. 101. o limite de 70 anos veio em 2022
+delegado|t|na vigência do mandato, o Presidente não responde por atos estranhos ao exercício das funções (art. 86, § 4º). responde depois que sair
+# w10-1
+cf88|t|princípios da administração (art. 37): LIMPE. legalidade, impessoalidade, moralidade, publicidade e eficiência. eficiência entrou em 1998, a caçula da turma
+banca|q|o prazo de validade do concurso público é: ;; até 4 anos, improrrogável ;; *até 2 anos, prorrogável uma vez por igual período ;; 2 anos, prorrogável quantas vezes precisar ;; =art. 37, III. o seu concurso, inclusive
+futura|t|validade de até 2 anos, prorrogável por mais 2. ou seja, até 4 anos de esperança de nomeação. pegando fé
+cf88|t|estabilidade: 3 anos de efetivo exercício + avaliação especial de desempenho por comissão (art. 41)
+banca|q|o servidor estável pode perder o cargo por: ;; decisão do chefe imediato ;; *sentença transitada em julgado, processo administrativo com ampla defesa ou avaliação periódica de desempenho ;; só sentença judicial ;; =art. 41, § 1º. e ainda por excesso de despesa com pessoal (art. 169)
+cf88|t|acumulação de cargos públicos é proibida. exceções, com horários compatíveis: dois de professor; um de professor + um técnico ou científico; dois de profissional de saúde com profissão regulamentada
+banca|q|cargo em comissão serve para: ;; qualquer função, à escolha do gestor ;; *direção, chefia e assessoramento ;; funções técnicas permanentes ;; =art. 37, V. livre nomeação e exoneração
+cf88|t|responsabilidade do Estado é OBJETIVA (art. 37, § 6º): a vítima prova o dano e a ligação com a atuação do agente, não precisa provar culpa. depois o Estado cobra do agente, se houve dolo ou culpa
+delegado|t|viatura bateu no carro do cidadão durante a diligência: ele processa o Estado, não o policial. o Estado cobra do servidor depois, se houve dolo ou culpa. dirija com cuidado
+banca|q|ato de improbidade, pela CF, pode gerar: ;; *suspensão dos direitos políticos, perda da função, indisponibilidade dos bens e ressarcimento ao erário ;; perda definitiva dos direitos políticos ;; só multa ;; =art. 37, § 4º, sem prejuízo da ação penal
+cf88|t|nepotismo: nomear cônjuge ou parente até o 3º grau da autoridade pra cargo em comissão ou função de confiança viola a CF (Súmula Vinculante 13). inclusive o cruzado: eu nomeio o seu, você nomeia o meu
+cf88|t|Ministério Público: instituição permanente, essencial à função jurisdicional. princípios: unidade, indivisibilidade e independência funcional
+banca|q|quem exerce o controle EXTERNO da atividade policial? ;; o Poder Judiciário ;; a corregedoria da polícia ;; *o Ministério Público ;; =art. 129, VII. a corregedoria faz o controle interno
+delegado|t|o MP pode requisitar diligências investigatórias e a instauração de inquérito policial (art. 129, VIII). requisitou, a gente faz
+cf88|t|publicidade dos atos públicos: proibido nome, símbolo ou imagem que caracterize promoção pessoal de autoridade (art. 37, § 1º). placa de obra com foto do governador? inconstitucional
+banca|q|o advogado, pela CF, é: ;; auxiliar facultativo da justiça ;; *indispensável à administração da justiça ;; servidor público ;; =art. 133. inviolável por seus atos e manifestações no exercício da profissão, nos limites da lei
+cf88|t|Defensoria Pública: orientação jurídica e defesa dos necessitados, em todos os graus. MP acusa, Defensoria defende quem não pode pagar, Advocacia Pública defende o ente público
+# w11-0
+cf88|t|art. 144: segurança pública é dever do Estado, direito e responsabilidade de TODOS, exercida pra preservar a ordem pública e a incolumidade das pessoas e do patrimônio. decora: cai na objetiva e salva a redação
+delegado|t|polícia civil (art. 144, § 4º): dirigida por delegado de carreira, faz polícia judiciária e apura infrações penais, exceto as militares, ressalvada a competência da União. o seu futuro emprego em uma frase
+banca|q|a apuração de crimes militares cabe à polícia civil? ;; sim, como as demais infrações ;; *não, a CF exclui as infrações militares ;; só se o PM estiver de folga ;; =art. 144, § 4º: "exceto as militares"
+cf88|th|órgãos da segurança pública (art. 144) // polícia federal // polícia rodoviária federal // polícia ferroviária federal // polícias civis // polícias militares e corpos de bombeiros militares // polícias penais federal, estaduais e distrital, incluídas em 2019 // guarda municipal fica num parágrafo à parte (§ 8º)
+banca|q|a polícia penal entrou no art. 144 pela: ;; EC 45/2004 ;; *EC 104/2019 ;; EC 19/1998 ;; =EC 104/2019. cuida da segurança dos estabelecimentos penais
+delegado|t|PM faz polícia ostensiva e preserva a ordem pública. PC investiga. uma chega primeiro, a outra descobre o que aconteceu
+banca|q|a polícia civil de Pernambuco é subordinada: ;; ao Ministro da Justiça ;; *ao Governador do Estado ;; ao Tribunal de Justiça ;; =art. 144, § 6º: polícias civis, militares e corpos de bombeiros subordinam-se aos Governadores
+cf88|t|estado de DEFESA: o Presidente decreta e o Congresso aprecia depois (24h pra receber, 10 dias pra decidir). estado de SÍTIO: o Presidente PEDE autorização antes. defesa decreta, sítio pede
+banca|q|o estado de defesa dura no máximo: ;; 60 dias, sem prorrogação ;; *30 dias, prorrogável uma vez por igual período ;; enquanto durar a crise ;; =art. 136, § 2º
+cf88|t|no estado de defesa, prisão por crime contra o Estado: comunicada na hora ao juiz, não passa de 10 dias sem autorização judicial e é proibida a incomunicabilidade do preso
+banca|q|estado de sítio decretado por guerra dura: ;; 30 dias ;; 90 dias ;; *enquanto durar a guerra ou a agressão estrangeira ;; =art. 138, § 1º. na comoção grave, 30 dias por vez
+futura|t|eu lendo o art. 144 pela décima vez e ainda me arrepiando no § 4º. é ali que eu quero trabalhar
+cf88|t|guardas municipais: os Municípios PODEM criar (não é obrigatório), pra proteção de bens, serviços e instalações, conforme a lei
+banca|q|quem o Presidente ouve antes de decretar estado de defesa? ;; o STF e o PGR ;; *o Conselho da República e o Conselho de Defesa Nacional ;; os Governadores ;; =art. 136. as opiniões não vinculam o Presidente
+delegado|t|repertório coringa da redação: "segurança pública é dever do Estado, direito e responsabilidade de todos" (art. 144). serve pra qualquer tema da discursiva
+# w2-5
+leitura|t|sinônimo depende do contexto. "prender" o suspeito e "prender" o cabelo não são a mesma coisa
+banca|q|"o delegado RATIFICOU a decisão". ratificar é: ;; corrigir ;; *confirmar ;; anular ;; =ratificar = confirmar. retificar = corrigir. uma letra muda tudo
+leitura|th|parônimos que caem em prova policial // ratificar (confirmar) x retificar (corrigir) // flagrante (evidente) x fragrante (perfumado) // mandado (ordem judicial) x mandato (de político) // infligir (aplicar pena) x infringir (violar regra) // descrição (descrever) x discrição (ser discreto)
+delegado|t|cumprimos o mandado. não o mandato. mandato é de vereador. já vi relatório com "mandato de busca e apreensão" e sofri
+banca|q|"o juiz _____ pena ao réu que _____ a lei": ;; infringiu / infligiu ;; *infligiu / infringiu ;; infligiu / infligiu ;; =infligir = aplicar castigo. infringir = violar
+leitura|t|denotação: sentido literal, de dicionário. conotação: sentido figurado. "a cidade é uma selva" é conotação. ninguém viu onça na Boa Vista
+leitura|th|figuras que a banca mais pede // metáfora: comparação sem o "como". "ele é uma pedra" // comparação: com o "como". "duro como pedra" // metonímia: troca por relação próxima. "li Machado de Assis", "bebi um copo" // hipérbole: exagero. "falei mil vezes" // eufemismo: suaviza. "ele partiu" no lugar de morreu // ironia: diz o contrário do que quer dizer
+banca|q|"a PC-PE precisa de mais braços" tem: ;; hipérbole ;; *metonímia (braços no lugar de pessoas) ;; eufemismo ;; =a parte pelo todo: braços = trabalhadores
+futura|t|"já estudei esse capítulo mil vezes": hipérbole / "estudei um pouquinho": eufemismo / "amo acordar às 5h pra estudar": ironia. sou um livro de figuras de linguagem
+leitura|t|vícios de linguagem: pleonasmo vicioso (subir pra cima, elo de ligação), ambiguidade (sentido duplo sem querer), cacofonia (som feio: "por cada") e barbarismo (erro de grafia ou de forma)
+banca|q|"há dois anos atrás" tem: ;; ambiguidade ;; *pleonasmo vicioso ;; cacofonia ;; =o "há" já indica passado. ou "há dois anos" ou "dois anos atrás"
+leitura|t|ambiguidade em relatório policial é perigo real: "o policial abordou o suspeito em sua casa". casa de quem? escreva "na casa do suspeito"
+banca|q|"o eminente delegado" é o delegado: ;; que vai chegar logo ;; *ilustre, notável ;; que vai se aposentar ;; =eminente = ilustre. iminente = prestes a acontecer
+leitura|t|polissemia: uma palavra, vários sentidos. "pena" de prisão, "pena" de galinha, "dar pena". a questão sempre pergunta o sentido NO texto
+# w2-6
+leitura|t|proparoxítona: TODAS são acentuadas, sem exceção. médico, lâmpada, público. e "polícia"? é paroxítona terminada em ditongo. respira
+banca|q|depois do Novo Acordo, qual está correta? ;; idéia ;; heróico ;; *ideia ;; =ditongos abertos ei/oi em paroxítonas perderam o acento: ideia, heroico, assembleia. em oxítonas continua: herói, papéis
+leitura|t|vôo, lêem, crêem? não. agora é voo, leem, creem, veem. o chapéu dos hiatos oo e ee foi embora
+banca|q|"eles ___ os relatórios e ___ cedo": ;; tem / vem ;; *têm / vêm ;; teem / veem ;; =plural de ter e vir leva acento: têm, vêm. "veem" é do verbo ver
+leitura|t|acentos diferenciais que sobraram: pôr (verbo) x por (preposição), pôde (passado) x pode (presente), e têm/vêm no plural. o "pára" do verbo parar perdeu o acento
+futura|t|o trema morreu com o Novo Acordo e eu ainda escrevo "lingüiça" mentalmente. luto não tem prazo
+banca|q|qual palavra perdeu o acento com o Novo Acordo? ;; café ;; herói ;; *feiura ;; =i ou u tônico depois de ditongo, em paroxítona, não leva acento: feiura, baiuca. café e herói continuam
+leitura|t|oxítonas acentuadas: terminadas em A, E, O (com ou sem s) e EM, ENS. café, você, avô, também, parabéns. e Recife? paroxítona terminada em e, sem acento
+leitura|th|paroxítonas acentuadas, a lista que ninguém ama // terminadas em R, X, N, L: caráter, tórax, hífen, útil // em I(S), US: júri, lápis, vírus // em UM, UNS, ÃO(S), Ã(S): álbum, órgão, ímã // em PS: bíceps // em ditongo: polícia, história, série
+banca|q|"polícia" é acentuada porque é: ;; proparoxítona ;; oxítona terminada em a ;; *paroxítona terminada em ditongo ;; =po-lí-cia: tônica na penúltima, termina em ditongo crescente
+leitura|t|hiato com i ou u tônico sozinho na sílaba (ou com s) leva acento: saída, saúde, baú, país. "rainha" não leva, porque vem nh depois. "juiz" não leva, porque o i não está sozinho (ju-iz). "juízes" leva
+banca|q|qual sequência está correta? ;; exceção, porisso, previlégio ;; *exceção, por isso, privilégio ;; excessão, por isso, privilégio ;; =por isso sempre separado. privilégio com i. exceção com ç
+leitura|t|por que (pergunta ou "pelo qual"), por quê (no fim da frase), porque (explicação), porquê (substantivo, com artigo: "o porquê")
+delegado|t|"concerteza" não existe. é "com certeza". separado, igual "de repente" e "a fim de". relatório com isso volta todo riscado
+# w1-12
+dobradas|t|objeto da contabilidade: o PATRIMÔNIO. objetivo: gerar informação útil pra decisão. objeto é o que estuda, objetivo é pra que serve
+banca|q|o objeto da contabilidade é: ;; o lucro ;; *o patrimônio das entidades ;; os tributos ;; =o patrimônio. lucro é consequência
+dobradas|t|características qualitativas FUNDAMENTAIS: relevância e representação fidedigna. só duas. as outras são de melhoria
+dobradas|th|características de MELHORIA (CPC 00), macete CVTC // comparabilidade: dá pra comparar entre empresas e entre anos // verificabilidade: outras pessoas chegariam à mesma conclusão // tempestividade: a informação chega a tempo de ajudar // compreensibilidade: clara e organizada
+banca|q|tempestividade é característica: ;; fundamental ;; *de melhoria ;; um princípio revogado ;; =fundamentais: relevância e representação fidedigna. comparabilidade, verificabilidade, tempestividade e compreensibilidade são de melhoria
+dobradas|t|representação fidedigna: informação completa, neutra e livre de erro. não quer dizer perfeita, quer dizer honesta e sem viés
+futura|t|contabilidade na prova de polícia? é pra rastrear dinheiro. lavagem de dinheiro não se investiga só com viatura
+banca|q|o pressuposto básico das demonstrações contábeis é: ;; o regime de caixa ;; *a continuidade (a entidade vai seguir operando) ;; o custo histórico ;; =continuidade operacional. se a empresa vai fechar, a base de avaliação muda
+dobradas|t|materialidade é um aspecto da relevância: a informação é material se omitir ou distorcer puder influenciar a decisão. erro de R$ 10 numa empresa de bilhões? imaterial
+dobradas|t|usuários principais (CPC 00): investidores, credores por empréstimo e outros credores, existentes e potenciais. governo e gestores usam também, mas não são o foco
+banca|q|qual destas é uma técnica contábil? ;; o patrimônio ;; *a escrituração ;; o lucro ;; =técnicas: escrituração, demonstrações contábeis, auditoria e análise de balanços
+ativo|t|eu sou o ativo. tenho tudo que é bom: dinheiro, estoque, direitos a receber. e mesmo assim vivo sendo comparado com o passivo
+dobradas|t|azienda: nome chique pra entidade econômico-administrativa, o patrimônio mais a gestão. aparece em questão antiga e às vezes volta
+# w2-10
+dobradas|t|a equação que resolve meia prova: ATIVO = PASSIVO + PATRIMÔNIO LÍQUIDO. ou PL = A − P
+banca|q|ativo de 500 mil e passivo de 700 mil. a empresa tem: ;; PL positivo de 200 mil ;; *passivo a descoberto de 200 mil ;; situação nula ;; =PL = 500 − 700 = −200. passivo maior que o ativo: passivo a descoberto
+ativo|t|ativo = bens + direitos. passivo = obrigações. PL = o que sobra pros donos. eu sou o ativo e ninguém me valoriza
+dobradas|t|lado direito do balanço (passivo + PL) = ORIGENS dos recursos. lado esquerdo (ativo) = APLICAÇÕES. de onde veio o dinheiro x onde ele está
+banca|q|o capital de terceiros é representado pelo: ;; ativo ;; *passivo exigível ;; patrimônio líquido ;; =capital próprio = PL. capital de terceiros = passivo. capital total à disposição = passivo + PL = ativo
+dobradas|th|as 3 situações do patrimônio // A > P: PL positivo, situação favorável // A = P: PL nulo // A < P: PL negativo, passivo a descoberto. deve mais do que tem // sem passivo nenhum: PL = ativo. rara igual empresa sem boleto
+futura|t|meu balanço: ativo = um notebook e uma esperança. passivo = cartão de crédito. PL = passivo a descoberto, mas com fé
+banca|q|ativo de 800 e PL de 300. o passivo é: ;; 1.100 ;; *500 ;; 300 ;; =A = P + PL → 800 = P + 300 → P = 500
+dobradas|t|bem: coisa com valor (dinheiro, carro, estoque, imóvel). direito: valor a receber (clientes, aluguéis a receber). obrigação: valor a pagar (fornecedores, salários a pagar, empréstimos)
+banca|q|"duplicatas a receber" é: ;; bem ;; *direito, no ativo ;; obrigação, no passivo ;; =a receber = direito = ativo. a pagar = obrigação = passivo
+ativo|t|o passivo é aquele ex que só aparece cobrando: salários a pagar, fornecedores, impostos a recolher. tudo boleto
+dobradas|t|capital subscrito: o que os sócios prometeram colocar. integralizado: o que já colocaram. a diferença, capital a integralizar, reduz o PL
+banca|q|empresa começa com 100 mil dos sócios em dinheiro. a equação fica: ;; ativo 100 = passivo 100 ;; *ativo 100 = PL 100 ;; ativo 0 = PL 100 ;; =caixa (ativo) 100 e capital social (PL) 100, sem passivo
+# w2-11
+dobradas|t|natureza das contas: ativo e despesa são DEVEDORAS. passivo, PL e receita são CREDORAS. o que a empresa TEM e GASTA é devedor. o que ela DEVE e GANHA é credor
+banca|q|a conta "receita de serviços" tem saldo de natureza: ;; devedora ;; *credora ;; mista ;; =receita aumenta o PL, que é credor. receita é credora
+dobradas|t|DÉBITO não é coisa ruim e CRÉDITO não é coisa boa. é só o lado do lançamento. debitar o caixa = aumentar o caixa. esquece o extrato do banco
+ativo|t|eu, conta de ativo: aumento a débito e diminuo a crédito. o passivo é o contrário. a gente não combina em nada
+banca|q|depreciação acumulada é: ;; conta do passivo ;; *conta redutora do ativo ;; despesa do período ;; =fica no ativo, com saldo credor, reduzindo o imobilizado. "despesa de depreciação" é outra conta, de resultado
+dobradas|th|contas redutoras que caem // do ativo: depreciação acumulada, amortização acumulada, perdas estimadas com créditos de liquidação duvidosa // do PL: capital a integralizar, ações em tesouraria, prejuízos acumulados // redutora tem natureza contrária à do grupo dela
+banca|q|ações em tesouraria são: ;; ativo ;; *redutora do patrimônio líquido ;; passivo ;; =a empresa recomprou as próprias ações. reduz o PL. conta redutora do PL caiu no seu simulado
+dobradas|t|contas patrimoniais (ativo, passivo, PL) vão pro balanço. contas de resultado (receitas e despesas) vão pra DRE e são zeradas no fim do exercício, levando o lucro ou prejuízo pro PL
+banca|q|no fim do exercício, as contas de receita e despesa: ;; continuam com saldo pro ano seguinte ;; *são encerradas e o resultado vai para o PL ;; viram contas do ativo ;; =apuração do resultado
+dobradas|t|plano de contas: a lista de todas as contas da empresa + o manual de quando usar cada uma. é o cardápio da contabilidade
+futura|t|"prejuízos acumulados" é redutora do PL. igual minha autoestima depois do simulado. mas a gente reverte com lucro
+banca|q|uma conta de despesa aumenta com: ;; *débito ;; crédito ;; tanto faz ;; =despesa reduz o PL (credor), então aumenta a débito
+# w3-11
+dobradas|t|método das partidas dobradas: pra cada débito, um crédito de mesmo valor. a soma dos débitos sempre bate com a dos créditos. é meu nome e é minha lei
+banca|q|o livro Diário registra os fatos em ordem: ;; por conta ;; *cronológica ;; alfabética ;; =Diário: cronológico, dia a dia. Razão: por conta
+dobradas|th|as 4 fórmulas de lançamento // 1ª: um débito e um crédito // 2ª: um débito e vários créditos // 3ª: vários débitos e um crédito // 4ª: vários débitos e vários créditos // a ordem é sempre débito primeiro
+banca|q|compra de um carro de 50 mil: 20 mil à vista e 30 mil financiados. o lançamento é de: ;; 1ª fórmula ;; *2ª fórmula ;; 3ª fórmula ;; =D veículos 50 / C caixa 20 / C financiamentos 30. um débito, dois créditos
+dobradas|t|elementos do lançamento: local e data, conta debitada, conta creditada, histórico e valor. histórico é a descrição do fato. igual BO: sem histórico ninguém entende
+delegado|t|livro Diário com rasura, entrelinha ou espaço em branco? a lei proíbe exatamente isso na escrituração. pra perícia contábil, é sinal pra olhar com lupa
+banca|q|o lançamento que anula outro feito errado, invertendo débito e crédito, é o: ;; *estorno ;; transferência ;; complementação ;; =estorno. depois se faz o lançamento certo
+ativo|t|o Razão é meu extrato pessoal: cada movimento de uma conta só. o Diário é o grupo da família: todo mundo misturado por data
+dobradas|t|o balancete prova que débitos = créditos, mas não pega tudo. lançou na conta errada com o valor certo? o balancete fecha igual. errar bonito também é errar
+banca|q|qual erro o balancete NÃO detecta? ;; débito sem o crédito correspondente ;; *lançamento em conta errada, com débito e crédito de mesmo valor ;; soma errada de uma conta ;; =se débito = crédito, o balancete fecha, mesmo na conta errada
+futura|t|o método das partidas dobradas foi publicado por Luca Pacioli em 1494. a contabilidade é mais velha que o Brasil. respeita
+dobradas|t|livro Diário: obrigatório. livro Razão: obrigatório pra fins fiscais. caixa e contas correntes: auxiliares
+# w4-11
+dobradas|t|ato administrativo não mexe no patrimônio: assinar contrato, contratar funcionário, dar aval. fato contábil mexe. só o fato entra no Diário (o ato relevante pode ir pra conta de compensação)
+banca|q|pagar uma dívida de 1.000 com 100 de juros é fato: ;; permutativo ;; modificativo aumentativo ;; *misto diminutivo ;; =a dívida sai (permuta) e os juros, despesa, reduzem o PL. caiu no seu simulado
+dobradas|th|os 3 tipos de fato contábil // permutativo: troca de elementos, o PL não muda. comprar um computador à vista // modificativo: muda o PL. aumentativo (receita) ou diminutivo (despesa) // misto: permuta e modificação juntas. receber com juros, pagar com desconto
+banca|q|compra de mercadorias a prazo é fato: ;; *permutativo ;; modificativo ;; misto ;; =entra estoque (ativo) e fornecedores (passivo). o PL não muda
+dobradas|t|regime de COMPETÊNCIA: receita e despesa entram no mês em que acontecem, tendo pago ou não. regime de CAIXA: só quando o dinheiro entra ou sai. a contabilidade das empresas usa competência
+banca|q|salário de dezembro pago em 5 de janeiro. pelo regime de competência, a despesa é de: ;; *dezembro ;; janeiro ;; metade em cada mês ;; =trabalhou em dezembro, despesa de dezembro. o pagamento só mexe no caixa
+futura|t|regime de competência é minha culpa: é do dia em que eu deixei de estudar, mesmo que eu só pague no simulado
+ativo|t|recebi aluguel adiantado e todo mundo achou que era receita. não, amor: é passivo (receita a apropriar) até chegar o mês do aluguel
+banca|q|receber uma conta de 2.000 com 200 de juros é fato: ;; permutativo ;; *misto aumentativo ;; modificativo diminutivo ;; =a conta a receber vira caixa (permuta) e os juros, receita, aumentam o PL
+dobradas|t|venda de serviço à vista é modificativo aumentativo: entra caixa e entra receita, e o PL aumenta
+banca|q|seguro de 12 meses pago adiantado. no dia do pagamento se registra: ;; despesa de seguro do ano inteiro ;; *seguros a apropriar (ativo), que viram despesa mês a mês ;; nada ;; =despesa antecipada: ativo apropriado pela competência
+delegado|t|empresa de fachada com receita alta, toda em dinheiro vivo, e quase nenhuma despesa? a contabilidade não fecha com a lógica. é aí que a investigação financeira começa
+# w5-11
+dobradas|t|CMV = estoque inicial + compras − estoque final. decora como respira
+banca|q|EI = 10 mil, compras = 50 mil, EF = 15 mil. o CMV é: ;; 75 mil ;; *45 mil ;; 55 mil ;; =10 + 50 − 15 = 45 mil
+dobradas|t|depreciação: bens tangíveis (máquina, carro, prédio). amortização: intangíveis e direitos com prazo (software, licença). exaustão: recursos naturais (mina, floresta). terreno não deprecia
+banca|q|o terreno da sede da empresa sofre: ;; depreciação ;; exaustão ;; *nenhuma das duas, terreno não se deprecia ;; =terreno não tem vida útil limitada. o prédio em cima dele deprecia
+dobradas|t|depreciação linear: (custo − valor residual) ÷ vida útil. viatura de 100 mil, residual de 20 mil, 5 anos: 16 mil por ano
+banca|q|máquina de 60 mil, valor residual de 10 mil, vida útil de 10 anos. depreciação anual linear: ;; 6 mil ;; *5 mil ;; 7 mil ;; =(60 − 10) ÷ 10 = 5 mil
+dobradas|th|PEPS x UEPS x média // PEPS (primeiro que entra, primeiro que sai): sai o mais antigo // UEPS (último que entra, primeiro que sai): sai o mais recente. não é aceito pelo CPC nem pelo fisco // média ponderada móvel: recalcula o custo a cada compra // com preços subindo, PEPS dá o menor CMV e o maior lucro
+banca|q|com preços subindo, qual método dá o MAIOR lucro? ;; *PEPS ;; UEPS ;; média ponderada ;; =PEPS baixa primeiro o estoque mais barato (antigo): CMV menor, lucro maior
+dobradas|t|desconto comercial (incondicional) vem na nota e reduz o valor da compra ou venda. desconto financeiro (condicional) é por pagar antes do prazo: vira receita ou despesa financeira
+banca|q|receita líquida de vendas = receita bruta menos: ;; o CMV ;; *devoluções, abatimentos, descontos incondicionais e impostos sobre vendas ;; despesas administrativas ;; =deduções da receita bruta. o CMV entra depois, pra achar o lucro bruto
+futura|t|eu comprando 3 livros de concurso "pra depreciar em 4 meses" / minha contabilidade pessoal: isso é despesa, querida
+ativo|t|me depreciam todo ano e no fim me chamam de "valor residual". mas sem mim não tem produção. respeitem o imobilizado
+dobradas|t|lucro bruto (resultado com mercadorias) = receita líquida de vendas − CMV. negativo? vendeu abaixo do custo
+# w2-8
+calc|t|regra de três composta, o método que salva: monta a tabela, marca o x, compara cada coluna com a do x (direta ou inversa), inverte as inversas e multiplica
+banca|q|6 policiais fazem a ronda em 8 horas. em quantas horas 4 policiais fazem (mesmo ritmo)? ;; 5h20 ;; *12 horas ;; 6 horas ;; =menos policial, mais tempo: inversa. 6 × 8 = 4 × x → x = 12
+calc|t|diretamente proporcional: um sobe, o outro sobe. inversamente: um sobe, o outro desce. mais gente trabalhando = menos tempo (inversa). mais tempo = mais trabalho feito (direta)
+banca|q|5 agentes analisam 100 processos em 4 dias. quantos processos 10 agentes analisam em 6 dias? ;; 150 ;; *300 ;; 200 ;; =processos são diretos a agentes e a dias: 100 × (10/5) × (6/4) = 300
+calc|th|regra de três composta passo a passo // 1. grandezas em colunas, o x numa delas // 2. pra cada coluna: se ela aumenta, a do x aumenta (direta) ou diminui (inversa)? // 3. inverte as frações das inversas // 4. x = valor conhecido da coluna do x × produto das razões // 5. confere se faz sentido: mais gente, menos tempo
+futura|t|regra de três composta caiu DUAS vezes no meu simulado e eu errei as duas. agora é pessoal
+banca|q|a razão entre 15 e 25, simplificada, é: ;; 5/3 ;; *3/5 ;; 15/5 ;; =15/25, dividindo por 5: 3/5
+calc|t|propriedade fundamental da proporção: o produto dos meios é igual ao dos extremos. a/b = c/d → a·d = b·c. o famoso "multiplica cruzado"
+banca|q|dividir 900 reais em partes diretamente proporcionais a 2 e 7: ;; 300 e 600 ;; *200 e 700 ;; 450 e 450 ;; =2 + 7 = 9 partes. 900 ÷ 9 = 100. 200 e 700
+calc|t|divisão inversamente proporcional a 2 e 3: inverte (1/2 e 1/3), tira o mmc (3/6 e 2/6) e divide direto em 3 e 2 partes
+banca|q|uma viatura a 60 km/h faz o trajeto em 2 horas. a 80 km/h, faz em: ;; 2h40 ;; *1h30 ;; 1h20 ;; =velocidade e tempo são inversas: 60 × 2 = 80 × t → t = 1,5 h
+calc|t|escala de mapa é razão: 1:50.000 quer dizer que 1 cm no mapa = 50.000 cm (500 m) na rua
+delegado|t|3 viaturas cobrem o bairro em 6 horas. com 2 viaturas, leva mais ou menos tempo? se respondeu "menos", volta pro primeiro post
+banca|q|4 máquinas imprimem 1.200 folhas em 3 horas. quantas folhas 6 máquinas imprimem em 2 horas? ;; 1.800 ;; *1.200 ;; 1.600 ;; =1.200 × (6/4) × (2/3) = 1.200. mais máquinas, menos tempo: empatou
+# w2-9
+calc|t|aumento de 20% seguido de desconto de 20% NÃO volta ao preço inicial. 100 → 120 → 96. perdeu 4%. o fator manda: 1,2 × 0,8 = 0,96
+banca|q|um preço sobe 10% e depois mais 10%. o aumento total é: ;; 20% ;; *21% ;; 19% ;; =1,1 × 1,1 = 1,21. aumentos sucessivos multiplicam, não somam
+calc|th|fator multiplicativo, o truque da porcentagem // aumento de x%: multiplica por (1 + x/100). +15% = × 1,15 // desconto de x%: multiplica por (1 − x/100). −30% = × 0,7 // sucessivos: multiplica os fatores // sem regra de três e sem sofrimento
+banca|q|30% de 40% de 500 é: ;; 350 ;; *60 ;; 200 ;; =0,3 × 0,4 × 500 = 60
+futura|t|x% de y = y% de x. 8% de 50 = 50% de 8 = 4. descobri isso agora e me sinto enganada pela escola
+banca|q|os furtos caíram de 200 para 150. a redução foi de: ;; 50% ;; *25% ;; 33% ;; =(150 − 200) ÷ 200 = −0,25. sempre divide pelo valor INICIAL
+calc|t|variação percentual = (final − inicial) ÷ inicial. divide pelo INICIAL. o 33% da alternativa está lá pra quem dividiu pelo final
+banca|q|depois de um aumento de 25%, um salário ficou em 5.000. o salário antigo era: ;; 3.750 ;; *4.000 ;; 4.250 ;; =antigo × 1,25 = 5.000 → 4.000. tirar 25% de 5.000 é a pegadinha
+calc|t|ponto percentual ≠ porcentagem. a taxa foi de 10% para 12%: subiu 2 pontos percentuais, mas 20% em relação ao valor anterior
+banca|q|a taxa de esclarecimento de crimes passou de 40% para 50%. ela aumentou: ;; 10% ;; *10 pontos percentuais, ou 25% ;; 50% ;; =50 − 40 = 10 p.p. e 10 ÷ 40 = 25% de aumento relativo
+delegado|t|"a criminalidade caiu 100%": cair 100% é zerar. se aparecer isso na sua redação, corta
+calc|t|descontos sucessivos de 10% e 20% dão desconto total de 28%, não 30%. 0,9 × 0,8 = 0,72: sobra 72%
+banca|q|lucro de 20% sobre o custo de 50 reais. o preço de venda é: ;; 70 ;; *60 ;; 62,50 ;; =50 × 1,2 = 60. lucro de 20% sobre a VENDA daria 62,50 (50 ÷ 0,8)

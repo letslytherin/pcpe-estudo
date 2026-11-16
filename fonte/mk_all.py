@@ -3,6 +3,27 @@ DISC=[('Penal','penal'),('Processo Penal','processo-penal'),('Constitucional','c
       ('Legislação Estadual','legislacao-estadual'),('Informática','informatica'),('Português','portugues'),
       ('Raciocínio Lógico','raciocinio-logico'),('Contabilidade','contabilidade'),('Estatística','estatistica')]
 rd=lambda f:open(f,encoding='utf-8').read()
+def feed_json():
+    import json
+    out=[];ch=None;n=0
+    for l in rd('feed.txt').splitlines():
+        l=l.strip()
+        if not l:continue
+        if l.startswith('# '):ch=l[2:].strip();n=0;continue
+        p,k,x=l.split('|',2);n+=1;o={'id':ch+'.'+str(n),'ch':ch,'p':p,'k':k}
+        if k=='t':o['x']=x
+        elif k=='th':o['parts']=[y.strip() for y in x.split(' // ')]
+        elif k=='q':
+            seg=[y.strip() for y in x.split(' ;; ')];o['x']=seg[0];opts=[]
+            for y in seg[1:]:
+                if y.startswith('='):o['e']=y[1:]
+                else:
+                    if y.startswith('*'):o['a']=len(opts);y=y[1:]
+                    opts.append(y)
+            o['o']=opts;assert 'a' in o and 'e' in o and len(opts)>=3,l
+        else:raise ValueError(l)
+        out.append(o)
+    return json.dumps(out,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
 def red_json():
     import json
     out=[]
@@ -55,13 +76,13 @@ acss+='''
 #anim .dchips button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
 #anim .dchips button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 #anim .hint{font-size:14px;color:var(--muted)}
-.tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;position:sticky;top:0;z-index:5}
+.tabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;position:sticky;top:0;z-index:5}
 .tabs button{font:700 14px var(--f-body);border:0;border-radius:9px;padding:10px 2px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:transparent;color:var(--muted);cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--card)}
 .tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .links button{font:600 13px var(--f-body);color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:6px 11px;cursor:pointer}
 [hidden]{display:none!important}
-'''+rd('abas_extra.css')+rd('redacao.css')+rd('erros.css')
+'''+rd('abas_extra.css')+rd('redacao.css')+rd('erros.css')+rd('feed.css')
 
 # ---------- JS: motor + cenas de cada disciplina ----------
 js=re.search(r'<script>(.*?)</script>',base,re.S).group(1)
@@ -123,6 +144,7 @@ hdr_end=s.index('</header>')+len('</header>')
 tabs='''
   <div class="tabs" role="tablist" aria-label="Seções">
     <button type="button" role="tab" id="tb-hoje" aria-selected="true" aria-controls="hoje">Hoje</button>
+    <button type="button" role="tab" id="tb-feed" aria-selected="false" aria-controls="feed">Feed</button>
     <button type="button" role="tab" id="tb-crono" aria-selected="false" aria-controls="tab-crono">Cronograma</button>
     <button type="button" role="tab" id="tb-notas" aria-selected="false" aria-controls="notas">Notas</button>
     <button type="button" role="tab" id="tb-taf" aria-selected="false" aria-controls="taf">TAF</button>
@@ -133,7 +155,7 @@ tabs='''
 s=s[:hdr_end]+tabs+s[hdr_end:]
 foot=s.index('  <footer>')
 anim='''  </div>
-'''+rd('abas_extra.html')+rd('redacao.html')+'''
+'''+rd('abas_extra.html')+rd('redacao.html')+rd('feed.html')+'''
   <div id="anim" role="tabpanel" aria-labelledby="tb-anim" hidden>
     <p class="hint">Escolha a disciplina. Cada uma tem cinco cenas curtas com palitinhos; a cena começa sozinha quando aparece na tela, e a regra fica logo abaixo.</p>
     <div class="dchips" id="anim-disc" aria-label="Disciplinas"></div>
@@ -151,7 +173,7 @@ s=s.replace('Seu progresso fica salvo nesta página.','Seu progresso fica salvo 
 tabjs='''
 <script>
 (function(){
-const T=['hoje','crono','notas','taf','red','anim'],P={hoje:'hoje',crono:'tab-crono',notas:'notas',taf:'taf',red:'redacao',anim:'anim'};
+const T=['hoje','feed','crono','notas','taf','red','anim'],P={hoje:'hoje',feed:'feed',crono:'tab-crono',notas:'notas',taf:'taf',red:'redacao',anim:'anim'};
 function tab(w,disc){T.forEach(k=>{const on=k===w;document.getElementById('tb-'+k).setAttribute('aria-selected',on);document.getElementById(P[k]).hidden=!on;});
   try{localStorage.setItem('pcpe-aba',w)}catch(e){}
   if(w==='anim')requestAnimationFrame(()=>{window.__animShow&&window.__animShow(disc);});
@@ -170,6 +192,10 @@ window.__red='''+red_json()+''';
 </script>
 <script>
 '''+rd('erros.js')+'''
+</script>
+<script>
+window.__feed='''+feed_json()+''';
+'''+rd('feed.js')+'''
 </script>
 <script>
 '''+ajs+'''
